@@ -1,0 +1,8 @@
+output/*
+*.out
+Genotype/*
+env/
+samplesheet.txt
+*snakefiles/utils/__pycache__*
+tools/
+
