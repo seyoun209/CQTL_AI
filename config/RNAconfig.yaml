@@ -1,0 +1,12 @@
+## change the samplesheet name, filenamesfom, mergeby 
+  
+## Path to sample sheet
+samplesheet: 'rna_samplesheet.txt'
+
+## List columns to group (i.e. any columns left out will become part of the same group)
+## set mergeBy: '' for no merging
+mergeBy: ['Donor','Condition','Tech_Rep','Sex']
+
+## Indicate whether to create stranded signal tracks
+#stranded: True # False
+

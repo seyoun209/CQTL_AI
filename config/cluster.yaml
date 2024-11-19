@@ -10,3 +10,16 @@ __default__:
   error: "output/logs_slurm/{rule}.{wildcards}.{jobid}.err"
 
 ## Multi-threaded / High-memory Rules
+
+align:
+  memPerCpu: 6G
+
+reheader:
+ memPerCpu: 8G
+
+mark_duplicates:
+  memPerCpu: 16G
+
+
+
+

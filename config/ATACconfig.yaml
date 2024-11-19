@@ -1,16 +1,42 @@
 ## Path to sample sheet
-samplesheet: 'ATACsamplesheet.txt'
+samplesheet: 'atac_samplesheet2.txt'
 
 ## List columns to concatenate for file names 
 ## (or indicate a single Name column, i.e. fileNamesFrom: ['Name'])
-fileNamesFrom: ['Project', 'Cell_Type', 'Time', 'Bio_Rep', 'Tech_Rep']
+fileNamesFrom: ['Proj','Donor','Condition','Tissue','Protocol_notes']
 
 ## List columns to group (i.e. any columns left out will become part of the same group)
 ## set mergeBy: '' for no merging 
-mergeBy: ['Project', 'Cell_Type', 'Time']
+mergeBy: ['Proj','Donor','Condition','Tissue','Protocol_notes']
 
 ## Indicate whether to create stranded signal tracks
 stranded: False
+
+##Blacklistfile
+blacklist: '/work/users/s/e/seyoun/CQTL_AI/external/blacklist_region'
+
+#BWAindex
+bwa_index: '/users/s/e/seyoun/Ref/genome/bwa_idx/hg38'
+
+#vcf_raw
+vcf: '/work/users/s/e/seyoun/CQTL_AI/Genopipe/output/vcf/CQTL_COA9_10_ALL_qc.vcf.gz'
+vcf_copy: '/work/users/s/e/seyoun/CQTL_AI/output/geno/cQTL_21_filtered.vcf.gz'
+
+#WASP
+wasp_dir: '/nas/longleaf/rhel8/apps/wasp/2023-02/WASP'
+chrom_size: '/proj/phanstiel_lab/References/chromSizes/hg38_chromSizes_filt.txt'
+
+## Software versions
+fastqcVers: "0.12.1"
+trim_galore: "0.6.7"
+python: "3.9.6"
+r: "4.4.0"
+bwaVers: "0.7.17"
+samtoolsVers: "1.21"
+javaVers: "17.0.2"
+waspVer: "2023-02"
+picardVers: "2.26.11"
+ataqvVers: "1.0.0"
 
 
 
