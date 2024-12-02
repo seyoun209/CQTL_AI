@@ -27,7 +27,10 @@ case $1 in
             ## Unlock snakemake workflow
             snakemake -j 1 --unlock -s snakefiles/SubsetPreprocess.smk --configfile "config/ATACconfig.yaml"  --cluster-config "config/cluster.yaml" --cluster "sbatch -J {cluster.name} -p {cluster.partition} -t {cluster.time} -c {cluster.cpusPerTask} --mem-per-cpu={cluster.memPerCpu} -N {cluster.nodes} --output {cluster.output} --error {cluster.error} --parsable" --cluster-status snakefiles/utils/status.py
             ;;
-
+	    'rna' | 'run_RNA_preprocessing')
+	    ## Unlock snakemake workflow
+            snakemake -j 1 --unlock -s snakefiles/RNA_preprocess.smk --configfile "config/RNAconfig.yaml"  --cluster-config "config/cluster.yaml" --cluster "sbatch -J {cluster.name} -p {cluster.partition} -t {cluster.time} -c {cluster.cpusPerTask} --mem-per-cpu={cluster.memPerCpu} -N {cluster.nodes} --output {cluster.output} --error {cluster.error} --parsable" --cluster-status snakefiles/utils/status.py
+            ;;
 
 
 esac

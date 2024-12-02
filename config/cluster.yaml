@@ -12,14 +12,45 @@ __default__:
 ## Multi-threaded / High-memory Rules
 
 align:
-  memPerCpu: 6G
+  memPerCpu: 16G
 
 reheader:
  memPerCpu: 8G
 
 mark_duplicates:
-  memPerCpu: 16G
+  memPerCpu: 10G
 
+collect_insert_size_metrics:
+  memPerCpu: 6G
+
+add_read_groups:
+  memPerCpu: 6G
+
+verifybamid:
+  memPerCpu: 15G
+  time: "11-00:00:00"
+
+quant:
+  memPerCpu: 4G
+
+multiqc:
+  memPerCpu: 4G
+
+mergeSignal:
+  memPerCpu: 8G
+  time: "11-00:00:00"
+
+mergeForwadSignal:
+  memPerCpu: 16G
+  time: "11-00:00:00"
+
+mergeReverseSignal:
+  memPerCpu: 16G
+  time: "11-00:00:00"
+
+mergeSignal_norm:
+  memPerCpu: 8G
+  time: "11-00:00:00"
 
 
 

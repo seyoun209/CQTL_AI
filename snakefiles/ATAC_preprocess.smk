@@ -57,9 +57,11 @@ rule all:
                         for key in read1.keys()],
         bam = [expand("output/align/{sampleName}_sorted.bam",sampleName=key) for key in read1.keys()],
         #bam_stats = [expand("output/align/{sampleName}_stats.txt",sampleName=key) for key in read1.keys()],
-        ataqv = [expand("output/ataqv/{sampleName}.ataqv.json", sampleName=key) for key in read1.keys()]
-
-
+        metrics = [expand("output/metrics/{sampleName}_insert_size_metrics.txt", sampleName=key) for key in read1.keys()],
+        histograms = [expand("output/metrics/{sampleName}_insert_size_histogram.pdf", sampleName=key) for key in read1.keys()],
+        ataqv = [expand("output/ataqv/{sampleName}.ataqv.json", sampleName=key) for key in read1.keys()],
+        ataqv_txt = [expand("output/ataqv/{sampleName}.ataqv.txt", sampleName=key) for key in read1.keys()],
+        bamqc = [expand("output/bamQC/{sampleName}_bamqQC", sampleName=key) for key in read1.keys()]
 
 
 rule catReads:
@@ -164,10 +166,12 @@ rule mark_duplicates:
     output:
         dedup_bam="output/dedup/{sampleName}_dedup.bam",
         metrics="output/dedup/{sampleName}_dup_metrics.txt",
-        index="output/dedup/{sampleName}_dedup.bai"
+        index="output/dedup/{sampleName}_dedup.bam.bai"
+    threads: 4
     params:
         picard_version=config["picardVers"],
-        java_version=config['javaVers']
+        java_version=config['javaVers'],
+        samtools_version = config['samtoolsVers']
     log:
         err="output/logs/mark_duplicates_{sampleName}.err",
         out="output/logs/mark_duplicates_{sampleName}.out"
@@ -175,9 +179,10 @@ rule mark_duplicates:
         """
         module load java/{params.java_version}
         module load picard/{params.picard_version}
+        module load samtools/{params.samtools_version}
         mkdir -p output/dedup
 
-        java -Xmx16g -jar /nas/longleaf/apps/picard/{params.java_version}/picard-{params.java_version}/picard.jar MarkDuplicates \
+        java -Xmx16g -jar /nas/longleaf/apps/picard/{params.picard_version}/picard-{params.picard_version}/picard.jar MarkDuplicates \
             I={input.bam} \
             O={output.dedup_bam} \
             M={output.metrics} \
@@ -194,6 +199,7 @@ rule filter_mitochondrial_reads:
     output:
         filtered_bam="output/filtered/{sampleName}_filtered.bam",
         index="output/filtered/{sampleName}_filtered.bam.bai"
+    threads: 4
     params:
         samtools_version=config['samtoolsVers']
     log:
@@ -216,9 +222,11 @@ rule collect_insert_size_metrics:
     output:
         metrics="output/metrics/{sampleName}_insert_size_metrics.txt",
         histogram="output/metrics/{sampleName}_insert_size_histogram.pdf"
+    threads: 4
     params:
         picard_version=config["picardVers"],
-        java_version=config['javaVers']
+        java_version=config['javaVers'],
+        R_version=config['r']
     log:
         err="output/logs/insert_size_metrics_{sampleName}.err",
         out="output/logs/insert_size_metrics_{sampleName}.out"
@@ -226,9 +234,10 @@ rule collect_insert_size_metrics:
         """
         module load java/{params.java_version}
         module load picard/{params.picard_version}
+        module load r/{params.R_version}
         mkdir -p output/metrics
 
-        java -jar /nas/longleaf/apps/picard/{params.picard_version}/picard.jar CollectInsertSizeMetrics \
+        java -jar /nas/longleaf/apps/picard/{params.picard_version}/picard-{params.picard_version}/picard.jar CollectInsertSizeMetrics \
             I={input.bam} \
             O={output.metrics} \
             H={output.histogram} \
@@ -243,10 +252,11 @@ rule add_read_groups:
         bai="output/filtered/{sampleName}_filtered.bam.bai"
     output:
         bam="output/align/{sampleName}_RG.bam",
-        bai="output/align/{sampleName}_RG.bai"
+        bai="output/align/{sampleName}_RG.bam.bai"
     params:
         picard_version=config["picardVers"],
         samtools_version=config["samtoolsVers"]
+    threads: 4
     log:
         err="output/logs/add_read_groups_{sampleName}.err",
         out="output/logs/add_read_groups_{sampleName}.out"
@@ -270,12 +280,15 @@ rule add_read_groups:
 
 rule run_ataqv:
     input:
-        bam="output/align/{sampleName}_RG.bam"
+        bam=rules.add_read_groups.output.bam
     output:
+        txt="output/ataqv/{sampleName}.ataqv.txt",
         json="output/ataqv/{sampleName}.ataqv.json"
     params:
         tss_file="/users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz",
-        ataqv_version=config["ataqvVers"]
+        ataqv_version=config["ataqvVers"],
+        tss_extension=config["tssextension"]
+    threads: 6
     log:
         err="output/logs/ataqv_{sampleName}.err",
         out="output/logs/ataqv_{sampleName}.out"
@@ -286,39 +299,30 @@ rule run_ataqv:
 
         ataqv \
             --tss-file {params.tss_file} \
+            --tss-extension {params.tss_extension} \
+            --metrics-file {output.json} \
             --ignore-read-groups human \
-            {input.bam} > {output.json} \
+            {input.bam} > {output.txt} \
             2> {log.err}
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
         """
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-    
-      
-    
-
+rule qc_r:
+    input:
+        bam=rules.add_read_groups.output.bam
+    output:
+        qc="output/bamQC/{sampleName}_bamqQC"
+    params:
+        script="/work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R",
+        r_version=config["r"]
+    log:
+        err="output/logs/atacseqQC_{sampleName}.err",
+        out="output/logs/atacseqQC_{sampleName}.out"
+    threads: 6
+    shell:
+        """
+        module load r/{params.r_version}
+        Rscript {params.script} {input.bam} 1> {log.out} 2> {log.err}
+        """
 
 

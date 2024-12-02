@@ -1,25 +1,30 @@
 #!/usr/bin/env python3
 
-include: '/work/users/s/e/seyoun/CQTL_sQTL/snakefiles/ATAC_preprocess.smk'
+include: '/work/users/s/e/seyoun/CQTL_AI/snakefiles/ATAC_preprocess.smk'
 
-rule all:
+# Define the list of all possible sample names
+all_samples = [
+    "CQTL_AM7778FE_FNF_Femur_1",
+    "CQTL_AM7754_FNF_Ankle_replicate",
+    "CQTL_AM7755_FNF_Ankle_replicate",
+    "CQTL_AM7778FE_CTL_Femur_1",
+    "CQTL_AM7754_CTL_Ankle_replicate",
+    "CQTL_AM7755_CTL_Ankle_replicate"
+    #"OTHER_SAMPLE_1",
+    #"OTHER_SAMPLE_2"
+]
+
+# Filter samples to include only those with 'replicate' or 'Femur' in their names
+selected_samples = [s for s in all_samples if "replicate" in s or "Femur" in s]
+
+rule all_subset:
     input:
         "output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz",
         "output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz",
         "output/geno/pbs_geno_other/pbs.rename.vcf.gz",
         "output/geno/fnf_geno_other/fnf.rename.vcf.gz",
-        expand("output/align/{sampleName}_RG.bam", sampleName=["CQTL_AM7778FE_FNF_Femur_1",
-                                                              "CQTL_AM7754_FNF_Ankle_replicate",
-                                                              "CQTL_AM7755_FNF_Ankle_replicate",
-                                                              "CQTL_AM7778FE_CTL_Femur_1",
-                                                              "CQTL_AM7754_CTL_Ankle_replicate",
-                                                              "CQTL_AM7755_CTL_Ankle_replicate"]),
-        expand("output/ataqv/{sampleName}.ataqv.json", sampleName=["CQTL_AM7778FE_FNF_Femur_1",
-                                                                   "CQTL_AM7754_FNF_Ankle_replicate",
-                                                                   "CQTL_AM7755_FNF_Ankle_replicate",
-                                                                   "CQTL_AM7778FE_CTL_Femur_1",
-                                                                   "CQTL_AM7754_CTL_Ankle_replicate",
-                                                                   "CQTL_AM7755_CTL_Ankle_replicate"])
+        expand("output/QC/{sampleName}_verifyBamID.{ext}", sampleName=selected_samples,
+            ext=['selfSM','selfRG','bestRG','bestSM','depthRG','depthSM'])
 
 
 rule categorize_femur_replicate_samples:
@@ -63,5 +68,49 @@ rule reheader_subset:
         
         sh /work/users/s/e/seyoun/CQTL_AI/scripts/rename.sh {params.vcf_copied} {input.matched_pbs} {output.pbs_temp} {output.pbs_vcf} 1> {log.pbsout} 2> {log.pbserr}
         sh /work/users/s/e/seyoun/CQTL_AI/scripts/rename.sh {params.vcf_copied} {input.matched_fnf} {output.fnf_temp} {output.fnf_vcf} 1> {log.fnfout} 2> {log.fnferr}
+        """
+
+rule verifybamid:
+    input:
+        bam = rules.add_read_groups.output.bam,
+        bai = rules.add_read_groups.output.bai,
+        pbs_vcf = rules.reheader_subset.output.pbs_vcf,
+        fnf_vcf = rules.reheader_subset.output.fnf_vcf
+    output:
+        selfSM = 'output/QC/{sampleName}_verifyBamID.selfSM',
+        selfRG = 'output/QC/{sampleName}_verifyBamID.selfRG',
+        bestRG = 'output/QC/{sampleName}_verifyBamID.bestRG',
+        bestSM = 'output/QC/{sampleName}_verifyBamID.bestSM',
+        depthRG = 'output/QC/{sampleName}_verifyBamID.depthRG',
+        depthSM = 'output/QC/{sampleName}_verifyBamID.depthSM'
+    params:
+        verifybamid = config['verifybamid'],
+        out_prefix = "output/QC/{sampleName}_verifyBamID"
+    wildcard_constraints:
+        sampleName = "|".join([
+            "CQTL_AM7778FE_FNF_Femur_1",
+            "CQTL_AM7754_FNF_Ankle_replicate", 
+            "CQTL_AM7755_FNF_Ankle_replicate",
+            "CQTL_AM7778FE_CTL_Femur_1",
+            "CQTL_AM7754_CTL_Ankle_replicate",
+            "CQTL_AM7755_CTL_Ankle_replicate"
+        ])
+    log:
+        err = "output/logs/verifyBamID_{sampleName}.err"
+    shell:
+        """
+        
+        if [[ "{wildcards.sampleName}" == *"CTL"* ]]; then
+            vcf_file={input.pbs_vcf}
+        elif [[ "{wildcards.sampleName}" == *"FNF"* ]]; then
+            vcf_file={input.fnf_vcf}
+        else
+            echo "Error: Sample type not recognized in {wildcards.sampleName}"
+            exit 1
+        fi
+        
+        echo "$vcf_file"
+
+        {params.verifybamid} --vcf $vcf_file --bam {input.bam} --bai {input.bai} --best --out {params.out_prefix} 2> {log.err}
         """
 

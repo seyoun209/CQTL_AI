@@ -2,11 +2,55 @@
   
 ## Path to sample sheet
 samplesheet: 'rna_samplesheet.txt'
+update_samplesheet: 'bam_samplesheet.txt'
+
+## List columns to concatenate for file names 
+## (or indicate a single Name column, i.e. fileNamesFrom: ['Name'])
+fileNamesFrom: ['Proj','Donor','Condition','Tissue','Tech_Rep']
 
 ## List columns to group (i.e. any columns left out will become part of the same group)
-## set mergeBy: '' for no merging
-mergeBy: ['Donor','Condition','Tech_Rep','Sex']
+## set mergeBy: '' for no merging 
+mergeBy: ['Proj','Donor','Condition','Tissue','Tech_Rep']
+
+mergeCondition: ['Time']
+selected_conditions: ['0', '360', '4320']
+control_condition: '0'
 
 ## Indicate whether to create stranded signal tracks
 #stranded: True # False
+
+## Genome-specific reference parameters
+#salmon: '/work/users/s/e/seyoun/Ref/genome/salmon_idx'
+gtf: '/users/s/e/seyoun/Ref/genome/gencode.v45.annotation.gtf'
+star: '/users/s/e/seyoun/Ref/genome/STAR_idx'
+starsjdb: '/users/s/e/seyoun/Ref/genome/STAR_idx/sjdbList.fromGTF.out.tab'
+fa: '/users/s/e/seyoun/Ref/genome/gencode.v45.transcripts.fa'
+genome_dir: '/users/s/e/seyoun/Ref/genome'
+
+##salmon options
+salmon: '/users/s/e/seyoun/Ref/genome/salmon_idx'
+gcBias: 'TRUE'
+seqBias: 'TRUE'
+
+##regtools
+regtools: '/work/users/s/e/seyoun/CQTL_sQTL/tools/regtools/build/regtools'
+
+##ramts
+t: 'paired'
+readlength: 75
+##leafcutter
+leafcutter: '/work/users/s/e/seyoun/CQTL_sQTL/tools/leafcutter/'
+
+## Software versions
+fastqcVers: "0.12.1"
+starVers: "2.7.11b"
+samtoolsVers: "1.21"
+trim_galore: "0.6.7"
+pgizVers: "2.7"
+rVers: "4.4.0"
+pythonVers: '3.9.6'
+salmonVers: '1.10.2'
+deeptoolsVers: '3.5.4'
+rmats_turboVers: "4.3.0"
+picardVers: "2.26.11"
 
