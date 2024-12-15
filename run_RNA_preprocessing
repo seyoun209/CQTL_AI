@@ -23,7 +23,7 @@ python3 -m venv env && source env/bin/activate && pip3 install -r config/require
 mkdir -p rna_output/logs_slurm
 
 
-snakemake -s snakefiles/RNA_preprocess.smk --configfile "config/RNAconfig.yaml" --cluster-config "config/cluster.yaml" --cluster "sbatch -J {cluster.name} -p {cluster.partition} -t {cluster.time} -c {cluster.cpusPerTask} --mem-per-cpu={cluster.memPerCpu} -N {cluster.nodes} --output {cluster.output} --error {cluster.error} --parsable" --cluster-status snakefiles/utils/status.py -j 100 --max-jobs-per-second 1 --max-status-checks-per-second 0.5 --rerun-incomplete -p --latency-wait 500 --dry-run
+snakemake -s snakefiles/RNA_preprocess.smk --configfile "config/RNAconfig.yaml" --cluster-config "config/cluster.yaml" --cluster "sbatch -J {cluster.name} -p {cluster.partition} -t {cluster.time} -c {cluster.cpusPerTask} --mem-per-cpu={cluster.memPerCpu} -N {cluster.nodes} --output {cluster.output} --error {cluster.error} --parsable" --cluster-status snakefiles/utils/status.py -j 100 --max-jobs-per-second 1 --max-status-checks-per-second 0.5 --rerun-incomplete -p --latency-wait 500 
 
 ## Success message
 echo "Workflow completed successfully!"

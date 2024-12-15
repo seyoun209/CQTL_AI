@@ -52,5 +52,11 @@ mergeSignal_norm:
   memPerCpu: 8G
   time: "11-00:00:00"
 
+find_intersecting_snps:
+  memPerCpu: 16G
+
+remap_wasp_reads:
+  memPerCpu: 16G
+
 
 
