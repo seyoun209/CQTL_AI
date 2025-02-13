@@ -22,10 +22,15 @@ if config['exclude_options']['exclude_femur']:
 
 ## Create merged names
 samples['mn'] = samples[config['mergeBy']].agg('_'.join, axis=1)
+#mergeBy = ['Proj','Donor','Condition','Tissue','Protocol_notes']
+#samples['mn'] = samples[mergeBy].agg('_'.join, axis=1)
 
 # Separate samples by condition
-ctl_samples = samples[samples['Condition'] == 'CTL']
-fnf_samples = samples[samples['Condition'] == 'FNF']
+#ctl_samples = samples[samples['Condition'] == 'CTL']
+#fnf_samples = samples[samples['Condition'] == 'FNF']
+
+# Group samples by condition
+condition_samples = samples.groupby('Condition')['mn'].apply(list).to_dict()
 
 # Create BAM and BAI file mappings
 bam_files = samples.groupby('mn').apply(lambda x: f"{config['base_dir']}/output/filtered/{x.name}_filtered.bam").to_dict()
@@ -40,8 +45,24 @@ rule all:
                 sampleName=bam_files.keys()),
         expand("output/wasp/rmdup/{sampleName}{ext}",
                 sampleName=bam_files.keys(),
-                ext=['.rmdup.bam','.sorted_wasp.bam','.sorted_wasp.bam.bai','_stats.txt'])
-
+                ext=['.rmdup.bam','.sorted_wasp.bam','.sorted_wasp.bam.bai','_stats.txt']),
+        expand("output/wasp/blk_filter/{sampleName}{ext}",
+                sampleName=bam_files.keys(),
+                ext=[".blkfilter.bam",".sorted_final.bam",".sorted_final.bam.bai","_stats.txt"]),
+        ataqv = expand("output/wasp/ataqv/{sampleName}.ataqv.json", sampleName=bam_files.keys()),
+        ataqv_txt = expand("output/wasp/ataqv/{sampleName}.ataqv.txt", sampleName=bam_files.keys()),
+        bamqc = [expand("output/wasp/bamQC/{sampleName}_bamqQC", sampleName=key) for key in bam_files.keys()],
+        #merged by condition
+        cond_macs3 = expand("output/peaks/merged_cond/{cond}_macs3_merged{ext}",ext=['.bed','.saf','_counts.txt'], cond=['CTL','FNF']),
+        # Merged files (single files, no expand needed)
+        merged_bed = expand("output/peaks/merged/allsamples_{tool}_merged.bed",tool=['macs3','macs2','hmmratac','rocco']),
+        merged_saf = expand("output/peaks/merged/allsamples_{tool}_merged.saf",tool=['macs3','macs2','hmmratac','rocco']),
+        merged_counts = expand("output/peaks/merged/allsamples_{tool}_merged_counts.txt",tool=['macs3','macs2','hmmratac','rocco']),
+        # Individual files
+        indv_counts = expand("output/peaks/{tool}/indv/{sampleName}_count.txt", tool=['macs3','macs2','hmmratac','rocco'],sampleName=bam_files.keys()),
+        # Signal files
+        signal = expand("output/signals/merged_signal/{cond}_merged.bw", cond=['CTL','FNF']),
+        indv_signal = expand("output/signals/indv/{sampleName}.bw", sampleName=bam_files.keys())
 
 
 rule extract_sample_ids:
@@ -66,8 +87,6 @@ rule extract_sample_ids:
 
 rule snp2h5:
     input:
-        pbs_vcf="output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz",
-        fnf_vcf="output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz",
         sample_ids_pbs=rules.extract_sample_ids.output.sample_ids_pbs,
         sample_ids_fnf=rules.extract_sample_ids.output.sample_ids_fnf
     output:
@@ -96,7 +115,7 @@ rule snp2h5:
         --haplotype {output.pbs_haplotypes} \
         --snp_index {output.pbs_snp_index} \
         --snp_tab {output.pbs_snp_tab} \
-        {input.pbs_vcf} 2> {log.pbs_err}
+        output/geno/pbs_geno/wasp_vcf/chr*.pbs.rename.vcf.gz 2> {log.pbs_err}
 
         # Process FNF VCF
         {params.wasp_path}/snp2h5/snp2h5 \
@@ -105,7 +124,7 @@ rule snp2h5:
         --haplotype {output.fnf_haplotypes} \
         --snp_index {output.fnf_snp_index} \
         --snp_tab {output.fnf_snp_tab} \
-        {input.fnf_vcf} 2> {log.fnf_err}
+        output/geno/fnf_geno/wasp_vcf/chr*.fnf.rename.vcf.gz 2> {log.fnf_err}
         """
 
 rule find_intersecting_snps:
@@ -297,4 +316,770 @@ rule rmDupWASP:
         samtools flagstat {output.sort_rmdup_bam} > {output.stats} 2>> {log.err}
 
         """
+
+rule rmblacklist_region:
+    input:
+        bam=rules.rmDupWASP.output.sort_rmdup_bam
+    output:
+        final_bam="output/wasp/blk_filter/{sampleName}.blkfilter.bam",
+        sort_bam="output/wasp/blk_filter/{sampleName}.sorted_final.bam",
+        index_bam="output/wasp/blk_filter/{sampleName}.sorted_final.bam.bai",
+        stats="output/wasp/blk_filter/{sampleName}_stats.txt"
+    threads:4
+    params:
+        bedtools_ver=config['bedtools'],
+        samtools_version=config['samtoolsVers'],
+        Blacklist_bed=config['blacklist']
+    log:
+        err="output/logs/blklistFilter_wasp_{sampleName}.err",
+        out="output/logs/blklistFilter_wasp_{sampleName}.out"
+    shell:
+        """
+        module load bedtools/{params.bedtools_ver}
+        module load samtools/{params.samtools_version}
+        mkdir -p output/wasp/blk_filter
+
+        bedtools intersect -v -abam {input.bam} -b {params.Blacklist_bed} > {output.final_bam} 
+        
+        samtools sort -o {output.sort_bam} {output.final_bam}
+        samtools index {output.sort_bam} 1>> {log.out} 2>> {log.err}
+        samtools flagstat {output.sort_bam} > {output.stats} 2>> {log.err}
+
+        """
+
+rule run_ataqv:
+    input:
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        txt="output/wasp/ataqv/{sampleName}.ataqv.txt",
+        json="output/wasp/ataqv/{sampleName}.ataqv.json"
+    params:
+        tss_file="/users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz",
+        ataqv_version=config["ataqvVers"],
+        tss_extension=config["tssextension"]
+    threads: 6
+    log:
+        err="output/logs/ataqv_afterWASP_{sampleName}.err",
+        out="output/logs/ataqv_afterWASP_{sampleName}.out"
+    shell:
+        """
+        module load ataqv/{params.ataqv_version}
+        mkdir -p output/wasp/ataqv
+
+        ataqv \
+            --tss-file {params.tss_file} \
+            --tss-extension {params.tss_extension} \
+            --metrics-file {output.json} \
+            --ignore-read-groups human \
+            {input.bam} > {output.txt} \
+            2> {log.err}
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        """
+
+
+rule bamQC:
+    input:
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        qc="output/wasp/bamQC/{sampleName}_bamqQC"
+    params:
+        script="/work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R",
+        r_version=config["r"]
+    log:
+        err="output/logs/atacseqQC_afterWASP_{sampleName}.err",
+        out="output/logs/atacseqQC_afterWASP_{sampleName}.out"
+    threads: 6
+    shell:
+        """
+        module load r/{params.r_version}
+        mkdir -p output/wasp/bamQC
+        Rscript {params.script} {input.bam} output/wasp/bamQC/ .sorted_final.bam  1> {log.out} 2> {log.err}
+        """
+
+rule macs3_peakcalling:
+    input:
+        bam = rules.rmblacklist_region.output.sort_bam
+    output:
+        macs3="output/peaks/macs3/{sampleName}_peaks.narrowPeak"
+    log:
+        err="output/logs/macs3_{sampleName}.err"
+    threads:2
+    params:
+        python_ver = config['python']
+    shell:
+        """
+        module load python/{params.python_ver}
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/macs3/
+
+        macs3 callpeak -t {input.bam} \
+                -f BAMPE \
+                -g hs \
+                --nomodel \
+                --shift -75 \
+                --extsize 150 \
+                --keep-dup all \
+                -q 0.01 \
+                --call-summits \
+                -n {wildcards.sampleName} \
+                --outdir output/peaks/macs3/ 2> {log.err}
+        """
+
+rule hmmratac_peaks:
+    input:
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        peak="output/peaks/hmmratac/{sampleName}_accessible_regions.narrowPeak"
+    log:
+        err='output/logs/hmmratac_{sampleName}.err'
+    params:
+        python_ver=config['python']
+    threads:2
+    shell:
+        """
+        module load python/{params.python_ver}
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac/
+
+         macs3 hmmratac \
+            -i {input.bam} \
+            -f BAMPE \
+            --keep-duplicates \
+            --minlen 100 \
+            --save-states \
+            --binsize 50 \
+            -n {wildcards.sampleName} \
+            --outdir output/peaks/hmmratac/ 2> {log.err}
+
+        """
+rule macs2_peaks:
+    input:
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        peak="output/peaks/macs2/{sampleName}_peaks.narrowPeak"
+    log:
+        err='output/logs/macs2_{sampleName}.err'
+    threads:2
+    params:
+        python_ver=config['python'],
+        macs2_ver=config['macs2']
+    shell:
+        """
+        module load python/{params.python_ver}
+        module load macs/{params.macs2_ver}
+
+        mkdir -p output/peaks/macs2
+
+        macs2 callpeak -t {input.bam} \
+            -f BAMPE \
+            -g hs \
+            --nomodel \
+            --shift -75 \
+            --extsize 150 \
+            --keep-dup all \
+            -p 0.01 \
+            --call-summits \
+            -n {wildcards.sampleName} \
+            --outdir output/peaks/macs2 2> {log.err}
+        """
+rule rocco_peaks:
+    input:
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        peak="output/peaks/rocco/{sampleName}_peaks.bed"
+    log:
+        err='output/logs/rocco_{sampleName}.err'
+    params:
+        python_ver=config['python'],
+        bedtools_ver=config['bedtools'],
+        genomesize=config['effective_genome_size'],
+        chrsize=config['chrsize']
+    threads:4
+    shell:
+        """
+        module load python/{params.python_ver}
+        module load bedtools/{params.bedtools_ver}
+        mkdir -p output/peaks/rocco
+
+        rocco -i {input.bam} \
+                --effective_genome_size {params.genomesize} \
+                -o {output.peak} \
+                --chrom_sizes_file {params.chrsize} \
+                --step 10 \
+                  --transform_logpc \
+                  --transform_logpc_const 1.0 \
+                  --transform_medfilt \
+                  --transform_medfilt_kernel 150 \
+                  --gamma 2.0 \
+                  --budget 0.03 \
+                  --min_mapping_score 30 \
+                  --flag_include 66 \
+                  --flag_exclude 1284 \
+                  --threads 4 \
+                  --verbose
+
+        """
+
+rule macs3_peak_count:
+    input:
+        macs3_peak = lambda wildcards: expand("output/peaks/macs3/{sp_nm_cond}_peaks.narrowPeak", sp_nm_cond=condition_samples[wildcards.cond]),
+        bam=lambda wildcards: expand("output/wasp/blk_filter/{sp_nm_cond}.sorted_final.bam",sp_nm_cond=condition_samples[wildcards.cond])
+    output:
+        macs3_bed="output/peaks/merged_cond/{cond}_macs3_merged.bed",
+        macs3_saf="output/peaks/merged_cond/{cond}_macs3_merged.saf",
+        count="output/peaks/merged_cond/{cond}_macs3_merged_counts.txt"
+    log:
+        err="output/logs/{cond}_macs3_merge_peakcount.err",
+        out="output/logs/{cond}_macs3_merge_peakcount.out"
+    threads: 8
+    params:
+        bedtoolsVer=config['bedtools'],
+        subreadVer=config['subread'],
+        min_samples=6
+    shell:
+        """
+        module load bedtools/{params.bedtoolsVer}
+        module load subread/{params.subreadVer}
+        mkdir -p output/peaks/merged_cond
+
+        multiIntersectBed -i {input.macs3_peak} | \
+        awk -v min_samples={params.min_samples} '$4 >= min_samples' | \
+        awk '($3-$2) >= 50' | \
+        bedtools merge > {output.macs3_bed} 2> {log.err}
+
+        #Convert to the saf
+
+        awk 'BEGIN{{print "GeneID\tChr\tStart\tEnd\tStrand"}} \
+         {{print "peak_"NR"\t"$1"\t"$2"\t"$3"\t."}}' {output.macs3_bed} > {output.macs3_saf}
+
+         #Count reads in the region
+         
+         featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {output.macs3_saf} \
+                -o {output.count} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+
+        """
+
+rule macs3_merge_conditions:
+    input:
+        bed=expand("output/peaks/merged_cond/{cond}_macs3_merged.bed", cond=['CTL', 'FNF']),
+        bam=expand("output/wasp/blk_filter/{sampleName}.sorted_final.bam", sampleName=bam_files.keys())
+    output:
+        bed="output/peaks/merged/allsamples_macs3_merged.bed",
+        saf="output/peaks/merged/allsamples_macs3_merged.saf",
+        counts="output/peaks/merged/allsamples_macs3_merged_counts.txt"
+    log:
+        err="output/logs/macs3_merged_counts_Allsamples.err",
+        out="output/logs/macs3_merged_counts_Allsamples.out"
+    params:
+        bedtoolsVer=config['bedtools'],
+        subreadVer=config['subread']
+    shell:
+        """
+        module load bedtools/{params.bedtoolsVer}
+        module load subread/{params.subreadVer}
+        
+        mkdir -p output/peaks/merged
+
+        cat {input.bed} |sort -k1,1 -k2,2n | bedtools merge > {output.bed} 2>> {log.err}
+
+        awk 'BEGIN{{print "GeneID\tChr\tStart\tEnd\tStrand"}} \
+         {{print "peak_"NR"\t"$1"\t"$2"\t"$3"\t."}}' {output.bed} > {output.saf} 
+
+        
+        #Count reads in the region
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {output.saf} \
+                -o {output.counts} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+
+        """
+
+rule macs3_frip_calc:
+    input:
+        mergedSAF=rules.macs3_merge_conditions.output.saf,
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        count="output/peaks/macs3/indv/{sampleName}_count.txt"
+    log:
+        err="output/logs/macs3_{sampleName}_count.err",
+        out="output/logs/macs3_{sampleName}_count.out"
+    threads: 4
+    params:
+        subreadVer=config['subread']
+    shell:
+        """
+        module load subread/{params.subreadVer}
+        mkdir -p output/peaks/macs3/indv
+
+        #count-indv
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {input.mergedSAF} \
+                -o {output.count} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        """
+
+rule macs2_peak_count:
+    input:
+        peak = lambda wildcards: expand("output/peaks/macs2/{sp_nm_cond}_peaks.narrowPeak", sp_nm_cond=condition_samples[wildcards.cond]),
+        bam = lambda wildcards: expand("output/wasp/blk_filter/{sp_nm_cond}.sorted_final.bam",sp_nm_cond=condition_samples[wildcards.cond])
+    output:
+        bed="output/peaks/merged_cond/{cond}_macs2_merged.bed",
+        saf="output/peaks/merged_cond/{cond}_macs2_merged.saf",
+        count="output/peaks/merged_cond/{cond}_macs2_merged_counts.txt"
+    log:
+        err="output/logs/{cond}_macs2_merge_peakcount.err",
+        out="output/logs/{cond}_macs2_merge_peakcount.out"
+    threads: 8
+    params:
+        bedtoolsVer=config['bedtools'],
+        subreadVer=config['subread'],
+        min_samples=6
+    shell:
+        """
+        module load bedtools/{params.bedtoolsVer}
+        module load subread/{params.subreadVer}
+        mkdir -p output/peaks/merged_cond
+
+        multiIntersectBed -i {input.peak} | \
+        awk -v min_samples={params.min_samples} '$4 >= min_samples' | \
+        awk '($3-$2) >= 50' | \
+        bedtools merge > {output.bed} 2> {log.err}
+
+        #Convert to the saf
+
+        awk 'BEGIN{{print "GeneID\tChr\tStart\tEnd\tStrand"}} \
+         {{print "peak_"NR"\t"$1"\t"$2"\t"$3"\t."}}' {output.bed} > {output.saf}
+
+
+        #Count reads in the region
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {output.saf} \
+                -o {output.count} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        #--primary only count primary alignment
+        #-C do not count reads where the pairs are mapped to different chromosomes
+
+        """
+rule macs2_merge_conditions:
+    input:
+        bed=expand("output/peaks/merged_cond/{cond}_macs2_merged.bed", cond=['CTL', 'FNF']),
+        bam=expand("output/wasp/blk_filter/{sampleName}.sorted_final.bam", sampleName=bam_files.keys())
+    output:
+        bed="output/peaks/merged/allsamples_macs2_merged.bed",
+        saf="output/peaks/merged/allsamples_macs2_merged.saf",
+        counts="output/peaks/merged/allsamples_macs2_merged_counts.txt"
+    log:
+        err="output/logs/macs2_merged_counts_Allsamples.err",
+        out="output/logs/macs2_merged_counts_Allsamples.out"
+    params:
+        bedtoolsVer=config['bedtools'],
+        subreadVer=config['subread']
+    shell:
+        """
+        module load bedtools/{params.bedtoolsVer}
+        module load subread/{params.subreadVer}
+        
+        mkdir -p output/peaks/merged
+
+        cat {input.bed} |sort -k1,1 -k2,2n | bedtools merge > {output.bed} 2>> {log.err}
+
+        awk 'BEGIN{{print "GeneID\tChr\tStart\tEnd\tStrand"}} \
+         {{print "peak_"NR"\t"$1"\t"$2"\t"$3"\t."}}' {output.bed} > {output.saf} 
+
+        
+        #Count reads in the region
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {output.saf} \
+                -o {output.counts} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        """
+
+rule macs2_frip_calc:
+    input:
+        mergedSAF=rules.macs2_merge_conditions.output.saf,
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        count="output/peaks/macs2/indv/{sampleName}_count.txt"
+    log:
+        err="output/logs/macs2_{sampleName}_count.err",
+        out="output/logs/macs2_{sampleName}_count.out"
+    threads: 4
+    params:
+        subreadVer=config['subread']
+    shell:
+        """
+        module load subread/{params.subreadVer}
+        mkdir -p output/peaks/macs2/indv
+
+        #count-indv
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {input.mergedSAF} \
+                -o {output.count} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        """
+
+rule hmmratac_peak_count:
+    input:
+        peak = lambda wildcards: expand("output/peaks/hmmratac/{sp_nm_cond}_accessible_regions.narrowPeak", sp_nm_cond=condition_samples[wildcards.cond]),
+        bam = lambda wildcards: expand("output/wasp/blk_filter/{sp_nm_cond}.sorted_final.bam",sp_nm_cond=condition_samples[wildcards.cond])
+    output:
+        bed="output/peaks/merged_cond/{cond}_hmmratac_merged.bed",
+        saf="output/peaks/merged_cond/{cond}_hmmratac_merged.saf",
+        count="output/peaks/merged_cond/{cond}_hmmratac_merged_counts.txt"
+    log:
+        err="output/logs/{cond}_hmmratac_merge_peakcount.err",
+        out="output/logs/{cond}_hmmratac_merge_peakcount.out"
+    threads: 8
+    params:
+        bedtoolsVer=config['bedtools'],
+        subreadVer=config['subread'],
+        min_samples=6
+    shell:
+        """
+        module load bedtools/{params.bedtoolsVer}
+        module load subread/{params.subreadVer}
+        mkdir -p output/peaks/merged_cond
+
+        multiIntersectBed -i {input.peak} | \
+        awk -v min_samples={params.min_samples} '$4 >= min_samples' | \
+        awk '($3-$2) >= 40' | \
+        bedtools merge > {output.bed} 2> {log.err}
+
+        #Convert to the saf
+
+        awk 'BEGIN{{print "GeneID\tChr\tStart\tEnd\tStrand"}} \
+         {{print "peak_"NR"\t"$1"\t"$2"\t"$3"\t."}}' {output.bed} > {output.saf}
+
+
+        #Count reads in the region
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {output.saf} \
+                -o {output.count} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        #--primary only count primary alignment
+        #-C do not count reads where the pairs are mapped to different chromosomes
+
+        """
+
+rule hmmratac_merge_conditions:
+    input:
+        bed=expand("output/peaks/merged_cond/{cond}_hmmratac_merged.bed", cond=['CTL', 'FNF']),
+        bam=expand("output/wasp/blk_filter/{sampleName}.sorted_final.bam", sampleName=bam_files.keys())
+    output:
+        bed="output/peaks/merged/allsamples_hmmratac_merged.bed",
+        saf="output/peaks/merged/allsamples_hmmratac_merged.saf",
+        counts="output/peaks/merged/allsamples_hmmratac_merged_counts.txt"
+    log:
+        err="output/logs/hmmratac_merged_counts_Allsamples.err",
+        out="output/logs/hmmratac_merged_counts_Allsamples.out"
+    params:
+        bedtoolsVer=config['bedtools'],
+        subreadVer=config['subread']
+    shell:
+        """
+        module load bedtools/{params.bedtoolsVer}
+        module load subread/{params.subreadVer}
+
+        mkdir -p output/peaks/merged
+
+        cat {input.bed} |sort -k1,1 -k2,2n | bedtools merge > {output.bed} 2>> {log.err}
+
+        awk 'BEGIN{{print "GeneID\tChr\tStart\tEnd\tStrand"}} \
+         {{print "peak_"NR"\t"$1"\t"$2"\t"$3"\t."}}' {output.bed} > {output.saf}
+
+
+        #Count reads in the region
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {output.saf} \
+                -o {output.counts} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        """
+
+rule hmmratac_frip_calc:
+    input:
+        mergedSAF=rules.hmmratac_merge_conditions.output.saf,
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        count="output/peaks/hmmratac/indv/{sampleName}_count.txt"
+    log:
+        err="output/logs/hmmratac_{sampleName}_count.err",
+        out="output/logs/hmmratac_{sampleName}_count.out"
+    threads: 4
+    params:
+        subreadVer=config['subread']
+    shell:
+        """
+        module load subread/{params.subreadVer}
+        mkdir -p output/peaks/hmmratac/indv
+
+        #count-indv
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {input.mergedSAF} \
+                -o {output.count} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        """
+rule rocco_peak_count:
+    input:
+        peak = lambda wildcards: expand("output/peaks/rocco/{sp_nm_cond}_peaks.bed", sp_nm_cond=condition_samples[wildcards.cond]),
+        bam = lambda wildcards: expand("output/wasp/blk_filter/{sp_nm_cond}.sorted_final.bam",sp_nm_cond=condition_samples[wildcards.cond])
+    output:
+        bed="output/peaks/merged_cond/{cond}_rocco_merged.bed",
+        saf="output/peaks/merged_cond/{cond}_rocco_merged.saf",
+        count="output/peaks/merged_cond/{cond}_rocco_merged_counts.txt"
+    log:
+        err="output/logs/{cond}_rocco_merge_peakcount.err",
+        out="output/logs/{cond}_rocco_merge_peakcount.out"
+    threads: 8
+    params:
+        bedtoolsVer=config['bedtools'],
+        subreadVer=config['subread'],
+        min_samples=6
+    shell:
+        """
+        module load bedtools/{params.bedtoolsVer}
+        module load subread/{params.subreadVer}
+        mkdir -p output/peaks/merged_cond
+
+        multiIntersectBed -i {input.peak} | \
+        awk -v min_samples={params.min_samples} '$4 >= min_samples' | \
+        awk '($3-$2) >= 40' | \
+        bedtools merge > {output.bed} 2> {log.err}
+
+        #Convert to the saf
+
+        awk 'BEGIN{{print "GeneID\tChr\tStart\tEnd\tStrand"}} \
+         {{print "peak_"NR"\t"$1"\t"$2"\t"$3"\t."}}' {output.bed} > {output.saf}
+
+
+        #Count reads in the region
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {output.saf} \
+                -o {output.count} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        #--primary only count primary alignment
+        #-C do not count reads where the pairs are mapped to different chromosomes
+        """
+
+rule rocco_merge_conditions:
+    input:
+        bed=expand("output/peaks/merged_cond/{cond}_rocco_merged.bed", cond=['CTL', 'FNF']),
+        bam=expand("output/wasp/blk_filter/{sampleName}.sorted_final.bam", sampleName=bam_files.keys())
+    output:
+        bed="output/peaks/merged/allsamples_rocco_merged.bed",
+        saf="output/peaks/merged/allsamples_rocco_merged.saf",
+        counts="output/peaks/merged/allsamples_rocco_merged_counts.txt"
+    log:
+        err="output/logs/rocco_merged_counts_Allsamples.err",
+        out="output/logs/rocco_merged_counts_Allsamples.out"
+    params:
+        bedtoolsVer=config['bedtools'],
+        subreadVer=config['subread']
+    shell:
+        """
+        module load bedtools/{params.bedtoolsVer}
+        module load subread/{params.subreadVer}
+
+        mkdir -p output/peaks/merged
+
+        cat {input.bed} |sort -k1,1 -k2,2n | bedtools merge > {output.bed} 2>> {log.err}
+
+        awk 'BEGIN{{print "GeneID\tChr\tStart\tEnd\tStrand"}} \
+         {{print "peak_"NR"\t"$1"\t"$2"\t"$3"\t."}}' {output.bed} > {output.saf}
+
+
+        #Count reads in the region
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {output.saf} \
+                -o {output.counts} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        """
+rule rocco_frip_calc:
+    input:
+        mergedSAF=rules.rocco_merge_conditions.output.saf,
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        count="output/peaks/rocco/indv/{sampleName}_count.txt"
+    log:
+        err="output/logs/rocco_{sampleName}_count.err",
+        out="output/logs/rocco_{sampleName}_count.out"
+    threads: 4
+    params:
+        subreadVer=config['subread']
+    shell:
+        """
+        module load subread/{params.subreadVer}
+        mkdir -p output/peaks/rocco/indv
+
+        #count-indv
+        featureCounts -p -F SAF \
+                -T {threads} \
+                --primary \
+                -C \
+                -a {input.mergedSAF} \
+                -o {output.count} \
+                {input.bam} 2>> {log.err} 1>> {log.out}
+
+        """
+
+rule signal:
+    input:
+        bam = rules.rmblacklist_region.output.sort_bam
+    output:
+        signal = "output/signals/indv/{sampleName}.bw"
+    log:
+        err = 'output/logs/signal_{sampleName}.err'
+    params:
+        deeptools_ver=config['deeptoolsVers'],
+        binSize=config['bin_size'],
+        effective_genomeSize=config['effective_genome_size'],
+        NormOption=config['normalize_option']
+    threads:4
+    shell:
+        """ 
+        module load deeptools/{params.deeptools_ver}
+        mkdir -p output/signals/indv/
+
+        bamCoverage \
+            --bam {input.bam} \
+            -o {output.signal} \
+            --binSize {params.binSize} \
+            --normalizeUsing {params.NormOption} \
+            --effectiveGenomeSize {params.effective_genomeSize} \
+            --extendReads \
+            --minMappingQuality 30 \
+            --samFlagInclude 66 \
+            --samFlagExclude 1284 \
+            --ignoreForNormalization chrX chrY chrM \
+            --numberOfProcessors 4
+            > {log.err} 2>&1
+
+        """
+
+# First define the empty dictionaries
+ctl_bams = {}
+fnf_bams = {}
+for idx, sample in enumerate(samples['mn']):
+    bam_path= f"output/wasp/blk_filter/{sample}.sorted_final.bam"
+    if 'CTL' in sample:
+        ctl_bams[sample] = bam_path
+    if 'FNF' in sample:
+        fnf_bams[sample] = bam_path
+
+print("CTL BAMs:", ctl_bams)
+print("FNF BAMs:", fnf_bams)
+
+condition_bams = {
+   'CTL': list(ctl_bams.values()),
+   'FNF': list(fnf_bams.values())
+}
+
+rule merge_by_condition:
+    input:
+        bams = lambda wildcards: condition_bams[wildcards.condition]
+    output:
+        merged_bam = "output/wasp/merged/{condition}_merged.bam",
+        merged_bai = "output/wasp/merged/{condition}_merged.bam.bai",
+        stats = "output/wasp/merged/{condition}_merged_stats.txt"
+    params:
+        samtools_version = config['samtoolsVers']
+    threads: 8
+    log:
+        err = "output/logs/merge_{condition}.err",
+        out = "output/logs/merge_{condition}.out"
+    shell:
+        """
+        module load samtools/{params.samtools_version}
+        mkdir -p output/wasp/merged
+
+        # Merge BAM files
+        samtools merge -@ {threads} {output.merged_bam} {input.bams} 1>> {log.out} 2>> {log.err}
+
+        # Index merged BAM
+        samtools index {output.merged_bam} 1>> {log.out} 2>> {log.err}
+
+        # Get stats for merged file
+        samtools flagstat {output.merged_bam} > {output.stats} 2>> {log.err}
+        """
+
+rule mergeSignal:
+    input:
+        bam = rules.merge_by_condition.output.merged_bam
+    output:
+        signal='output/signals/merged_signal/{condition}_merged.bw'
+    log:
+        err='output/logs/mergedSignal_{condition}.err'
+    params:
+        deeptools_ver=config['deeptoolsVers'],
+        binSize=config['bin_size'],
+        effective_genomeSize=config['effective_genome_size'],
+        NormOption=config['normalize_option']
+    shell:
+        """
+        module load deeptools/{params.deeptools_ver}
+        mkdir -p output/signals/merged_signal
+
+        bamCoverage \
+            --bam {input.bam} \
+            -o {output.signal} \
+            --binSize {params.binSize} \
+            --normalizeUsing {params.NormOption} \
+            --effectiveGenomeSize {params.effective_genomeSize} \
+            --extendReads \
+            --minMappingQuality 30 \
+            --samFlagInclude 66 \
+            --samFlagExclude 1284 \
+            --ignoreForNormalization chrX chrY chrM \
+            --numberOfProcessors 4
+            > {log.err} 2>&1
+        """
+
+
 

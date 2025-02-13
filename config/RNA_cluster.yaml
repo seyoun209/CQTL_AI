@@ -6,8 +6,8 @@ __default__:
   memPerCpu: 4G # --mem-per-cpu
   nodes: 1
   ntasks: 1
-  output: "output/logs_slurm/{rule}.{wildcards}.{jobid}.out"
-  error: "output/logs_slurm/{rule}.{wildcards}.{jobid}.err"
+  output: "rna_output/logs_slurm/{rule}.{wildcards}.{jobid}.out"
+  error: "rna_output/logs_slurm/{rule}.{wildcards}.{jobid}.err"
 
 ## Multi-threaded / High-memory Rules
 
@@ -35,10 +35,6 @@ quant:
 
 multiqc:
   memPerCpu: 4G
-
-rocco_peaks:
-  memPerCpu: 34G
-  time: "7-00:00:00"
 
 signal:
   memPerCpu: 4G
@@ -70,14 +66,7 @@ filter_remapped_reads:
 merge:
   memPerCpu: 6G
 
-macs3_peaks:
-  memPerCpu: 10G
 
-hmmratac_peaks:
-  memPerCpu: 20G
-
-macs2_peaks:
-  memPerCpu: 10G
 
 
 

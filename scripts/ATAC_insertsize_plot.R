@@ -36,7 +36,7 @@ metrics_mean <- metrics_data %>%
   group_by(condition, tissue, replicate, insert_size) %>%
   summarise(Mean_Reads = mean(All_Reads.fr_count), .groups = "drop")
 
-metrics_mean$Condition <- factor(metrics_mean$Condition, levels = c("CTL", "FNF"))
+metrics_mean$Condition <- factor(metrics_mean$condition, levels = c("CTL", "FNF"))
 
 #individual 
 # Get the unique donors in each condition and tissue
@@ -94,3 +94,51 @@ ggplot(metrics_mean %>% filter(tissue == "synovium"),  # Filter for synovium
     axis.title = element_text(size = 14),
     axis.text = element_text(size = 10)
   )
+
+
+#------------------------------------------------------------------------------
+# Finding the insert_size metris for the mono
+
+metrics_class <- function(file) {
+  # Skip header lines and read the metrics
+  data <- read.delim(file, skip=6, nrows=1)
+  data$sample <- gsub("_insert_size_metrics.txt", "", basename(file))
+  return(data)
+}
+
+# Read all files into a list and combine
+metrics_class_calc <- do.call(rbind, lapply(files, metrics_class))
+
+# Filter samples to exclude femur, replicate, and synovium
+ankle_metrics <- metrics_class_calc %>%
+  filter(!grepl("femur|replicate|synovium", tolower(sample)))
+
+
+# Summary statistics
+ankle_summary_stats <- ankle_metrics %>%
+  summarise(
+    mean_median = mean(MEDIAN_INSERT_SIZE),
+    sd_median = sd(MEDIAN_INSERT_SIZE),
+    mean_mode = mean(MODE_INSERT_SIZE),
+    sd_mode = sd(MODE_INSERT_SIZE)
+  )
+
+print(ankle_summary_stats)
+
+
+synovium_metrics <- metrics_class_calc %>%
+  filter(grepl("synovium", tolower(sample)))
+
+
+# Summary statistics
+synovium_summary_stats <- synovium_metrics %>%
+  summarise(
+    mean_median = mean(MEDIAN_INSERT_SIZE),
+    sd_median = sd(MEDIAN_INSERT_SIZE),
+    mean_mode = mean(MODE_INSERT_SIZE),
+    sd_mode = sd(MODE_INSERT_SIZE)
+  )
+
+print(synovium_summary_stats)
+
+

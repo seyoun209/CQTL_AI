@@ -322,7 +322,7 @@ rule qc_r:
     shell:
         """
         module load r/{params.r_version}
-        Rscript {params.script} {input.bam} 1> {log.out} 2> {log.err}
+        Rscript {params.script} {input.bam} "output/bamQ" "_RG.bam" 1> {log.out} 2> {log.err}
         """
 
 

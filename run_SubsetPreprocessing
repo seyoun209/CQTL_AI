@@ -1,5 +1,5 @@
 #! /bin/bash -login
-#SBATCH -J vcf_subset
+#SBATCH -J Subset
 #SBATCH -t 11-00:00:00
 #SBATCH -N 1
 #SBATCH -n 1

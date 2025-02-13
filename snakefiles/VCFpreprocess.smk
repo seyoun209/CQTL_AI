@@ -42,7 +42,9 @@ rule all:
     input:
         "output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz",
         "output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz",
-        expand("output/QC/{sampleName}_verifyBamID.{ext}",sampleName=bam_files.keys(),ext=['selfSM','selfRG','bestRG','bestSM','depthRG','depthSM'])
+        expand("output/QC/{sampleName}_verifyBamID.{ext}",sampleName=bam_files.keys(),ext=['selfSM','selfRG','bestRG','bestSM','depthRG','depthSM']),
+        pbs=expand("output/geno/pbs_geno/wasp_vcf/chr{chrom}.pbs.rename.vcf.gz", chrom=range(1,23)),
+        fnf=expand("output/geno/fnf_geno/wasp_vcf/chr{chrom}.fnf.rename.vcf.gz", chrom=range(1,23))
       
     
 
@@ -107,7 +109,9 @@ rule reheader:
         pbs_vcf="output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz",
         fnf_vcf="output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz",
         pbs_temp="output/geno/pbs_geno/pbs.rename.vcf.gz",
-        fnf_temp="output/geno/fnf_geno/fnf.rename.vcf.gz"
+        fnf_temp="output/geno/fnf_geno/fnf.rename.vcf.gz",
+        mapping_pbs_txt="output/geno/pbs_geno/mappings/sample_name_mapping.txt",
+        mapping_fnf_txt="output/geno/fnf_geno/mappings/sample_name_mapping.txt"
     params:
        samtoolsVer = config['samtoolsVers']
     log:
@@ -121,6 +125,48 @@ rule reheader:
         
        sh /work/users/s/e/seyoun/CQTL_AI/scripts/rename.sh {input.VCF_in} {input.matched_pbs} {output.pbs_temp} {output.pbs_vcf} 1> {log.pbsout} 2> {log.pbserr}
         sh /work/users/s/e/seyoun/CQTL_AI/scripts/rename.sh {input.VCF_in} {input.matched_fnf} {output.fnf_temp} {output.fnf_vcf} 1> {log.fnfout} 2> {log.fnferr}
+        """
+
+rule reheader_imputed:
+    input:
+        imputed_vcf="/work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr{chrom}.dose.vcf.gz",
+        matched_pbs=rules.reheader.output.mapping_pbs_txt,
+        matched_fnf=rules.reheader.output.mapping_fnf_txt
+    output:
+        pbs_vcf="output/geno/pbs_geno/wasp_vcf/chr{chrom}.pbs.rename.vcf.gz",
+        fnf_vcf="output/geno/fnf_geno/wasp_vcf/chr{chrom}.fnf.rename.vcf.gz"
+    params:
+        chromosomes=list(range(1,23)),
+        samtools_version = config['samtoolsVers']
+    log:
+        pbs="output/logs/imputed_PBS_chr{chrom}_rename.log",
+        fnf="output/logs/imputed_FNF_chr{chrom}_rename.log"
+    shell:
+        """
+        module load samtools/{params.samtools_version}
+        # Get the chromosome number from wildcards
+        chrom={wildcards.chrom}
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' {input.matched_pbs} > output/geno/pbs_geno/mappings/imputed_pbs_{wildcards.chrom}_mapping.txt
+        sed 's/^0_//' {input.matched_fnf} > output/geno/fnf_geno/mappings/imputed_fnf_{wildcards.chrom}_mapping.txt
+
+        # PBS files
+        bcftools reheader \
+            --samples output/geno/pbs_geno/mappings/imputed_pbs_{wildcards.chrom}_mapping.txt \
+            {input.imputed_vcf} \
+            -o {output.pbs_vcf} 2> {log.pbs}
+
+        # FNF files
+        bcftools reheader \
+            --samples output/geno/fnf_geno/mappings/imputed_fnf_{wildcards.chrom}_mapping.txt \
+            {input.imputed_vcf} \
+            -o {output.fnf_vcf} 2> {log.fnf}
+
+        # Index files
+        tabix -p vcf {output.pbs_vcf}
+        tabix -p vcf {output.fnf_vcf}
         """
 
 rule verifybamid:

@@ -9,14 +9,33 @@ library(ChIPpeakAnno)
 library(Rsamtools)
 
 args <- commandArgs(TRUE)
+
 bamfiles_li <- args[1]  # Input BAM path
-bamFileLabels <- gsub("_RG.bam", "", basename(bamfiles_li))
+output_dir <- args[2]
+name_subset <- args[3]
 
 print(bamfiles_li)
-print(bamFileLabels)
+print(output_dir)
+print(name_subset)
+
+# Verify input file exists
+if (!file.exists(bamfiles_li)) {
+  stop(paste("Input BAM file does not exist:", bamfiles_li))
+}
+
+# Ensure output directory exists
+if (!dir.exists(output_dir)) {
+  dir.create(output_dir, recursive = TRUE)
+}
+
+# Create label from filename
+bamFileLabels <- gsub(name_subset, "", basename(bamfiles_li))
+
+print(paste("Processing BAM file:", bamfiles_li))
+print(paste("Output label:", bamFileLabels))
 
 bamqc <- bamQC(bamfiles_li, outPath = NULL)
-save(bamqc, file=paste0("output/bamQC/",bamFileLabels,"_bamqQC"))
+save(bamqc, file=paste0(output_dir,bamFileLabels,"_bamQC"))
 print("bamqc qc done")
 
 
