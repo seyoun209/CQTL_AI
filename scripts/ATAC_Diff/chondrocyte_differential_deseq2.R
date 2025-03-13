@@ -13,9 +13,10 @@ library(base)
 
 
 #rocco <- read_and_clean_peaks("peaks/merged/allsamples_rocco_merged_counts.txt")
-macs2 <- read_and_clean_peaks("peaks/merged/allsamples_macs2_merged_counts.txt")
 #macs3 <- read_and_clean_peaks("peaks/merged/allsamples_macs3_merged_counts.txt")
 #hmmratac <- read_and_clean_peaks("peaks/merged/allsamples_hmmratac_merged_counts.txt")
+
+macs2 <- read_and_clean_peaks("peaks/merged/allsamples_macs2_merged_counts.txt")
 
 #Differential analysis 
 
@@ -115,7 +116,7 @@ chon_res_Shrink_df <- as.data.frame(chon_res_Shrink)
 
 #Getting significant ATAC-signals
 diff_chon_atac_sig <- chon_res_Shrink_df %>%
-  dplyr::filter(abs(log2FoldChange) > 1 & padj < 0.05)
+  dplyr::filter(abs(log2FoldChange) > 1.5 & padj < 0.05)
 
 #finiding up sig and down sig
 gained <- diff_chon_atac_sig[diff_chon_atac_sig$log2FoldChange > 0 & diff_chon_atac_sig$padj < 0.05,]
