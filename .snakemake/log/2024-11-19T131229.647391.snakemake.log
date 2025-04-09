@@ -1,3 +1,0 @@
-KeyError in line 167 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/ATAC_preprocess.smk:
-'picardVers'
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/ATAC_preprocess.smk", line 167, in <module>

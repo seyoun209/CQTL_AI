@@ -1,3 +1,0 @@
-AttributeError in line 283 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/ATAC_preprocess.smk:
-'RuleProxy' object has no attribute 'bam'
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/ATAC_preprocess.smk", line 283, in <module>

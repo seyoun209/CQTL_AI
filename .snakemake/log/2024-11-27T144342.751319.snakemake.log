@@ -1,3 +1,0 @@
-SyntaxError in line 319 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/ATAC_preprocess.smk:
-invalid syntax
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/SubsetPreprocess.smk", line 3, in <module>

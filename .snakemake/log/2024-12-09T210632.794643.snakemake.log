@@ -1,4 +1,0 @@
-CreateRuleException in line 43 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/ATAC_preprocess.smk:
-The name all is already used by another rule
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/WASP_atac.smk", line 5, in <module>
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/ATAC_preprocess.smk", line 43, in <module>

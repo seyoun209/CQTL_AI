@@ -1,6 +1,0 @@
-KeyError in line 18 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/signal_track.smk:
-"None of [Index(['Proj', 'Donor', 'Condition', 'Tissue', 'Protocol_notes'], dtype='object')] are in the [columns]"
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/signal_track.smk", line 18, in <module>
-  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/core/frame.py", line 4108, in __getitem__
-  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 6200, in _get_indexer_strict
-  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/core/indexes/base.py", line 6249, in _raise_if_missing

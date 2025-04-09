@@ -1,3 +1,0 @@
-NameError in line 41 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/WASP_atac.smk:
-name 'pbs_samples' is not defined
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/WASP_atac.smk", line 41, in <module>

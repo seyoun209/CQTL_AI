@@ -1,6 +1,0 @@
-Building DAG of jobs...
-InputFunctionException in line 123 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/RNA_signal_track.smk:
-KeyError: 'CTL'
-Wildcards:
-tissue=Ankle
-cond=CTL

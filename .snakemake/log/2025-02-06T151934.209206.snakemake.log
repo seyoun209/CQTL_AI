@@ -1,5 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 39 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/WASP_atac.smk:
-Missing input files for rule all:
-output/peaks/merged_cond/CTL_macs3_merged_merged_counts.txt
-output/peaks/merged_cond/FNF_macs3_merged_merged_counts.txt

@@ -1,4 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 105 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_calling_only.smk:
-Missing input files for rule macs2_peaks:
-output/filtered/blk_filter/CQTL_AM7677_A_CTL_18_1.sorted_final.bam

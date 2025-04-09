@@ -1,3 +1,0 @@
-NameError in line 31 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_counting.smk:
-name 'extend' is not defined
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_counting.smk", line 31, in <module>

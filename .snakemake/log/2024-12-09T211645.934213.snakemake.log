@@ -1,3 +1,0 @@
-KeyError in line 181 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/WASP_atac.smk:
-'samples'
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/WASP_atac.smk", line 181, in <module>

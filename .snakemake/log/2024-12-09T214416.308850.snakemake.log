@@ -1,7 +1,0 @@
-The flag 'directory' used in rule all is only valid for outputs, not inputs.
-The flag 'directory' used in rule all is only valid for outputs, not inputs.
-Building DAG of jobs...
-InputFunctionException in line 110 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/WASP_atac.smk:
-AttributeError: 'Wildcards' object has no attribute 'sampleName'
-Wildcards:
-

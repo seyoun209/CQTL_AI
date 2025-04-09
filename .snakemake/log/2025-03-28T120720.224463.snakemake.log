@@ -1,9 +1,0 @@
-Building DAG of jobs...
-MissingInputException in line 24 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_counting.smk:
-Missing input files for rule all:
-output/peaks/Ankle/merged_cond/CTL_consensus_macs3_peaks.bed
-output/peaks/Ankle/merged_cond/FNF_consensus_macs3_peaks.bed
-output/peaks/Ankle/merged_cond/CTL_consensus_macs2_peaks.bed
-output/peaks/Ankle/merged_cond/FNF_consensus_hmmratac_peaks.bed
-output/peaks/Ankle/merged_cond/CTL_consensus_hmmratac_peaks.bed
-output/peaks/Ankle/merged_cond/FNF_consensus_macs2_peaks.bed

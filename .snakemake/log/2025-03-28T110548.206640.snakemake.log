@@ -1,3 +1,0 @@
-AttributeError in line 128 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_counting.smk:
-'Rules' object has no attribute 'rmblacklist_region'
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_counting.smk", line 128, in <module>

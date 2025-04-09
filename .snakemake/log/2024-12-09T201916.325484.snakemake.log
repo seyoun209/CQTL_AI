@@ -1,3 +1,0 @@
-WorkflowError in line 4 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/WASP_atac.smk:
-Failed to open /work/users/s/e/seyoun/CQTL_sQTL/snakefiles/VCFpreprocess.smk.
-  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/WASP_atac.smk", line 4, in <module>
