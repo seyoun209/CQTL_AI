@@ -1,0 +1,900 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	42	run_ataqv
+	43
+
+[Sun Dec 15 16:54:26 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7677_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7677_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7677_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7677_CTL_Ankle_1.out
+    jobid: 127
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7677_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7677_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7677_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 127 with external jobid '55949707'.
+
+[Sun Dec 15 16:54:27 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7771_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7771_CTL_Ankle_1.out
+    jobid: 155
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7771_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 155 with external jobid '55949713'.
+
+[Sun Dec 15 16:54:28 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7679_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7679_CTL_Ankle_1.out
+    jobid: 131
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7679_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 131 with external jobid '55949714'.
+
+[Sun Dec 15 16:54:30 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7765_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7765_CTL_Ankle_1.out
+    jobid: 151
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7765_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 151 with external jobid '55949715'.
+
+[Sun Dec 15 16:54:31 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7775_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7775_CTL_Ankle_1.out
+    jobid: 157
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7775_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 157 with external jobid '55949716'.
+
+[Sun Dec 15 16:54:32 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7712_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7712_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7712_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7712_FNF_Ankle_1.out
+    jobid: 136
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7712_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7712_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7712_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 136 with external jobid '55949717'.
+
+[Sun Dec 15 16:54:33 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7769_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7769_CTL_Ankle_1.out
+    jobid: 153
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7769_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 153 with external jobid '55949718'.
+
+[Sun Dec 15 16:54:34 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7781_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7781_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7781_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7781_CTL_Ankle_1.out
+    jobid: 163
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7781_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7781_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7781_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 163 with external jobid '55949719'.
+
+[Sun Dec 15 16:54:35 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7712_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7712_CTL_Ankle_1.out
+    jobid: 135
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7712_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 135 with external jobid '55949720'.
+
+[Sun Dec 15 16:54:36 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7785_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7785_FNF_Ankle_1.out
+    jobid: 166
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7785_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 166 with external jobid '55949721'.
+
+[Sun Dec 15 16:54:37 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7735_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7735_CTL_Ankle_1.out
+    jobid: 143
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7735_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 143 with external jobid '55949722'.
+
+[Sun Dec 15 16:54:38 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7771_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7771_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7771_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7771_FNF_Ankle_1.out
+    jobid: 156
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7771_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7771_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7771_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 156 with external jobid '55949723'.
+
+[Sun Dec 15 16:54:39 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7778_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7778_FNF_Ankle_1.out
+    jobid: 160
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7778_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 160 with external jobid '55949724'.
+
+[Sun Dec 15 16:54:40 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7769_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7769_FNF_Ankle_1.out
+    jobid: 154
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7769_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 154 with external jobid '55949725'.
+
+[Sun Dec 15 16:54:41 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7781_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7781_FNF_Ankle_1.out
+    jobid: 164
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7781_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 164 with external jobid '55949726'.
+
+[Sun Dec 15 16:54:42 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7711_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7711_FNF_Ankle_1.out
+    jobid: 134
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7711_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 134 with external jobid '55949727'.
+
+[Sun Dec 15 16:54:44 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7775_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7775_FNF_Ankle_1.out
+    jobid: 158
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7775_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 158 with external jobid '55949728'.
+
+[Sun Dec 15 16:54:45 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7786_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7786_CTL_Ankle_1.out
+    jobid: 167
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7786_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 167 with external jobid '55949729'.
+
+[Sun Dec 15 16:54:46 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7679_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7679_FNF_Ankle_1.out
+    jobid: 132
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7679_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 132 with external jobid '55949730'.
+
+[Sun Dec 15 16:54:47 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7717_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7717_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7717_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7717_CTL_Ankle_1.out
+    jobid: 137
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7717_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7717_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7717_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 137 with external jobid '55949731'.
+
+[Sun Dec 15 16:54:48 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7727_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7727_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7727_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7727_CTL_Ankle_1.out
+    jobid: 141
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7727_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7727_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7727_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 141 with external jobid '55949732'.
+
+[Sun Dec 15 16:54:49 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7754_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7754_FNF_Ankle_1.out
+    jobid: 146
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7754_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 146 with external jobid '55949733'.
+
+[Sun Dec 15 16:54:50 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7711_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7711_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7711_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7711_CTL_Ankle_1.out
+    jobid: 133
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7711_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7711_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7711_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 133 with external jobid '55949734'.
+
+[Sun Dec 15 16:54:51 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7763_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7763_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7763_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7763_FNF_Ankle_1.out
+    jobid: 150
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7763_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7763_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7763_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 150 with external jobid '55949735'.
+
+[Sun Dec 15 16:54:52 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7763_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7763_CTL_Ankle_1.out
+    jobid: 149
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7763_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 149 with external jobid '55949736'.
+
+[Sun Dec 15 16:54:53 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7717_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7717_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7717_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7717_FNF_Ankle_1.out
+    jobid: 138
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7717_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7717_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7717_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 138 with external jobid '55949737'.
+
+[Sun Dec 15 16:54:54 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7727_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7727_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7727_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7727_FNF_Ankle_1.out
+    jobid: 142
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7727_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7727_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7727_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 142 with external jobid '55949738'.
+
+[Sun Dec 15 16:54:55 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7786_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7786_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7786_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7786_FNF_Ankle_1.out
+    jobid: 168
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7786_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7786_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7786_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 168 with external jobid '55949739'.
+
+[Sun Dec 15 16:54:56 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7678_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7678_FNF_Ankle_1.out
+    jobid: 130
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7678_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 130 with external jobid '55949743'.
+
+[Sun Dec 15 16:54:57 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7735_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7735_FNF_Ankle_1.out
+    jobid: 144
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7735_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 144 with external jobid '55949744'.
+
+[Sun Dec 15 16:54:58 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7765_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7765_FNF_Ankle_1.out
+    jobid: 152
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7765_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 152 with external jobid '55949751'.
+
+[Sun Dec 15 16:55:00 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7678_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7678_CTL_Ankle_1.out
+    jobid: 129
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7678_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 129 with external jobid '55949752'.
+
+[Sun Dec 15 16:55:01 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7780_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7780_FNF_Ankle_1.out
+    jobid: 162
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7780_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 162 with external jobid '55949753'.
+
+[Sun Dec 15 16:55:02 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7754_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7754_CTL_Ankle_1.out
+    jobid: 145
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7754_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 145 with external jobid '55949754'.
+
+[Sun Dec 15 16:55:03 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7778_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7778_CTL_Ankle_1.out
+    jobid: 159
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7778_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 159 with external jobid '55949755'.
+
+[Sun Dec 15 16:55:05 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7785_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7785_CTL_Ankle_1.out
+    jobid: 165
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7785_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 165 with external jobid '55949756'.
+
+[Sun Dec 15 16:55:06 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7677_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7677_FNF_Ankle_1.out
+    jobid: 128
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7677_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 128 with external jobid '55949757'.
+
+[Sun Dec 15 16:55:07 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7726_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7726_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7726_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7726_CTL_Ankle_1.out
+    jobid: 139
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7726_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7726_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7726_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 139 with external jobid '55949758'.
+
+[Sun Dec 15 16:55:08 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7726_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7726_FNF_Ankle_1.out
+    jobid: 140
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7726_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 140 with external jobid '55949759'.
+
+[Sun Dec 15 16:55:09 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7780_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7780_CTL_Ankle_1.out
+    jobid: 161
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7780_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 161 with external jobid '55949760'.
+
+[Sun Dec 15 16:55:10 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7755_CTL_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7755_CTL_Ankle_1.out
+    jobid: 147
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7755_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 147 with external jobid '55949761'.
+
+[Sun Dec 15 16:55:11 2024]
+rule run_ataqv:
+    input: output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam
+    output: output/wasp/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_afterWASP_CQTL_AM7755_FNF_Ankle_1.err, output/logs/ataqv_afterWASP_CQTL_AM7755_FNF_Ankle_1.out
+    jobid: 148
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/wasp/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/wasp/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam > output/wasp/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_afterWASP_CQTL_AM7755_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/final_atacQC_summary *.json   
+        
+Submitted job 148 with external jobid '55949762'.
+[Sun Dec 15 17:13:40 2024]
+Finished job 137.
+1 of 43 steps (2%) done
+[Sun Dec 15 17:18:00 2024]
+Finished job 127.
+2 of 43 steps (5%) done
+[Sun Dec 15 17:20:46 2024]
+Finished job 163.
+3 of 43 steps (7%) done
+[Sun Dec 15 17:22:40 2024]
+Finished job 138.
+4 of 43 steps (9%) done
+[Sun Dec 15 17:23:26 2024]
+Finished job 141.
+5 of 43 steps (12%) done
+[Sun Dec 15 17:24:37 2024]
+Finished job 129.
+6 of 43 steps (14%) done
+[Sun Dec 15 17:25:46 2024]
+Finished job 155.
+7 of 43 steps (16%) done
+[Sun Dec 15 17:26:28 2024]
+Finished job 156.
+8 of 43 steps (19%) done
+[Sun Dec 15 17:26:38 2024]
+Finished job 136.
+9 of 43 steps (21%) done
+[Sun Dec 15 17:27:08 2024]
+Finished job 139.
+10 of 43 steps (23%) done
+[Sun Dec 15 17:27:11 2024]
+Finished job 147.
+11 of 43 steps (26%) done
+[Sun Dec 15 17:27:19 2024]
+Finished job 134.
+12 of 43 steps (28%) done
+[Sun Dec 15 17:27:29 2024]
+Finished job 133.
+13 of 43 steps (30%) done
+[Sun Dec 15 17:28:42 2024]
+Finished job 164.
+14 of 43 steps (33%) done
+[Sun Dec 15 17:28:48 2024]
+Finished job 135.
+15 of 43 steps (35%) done
+[Sun Dec 15 17:28:55 2024]
+Finished job 142.
+16 of 43 steps (37%) done
+[Sun Dec 15 17:29:27 2024]
+Finished job 153.
+17 of 43 steps (40%) done
+[Sun Dec 15 17:29:49 2024]
+Finished job 145.
+18 of 43 steps (42%) done
+[Sun Dec 15 17:29:56 2024]
+Finished job 148.
+19 of 43 steps (44%) done
+[Sun Dec 15 17:30:37 2024]
+Finished job 131.
+20 of 43 steps (47%) done
+[Sun Dec 15 17:30:43 2024]
+Finished job 150.
+21 of 43 steps (49%) done
+[Sun Dec 15 17:31:01 2024]
+Finished job 159.
+22 of 43 steps (51%) done
+[Sun Dec 15 17:31:43 2024]
+Finished job 151.
+23 of 43 steps (53%) done
+[Sun Dec 15 17:32:06 2024]
+Finished job 128.
+24 of 43 steps (56%) done
+[Sun Dec 15 17:32:34 2024]
+Finished job 162.
+25 of 43 steps (58%) done
+[Sun Dec 15 17:33:38 2024]
+Finished job 154.
+26 of 43 steps (60%) done
+[Sun Dec 15 17:33:39 2024]
+Finished job 158.
+27 of 43 steps (63%) done
+[Sun Dec 15 17:33:59 2024]
+Finished job 152.
+28 of 43 steps (65%) done
+[Sun Dec 15 17:34:08 2024]
+Finished job 167.
+29 of 43 steps (67%) done
+[Sun Dec 15 17:34:09 2024]
+Finished job 132.
+30 of 43 steps (70%) done
+[Sun Dec 15 17:34:22 2024]
+Finished job 168.
+31 of 43 steps (72%) done
+[Sun Dec 15 17:34:23 2024]
+Finished job 130.
+32 of 43 steps (74%) done
+[Sun Dec 15 17:34:26 2024]
+Finished job 140.
+33 of 43 steps (77%) done
+[Sun Dec 15 17:36:12 2024]
+Finished job 149.
+34 of 43 steps (79%) done
+[Sun Dec 15 17:36:43 2024]
+Finished job 165.
+35 of 43 steps (81%) done
+[Sun Dec 15 17:36:46 2024]
+Finished job 143.
+36 of 43 steps (84%) done
+[Sun Dec 15 17:38:39 2024]
+Finished job 144.
+37 of 43 steps (86%) done
+[Sun Dec 15 17:38:56 2024]
+Finished job 161.
+38 of 43 steps (88%) done
+[Sun Dec 15 17:39:40 2024]
+Finished job 166.
+39 of 43 steps (91%) done
+[Sun Dec 15 17:40:47 2024]
+Finished job 160.
+40 of 43 steps (93%) done
+[Sun Dec 15 17:42:39 2024]
+Finished job 146.
+41 of 43 steps (95%) done
+[Sun Dec 15 17:50:13 2024]
+Finished job 157.
+42 of 43 steps (98%) done
+
+[Sun Dec 15 17:50:14 2024]
+localrule all:
+    input: output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.keep.bam, output/wasp/filtered_bam/CQTL_AM7677_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7677_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7678_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7678_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7679_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7679_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7711_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7711_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7712_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7712_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7717_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7717_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7726_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7726_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7727_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7727_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7735_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7735_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7754_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7754_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7755_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7755_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7763_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7763_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7765_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7765_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7769_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7769_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7771_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7771_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7775_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7775_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7778_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7778_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7780_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7780_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7781_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7781_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7785_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7785_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7786_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7786_FNF_Ankle_1.keep.bam, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1_stats.txt, output/wasp/ataqv/CQTL_AM7677_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7711_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7712_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7717_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7717_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7726_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7727_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7727_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7763_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7771_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7781_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7786_FNF_Ankle_1.ataqv.json, output/wasp/ataqv/CQTL_AM7677_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7711_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7712_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7717_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7717_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7726_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7727_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7727_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7763_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7771_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7781_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.txt, output/wasp/ataqv/CQTL_AM7786_FNF_Ankle_1.ataqv.txt
+    jobid: 0
+
+[Sun Dec 15 17:50:14 2024]
+Finished job 0.
+43 of 43 steps (100%) done
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-15T165421.718348.snakemake.log

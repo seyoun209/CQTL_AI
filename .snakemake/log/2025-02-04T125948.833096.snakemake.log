@@ -1,0 +1,789 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all_subset
+	6	bamQC
+	6	hmmratac_frip_calc
+	6	macs2_frip_calc
+	6	macs3_frip_calc
+	6	rocco_frip_calc
+	31
+
+[Tue Feb  4 12:59:51 2025]
+rule hmmratac_frip_calc:
+    input: output/peaks/merged/allsamples_hmmratac_merged.saf, output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/peaks/hmmratac/indv/CQTL_AM7778FE_FNF_Femur_1_count.txt
+    log: output/logs/hmmratac_CQTL_AM7778FE_FNF_Femur_1_count.err, output/logs/hmmratac_CQTL_AM7778FE_FNF_Femur_1_count.out
+    jobid: 54
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/hmmratac/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"}{print $4, $1, $2+1, $3, "."}' indv.peakfile > indv.saf
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_hmmratac_merged.saf                 -o output/peaks/hmmratac/indv/CQTL_AM7778FE_FNF_Femur_1_count.txt                 output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam 2>> output/logs/hmmratac_CQTL_AM7778FE_FNF_Femur_1_count.err 1>> output/logs/hmmratac_CQTL_AM7778FE_FNF_Femur_1_count.out
+
+        
+Submitted job 54 with external jobid '58663199'.
+
+[Tue Feb  4 12:59:56 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7778FE_CTL_Femur_1_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.err, output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.out
+    jobid: 39
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 39 with external jobid '58663202'.
+
+[Tue Feb  4 13:00:02 2025]
+rule macs2_frip_calc:
+    input: output/peaks/merged/allsamples_macs2_merged.saf, output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/peaks/macs2/indv/CQTL_AM7778FE_CTL_Femur_1_count.txt
+    log: output/logs/macs2_CQTL_AM7778FE_CTL_Femur_1_count.err, output/logs/macs2_CQTL_AM7778FE_CTL_Femur_1_count.out
+    jobid: 45
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs2/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs2_merged.saf                 -o output/peaks/macs2/indv/CQTL_AM7778FE_CTL_Femur_1_count.txt                 output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam 2>> output/logs/macs2_CQTL_AM7778FE_CTL_Femur_1_count.err 1>> output/logs/macs2_CQTL_AM7778FE_CTL_Femur_1_count.out
+
+        
+Submitted job 45 with external jobid '58663203'.
+
+[Tue Feb  4 13:00:07 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7754_FNF_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.out
+    jobid: 37
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+Submitted job 37 with external jobid '58663204'.
+
+[Tue Feb  4 13:00:12 2025]
+rule macs2_frip_calc:
+    input: output/peaks/merged/allsamples_macs2_merged.saf, output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/macs2/indv/CQTL_AM7754_FNF_Ankle_replicate_count.txt
+    log: output/logs/macs2_CQTL_AM7754_FNF_Ankle_replicate_count.err, output/logs/macs2_CQTL_AM7754_FNF_Ankle_replicate_count.out
+    jobid: 43
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs2/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs2_merged.saf                 -o output/peaks/macs2/indv/CQTL_AM7754_FNF_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam 2>> output/logs/macs2_CQTL_AM7754_FNF_Ankle_replicate_count.err 1>> output/logs/macs2_CQTL_AM7754_FNF_Ankle_replicate_count.out
+
+        
+Submitted job 43 with external jobid '58663205'.
+
+[Tue Feb  4 13:00:17 2025]
+rule hmmratac_frip_calc:
+    input: output/peaks/merged/allsamples_hmmratac_merged.saf, output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/hmmratac/indv/CQTL_AM7755_CTL_Ankle_replicate_count.txt
+    log: output/logs/hmmratac_CQTL_AM7755_CTL_Ankle_replicate_count.err, output/logs/hmmratac_CQTL_AM7755_CTL_Ankle_replicate_count.out
+    jobid: 59
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/hmmratac/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"}{print $4, $1, $2+1, $3, "."}' indv.peakfile > indv.saf
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_hmmratac_merged.saf                 -o output/peaks/hmmratac/indv/CQTL_AM7755_CTL_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam 2>> output/logs/hmmratac_CQTL_AM7755_CTL_Ankle_replicate_count.err 1>> output/logs/hmmratac_CQTL_AM7755_CTL_Ankle_replicate_count.out
+
+        
+Submitted job 59 with external jobid '58663232'.
+
+[Tue Feb  4 13:00:22 2025]
+rule macs2_frip_calc:
+    input: output/peaks/merged/allsamples_macs2_merged.saf, output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/peaks/macs2/indv/CQTL_AM7778FE_FNF_Femur_1_count.txt
+    log: output/logs/macs2_CQTL_AM7778FE_FNF_Femur_1_count.err, output/logs/macs2_CQTL_AM7778FE_FNF_Femur_1_count.out
+    jobid: 42
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs2/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs2_merged.saf                 -o output/peaks/macs2/indv/CQTL_AM7778FE_FNF_Femur_1_count.txt                 output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam 2>> output/logs/macs2_CQTL_AM7778FE_FNF_Femur_1_count.err 1>> output/logs/macs2_CQTL_AM7778FE_FNF_Femur_1_count.out
+
+        
+Submitted job 42 with external jobid '58663233'.
+
+[Tue Feb  4 13:00:27 2025]
+rule macs3_frip_calc:
+    input: output/peaks/merged/allsamples_macs3_merged.saf, output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/macs3/indv/CQTL_AM7754_CTL_Ankle_replicate_count.txt
+    log: output/logs/macs3_CQTL_AM7754_CTL_Ankle_replicate_count.err, output/logs/macs3_CQTL_AM7754_CTL_Ankle_replicate_count.out
+    jobid: 52
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs3/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs3_merged.saf                 -o output/peaks/macs3/indv/CQTL_AM7754_CTL_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam 2>> output/logs/macs3_CQTL_AM7754_CTL_Ankle_replicate_count.err 1>> output/logs/macs3_CQTL_AM7754_CTL_Ankle_replicate_count.out
+
+
+        
+Submitted job 52 with external jobid '58663234'.
+
+[Tue Feb  4 13:00:33 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7778FE_FNF_Femur_1_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.out
+    jobid: 36
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 36 with external jobid '58663235'.
+
+[Tue Feb  4 13:00:38 2025]
+rule hmmratac_frip_calc:
+    input: output/peaks/merged/allsamples_hmmratac_merged.saf, output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/peaks/hmmratac/indv/CQTL_AM7778FE_CTL_Femur_1_count.txt
+    log: output/logs/hmmratac_CQTL_AM7778FE_CTL_Femur_1_count.err, output/logs/hmmratac_CQTL_AM7778FE_CTL_Femur_1_count.out
+    jobid: 57
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/hmmratac/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"}{print $4, $1, $2+1, $3, "."}' indv.peakfile > indv.saf
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_hmmratac_merged.saf                 -o output/peaks/hmmratac/indv/CQTL_AM7778FE_CTL_Femur_1_count.txt                 output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam 2>> output/logs/hmmratac_CQTL_AM7778FE_CTL_Femur_1_count.err 1>> output/logs/hmmratac_CQTL_AM7778FE_CTL_Femur_1_count.out
+
+        
+Submitted job 57 with external jobid '58663236'.
+
+[Tue Feb  4 13:00:43 2025]
+rule rocco_frip_calc:
+    input: output/peaks/merged/allsamples_rocco_merged.saf, output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/rocco/indv/CQTL_AM7754_CTL_Ankle_replicate_count.txt
+    log: output/logs/rocco_CQTL_AM7754_CTL_Ankle_replicate_count.err, output/logs/rocco_CQTL_AM7754_CTL_Ankle_replicate_count.out
+    jobid: 64
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/rocco/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"} {print "peak_"NR, $1, $2, $3, "."}' input.peak > output.saf
+
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_rocco_merged.saf                 -o output/peaks/rocco/indv/CQTL_AM7754_CTL_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam 2>> output/logs/rocco_CQTL_AM7754_CTL_Ankle_replicate_count.err 1>> output/logs/rocco_CQTL_AM7754_CTL_Ankle_replicate_count.out
+        
+Submitted job 64 with external jobid '58663238'.
+
+[Tue Feb  4 13:00:48 2025]
+rule rocco_frip_calc:
+    input: output/peaks/merged/allsamples_rocco_merged.saf, output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/rocco/indv/CQTL_AM7755_FNF_Ankle_replicate_count.txt
+    log: output/logs/rocco_CQTL_AM7755_FNF_Ankle_replicate_count.err, output/logs/rocco_CQTL_AM7755_FNF_Ankle_replicate_count.out
+    jobid: 62
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/rocco/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"} {print "peak_"NR, $1, $2, $3, "."}' input.peak > output.saf
+
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_rocco_merged.saf                 -o output/peaks/rocco/indv/CQTL_AM7755_FNF_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam 2>> output/logs/rocco_CQTL_AM7755_FNF_Ankle_replicate_count.err 1>> output/logs/rocco_CQTL_AM7755_FNF_Ankle_replicate_count.out
+        
+Submitted job 62 with external jobid '58663239'.
+
+[Tue Feb  4 13:00:53 2025]
+rule macs2_frip_calc:
+    input: output/peaks/merged/allsamples_macs2_merged.saf, output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/macs2/indv/CQTL_AM7755_CTL_Ankle_replicate_count.txt
+    log: output/logs/macs2_CQTL_AM7755_CTL_Ankle_replicate_count.err, output/logs/macs2_CQTL_AM7755_CTL_Ankle_replicate_count.out
+    jobid: 47
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs2/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs2_merged.saf                 -o output/peaks/macs2/indv/CQTL_AM7755_CTL_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam 2>> output/logs/macs2_CQTL_AM7755_CTL_Ankle_replicate_count.err 1>> output/logs/macs2_CQTL_AM7755_CTL_Ankle_replicate_count.out
+
+        
+Submitted job 47 with external jobid '58663253'.
+
+[Tue Feb  4 13:00:58 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7755_CTL_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.out
+    jobid: 41
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+Submitted job 41 with external jobid '58663254'.
+
+[Tue Feb  4 13:01:03 2025]
+rule hmmratac_frip_calc:
+    input: output/peaks/merged/allsamples_hmmratac_merged.saf, output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/hmmratac/indv/CQTL_AM7754_FNF_Ankle_replicate_count.txt
+    log: output/logs/hmmratac_CQTL_AM7754_FNF_Ankle_replicate_count.err, output/logs/hmmratac_CQTL_AM7754_FNF_Ankle_replicate_count.out
+    jobid: 55
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/hmmratac/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"}{print $4, $1, $2+1, $3, "."}' indv.peakfile > indv.saf
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_hmmratac_merged.saf                 -o output/peaks/hmmratac/indv/CQTL_AM7754_FNF_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam 2>> output/logs/hmmratac_CQTL_AM7754_FNF_Ankle_replicate_count.err 1>> output/logs/hmmratac_CQTL_AM7754_FNF_Ankle_replicate_count.out
+
+        
+Submitted job 55 with external jobid '58663255'.
+
+[Tue Feb  4 13:01:08 2025]
+rule macs3_frip_calc:
+    input: output/peaks/merged/allsamples_macs3_merged.saf, output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/macs3/indv/CQTL_AM7755_FNF_Ankle_replicate_count.txt
+    log: output/logs/macs3_CQTL_AM7755_FNF_Ankle_replicate_count.err, output/logs/macs3_CQTL_AM7755_FNF_Ankle_replicate_count.out
+    jobid: 50
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs3/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs3_merged.saf                 -o output/peaks/macs3/indv/CQTL_AM7755_FNF_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam 2>> output/logs/macs3_CQTL_AM7755_FNF_Ankle_replicate_count.err 1>> output/logs/macs3_CQTL_AM7755_FNF_Ankle_replicate_count.out
+
+
+        
+Submitted job 50 with external jobid '58663256'.
+
+[Tue Feb  4 13:01:13 2025]
+rule macs3_frip_calc:
+    input: output/peaks/merged/allsamples_macs3_merged.saf, output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/macs3/indv/CQTL_AM7754_FNF_Ankle_replicate_count.txt
+    log: output/logs/macs3_CQTL_AM7754_FNF_Ankle_replicate_count.err, output/logs/macs3_CQTL_AM7754_FNF_Ankle_replicate_count.out
+    jobid: 49
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs3/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs3_merged.saf                 -o output/peaks/macs3/indv/CQTL_AM7754_FNF_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam 2>> output/logs/macs3_CQTL_AM7754_FNF_Ankle_replicate_count.err 1>> output/logs/macs3_CQTL_AM7754_FNF_Ankle_replicate_count.out
+
+
+        
+Submitted job 49 with external jobid '58663258'.
+[Tue Feb  4 13:01:15 2025]
+Finished job 45.
+1 of 31 steps (3%) done
+[Tue Feb  4 13:01:16 2025]
+Finished job 54.
+2 of 31 steps (6%) done
+
+[Tue Feb  4 13:01:18 2025]
+rule rocco_frip_calc:
+    input: output/peaks/merged/allsamples_rocco_merged.saf, output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/rocco/indv/CQTL_AM7754_FNF_Ankle_replicate_count.txt
+    log: output/logs/rocco_CQTL_AM7754_FNF_Ankle_replicate_count.err, output/logs/rocco_CQTL_AM7754_FNF_Ankle_replicate_count.out
+    jobid: 61
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/rocco/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"} {print "peak_"NR, $1, $2, $3, "."}' input.peak > output.saf
+
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_rocco_merged.saf                 -o output/peaks/rocco/indv/CQTL_AM7754_FNF_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam 2>> output/logs/rocco_CQTL_AM7754_FNF_Ankle_replicate_count.err 1>> output/logs/rocco_CQTL_AM7754_FNF_Ankle_replicate_count.out
+        
+Submitted job 61 with external jobid '58663259'.
+
+[Tue Feb  4 13:01:23 2025]
+rule hmmratac_frip_calc:
+    input: output/peaks/merged/allsamples_hmmratac_merged.saf, output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/hmmratac/indv/CQTL_AM7755_FNF_Ankle_replicate_count.txt
+    log: output/logs/hmmratac_CQTL_AM7755_FNF_Ankle_replicate_count.err, output/logs/hmmratac_CQTL_AM7755_FNF_Ankle_replicate_count.out
+    jobid: 56
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/hmmratac/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"}{print $4, $1, $2+1, $3, "."}' indv.peakfile > indv.saf
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_hmmratac_merged.saf                 -o output/peaks/hmmratac/indv/CQTL_AM7755_FNF_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam 2>> output/logs/hmmratac_CQTL_AM7755_FNF_Ankle_replicate_count.err 1>> output/logs/hmmratac_CQTL_AM7755_FNF_Ankle_replicate_count.out
+
+        
+Submitted job 56 with external jobid '58663260'.
+
+[Tue Feb  4 13:01:29 2025]
+rule rocco_frip_calc:
+    input: output/peaks/merged/allsamples_rocco_merged.saf, output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/peaks/rocco/indv/CQTL_AM7778FE_CTL_Femur_1_count.txt
+    log: output/logs/rocco_CQTL_AM7778FE_CTL_Femur_1_count.err, output/logs/rocco_CQTL_AM7778FE_CTL_Femur_1_count.out
+    jobid: 63
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/rocco/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"} {print "peak_"NR, $1, $2, $3, "."}' input.peak > output.saf
+
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_rocco_merged.saf                 -o output/peaks/rocco/indv/CQTL_AM7778FE_CTL_Femur_1_count.txt                 output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam 2>> output/logs/rocco_CQTL_AM7778FE_CTL_Femur_1_count.err 1>> output/logs/rocco_CQTL_AM7778FE_CTL_Femur_1_count.out
+        
+Submitted job 63 with external jobid '58663271'.
+
+[Tue Feb  4 13:01:35 2025]
+rule hmmratac_frip_calc:
+    input: output/peaks/merged/allsamples_hmmratac_merged.saf, output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/hmmratac/indv/CQTL_AM7754_CTL_Ankle_replicate_count.txt
+    log: output/logs/hmmratac_CQTL_AM7754_CTL_Ankle_replicate_count.err, output/logs/hmmratac_CQTL_AM7754_CTL_Ankle_replicate_count.out
+    jobid: 58
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/hmmratac/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"}{print $4, $1, $2+1, $3, "."}' indv.peakfile > indv.saf
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_hmmratac_merged.saf                 -o output/peaks/hmmratac/indv/CQTL_AM7754_CTL_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam 2>> output/logs/hmmratac_CQTL_AM7754_CTL_Ankle_replicate_count.err 1>> output/logs/hmmratac_CQTL_AM7754_CTL_Ankle_replicate_count.out
+
+        
+Submitted job 58 with external jobid '58663272'.
+
+[Tue Feb  4 13:01:40 2025]
+rule macs3_frip_calc:
+    input: output/peaks/merged/allsamples_macs3_merged.saf, output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/peaks/macs3/indv/CQTL_AM7778FE_CTL_Femur_1_count.txt
+    log: output/logs/macs3_CQTL_AM7778FE_CTL_Femur_1_count.err, output/logs/macs3_CQTL_AM7778FE_CTL_Femur_1_count.out
+    jobid: 51
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs3/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs3_merged.saf                 -o output/peaks/macs3/indv/CQTL_AM7778FE_CTL_Femur_1_count.txt                 output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam 2>> output/logs/macs3_CQTL_AM7778FE_CTL_Femur_1_count.err 1>> output/logs/macs3_CQTL_AM7778FE_CTL_Femur_1_count.out
+
+
+        
+Submitted job 51 with external jobid '58663274'.
+
+[Tue Feb  4 13:01:45 2025]
+rule macs3_frip_calc:
+    input: output/peaks/merged/allsamples_macs3_merged.saf, output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/macs3/indv/CQTL_AM7755_CTL_Ankle_replicate_count.txt
+    log: output/logs/macs3_CQTL_AM7755_CTL_Ankle_replicate_count.err, output/logs/macs3_CQTL_AM7755_CTL_Ankle_replicate_count.out
+    jobid: 53
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs3/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs3_merged.saf                 -o output/peaks/macs3/indv/CQTL_AM7755_CTL_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam 2>> output/logs/macs3_CQTL_AM7755_CTL_Ankle_replicate_count.err 1>> output/logs/macs3_CQTL_AM7755_CTL_Ankle_replicate_count.out
+
+
+        
+Submitted job 53 with external jobid '58663275'.
+[Tue Feb  4 13:01:46 2025]
+Error in rule bamQC:
+    jobid: 39
+    output: output/wasp/bamQC/CQTL_AM7778FE_CTL_Femur_1_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.err, output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663202
+
+Error executing rule bamQC on cluster (jobid: 39, external: 58663202, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.42xj5l4a/snakejob.bamQC.39.sh). For error details see the cluster log and the log files of the involved rule(s).
+
+[Tue Feb  4 13:01:50 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7755_FNF_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.out
+    jobid: 38
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+Submitted job 38 with external jobid '58663276'.
+
+[Tue Feb  4 13:01:55 2025]
+rule macs2_frip_calc:
+    input: output/peaks/merged/allsamples_macs2_merged.saf, output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/macs2/indv/CQTL_AM7755_FNF_Ankle_replicate_count.txt
+    log: output/logs/macs2_CQTL_AM7755_FNF_Ankle_replicate_count.err, output/logs/macs2_CQTL_AM7755_FNF_Ankle_replicate_count.out
+    jobid: 44
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs2/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs2_merged.saf                 -o output/peaks/macs2/indv/CQTL_AM7755_FNF_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam 2>> output/logs/macs2_CQTL_AM7755_FNF_Ankle_replicate_count.err 1>> output/logs/macs2_CQTL_AM7755_FNF_Ankle_replicate_count.out
+
+        
+Submitted job 44 with external jobid '58663277'.
+
+[Tue Feb  4 13:02:00 2025]
+rule rocco_frip_calc:
+    input: output/peaks/merged/allsamples_rocco_merged.saf, output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/rocco/indv/CQTL_AM7755_CTL_Ankle_replicate_count.txt
+    log: output/logs/rocco_CQTL_AM7755_CTL_Ankle_replicate_count.err, output/logs/rocco_CQTL_AM7755_CTL_Ankle_replicate_count.out
+    jobid: 65
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/rocco/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"} {print "peak_"NR, $1, $2, $3, "."}' input.peak > output.saf
+
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_rocco_merged.saf                 -o output/peaks/rocco/indv/CQTL_AM7755_CTL_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam 2>> output/logs/rocco_CQTL_AM7755_CTL_Ankle_replicate_count.err 1>> output/logs/rocco_CQTL_AM7755_CTL_Ankle_replicate_count.out
+        
+Submitted job 65 with external jobid '58663278'.
+
+[Tue Feb  4 13:02:05 2025]
+rule macs2_frip_calc:
+    input: output/peaks/merged/allsamples_macs2_merged.saf, output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/macs2/indv/CQTL_AM7754_CTL_Ankle_replicate_count.txt
+    log: output/logs/macs2_CQTL_AM7754_CTL_Ankle_replicate_count.err, output/logs/macs2_CQTL_AM7754_CTL_Ankle_replicate_count.out
+    jobid: 46
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs2/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs2_merged.saf                 -o output/peaks/macs2/indv/CQTL_AM7754_CTL_Ankle_replicate_count.txt                 output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam 2>> output/logs/macs2_CQTL_AM7754_CTL_Ankle_replicate_count.err 1>> output/logs/macs2_CQTL_AM7754_CTL_Ankle_replicate_count.out
+
+        
+Submitted job 46 with external jobid '58663279'.
+
+[Tue Feb  4 13:02:11 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7754_CTL_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.out
+    jobid: 40
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+Submitted job 40 with external jobid '58663326'.
+
+[Tue Feb  4 13:02:16 2025]
+rule macs3_frip_calc:
+    input: output/peaks/merged/allsamples_macs3_merged.saf, output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/peaks/macs3/indv/CQTL_AM7778FE_FNF_Femur_1_count.txt
+    log: output/logs/macs3_CQTL_AM7778FE_FNF_Femur_1_count.err, output/logs/macs3_CQTL_AM7778FE_FNF_Femur_1_count.out
+    jobid: 48
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/macs3/indv
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_macs3_merged.saf                 -o output/peaks/macs3/indv/CQTL_AM7778FE_FNF_Femur_1_count.txt                 output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam 2>> output/logs/macs3_CQTL_AM7778FE_FNF_Femur_1_count.err 1>> output/logs/macs3_CQTL_AM7778FE_FNF_Femur_1_count.out
+
+
+        
+Submitted job 48 with external jobid '58663334'.
+[Tue Feb  4 13:02:17 2025]
+Error in rule bamQC:
+    jobid: 41
+    output: output/wasp/bamQC/CQTL_AM7755_CTL_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663254
+
+Error executing rule bamQC on cluster (jobid: 41, external: 58663254, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.42xj5l4a/snakejob.bamQC.41.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Feb  4 13:02:18 2025]
+Error in rule bamQC:
+    jobid: 36
+    output: output/wasp/bamQC/CQTL_AM7778FE_FNF_Femur_1_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663235
+
+Error executing rule bamQC on cluster (jobid: 36, external: 58663235, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.42xj5l4a/snakejob.bamQC.36.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Feb  4 13:02:21 2025]
+Error in rule bamQC:
+    jobid: 37
+    output: output/wasp/bamQC/CQTL_AM7754_FNF_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663204
+
+Error executing rule bamQC on cluster (jobid: 37, external: 58663204, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.42xj5l4a/snakejob.bamQC.37.sh). For error details see the cluster log and the log files of the involved rule(s).
+
+[Tue Feb  4 13:02:21 2025]
+rule rocco_frip_calc:
+    input: output/peaks/merged/allsamples_rocco_merged.saf, output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/peaks/rocco/indv/CQTL_AM7778FE_FNF_Femur_1_count.txt
+    log: output/logs/rocco_CQTL_AM7778FE_FNF_Femur_1_count.err, output/logs/rocco_CQTL_AM7778FE_FNF_Femur_1_count.out
+    jobid: 60
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 4
+
+
+        module load subread/2.0.6
+        mkdir -p output/peaks/rocco/indv
+
+        #convert peak region to SAF
+        #awk 'BEGIN{FS=OFS="	"; print "GeneID	Chr	Start	End	Strand"} {print "peak_"NR, $1, $2, $3, "."}' input.peak > output.saf
+
+
+
+        #count-indv
+        featureCounts -p -F SAF                 -T 4                 --primary                 -C                 -a output/peaks/merged/allsamples_rocco_merged.saf                 -o output/peaks/rocco/indv/CQTL_AM7778FE_FNF_Femur_1_count.txt                 output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam 2>> output/logs/rocco_CQTL_AM7778FE_FNF_Femur_1_count.err 1>> output/logs/rocco_CQTL_AM7778FE_FNF_Femur_1_count.out
+        
+Submitted job 60 with external jobid '58663335'.
+[Tue Feb  4 13:02:22 2025]
+Finished job 43.
+3 of 31 steps (10%) done
+[Tue Feb  4 13:02:44 2025]
+Error in rule bamQC:
+    jobid: 40
+    output: output/wasp/bamQC/CQTL_AM7754_CTL_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663326
+
+Error executing rule bamQC on cluster (jobid: 40, external: 58663326, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.42xj5l4a/snakejob.bamQC.40.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Feb  4 13:02:49 2025]
+Error in rule bamQC:
+    jobid: 38
+    output: output/wasp/bamQC/CQTL_AM7755_FNF_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam "output/wasp/bamQC/" "sorted_final.bam"  1> output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663276
+
+Error executing rule bamQC on cluster (jobid: 38, external: 58663276, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.42xj5l4a/snakejob.bamQC.38.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Feb  4 13:02:57 2025]
+Finished job 59.
+4 of 31 steps (13%) done
+[Tue Feb  4 13:02:58 2025]
+Finished job 42.
+5 of 31 steps (16%) done
+[Tue Feb  4 13:03:00 2025]
+Finished job 57.
+6 of 31 steps (19%) done
+[Tue Feb  4 13:03:01 2025]
+Finished job 64.
+7 of 31 steps (23%) done
+[Tue Feb  4 13:03:04 2025]
+Finished job 63.
+8 of 31 steps (26%) done
+[Tue Feb  4 13:03:05 2025]
+Finished job 58.
+9 of 31 steps (29%) done
+[Tue Feb  4 13:03:06 2025]
+Finished job 65.
+10 of 31 steps (32%) done
+[Tue Feb  4 13:03:21 2025]
+Finished job 51.
+11 of 31 steps (35%) done
+[Tue Feb  4 13:03:22 2025]
+Finished job 53.
+12 of 31 steps (39%) done
+[Tue Feb  4 13:03:23 2025]
+Finished job 44.
+13 of 31 steps (42%) done
+[Tue Feb  4 13:03:24 2025]
+Finished job 49.
+14 of 31 steps (45%) done
+[Tue Feb  4 13:03:25 2025]
+Finished job 61.
+15 of 31 steps (48%) done
+[Tue Feb  4 13:03:26 2025]
+Finished job 56.
+16 of 31 steps (52%) done
+[Tue Feb  4 13:03:27 2025]
+Finished job 62.
+17 of 31 steps (55%) done
+[Tue Feb  4 13:03:29 2025]
+Finished job 47.
+18 of 31 steps (58%) done
+[Tue Feb  4 13:03:30 2025]
+Finished job 52.
+19 of 31 steps (61%) done
+[Tue Feb  4 13:03:31 2025]
+Finished job 55.
+20 of 31 steps (65%) done
+[Tue Feb  4 13:03:32 2025]
+Finished job 50.
+21 of 31 steps (68%) done
+[Tue Feb  4 13:03:33 2025]
+Finished job 46.
+22 of 31 steps (71%) done
+[Tue Feb  4 13:03:44 2025]
+Finished job 48.
+23 of 31 steps (74%) done
+[Tue Feb  4 13:03:45 2025]
+Finished job 60.
+24 of 31 steps (77%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2025-02-04T125948.833096.snakemake.log

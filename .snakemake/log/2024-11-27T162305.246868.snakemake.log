@@ -1,0 +1,2111 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all
+	42	verifybamid
+	43
+
+[Wed Nov 27 16:23:06 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7775_FNF_Ankle_1.err
+    jobid: 33
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7775_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7775_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7775_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7775_FNF_Ankle_1.err
+        
+Submitted job 33 with external jobid '54990225'.
+
+[Wed Nov 27 16:23:11 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7754_FNF_Ankle_1.err
+    jobid: 21
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7754_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7754_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7754_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7754_FNF_Ankle_1.err
+        
+Submitted job 21 with external jobid '54990230'.
+
+[Wed Nov 27 16:23:16 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7678_CTL_Ankle_1.err
+    jobid: 4
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7678_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7678_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7678_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7678_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7678_CTL_Ankle_1.err
+        
+Submitted job 4 with external jobid '54990237'.
+
+[Wed Nov 27 16:23:21 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7781_CTL_Ankle_1.err
+    jobid: 38
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7781_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7781_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7781_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7781_CTL_Ankle_1.err
+        
+Submitted job 38 with external jobid '54990238'.
+
+[Wed Nov 27 16:23:26 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7678_FNF_Ankle_1.err
+    jobid: 5
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7678_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7678_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7678_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7678_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7678_FNF_Ankle_1.err
+        
+Submitted job 5 with external jobid '54990239'.
+
+[Wed Nov 27 16:23:31 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7677_FNF_Ankle_1.err
+    jobid: 3
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7677_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7677_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7677_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7677_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7677_FNF_Ankle_1.err
+        
+Submitted job 3 with external jobid '54990240'.
+
+[Wed Nov 27 16:23:38 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7780_CTL_Ankle_1.err
+    jobid: 36
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7780_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7780_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7780_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7780_CTL_Ankle_1.err
+        
+Submitted job 36 with external jobid '54990242'.
+
+[Wed Nov 27 16:23:43 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7679_CTL_Ankle_1.err
+    jobid: 6
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7679_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7679_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7679_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7679_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7679_CTL_Ankle_1.err
+        
+Submitted job 6 with external jobid '54990243'.
+
+[Wed Nov 27 16:23:49 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7717_CTL_Ankle_1.err
+    jobid: 12
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7717_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7717_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7717_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7717_CTL_Ankle_1.err
+        
+Submitted job 12 with external jobid '54990244'.
+
+[Wed Nov 27 16:23:54 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7769_FNF_Ankle_1.err
+    jobid: 29
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7769_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7769_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7769_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7769_FNF_Ankle_1.err
+        
+Submitted job 29 with external jobid '54990250'.
+
+[Wed Nov 27 16:24:00 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7711_FNF_Ankle_1.err
+    jobid: 9
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7711_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7711_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7711_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7711_FNF_Ankle_1.err
+        
+Submitted job 9 with external jobid '54990251'.
+
+[Wed Nov 27 16:24:05 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7711_CTL_Ankle_1.err
+    jobid: 8
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7711_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7711_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7711_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7711_CTL_Ankle_1.err
+        
+Submitted job 8 with external jobid '54990252'.
+
+[Wed Nov 27 16:24:10 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7726_CTL_Ankle_1.err
+    jobid: 14
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7726_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7726_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7726_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7726_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7726_CTL_Ankle_1.err
+        
+Submitted job 14 with external jobid '54990253'.
+
+[Wed Nov 27 16:24:15 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7765_FNF_Ankle_1.err
+    jobid: 27
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7765_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7765_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7765_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7765_FNF_Ankle_1.err
+        
+Submitted job 27 with external jobid '54990256'.
+
+[Wed Nov 27 16:24:23 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7755_FNF_Ankle_1.err
+    jobid: 23
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7755_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7755_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7755_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7755_FNF_Ankle_1.err
+        
+Submitted job 23 with external jobid '54990257'.
+
+[Wed Nov 27 16:24:29 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7763_CTL_Ankle_1.err
+    jobid: 24
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7763_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7763_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7763_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7763_CTL_Ankle_1.err
+        
+Submitted job 24 with external jobid '54990258'.
+
+[Wed Nov 27 16:24:34 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7771_CTL_Ankle_1.err
+    jobid: 30
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7771_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7771_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7771_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7771_CTL_Ankle_1.err
+        
+Submitted job 30 with external jobid '54990259'.
+
+[Wed Nov 27 16:24:39 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7775_CTL_Ankle_1.err
+    jobid: 32
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7775_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7775_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7775_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7775_CTL_Ankle_1.err
+        
+Submitted job 32 with external jobid '54990260'.
+
+[Wed Nov 27 16:24:44 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7786_CTL_Ankle_1.err
+    jobid: 42
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7786_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7786_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7786_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7786_CTL_Ankle_1.err
+        
+Submitted job 42 with external jobid '54990261'.
+
+[Wed Nov 27 16:24:49 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7712_CTL_Ankle_1.err
+    jobid: 10
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7712_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7712_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7712_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7712_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7712_CTL_Ankle_1.err
+        
+Submitted job 10 with external jobid '54990262'.
+
+[Wed Nov 27 16:24:54 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7712_FNF_Ankle_1.err
+    jobid: 11
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7712_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7712_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7712_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7712_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7712_FNF_Ankle_1.err
+        
+Submitted job 11 with external jobid '54990263'.
+
+[Wed Nov 27 16:25:00 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7754_CTL_Ankle_1.err
+    jobid: 20
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7754_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7754_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7754_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7754_CTL_Ankle_1.err
+        
+Submitted job 20 with external jobid '54990264'.
+
+[Wed Nov 27 16:25:06 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7755_CTL_Ankle_1.err
+    jobid: 22
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7755_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7755_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7755_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7755_CTL_Ankle_1.err
+        
+Submitted job 22 with external jobid '54990266'.
+
+[Wed Nov 27 16:25:11 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7785_CTL_Ankle_1.err
+    jobid: 40
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7785_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7785_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7785_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7785_CTL_Ankle_1.err
+        
+Submitted job 40 with external jobid '54990267'.
+
+[Wed Nov 27 16:25:17 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7679_FNF_Ankle_1.err
+    jobid: 7
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7679_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7679_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7679_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7679_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7679_FNF_Ankle_1.err
+        
+Submitted job 7 with external jobid '54990268'.
+
+[Wed Nov 27 16:25:22 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7735_CTL_Ankle_1.err
+    jobid: 18
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7735_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7735_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7735_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7735_CTL_Ankle_1.err
+        
+Submitted job 18 with external jobid '54990269'.
+
+[Wed Nov 27 16:25:27 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7771_FNF_Ankle_1.err
+    jobid: 31
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7771_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7771_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7771_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7771_FNF_Ankle_1.err
+        
+Submitted job 31 with external jobid '54990270'.
+
+[Wed Nov 27 16:25:32 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7780_FNF_Ankle_1.err
+    jobid: 37
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7780_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7780_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7780_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7780_FNF_Ankle_1.err
+        
+Submitted job 37 with external jobid '54990271'.
+
+[Wed Nov 27 16:25:37 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7781_FNF_Ankle_1.err
+    jobid: 39
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7781_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7781_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7781_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7781_FNF_Ankle_1.err
+        
+Submitted job 39 with external jobid '54990272'.
+
+[Wed Nov 27 16:25:43 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7735_FNF_Ankle_1.err
+    jobid: 19
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7735_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7735_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7735_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7735_FNF_Ankle_1.err
+        
+Submitted job 19 with external jobid '54990273'.
+
+[Wed Nov 27 16:25:49 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7765_CTL_Ankle_1.err
+    jobid: 26
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7765_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7765_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7765_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7765_CTL_Ankle_1.err
+        
+Submitted job 26 with external jobid '54990274'.
+
+[Wed Nov 27 16:25:54 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7778_FNF_Ankle_1.err
+    jobid: 35
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7778_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7778_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7778_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7778_FNF_Ankle_1.err
+        
+Submitted job 35 with external jobid '54990276'.
+
+[Wed Nov 27 16:25:59 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7727_CTL_Ankle_1.err
+    jobid: 16
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7727_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7727_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7727_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7727_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7727_CTL_Ankle_1.err
+        
+Submitted job 16 with external jobid '54990277'.
+
+[Wed Nov 27 16:26:04 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7717_FNF_Ankle_1.err
+    jobid: 13
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7717_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7717_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7717_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7717_FNF_Ankle_1.err
+        
+Submitted job 13 with external jobid '54990279'.
+
+[Wed Nov 27 16:26:11 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7785_FNF_Ankle_1.err
+    jobid: 41
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7785_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7785_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7785_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7785_FNF_Ankle_1.err
+        
+Submitted job 41 with external jobid '54990280'.
+
+[Wed Nov 27 16:26:16 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7763_FNF_Ankle_1.err
+    jobid: 25
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7763_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7763_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7763_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7763_FNF_Ankle_1.err
+        
+Submitted job 25 with external jobid '54990281'.
+
+[Wed Nov 27 16:26:22 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7726_FNF_Ankle_1.err
+    jobid: 15
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7726_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7726_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7726_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7726_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7726_FNF_Ankle_1.err
+        
+Submitted job 15 with external jobid '54990282'.
+
+[Wed Nov 27 16:26:27 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7778_CTL_Ankle_1.err
+    jobid: 34
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7778_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7778_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7778_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7778_CTL_Ankle_1.err
+        
+Submitted job 34 with external jobid '54990284'.
+
+[Wed Nov 27 16:26:33 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7786_FNF_Ankle_1.err
+    jobid: 43
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7786_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7786_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7786_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7786_FNF_Ankle_1.err
+        
+Submitted job 43 with external jobid '54990287'.
+
+[Wed Nov 27 16:26:38 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7677_CTL_Ankle_1.err
+    jobid: 2
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7677_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7677_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7677_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7677_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7677_CTL_Ankle_1.err
+        
+Submitted job 2 with external jobid '54990289'.
+
+[Wed Nov 27 16:26:43 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7727_FNF_Ankle_1.err
+    jobid: 17
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+
+
+
+        if [[ "CQTL_AM7727_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7727_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7727_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7727_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7727_FNF_Ankle_1.err
+        
+Submitted job 17 with external jobid '54990291'.
+
+[Wed Nov 27 16:26:48 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7769_CTL_Ankle_1.err
+    jobid: 28
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+
+
+
+        if [[ "CQTL_AM7769_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7769_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7769_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7769_CTL_Ankle_1.err
+        
+Submitted job 28 with external jobid '54990294'.
+[Wed Nov 27 20:45:35 2024]
+Error in rule verifybamid:
+    jobid: 2
+    output: output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7677_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7677_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7677_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7677_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7677_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7677_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7677_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990289
+
+Error executing rule verifybamid on cluster (jobid: 2, external: 54990289, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 20:46:09 2024]
+Error in rule verifybamid:
+    jobid: 14
+    output: output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7726_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7726_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7726_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7726_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7726_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7726_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7726_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990253
+
+Error executing rule verifybamid on cluster (jobid: 14, external: 54990253, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 20:46:40 2024]
+Error in rule verifybamid:
+    jobid: 17
+    output: output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7727_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7727_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7727_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7727_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7727_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7727_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7727_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990291
+
+Error executing rule verifybamid on cluster (jobid: 17, external: 54990291, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.17.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 20:53:26 2024]
+Error in rule verifybamid:
+    jobid: 7
+    output: output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7679_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7679_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7679_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7679_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7679_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7679_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7679_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990268
+
+Error executing rule verifybamid on cluster (jobid: 7, external: 54990268, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 20:58:15 2024]
+Error in rule verifybamid:
+    jobid: 23
+    output: output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7755_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7755_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7755_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7755_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7755_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7755_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990257
+
+Error executing rule verifybamid on cluster (jobid: 23, external: 54990257, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:01:40 2024]
+Error in rule verifybamid:
+    jobid: 8
+    output: output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7711_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7711_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7711_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7711_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7711_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7711_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990252
+
+Error executing rule verifybamid on cluster (jobid: 8, external: 54990252, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:08:10 2024]
+Error in rule verifybamid:
+    jobid: 11
+    output: output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7712_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7712_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7712_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7712_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7712_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7712_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7712_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990263
+
+Error executing rule verifybamid on cluster (jobid: 11, external: 54990263, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.11.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:08:25 2024]
+Error in rule verifybamid:
+    jobid: 29
+    output: output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7769_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7769_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7769_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7769_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7769_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7769_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990250
+
+Error executing rule verifybamid on cluster (jobid: 29, external: 54990250, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.29.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:10:01 2024]
+Error in rule verifybamid:
+    jobid: 27
+    output: output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7765_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7765_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7765_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7765_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7765_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7765_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990256
+
+Error executing rule verifybamid on cluster (jobid: 27, external: 54990256, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.27.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:11:57 2024]
+Error in rule verifybamid:
+    jobid: 15
+    output: output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7726_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7726_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7726_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7726_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7726_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7726_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7726_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990282
+
+Error executing rule verifybamid on cluster (jobid: 15, external: 54990282, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.15.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:13:56 2024]
+Error in rule verifybamid:
+    jobid: 43
+    output: output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7786_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7786_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7786_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7786_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7786_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7786_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990287
+
+Error executing rule verifybamid on cluster (jobid: 43, external: 54990287, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.43.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:14:20 2024]
+Error in rule verifybamid:
+    jobid: 20
+    output: output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7754_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7754_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7754_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7754_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7754_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7754_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990264
+
+Error executing rule verifybamid on cluster (jobid: 20, external: 54990264, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.20.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:16:37 2024]
+Error in rule verifybamid:
+    jobid: 21
+    output: output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7754_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7754_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7754_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7754_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7754_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7754_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990230
+
+Error executing rule verifybamid on cluster (jobid: 21, external: 54990230, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.21.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:16:43 2024]
+Error in rule verifybamid:
+    jobid: 9
+    output: output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7711_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7711_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7711_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7711_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7711_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7711_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990251
+
+Error executing rule verifybamid on cluster (jobid: 9, external: 54990251, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:17:41 2024]
+Error in rule verifybamid:
+    jobid: 16
+    output: output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7727_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7727_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7727_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7727_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7727_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7727_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7727_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7727_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990277
+
+Error executing rule verifybamid on cluster (jobid: 16, external: 54990277, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.16.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:20:39 2024]
+Error in rule verifybamid:
+    jobid: 5
+    output: output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7678_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7678_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7678_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7678_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7678_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7678_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7678_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990239
+
+Error executing rule verifybamid on cluster (jobid: 5, external: 54990239, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:21:01 2024]
+Error in rule verifybamid:
+    jobid: 25
+    output: output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7763_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7763_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7763_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7763_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7763_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7763_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990281
+
+Error executing rule verifybamid on cluster (jobid: 25, external: 54990281, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.25.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:31:48 2024]
+Error in rule verifybamid:
+    jobid: 38
+    output: output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7781_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7781_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7781_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7781_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7781_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7781_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990238
+
+Error executing rule verifybamid on cluster (jobid: 38, external: 54990238, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.38.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:32:08 2024]
+Error in rule verifybamid:
+    jobid: 13
+    output: output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7717_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7717_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7717_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7717_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7717_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7717_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990279
+
+Error executing rule verifybamid on cluster (jobid: 13, external: 54990279, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:32:16 2024]
+Error in rule verifybamid:
+    jobid: 19
+    output: output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7735_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7735_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7735_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7735_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7735_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7735_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990273
+
+Error executing rule verifybamid on cluster (jobid: 19, external: 54990273, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.19.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:33:31 2024]
+Error in rule verifybamid:
+    jobid: 4
+    output: output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7678_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7678_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7678_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7678_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7678_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7678_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7678_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990237
+
+Error executing rule verifybamid on cluster (jobid: 4, external: 54990237, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.4.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:35:33 2024]
+Error in rule verifybamid:
+    jobid: 18
+    output: output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7735_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7735_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7735_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7735_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7735_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7735_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990269
+
+Error executing rule verifybamid on cluster (jobid: 18, external: 54990269, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.18.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:36:54 2024]
+Error in rule verifybamid:
+    jobid: 26
+    output: output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7765_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7765_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7765_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7765_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7765_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7765_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990274
+
+Error executing rule verifybamid on cluster (jobid: 26, external: 54990274, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.26.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:43:25 2024]
+Error in rule verifybamid:
+    jobid: 6
+    output: output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7679_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7679_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7679_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7679_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7679_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7679_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7679_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990243
+
+Error executing rule verifybamid on cluster (jobid: 6, external: 54990243, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:44:44 2024]
+Error in rule verifybamid:
+    jobid: 28
+    output: output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7769_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7769_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7769_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7769_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7769_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7769_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990294
+
+Error executing rule verifybamid on cluster (jobid: 28, external: 54990294, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.28.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:48:11 2024]
+Error in rule verifybamid:
+    jobid: 10
+    output: output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7712_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7712_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7712_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7712_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7712_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7712_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7712_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990262
+
+Error executing rule verifybamid on cluster (jobid: 10, external: 54990262, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:49:11 2024]
+Error in rule verifybamid:
+    jobid: 33
+    output: output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7775_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7775_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7775_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7775_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7775_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7775_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990225
+
+Error executing rule verifybamid on cluster (jobid: 33, external: 54990225, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.33.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:50:01 2024]
+Error in rule verifybamid:
+    jobid: 24
+    output: output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7763_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7763_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7763_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7763_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7763_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7763_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990258
+
+Error executing rule verifybamid on cluster (jobid: 24, external: 54990258, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.24.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:55:31 2024]
+Error in rule verifybamid:
+    jobid: 12
+    output: output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7717_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7717_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7717_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7717_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7717_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7717_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990244
+
+Error executing rule verifybamid on cluster (jobid: 12, external: 54990244, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.12.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:55:49 2024]
+Error in rule verifybamid:
+    jobid: 41
+    output: output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7785_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7785_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7785_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7785_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7785_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7785_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990280
+
+Error executing rule verifybamid on cluster (jobid: 41, external: 54990280, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.41.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 21:56:37 2024]
+Error in rule verifybamid:
+    jobid: 31
+    output: output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7771_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7771_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7771_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7771_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7771_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7771_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990270
+
+Error executing rule verifybamid on cluster (jobid: 31, external: 54990270, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.31.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 22:05:29 2024]
+Error in rule verifybamid:
+    jobid: 3
+    output: output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7677_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7677_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7677_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7677_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7677_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7677_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7677_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990240
+
+Error executing rule verifybamid on cluster (jobid: 3, external: 54990240, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.3.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 22:07:12 2024]
+Error in rule verifybamid:
+    jobid: 22
+    output: output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7755_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7755_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7755_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7755_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7755_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7755_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990266
+
+Error executing rule verifybamid on cluster (jobid: 22, external: 54990266, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.22.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 22:09:49 2024]
+Error in rule verifybamid:
+    jobid: 34
+    output: output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7778_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7778_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7778_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7778_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7778_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7778_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990284
+
+Error executing rule verifybamid on cluster (jobid: 34, external: 54990284, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.34.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 22:13:40 2024]
+Error in rule verifybamid:
+    jobid: 42
+    output: output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7786_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7786_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7786_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7786_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7786_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7786_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990261
+
+Error executing rule verifybamid on cluster (jobid: 42, external: 54990261, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.42.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 22:18:19 2024]
+Error in rule verifybamid:
+    jobid: 30
+    output: output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7771_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7771_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7771_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7771_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7771_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7771_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990259
+
+Error executing rule verifybamid on cluster (jobid: 30, external: 54990259, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.30.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 22:31:52 2024]
+Error in rule verifybamid:
+    jobid: 40
+    output: output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7785_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7785_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7785_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7785_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7785_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7785_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990267
+
+Error executing rule verifybamid on cluster (jobid: 40, external: 54990267, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.40.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 22:33:39 2024]
+Error in rule verifybamid:
+    jobid: 36
+    output: output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7780_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7780_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7780_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7780_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7780_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7780_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990242
+
+Error executing rule verifybamid on cluster (jobid: 36, external: 54990242, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.36.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 22:43:28 2024]
+Error in rule verifybamid:
+    jobid: 39
+    output: output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7781_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7781_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7781_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7781_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7781_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7781_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990272
+
+Error executing rule verifybamid on cluster (jobid: 39, external: 54990272, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.39.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 22:48:09 2024]
+Error in rule verifybamid:
+    jobid: 35
+    output: output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7778_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7778_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7778_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7778_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7778_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7778_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990276
+
+Error executing rule verifybamid on cluster (jobid: 35, external: 54990276, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.35.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 23:01:46 2024]
+Error in rule verifybamid:
+    jobid: 37
+    output: output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7780_FNF_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7780_FNF_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7780_FNF_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7780_FNF_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7780_FNF_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7780_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990271
+
+Error executing rule verifybamid on cluster (jobid: 37, external: 54990271, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.37.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 27 23:08:38 2024]
+Error in rule verifybamid:
+    jobid: 32
+    output: output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.selfSM, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.selfRG, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.bestRG, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.bestSM, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.depthRG, output/QC/CQTL_AM7775_CTL_Ankle_1_verifybamid.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7775_CTL_Ankle_1.err (check log file(s) for error message)
+    shell:
+        
+
+        if [[ "CQTL_AM7775_CTL_Ankle_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7775_CTL_Ankle_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7775_CTL_Ankle_1"
+            exit 1
+        fi
+
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam --bai /work/users/s/e/seyoun/CQTL_AI/output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam.bai --best --out output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7775_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54990260
+
+Error executing rule verifybamid on cluster (jobid: 32, external: 54990260, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jvlqranm/snakejob.verifybamid.32.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-11-27T162305.246868.snakemake.log

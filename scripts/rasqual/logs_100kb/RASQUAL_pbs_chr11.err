@@ -1,0 +1,12 @@
+gsl: gamma.c:1180: ERROR: error
+Default GSL error handler invoked.
+/var/spool/slurmd/job61274179/slurm_script: line 87: 1381577 Done                    tabix ${VCF_dir}/${VCF} ${peak_chr}:${cisWindow_start}-${cisWindow_end}
+     1381578 Aborted                 (core dumped) | /users/s/e/seyoun/tools/rasqual/bin/rasqual -s ${peak_start} -e ${peak_end} -j ${peak_rowNum} -y ${peak_counts} -k ${sample_offsets} -n ${samplenumber} -l ${num_cisSNPs} -m ${num_peakSNPs} -f ${peak_ID} -x ${covariates} -p 10 -w ${WindowSize} -q 0.0 -a 0.00 -h 0.00 --min-coverage-depth 0.0 -z --n-threads 10 >> ${Output}
+gsl: gamma.c:1180: ERROR: error
+Default GSL error handler invoked.
+/var/spool/slurmd/job61274178/slurm_script: line 87: 3142993 Done                    tabix ${VCF_dir}/${VCF} ${peak_chr}:${cisWindow_start}-${cisWindow_end}
+     3142994 Aborted                 (core dumped) | /users/s/e/seyoun/tools/rasqual/bin/rasqual -s ${peak_start} -e ${peak_end} -j ${peak_rowNum} -y ${peak_counts} -k ${sample_offsets} -n ${samplenumber} -l ${num_cisSNPs} -m ${num_peakSNPs} -f ${peak_ID} -x ${covariates} -p 10 -w ${WindowSize} -q 0.0 -a 0.00 -h 0.00 --min-coverage-depth 0.0 -z --n-threads 10 >> ${Output}
+gsl: gamma.c:1180: ERROR: error
+Default GSL error handler invoked.
+/var/spool/slurmd/job61274178/slurm_script: line 87: 3143019 Done                    tabix ${VCF_dir}/${VCF} ${peak_chr}:${cisWindow_start}-${cisWindow_end}
+     3143020 Aborted                 (core dumped) | /users/s/e/seyoun/tools/rasqual/bin/rasqual -s ${peak_start} -e ${peak_end} -j ${peak_rowNum} -y ${peak_counts} -k ${sample_offsets} -n ${samplenumber} -l ${num_cisSNPs} -m ${num_peakSNPs} -f ${peak_ID} -x ${covariates} -p 10 -w ${WindowSize} -q 0.0 -a 0.00 -h 0.00 --min-coverage-depth 0.0 -z --n-threads 10 >> ${Output}

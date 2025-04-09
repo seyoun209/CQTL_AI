@@ -1,0 +1,978 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	48	signal
+	49
+
+[Thu Mar 27 17:14:04 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7677_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7677_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7677_CTL_Ankle_1.err
+    jobid: 338
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7677_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7677_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7677_CTL_Ankle_1.err 2>&1
+        
+Submitted job 338 with external jobid '63159951'.
+
+[Thu Mar 27 17:14:05 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7712_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7712_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7712_CTL_Ankle_1.err
+    jobid: 346
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7712_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7712_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7712_CTL_Ankle_1.err 2>&1
+        
+Submitted job 346 with external jobid '63159954'.
+
+[Thu Mar 27 17:14:07 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7711_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7711_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7711_FNF_Ankle_1.err
+    jobid: 345
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7711_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7711_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7711_FNF_Ankle_1.err 2>&1
+        
+Submitted job 345 with external jobid '63159962'.
+
+[Thu Mar 27 17:14:08 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7754_FNF_Ankle_replicate.bw
+    log: output/logs/signal_CQTL_AM7754_FNF_Ankle_replicate.err
+    jobid: 359
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam             -o output/signals/indv/CQTL_AM7754_FNF_Ankle_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7754_FNF_Ankle_replicate.err 2>&1
+        
+Submitted job 359 with external jobid '63159968'.
+
+[Thu Mar 27 17:14:10 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7780_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7780_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7780_FNF_Ankle_1.err
+    jobid: 379
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7780_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7780_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7780_FNF_Ankle_1.err 2>&1
+        
+Submitted job 379 with external jobid '63159969'.
+
+[Thu Mar 27 17:14:11 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7712_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7712_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7712_FNF_Ankle_1.err
+    jobid: 347
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7712_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7712_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7712_FNF_Ankle_1.err 2>&1
+        
+Submitted job 347 with external jobid '63159971'.
+
+[Thu Mar 27 17:14:13 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7775_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7775_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7775_CTL_Ankle_1.err
+    jobid: 372
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7775_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7775_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7775_CTL_Ankle_1.err 2>&1
+        
+Submitted job 372 with external jobid '63159974'.
+
+[Thu Mar 27 17:14:14 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7735_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7735_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7735_FNF_Ankle_1.err
+    jobid: 355
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7735_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7735_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7735_FNF_Ankle_1.err 2>&1
+        
+Submitted job 355 with external jobid '63159975'.
+
+[Thu Mar 27 17:14:16 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7786_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7786_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7786_FNF_Ankle_1.err
+    jobid: 385
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7786_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7786_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7786_FNF_Ankle_1.err 2>&1
+        
+Submitted job 385 with external jobid '63159976'.
+
+[Thu Mar 27 17:14:17 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7786_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7786_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7786_CTL_Ankle_1.err
+    jobid: 384
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7786_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7786_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7786_CTL_Ankle_1.err 2>&1
+        
+Submitted job 384 with external jobid '63159977'.
+
+[Thu Mar 27 17:14:19 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7778FE_FNF_Femur_1.bw
+    log: output/logs/signal_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 375
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7778FE_FNF_Femur_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7778FE_FNF_Femur_1.err 2>&1
+        
+Submitted job 375 with external jobid '63159980'.
+
+[Thu Mar 27 17:14:20 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7771_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7771_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7771_CTL_Ankle_1.err
+    jobid: 370
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7771_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7771_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7771_CTL_Ankle_1.err 2>&1
+        
+Submitted job 370 with external jobid '63159985'.
+
+[Thu Mar 27 17:14:21 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7679_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7679_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7679_CTL_Ankle_1.err
+    jobid: 342
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7679_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7679_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7679_CTL_Ankle_1.err 2>&1
+        
+Submitted job 342 with external jobid '63159986'.
+
+[Thu Mar 27 17:14:22 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7755_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7755_FNF_Ankle_1.err
+    jobid: 362
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7755_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7755_FNF_Ankle_1.err 2>&1
+        
+Submitted job 362 with external jobid '63159988'.
+
+[Thu Mar 27 17:14:23 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7679_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7679_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7679_FNF_Ankle_1.err
+    jobid: 343
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7679_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7679_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7679_FNF_Ankle_1.err 2>&1
+        
+Submitted job 343 with external jobid '63159989'.
+
+[Thu Mar 27 17:14:24 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7763_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7763_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7763_FNF_Ankle_1.err
+    jobid: 365
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7763_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7763_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7763_FNF_Ankle_1.err 2>&1
+        
+Submitted job 365 with external jobid '63159990'.
+
+[Thu Mar 27 17:14:25 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7785_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7785_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7785_FNF_Ankle_1.err
+    jobid: 383
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7785_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7785_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7785_FNF_Ankle_1.err 2>&1
+        
+Submitted job 383 with external jobid '63159991'.
+
+[Thu Mar 27 17:14:26 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7717_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7717_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7717_CTL_Ankle_1.err
+    jobid: 348
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7717_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7717_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7717_CTL_Ankle_1.err 2>&1
+        
+Submitted job 348 with external jobid '63159992'.
+
+[Thu Mar 27 17:14:27 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7735_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7735_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7735_CTL_Ankle_1.err
+    jobid: 354
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7735_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7735_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7735_CTL_Ankle_1.err 2>&1
+        
+Submitted job 354 with external jobid '63159993'.
+
+[Thu Mar 27 17:14:28 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7755_CTL_Ankle_replicate.bw
+    log: output/logs/signal_CQTL_AM7755_CTL_Ankle_replicate.err
+    jobid: 361
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam             -o output/signals/indv/CQTL_AM7755_CTL_Ankle_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7755_CTL_Ankle_replicate.err 2>&1
+        
+Submitted job 361 with external jobid '63159994'.
+
+[Thu Mar 27 17:14:29 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7727_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7727_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7727_FNF_Ankle_1.err
+    jobid: 353
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7727_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7727_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7727_FNF_Ankle_1.err 2>&1
+        
+Submitted job 353 with external jobid '63159995'.
+
+[Thu Mar 27 17:14:30 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7711_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7711_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7711_CTL_Ankle_1.err
+    jobid: 344
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7711_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7711_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7711_CTL_Ankle_1.err 2>&1
+        
+Submitted job 344 with external jobid '63159996'.
+
+[Thu Mar 27 17:14:32 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7778_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7778_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7778_CTL_Ankle_1.err
+    jobid: 376
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7778_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7778_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7778_CTL_Ankle_1.err 2>&1
+        
+Submitted job 376 with external jobid '63159997'.
+
+[Thu Mar 27 17:14:33 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7785_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7785_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7785_CTL_Ankle_1.err
+    jobid: 382
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7785_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7785_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7785_CTL_Ankle_1.err 2>&1
+        
+Submitted job 382 with external jobid '63159999'.
+
+[Thu Mar 27 17:14:34 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7678_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7678_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7678_CTL_Ankle_1.err
+    jobid: 340
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7678_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7678_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7678_CTL_Ankle_1.err 2>&1
+        
+Submitted job 340 with external jobid '63160000'.
+
+[Thu Mar 27 17:14:35 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7771_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7771_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7771_FNF_Ankle_1.err
+    jobid: 371
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7771_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7771_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7771_FNF_Ankle_1.err 2>&1
+        
+Submitted job 371 with external jobid '63160001'.
+
+[Thu Mar 27 17:14:36 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7677_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7677_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7677_FNF_Ankle_1.err
+    jobid: 339
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7677_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7677_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7677_FNF_Ankle_1.err 2>&1
+        
+Submitted job 339 with external jobid '63160006'.
+
+[Thu Mar 27 17:14:37 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7781_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7781_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7781_CTL_Ankle_1.err
+    jobid: 380
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7781_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7781_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7781_CTL_Ankle_1.err 2>&1
+        
+Submitted job 380 with external jobid '63160007'.
+
+[Thu Mar 27 17:14:38 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7726_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7726_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7726_FNF_Ankle_1.err
+    jobid: 351
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7726_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7726_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7726_FNF_Ankle_1.err 2>&1
+        
+Submitted job 351 with external jobid '63160008'.
+
+[Thu Mar 27 17:14:39 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7775_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7775_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7775_FNF_Ankle_1.err
+    jobid: 373
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7775_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7775_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7775_FNF_Ankle_1.err 2>&1
+        
+Submitted job 373 with external jobid '63160009'.
+
+[Thu Mar 27 17:14:40 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7769_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7769_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7769_CTL_Ankle_1.err
+    jobid: 368
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7769_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7769_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7769_CTL_Ankle_1.err 2>&1
+        
+Submitted job 368 with external jobid '63160010'.
+
+[Thu Mar 27 17:14:41 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7754_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7754_FNF_Ankle_1.err
+    jobid: 358
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7754_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7754_FNF_Ankle_1.err 2>&1
+        
+Submitted job 358 with external jobid '63160011'.
+
+[Thu Mar 27 17:14:42 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7678_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7678_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7678_FNF_Ankle_1.err
+    jobid: 341
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7678_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7678_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7678_FNF_Ankle_1.err 2>&1
+        
+Submitted job 341 with external jobid '63160018'.
+
+[Thu Mar 27 17:14:43 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7754_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7754_CTL_Ankle_1.err
+    jobid: 356
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7754_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7754_CTL_Ankle_1.err 2>&1
+        
+Submitted job 356 with external jobid '63160019'.
+
+[Thu Mar 27 17:14:44 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7769_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7769_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7769_FNF_Ankle_1.err
+    jobid: 369
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7769_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7769_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7769_FNF_Ankle_1.err 2>&1
+        
+Submitted job 369 with external jobid '63160020'.
+
+[Thu Mar 27 17:14:45 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7755_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7755_CTL_Ankle_1.err
+    jobid: 360
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7755_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7755_CTL_Ankle_1.err 2>&1
+        
+Submitted job 360 with external jobid '63160021'.
+
+[Thu Mar 27 17:14:46 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7780_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7780_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7780_CTL_Ankle_1.err
+    jobid: 378
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7780_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7780_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7780_CTL_Ankle_1.err 2>&1
+        
+Submitted job 378 with external jobid '63160022'.
+
+[Thu Mar 27 17:14:48 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7754_CTL_Ankle_replicate.bw
+    log: output/logs/signal_CQTL_AM7754_CTL_Ankle_replicate.err
+    jobid: 357
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam             -o output/signals/indv/CQTL_AM7754_CTL_Ankle_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7754_CTL_Ankle_replicate.err 2>&1
+        
+Submitted job 357 with external jobid '63160023'.
+
+[Thu Mar 27 17:14:49 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7755_FNF_Ankle_replicate.bw
+    log: output/logs/signal_CQTL_AM7755_FNF_Ankle_replicate.err
+    jobid: 363
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam             -o output/signals/indv/CQTL_AM7755_FNF_Ankle_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7755_FNF_Ankle_replicate.err 2>&1
+        
+Submitted job 363 with external jobid '63160024'.
+
+[Thu Mar 27 17:14:50 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7778FE_CTL_Femur_1.bw
+    log: output/logs/signal_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 374
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7778FE_CTL_Femur_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7778FE_CTL_Femur_1.err 2>&1
+        
+Submitted job 374 with external jobid '63160026'.
+
+[Thu Mar 27 17:14:52 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7781_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7781_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7781_FNF_Ankle_1.err
+    jobid: 381
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7781_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7781_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7781_FNF_Ankle_1.err 2>&1
+        
+Submitted job 381 with external jobid '63160030'.
+
+[Thu Mar 27 17:14:54 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7765_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7765_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7765_CTL_Ankle_1.err
+    jobid: 366
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7765_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7765_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7765_CTL_Ankle_1.err 2>&1
+        
+Submitted job 366 with external jobid '63160036'.
+
+[Thu Mar 27 17:14:55 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7727_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7727_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7727_CTL_Ankle_1.err
+    jobid: 352
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7727_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7727_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7727_CTL_Ankle_1.err 2>&1
+        
+Submitted job 352 with external jobid '63160042'.
+
+[Thu Mar 27 17:14:56 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7763_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7763_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7763_CTL_Ankle_1.err
+    jobid: 364
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7763_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7763_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7763_CTL_Ankle_1.err 2>&1
+        
+Submitted job 364 with external jobid '63160051'.
+
+[Thu Mar 27 17:14:58 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7717_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7717_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7717_FNF_Ankle_1.err
+    jobid: 349
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7717_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7717_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7717_FNF_Ankle_1.err 2>&1
+        
+Submitted job 349 with external jobid '63160059'.
+
+[Thu Mar 27 17:15:00 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7765_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7765_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7765_FNF_Ankle_1.err
+    jobid: 367
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7765_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7765_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7765_FNF_Ankle_1.err 2>&1
+        
+Submitted job 367 with external jobid '63160064'.
+
+[Thu Mar 27 17:15:01 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7778_FNF_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7778_FNF_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7778_FNF_Ankle_1.err
+    jobid: 377
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7778_FNF_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7778_FNF_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7778_FNF_Ankle_1.err 2>&1
+        
+Submitted job 377 with external jobid '63160065'.
+
+[Thu Mar 27 17:15:02 2025]
+rule signal:
+    input: output/filtered/blk_filter/CQTL_AM7726_CTL_Ankle_1.sorted_final.bam
+    output: output/signals/indv/CQTL_AM7726_CTL_Ankle_1.bw
+    log: output/logs/signal_CQTL_AM7726_CTL_Ankle_1.err
+    jobid: 350
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 4
+
+ 
+        module load deeptools/3.5.4
+        mkdir -p output/signals/indv/
+
+        bamCoverage             --bam output/filtered/blk_filter/CQTL_AM7726_CTL_Ankle_1.sorted_final.bam             -o output/signals/indv/CQTL_AM7726_CTL_Ankle_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             --minMappingQuality 30             --samFlagInclude 66             --samFlagExclude 1284             --ignoreForNormalization chrX chrY chrM             --numberOfProcessors 4             > output/logs/signal_CQTL_AM7726_CTL_Ankle_1.err 2>&1
+        
+Submitted job 350 with external jobid '63160066'.
+[Thu Mar 27 17:22:58 2025]
+Finished job 348.
+1 of 49 steps (2%) done
+[Thu Mar 27 17:23:47 2025]
+Finished job 338.
+2 of 49 steps (4%) done
+[Thu Mar 27 17:25:04 2025]
+Finished job 352.
+3 of 49 steps (6%) done
+[Thu Mar 27 17:25:39 2025]
+Finished job 374.
+4 of 49 steps (8%) done
+[Thu Mar 27 17:26:01 2025]
+Finished job 353.
+5 of 49 steps (10%) done
+[Thu Mar 27 17:26:02 2025]
+Finished job 344.
+6 of 49 steps (12%) done
+[Thu Mar 27 17:26:50 2025]
+Finished job 347.
+7 of 49 steps (14%) done
+[Thu Mar 27 17:26:56 2025]
+Finished job 365.
+8 of 49 steps (16%) done
+[Thu Mar 27 17:27:06 2025]
+Finished job 350.
+9 of 49 steps (18%) done
+[Thu Mar 27 17:27:22 2025]
+Finished job 380.
+10 of 49 steps (20%) done
+[Thu Mar 27 17:27:39 2025]
+Finished job 385.
+11 of 49 steps (22%) done
+[Thu Mar 27 17:27:43 2025]
+Finished job 346.
+12 of 49 steps (24%) done
+[Thu Mar 27 17:27:44 2025]
+Finished job 345.
+13 of 49 steps (27%) done
+[Thu Mar 27 17:27:51 2025]
+Finished job 343.
+14 of 49 steps (29%) done
+[Thu Mar 27 17:27:56 2025]
+Finished job 349.
+15 of 49 steps (31%) done
+[Thu Mar 27 17:27:57 2025]
+Finished job 367.
+16 of 49 steps (33%) done
+[Thu Mar 27 17:28:11 2025]
+Finished job 340.
+17 of 49 steps (35%) done
+[Thu Mar 27 17:28:12 2025]
+Finished job 371.
+18 of 49 steps (37%) done
+[Thu Mar 27 17:28:15 2025]
+Finished job 351.
+19 of 49 steps (39%) done
+[Thu Mar 27 17:28:21 2025]
+Finished job 369.
+20 of 49 steps (41%) done
+[Thu Mar 27 17:28:31 2025]
+Finished job 375.
+21 of 49 steps (43%) done
+[Thu Mar 27 17:28:32 2025]
+Finished job 370.
+22 of 49 steps (45%) done
+[Thu Mar 27 17:28:33 2025]
+Finished job 359.
+23 of 49 steps (47%) done
+[Thu Mar 27 17:28:37 2025]
+Finished job 362.
+24 of 49 steps (49%) done
+[Thu Mar 27 17:28:54 2025]
+Finished job 376.
+25 of 49 steps (51%) done
+[Thu Mar 27 17:28:58 2025]
+Finished job 368.
+26 of 49 steps (53%) done
+[Thu Mar 27 17:29:02 2025]
+Finished job 356.
+27 of 49 steps (55%) done
+[Thu Mar 27 17:29:08 2025]
+Finished job 366.
+28 of 49 steps (57%) done
+[Thu Mar 27 17:29:16 2025]
+Finished job 354.
+29 of 49 steps (59%) done
+[Thu Mar 27 17:29:17 2025]
+Finished job 361.
+30 of 49 steps (61%) done
+[Thu Mar 27 17:29:34 2025]
+Finished job 341.
+31 of 49 steps (63%) done
+[Thu Mar 27 17:29:39 2025]
+Finished job 363.
+32 of 49 steps (65%) done
+[Thu Mar 27 17:29:41 2025]
+Finished job 355.
+33 of 49 steps (67%) done
+[Thu Mar 27 17:29:45 2025]
+Finished job 342.
+34 of 49 steps (69%) done
+[Thu Mar 27 17:30:03 2025]
+Finished job 358.
+35 of 49 steps (71%) done
+[Thu Mar 27 17:30:04 2025]
+Finished job 360.
+36 of 49 steps (73%) done
+[Thu Mar 27 17:30:06 2025]
+Finished job 357.
+37 of 49 steps (76%) done
+[Thu Mar 27 17:30:08 2025]
+Finished job 384.
+38 of 49 steps (78%) done
+[Thu Mar 27 17:30:09 2025]
+Finished job 379.
+39 of 49 steps (80%) done
+[Thu Mar 27 17:30:27 2025]
+Finished job 373.
+40 of 49 steps (82%) done
+[Thu Mar 27 17:30:33 2025]
+Finished job 364.
+41 of 49 steps (84%) done
+[Thu Mar 27 17:30:46 2025]
+Finished job 339.
+42 of 49 steps (86%) done
+[Thu Mar 27 17:31:03 2025]
+Finished job 378.
+43 of 49 steps (88%) done
+[Thu Mar 27 17:31:19 2025]
+Finished job 382.
+44 of 49 steps (90%) done
+[Thu Mar 27 17:31:20 2025]
+Finished job 381.
+45 of 49 steps (92%) done
+[Thu Mar 27 17:32:02 2025]
+Finished job 383.
+46 of 49 steps (94%) done
+[Thu Mar 27 17:33:39 2025]
+Finished job 372.
+47 of 49 steps (96%) done
+[Thu Mar 27 17:34:25 2025]
+Finished job 377.
+48 of 49 steps (98%) done
+
+[Thu Mar 27 17:34:26 2025]
+localrule all:
+    input: output/fastq/CQTL_AM7677_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7677_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7677_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7677_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7678_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7678_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7678_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7678_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7679_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7679_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7679_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7679_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7711_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7711_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7711_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7711_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7712_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7712_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7712_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7712_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7717_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7717_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7717_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7717_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7726_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7726_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7726_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7726_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7727_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7727_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7727_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7727_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7735_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7735_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7735_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7735_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R2.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R2.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R2.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R2.fastq.gz, output/fastq/CQTL_AM7763_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7763_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7763_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7763_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7765_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7765_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7765_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7765_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7769_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7769_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7769_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7769_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7771_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7771_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7771_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7771_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7775_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7775_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7775_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7775_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7778FE_CTL_Femur_1_R1.fastq.gz, output/fastq/CQTL_AM7778FE_CTL_Femur_1_R2.fastq.gz, output/fastq/CQTL_AM7778FE_FNF_Femur_1_R1.fastq.gz, output/fastq/CQTL_AM7778FE_FNF_Femur_1_R2.fastq.gz, output/fastq/CQTL_AM7778_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7778_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7778_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7778_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7780_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7780_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7780_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7780_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7781_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7781_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7781_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7781_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7785_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7785_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7785_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7785_FNF_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7786_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7786_CTL_Ankle_1_R2.fastq.gz, output/fastq/CQTL_AM7786_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7786_FNF_Ankle_1_R2.fastq.gz, output/QC/CQTL_AM7677_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7677_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7677_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7677_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7677_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7677_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7677_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7677_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7678_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7678_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7678_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7678_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7678_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7678_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7678_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7678_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7679_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7679_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7679_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7679_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7679_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7679_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7679_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7679_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7711_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7711_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7711_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7711_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7711_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7711_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7711_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7711_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7712_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7712_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7712_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7712_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7712_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7712_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7712_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7712_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7717_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7717_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7717_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7717_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7717_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7717_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7717_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7717_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7726_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7726_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7726_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7726_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7726_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7726_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7726_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7726_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7727_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7727_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7727_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7727_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7727_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7727_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7727_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7727_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7735_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7735_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7735_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7735_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7735_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7735_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7735_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7735_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7754_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7754_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7754_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7754_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7754_CTL_Ankle_replicate_R1_fastqc.zip, output/QC/CQTL_AM7754_CTL_Ankle_replicate_R1_fastqc.html, output/QC/CQTL_AM7754_CTL_Ankle_replicate_R2_fastqc.zip, output/QC/CQTL_AM7754_CTL_Ankle_replicate_R2_fastqc.html, output/QC/CQTL_AM7754_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7754_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7754_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7754_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7754_FNF_Ankle_replicate_R1_fastqc.zip, output/QC/CQTL_AM7754_FNF_Ankle_replicate_R1_fastqc.html, output/QC/CQTL_AM7754_FNF_Ankle_replicate_R2_fastqc.zip, output/QC/CQTL_AM7754_FNF_Ankle_replicate_R2_fastqc.html, output/QC/CQTL_AM7755_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7755_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7755_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7755_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7755_CTL_Ankle_replicate_R1_fastqc.zip, output/QC/CQTL_AM7755_CTL_Ankle_replicate_R1_fastqc.html, output/QC/CQTL_AM7755_CTL_Ankle_replicate_R2_fastqc.zip, output/QC/CQTL_AM7755_CTL_Ankle_replicate_R2_fastqc.html, output/QC/CQTL_AM7755_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7755_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7755_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7755_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7755_FNF_Ankle_replicate_R1_fastqc.zip, output/QC/CQTL_AM7755_FNF_Ankle_replicate_R1_fastqc.html, output/QC/CQTL_AM7755_FNF_Ankle_replicate_R2_fastqc.zip, output/QC/CQTL_AM7755_FNF_Ankle_replicate_R2_fastqc.html, output/QC/CQTL_AM7763_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7763_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7763_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7763_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7763_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7763_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7763_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7763_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7765_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7765_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7765_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7765_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7765_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7765_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7765_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7765_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7769_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7769_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7769_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7769_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7769_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7769_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7769_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7769_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7771_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7771_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7771_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7771_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7771_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7771_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7771_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7771_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7775_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7775_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7775_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7775_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7775_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7775_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7775_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7775_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7778FE_CTL_Femur_1_R1_fastqc.zip, output/QC/CQTL_AM7778FE_CTL_Femur_1_R1_fastqc.html, output/QC/CQTL_AM7778FE_CTL_Femur_1_R2_fastqc.zip, output/QC/CQTL_AM7778FE_CTL_Femur_1_R2_fastqc.html, output/QC/CQTL_AM7778FE_FNF_Femur_1_R1_fastqc.zip, output/QC/CQTL_AM7778FE_FNF_Femur_1_R1_fastqc.html, output/QC/CQTL_AM7778FE_FNF_Femur_1_R2_fastqc.zip, output/QC/CQTL_AM7778FE_FNF_Femur_1_R2_fastqc.html, output/QC/CQTL_AM7778_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7778_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7778_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7778_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7778_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7778_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7778_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7778_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7780_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7780_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7780_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7780_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7780_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7780_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7780_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7780_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7781_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7781_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7781_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7781_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7781_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7781_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7781_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7781_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7785_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7785_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7785_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7785_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7785_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7785_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7785_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7785_FNF_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7786_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7786_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7786_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7786_CTL_Ankle_1_R2_fastqc.html, output/QC/CQTL_AM7786_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7786_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7786_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7786_FNF_Ankle_1_R2_fastqc.html, output/trim/CQTL_AM7677_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7677_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7677_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7677_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7678_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7678_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7678_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7678_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7679_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7679_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7679_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7679_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7711_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7711_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7711_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7711_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7712_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7712_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7712_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7712_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7717_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7717_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7717_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7717_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7726_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7726_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7726_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7726_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7727_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7727_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7727_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7727_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7735_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7735_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7735_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7735_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_CTL_Ankle_replicate_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_CTL_Ankle_replicate_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_FNF_Ankle_replicate_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_FNF_Ankle_replicate_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_CTL_Ankle_replicate_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_CTL_Ankle_replicate_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_FNF_Ankle_replicate_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_FNF_Ankle_replicate_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7763_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7763_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7763_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7763_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7765_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7765_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7765_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7765_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7769_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7769_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7769_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7769_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7771_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7771_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7771_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7771_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7775_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7775_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7775_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7775_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778FE_CTL_Femur_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778FE_CTL_Femur_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778FE_FNF_Femur_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778FE_FNF_Femur_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7780_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7780_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7780_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7780_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7781_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7781_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7781_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7781_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7785_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7785_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7785_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7785_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7786_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7786_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7786_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7786_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7677_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7677_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7677_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7677_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7678_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7678_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7678_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7678_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7679_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7679_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7679_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7679_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7711_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7711_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7711_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7711_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7712_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7712_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7712_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7712_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7717_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7717_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7717_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7717_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7726_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7726_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7726_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7726_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7727_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7727_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7727_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7727_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7735_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7735_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7735_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7735_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_replicate_R2_val_2.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_replicate_R2_val_2.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_replicate_R2_val_2.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_replicate_R2_val_2.fq.gz, output/trim/CQTL_AM7763_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7763_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7763_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7763_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7765_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7765_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7765_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7765_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7769_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7769_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7769_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7769_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7771_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7771_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7771_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7771_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7775_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7775_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7775_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7775_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7778FE_CTL_Femur_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778FE_CTL_Femur_1_R2_val_2.fq.gz, output/trim/CQTL_AM7778FE_FNF_Femur_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778FE_FNF_Femur_1_R2_val_2.fq.gz, output/trim/CQTL_AM7778_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7778_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7780_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7780_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7780_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7780_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7781_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7781_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7781_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7781_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7785_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7785_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7785_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7785_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7786_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7786_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7786_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7786_FNF_Ankle_1_R2_val_2.fq.gz, output/align/CQTL_AM7677_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7677_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7678_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7678_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7679_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7679_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7711_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7711_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7712_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7712_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7717_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7717_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7726_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7726_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7727_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7727_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7735_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7735_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7754_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7754_CTL_Ankle_replicate_sorted.bam, output/align/CQTL_AM7754_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7754_FNF_Ankle_replicate_sorted.bam, output/align/CQTL_AM7755_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7755_CTL_Ankle_replicate_sorted.bam, output/align/CQTL_AM7755_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7755_FNF_Ankle_replicate_sorted.bam, output/align/CQTL_AM7763_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7763_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7765_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7765_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7769_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7769_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7771_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7771_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7775_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7775_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7778FE_CTL_Femur_1_sorted.bam, output/align/CQTL_AM7778FE_FNF_Femur_1_sorted.bam, output/align/CQTL_AM7778_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7778_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7780_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7780_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7781_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7781_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7785_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7785_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7786_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7786_FNF_Ankle_1_sorted.bam, output/metrics/CQTL_AM7677_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7677_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7678_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7678_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7679_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7679_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7711_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7711_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7712_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7712_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7717_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7717_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7726_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7726_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7727_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7727_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7735_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7735_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7754_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7754_CTL_Ankle_replicate_insert_size_metrics.txt, output/metrics/CQTL_AM7754_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7754_FNF_Ankle_replicate_insert_size_metrics.txt, output/metrics/CQTL_AM7755_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7755_CTL_Ankle_replicate_insert_size_metrics.txt, output/metrics/CQTL_AM7755_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7755_FNF_Ankle_replicate_insert_size_metrics.txt, output/metrics/CQTL_AM7763_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7763_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7765_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7765_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7769_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7769_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7771_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7771_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7775_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7775_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7778FE_CTL_Femur_1_insert_size_metrics.txt, output/metrics/CQTL_AM7778FE_FNF_Femur_1_insert_size_metrics.txt, output/metrics/CQTL_AM7778_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7778_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7780_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7780_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7781_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7781_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7785_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7785_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7786_CTL_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7786_FNF_Ankle_1_insert_size_metrics.txt, output/metrics/CQTL_AM7677_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7677_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7678_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7678_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7679_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7679_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7711_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7711_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7712_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7712_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7717_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7717_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7726_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7726_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7727_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7727_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7735_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7735_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7754_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7754_CTL_Ankle_replicate_insert_size_histogram.pdf, output/metrics/CQTL_AM7754_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7754_FNF_Ankle_replicate_insert_size_histogram.pdf, output/metrics/CQTL_AM7755_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7755_CTL_Ankle_replicate_insert_size_histogram.pdf, output/metrics/CQTL_AM7755_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7755_FNF_Ankle_replicate_insert_size_histogram.pdf, output/metrics/CQTL_AM7763_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7763_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7765_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7765_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7769_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7769_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7771_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7771_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7775_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7775_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7778FE_CTL_Femur_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7778FE_FNF_Femur_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7778_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7778_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7780_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7780_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7781_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7781_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7785_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7785_FNF_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7786_CTL_Ankle_1_insert_size_histogram.pdf, output/metrics/CQTL_AM7786_FNF_Ankle_1_insert_size_histogram.pdf, output/ataqv/CQTL_AM7677_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7711_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7712_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7717_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7717_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7726_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7727_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7727_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7754_CTL_Ankle_replicate.ataqv.json, output/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7754_FNF_Ankle_replicate.ataqv.json, output/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7755_CTL_Ankle_replicate.ataqv.json, output/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7755_FNF_Ankle_replicate.ataqv.json, output/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7763_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7771_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7778FE_CTL_Femur_1.ataqv.json, output/ataqv/CQTL_AM7778FE_FNF_Femur_1.ataqv.json, output/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7781_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7786_FNF_Ankle_1.ataqv.json, output/ataqv/CQTL_AM7677_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7711_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7712_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7717_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7717_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7726_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7727_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7727_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7754_CTL_Ankle_replicate.ataqv.txt, output/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7754_FNF_Ankle_replicate.ataqv.txt, output/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7755_CTL_Ankle_replicate.ataqv.txt, output/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7755_FNF_Ankle_replicate.ataqv.txt, output/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7763_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7771_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7778FE_CTL_Femur_1.ataqv.txt, output/ataqv/CQTL_AM7778FE_FNF_Femur_1.ataqv.txt, output/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7781_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7786_FNF_Ankle_1.ataqv.txt, output/bamQC/CQTL_AM7677_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7677_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7678_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7678_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7679_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7679_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7711_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7711_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7712_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7712_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7717_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7717_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7726_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7726_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7727_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7727_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7735_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7735_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7754_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7754_CTL_Ankle_replicate_bamQC, output/bamQC/CQTL_AM7754_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7754_FNF_Ankle_replicate_bamQC, output/bamQC/CQTL_AM7755_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7755_CTL_Ankle_replicate_bamQC, output/bamQC/CQTL_AM7755_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7755_FNF_Ankle_replicate_bamQC, output/bamQC/CQTL_AM7763_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7763_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7765_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7765_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7769_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7769_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7771_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7771_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7775_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7775_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7778FE_CTL_Femur_1_bamQC, output/bamQC/CQTL_AM7778FE_FNF_Femur_1_bamQC, output/bamQC/CQTL_AM7778_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7778_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7780_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7780_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7781_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7781_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7785_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7785_FNF_Ankle_1_bamQC, output/bamQC/CQTL_AM7786_CTL_Ankle_1_bamQC, output/bamQC/CQTL_AM7786_FNF_Ankle_1_bamQC, bam_atac_CQTL_all_samplesheet.txt, output/signals/indv/CQTL_AM7677_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7677_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7678_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7678_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7679_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7679_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7711_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7711_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7712_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7712_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7717_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7717_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7726_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7726_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7727_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7727_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7735_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7735_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7754_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7754_CTL_Ankle_replicate.bw, output/signals/indv/CQTL_AM7754_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7754_FNF_Ankle_replicate.bw, output/signals/indv/CQTL_AM7755_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7755_CTL_Ankle_replicate.bw, output/signals/indv/CQTL_AM7755_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7755_FNF_Ankle_replicate.bw, output/signals/indv/CQTL_AM7763_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7763_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7765_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7765_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7769_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7769_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7771_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7771_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7775_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7775_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7778FE_CTL_Femur_1.bw, output/signals/indv/CQTL_AM7778FE_FNF_Femur_1.bw, output/signals/indv/CQTL_AM7778_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7778_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7780_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7780_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7781_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7781_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7785_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7785_FNF_Ankle_1.bw, output/signals/indv/CQTL_AM7786_CTL_Ankle_1.bw, output/signals/indv/CQTL_AM7786_FNF_Ankle_1.bw
+    jobid: 0
+
+[Thu Mar 27 17:34:26 2025]
+Finished job 0.
+49 of 49 steps (100%) done
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2025-03-27T171358.259088.snakemake.log

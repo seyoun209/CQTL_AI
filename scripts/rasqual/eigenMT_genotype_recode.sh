@@ -35,7 +35,7 @@ for CONDITION in fnf pbs; do
         # Convert to PLINK additive format for this chromosome
         echo "Converting chr${CHR} to PLINK additive format..."
         plink2 --vcf ${VCF_FILE} \
-               --double-id \
+               --const-fid 0 \
                --recode A-transpose \
                --keep-allele-order \
                --out ${recode_dir}/${CONDITION}/recodeA_chr${CHR}_${CONDITION}

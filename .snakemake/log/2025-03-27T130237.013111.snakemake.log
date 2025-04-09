@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 43 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/ATAC_preprocess.smk:
+Missing input files for rule all:
+bam_atac_CQLT_all_samplesheet.txt

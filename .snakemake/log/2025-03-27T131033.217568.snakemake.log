@@ -1,0 +1,8 @@
+FileNotFoundError in line 13 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_calling_only.smk:
+[Errno 2] No such file or directory: 'bam_atac_CQLT_all_samplesheet.txt'
+  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_calling_only.smk", line 13, in <module>
+  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/io/common.py", line 873, in get_handle

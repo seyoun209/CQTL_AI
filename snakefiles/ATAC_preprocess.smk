@@ -43,26 +43,23 @@ onsuccess:
 rule all:
     input:
         # Explicitly list all expected output files
-        fastq = [expand("output/fastq/{sampleName}_{read}.fastq.gz",
-                       sampleName=key, read=['R1','R2'])
-                for key in read1.keys()],
-        qc = [expand("output/QC/{sampleName}_{read}_fastqc.{ext}",
-                    sampleName=key, read=['R1', 'R2'], ext=['zip', 'html'])
-              for key in read1.keys()],
-        trim_reports = [expand('output/trim/{sampleName}_R{read}.fastq.gz_trimming_report.txt',
-                             sampleName=key, read=['1', '2'])
-                       for key in read1.keys()],
-        trimmed_fastq = [expand('output/trim/{sampleName}_R{read}_val_{read}.fq.gz',
-                              sampleName=key, read=['1', '2'])
-                        for key in read1.keys()],
-        bam = [expand("output/align/{sampleName}_sorted.bam",sampleName=key) for key in read1.keys()],
-        #bam_stats = [expand("output/align/{sampleName}_stats.txt",sampleName=key) for key in read1.keys()],
-        metrics = [expand("output/metrics/{sampleName}_insert_size_metrics.txt", sampleName=key) for key in read1.keys()],
-        histograms = [expand("output/metrics/{sampleName}_insert_size_histogram.pdf", sampleName=key) for key in read1.keys()],
-        ataqv = [expand("output/ataqv/{sampleName}.ataqv.json", sampleName=key) for key in read1.keys()],
-        ataqv_txt = [expand("output/ataqv/{sampleName}.ataqv.txt", sampleName=key) for key in read1.keys()],
-        bamqc = [expand("output/bamQC/{sampleName}_bamqQC", sampleName=key) for key in read1.keys()]
-
+        fastq=[expand("output/fastq/{sampleName}_{read}.fastq.gz",
+                      sampleName=key, read=['R1', 'R2']) for key in read1.keys()],
+        qc=[expand("output/QC/{sampleName}_{read}_fastqc.{ext}",
+                   sampleName=key, read=['R1', 'R2'], ext=['zip', 'html']) for key in read1.keys()],
+        trim_reports=[expand('output/trim/{sampleName}_R{read}.fastq.gz_trimming_report.txt',
+                             sampleName=key, read=['1', '2']) for key in read1.keys()],
+        trimmed_fastq=[expand('output/trim/{sampleName}_R{read}_val_{read}.fq.gz',
+                              sampleName=key, read=['1', '2']) for key in read1.keys()],
+        bam=[expand("output/align/{sampleName}_sorted.bam", sampleName=key) for key in read1.keys()],
+        # bam_stats=[expand("output/align/{sampleName}_stats.txt", sampleName=key) for key in read1.keys()],
+        metrics=[expand("output/metrics/{sampleName}_insert_size_metrics.txt", sampleName=key) for key in read1.keys()],
+        histograms=[expand("output/metrics/{sampleName}_insert_size_histogram.pdf", sampleName=key) for key in read1.keys()],
+        ataqv=[expand("output/ataqv/{sampleName}.ataqv.json", sampleName=key) for key in read1.keys()],
+        ataqv_txt=[expand("output/ataqv/{sampleName}.ataqv.txt", sampleName=key) for key in read1.keys()],
+        bamqc=[expand("output/bamQC/{sampleName}_bamQC", sampleName=key) for key in read1.keys()],
+        bam_samplesheet="bam_atac_CQTL_all_samplesheet.txt",
+        signals=[expand("output/signals/indv/{sampleName}.bw", sampleName=key) for key in read1.keys()]  
 
 rule catReads:
     input:
@@ -216,9 +213,39 @@ rule filter_mitochondrial_reads:
         samtools index {output.filtered_bam} 1>> {log.out} 2>> {log.err}
         """
 
-rule collect_insert_size_metrics:
+rule rmblacklist_region:
     input:
         bam=rules.filter_mitochondrial_reads.output.filtered_bam
+    output:
+        final_bam="output/filtered/blk_filter/{sampleName}.blkfilter.bam",
+        sort_bam="output/filtered/blk_filter/{sampleName}.sorted_final.bam",
+        index_bam="output/filtered/blk_filter/{sampleName}.sorted_final.bam.bai",
+        stats="output/filtered/blk_filter/{sampleName}_stats.txt"
+    threads:4
+    params:
+        bedtools_ver=config['bedtools'],
+        samtools_version=config['samtoolsVers'],
+        Blacklist_bed=config['blacklist']
+    log:
+        err="output/logs/blk_filter_{sampleName}.err",
+        out="output/logs/blk_filter_{sampleName}.out"
+    shell:
+        """
+        module load bedtools/{params.bedtools_ver}
+        module load samtools/{params.samtools_version}
+
+        mkdir -p output/filtered/blk_filter
+
+        bedtools intersect -v -abam {input.bam} -b {params.Blacklist_bed} > {output.final_bam}
+
+        samtools sort -o {output.sort_bam} {output.final_bam}
+        samtools index {output.sort_bam} 1>> {log.out} 2>> {log.err}
+        samtools flagstat {output.sort_bam} > {output.stats} 2>> {log.err}
+        """
+
+rule collect_insert_size_metrics:
+    input:
+        bam=rules.rmblacklist_region.output.final_bam
     output:
         metrics="output/metrics/{sampleName}_insert_size_metrics.txt",
         histogram="output/metrics/{sampleName}_insert_size_histogram.pdf"
@@ -248,8 +275,8 @@ rule collect_insert_size_metrics:
 
 rule add_read_groups:
     input:
-        bam="output/filtered/{sampleName}_filtered.bam",
-        bai="output/filtered/{sampleName}_filtered.bam.bai"
+        bam=rules.rmblacklist_region.output.final_bam,
+        bai=rules.rmblacklist_region.output.index_bam
     output:
         bam="output/align/{sampleName}_RG.bam",
         bai="output/align/{sampleName}_RG.bam.bai"
@@ -311,7 +338,7 @@ rule qc_r:
     input:
         bam=rules.add_read_groups.output.bam
     output:
-        qc="output/bamQC/{sampleName}_bamqQC"
+        qc="output/bamQC/{sampleName}_bamQC"
     params:
         script="/work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R",
         r_version=config["r"]
@@ -322,7 +349,60 @@ rule qc_r:
     shell:
         """
         module load r/{params.r_version}
-        Rscript {params.script} {input.bam} "output/bamQ" "_RG.bam" 1> {log.out} 2> {log.err}
+        Rscript {params.script} {input.bam} "output/bamQC/" "_RG.bam" 1> {log.out} 2> {log.err}
         """
 
+rule generate_bam_samplesheet:
+    input:
+        bam=[f"output/filtered/blk_filter/{sampleName}.sorted_final.bam" for sampleName in read1.keys()]  # Ensure all BAM files are generated
+    output:
+        bam_samplesheet="bam_atac_CQTL_all_samplesheet.txt"  # Output BAM samplesheet
+    run:
+        import pandas as pd
+        import os
 
+        # Load the input samplesheet
+        samples = pd.read_csv(config["samplesheet"], sep="\t")
+
+        # Add Bam_file and Bam_directory columns
+        samples["Bam_file"] = samples.apply(
+            lambda row: f"{row['Proj']}_{row['Donor']}_{row['Condition']}_{row['Tissue']}_{row['Protocol_notes']}.sorted_final.bam", axis=1
+        )
+        samples["Bam_directory"] = "output/filtered/blk_filter"
+
+        # Save the updated samplesheet
+        samples.to_csv(output.bam_samplesheet, sep="\t", index=False)
+        print(f"Generated BAM samplesheet saved to {output.bam_samplesheet}")
+
+rule signal:
+    input:
+        bam=rules.rmblacklist_region.output.sort_bam
+    output:
+        signal="output/signals/indv/{sampleName}.bw"
+    log:
+        err="output/logs/signal_{sampleName}.err"
+    params:
+        deeptools_ver=config['deeptoolsVers'],
+        binSize=config['bin_size'],
+        effective_genomeSize=config['effective_genome_size'],
+        NormOption=config['normalize_option']
+    threads: 4
+    shell:
+        """ 
+        module load deeptools/{params.deeptools_ver}
+        mkdir -p output/signals/indv/
+
+        bamCoverage \
+            --bam {input.bam} \
+            -o {output.signal} \
+            --binSize {params.binSize} \
+            --normalizeUsing {params.NormOption} \
+            --effectiveGenomeSize {params.effective_genomeSize} \
+            --extendReads \
+            --minMappingQuality 30 \
+            --samFlagInclude 66 \
+            --samFlagExclude 1284 \
+            --ignoreForNormalization chrX chrY chrM \
+            --numberOfProcessors 4 \
+            > {log.err} 2>&1
+        """

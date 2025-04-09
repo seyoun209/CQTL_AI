@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Job counts:
+	count	jobs
+	1	all
+	1	create_count_matrices
+	2	hmmratac_merge_peaks_by_condition
+	4
+
+[Mon Dec 23 19:08:47 2024]
+rule hmmratac_merge_peaks_by_condition:
+    input: output/peaks/synovium/hmmratac/FACT_23-0013_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0016_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0022_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0023_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0025_FNF_synovium_1_accessible_regions.narrowPeak
+    output: output/peaks/synovium/FNF_consensus_hmmratac_peaks.bed
+    log: output/logs/synovium_hmmratac_merge_bedtools_FNF.err
+    jobid: 34
+    wildcards: tissue=synovium, cond=FNF
+
+
+        module load bedtools/2.30
+
+        mkdir -p output/peaks/synovium
+
+        # Merge peaks that appear in at least 50% of samples
+        multiIntersectBed -i output/peaks/synovium/hmmratac/FACT_23-0013_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0016_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0022_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0023_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0025_FNF_synovium_1_accessible_regions.narrowPeak | \     
+        awk -v min_samples=2 '$4 >= min_samples' |         bedtools merge > output/peaks/synovium/FNF_consensus_hmmratac_peaks.bed 2> output/logs/synovium_hmmratac_merge_bedtools_FNF.err
+
+        
+
+[Mon Dec 23 19:08:47 2024]
+rule create_count_matrices:
+    input: output/synovium/merged/all_macs3_merged.bed, output/synovium/merged/all_macs2_merged.bed, output/synovium/merged/all_hmmratac_merged.bed, /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam
+    output: output/synovium/counts/macs3.saf, output/synovium/counts/macs2.saf, output/synovium/counts/hhmratac.saf, output/synovium/counts/macs3_counts.txt, output/synovium/counts/macs2_counts.txt, output/synovium/counts/hmmratac_counts.txt
+    log: output/logs/synovium_count_matrices.err, output/logs/synovium_count_matrices.out
+    jobid: 37
+    wildcards: tissue=synovium
+    threads: 8
+
+InputFunctionException in line 241 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_counting.smk:
+TypeError: sequence item 0: expected str instance, list found
+Wildcards:
+tissue=synovium

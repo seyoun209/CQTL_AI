@@ -1,0 +1,2119 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	42	merge
+	42	rmDupWASP
+	85
+
+[Fri Dec 13 16:50:12 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7678_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7678_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7678_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7678_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7678_FNF_Ankle_1.log
+    jobid: 174
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7678_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7678_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7678_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7678_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7678_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 174 with external jobid '55848654'.
+
+[Fri Dec 13 16:50:13 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7727_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7727_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7727_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7727_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7727_CTL_Ankle_1.log
+    jobid: 185
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7727_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7727_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7727_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7727_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7727_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 185 with external jobid '55848655'.
+
+[Fri Dec 13 16:50:15 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7780_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7780_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7780_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7780_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7780_CTL_Ankle_1.log
+    jobid: 205
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7780_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7780_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7780_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7780_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7780_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 205 with external jobid '55848656'.
+
+[Fri Dec 13 16:50:16 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7717_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7717_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7717_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7717_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7717_FNF_Ankle_1.log
+    jobid: 182
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7717_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7717_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7717_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7717_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7717_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 182 with external jobid '55848657'.
+
+[Fri Dec 13 16:50:17 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7765_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7765_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7765_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7765_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7765_FNF_Ankle_1.log
+    jobid: 196
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7765_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7765_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7765_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7765_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7765_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 196 with external jobid '55848658'.
+
+[Fri Dec 13 16:50:18 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7677_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7677_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7677_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7677_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7677_FNF_Ankle_1.log
+    jobid: 172
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7677_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7677_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7677_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7677_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7677_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 172 with external jobid '55848659'.
+
+[Fri Dec 13 16:50:19 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7755_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7755_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7755_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7755_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7755_CTL_Ankle_1.log
+    jobid: 191
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7755_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7755_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7755_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7755_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7755_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 191 with external jobid '55848660'.
+
+[Fri Dec 13 16:50:20 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7712_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7712_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7712_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7712_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7712_CTL_Ankle_1.log
+    jobid: 179
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7712_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7712_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7712_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7712_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7712_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 179 with external jobid '55848661'.
+
+[Fri Dec 13 16:50:21 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7781_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7781_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7781_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7781_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7781_CTL_Ankle_1.log
+    jobid: 207
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7781_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7781_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7781_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7781_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7781_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 207 with external jobid '55848662'.
+
+[Fri Dec 13 16:50:22 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7735_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7735_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7735_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7735_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7735_CTL_Ankle_1.log
+    jobid: 187
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7735_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7735_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7735_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7735_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7735_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 187 with external jobid '55848663'.
+
+[Fri Dec 13 16:50:23 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7763_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7763_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7763_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7763_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7763_CTL_Ankle_1.log
+    jobid: 193
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7763_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7763_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7763_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7763_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7763_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 193 with external jobid '55848665'.
+
+[Fri Dec 13 16:50:24 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7775_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7775_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7775_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7775_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7775_FNF_Ankle_1.log
+    jobid: 202
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7775_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7775_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7775_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7775_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7775_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 202 with external jobid '55848666'.
+
+[Fri Dec 13 16:50:26 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7726_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7726_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7726_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7726_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7726_CTL_Ankle_1.log
+    jobid: 183
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7726_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7726_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7726_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7726_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7726_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 183 with external jobid '55848667'.
+
+[Fri Dec 13 16:50:27 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7785_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7785_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7785_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7785_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7785_CTL_Ankle_1.log
+    jobid: 209
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7785_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7785_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7785_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7785_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7785_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 209 with external jobid '55848668'.
+
+[Fri Dec 13 16:50:28 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7771_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7771_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7771_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7771_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7771_CTL_Ankle_1.log
+    jobid: 199
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7771_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7771_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7771_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7771_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7771_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 199 with external jobid '55848670'.
+
+[Fri Dec 13 16:50:29 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7785_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7785_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7785_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7785_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7785_FNF_Ankle_1.log
+    jobid: 210
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7785_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7785_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7785_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7785_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7785_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 210 with external jobid '55848671'.
+
+[Fri Dec 13 16:50:30 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7679_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7679_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7679_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7679_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7679_CTL_Ankle_1.log
+    jobid: 175
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7679_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7679_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7679_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7679_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7679_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 175 with external jobid '55848672'.
+
+[Fri Dec 13 16:50:31 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7780_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7780_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7780_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7780_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7780_FNF_Ankle_1.log
+    jobid: 206
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7780_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7780_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7780_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7780_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7780_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 206 with external jobid '55848673'.
+
+[Fri Dec 13 16:50:32 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7771_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7771_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7771_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7771_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7771_FNF_Ankle_1.log
+    jobid: 200
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7771_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7771_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7771_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7771_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7771_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 200 with external jobid '55848674'.
+
+[Fri Dec 13 16:50:34 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7678_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7678_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7678_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7678_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7678_CTL_Ankle_1.log
+    jobid: 173
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7678_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7678_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7678_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7678_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7678_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 173 with external jobid '55848681'.
+
+[Fri Dec 13 16:50:35 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7727_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7727_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7727_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7727_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7727_FNF_Ankle_1.log
+    jobid: 186
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7727_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7727_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7727_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7727_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7727_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 186 with external jobid '55848682'.
+
+[Fri Dec 13 16:50:36 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7677_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7677_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7677_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7677_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7677_CTL_Ankle_1.log
+    jobid: 171
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7677_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7677_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7677_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7677_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7677_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 171 with external jobid '55848683'.
+
+[Fri Dec 13 16:50:37 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7711_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7711_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7711_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7711_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7711_CTL_Ankle_1.log
+    jobid: 177
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7711_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7711_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7711_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7711_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7711_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 177 with external jobid '55848684'.
+
+[Fri Dec 13 16:50:38 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7726_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7726_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7726_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7726_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7726_FNF_Ankle_1.log
+    jobid: 184
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7726_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7726_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7726_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7726_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7726_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 184 with external jobid '55848685'.
+
+[Fri Dec 13 16:50:39 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7778_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7778_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7778_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7778_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7778_CTL_Ankle_1.log
+    jobid: 203
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7778_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7778_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7778_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7778_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7778_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 203 with external jobid '55848686'.
+
+[Fri Dec 13 16:50:40 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7711_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7711_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7711_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7711_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7711_FNF_Ankle_1.log
+    jobid: 178
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7711_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7711_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7711_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7711_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7711_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 178 with external jobid '55848687'.
+
+[Fri Dec 13 16:50:42 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7712_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7712_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7712_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7712_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7712_FNF_Ankle_1.log
+    jobid: 180
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7712_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7712_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7712_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7712_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7712_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 180 with external jobid '55848688'.
+
+[Fri Dec 13 16:50:43 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7754_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7754_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7754_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7754_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7754_CTL_Ankle_1.log
+    jobid: 189
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7754_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7754_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7754_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7754_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7754_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 189 with external jobid '55848689'.
+
+[Fri Dec 13 16:50:44 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7778_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7778_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7778_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7778_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7778_FNF_Ankle_1.log
+    jobid: 204
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7778_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7778_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7778_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7778_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7778_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 204 with external jobid '55848690'.
+
+[Fri Dec 13 16:50:45 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7679_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7679_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7679_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7679_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7679_FNF_Ankle_1.log
+    jobid: 176
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7679_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7679_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7679_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7679_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7679_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 176 with external jobid '55848691'.
+
+[Fri Dec 13 16:50:46 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7775_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7775_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7775_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7775_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7775_CTL_Ankle_1.log
+    jobid: 201
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7775_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7775_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7775_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7775_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7775_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 201 with external jobid '55848692'.
+
+[Fri Dec 13 16:50:47 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7763_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7763_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7763_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7763_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7763_FNF_Ankle_1.log
+    jobid: 194
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7763_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7763_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7763_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7763_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7763_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 194 with external jobid '55848693'.
+
+[Fri Dec 13 16:50:48 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7769_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7769_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7769_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7769_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7769_CTL_Ankle_1.log
+    jobid: 197
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7769_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7769_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7769_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7769_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7769_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 197 with external jobid '55848694'.
+
+[Fri Dec 13 16:50:49 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7786_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7786_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7786_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7786_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7786_CTL_Ankle_1.log
+    jobid: 211
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7786_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7786_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7786_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7786_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7786_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 211 with external jobid '55848695'.
+
+[Fri Dec 13 16:50:50 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7781_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7781_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7781_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7781_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7781_FNF_Ankle_1.log
+    jobid: 208
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7781_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7781_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7781_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7781_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7781_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 208 with external jobid '55848696'.
+
+[Fri Dec 13 16:50:52 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7754_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7754_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7754_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7754_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7754_FNF_Ankle_1.log
+    jobid: 190
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7754_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7754_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7754_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7754_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7754_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 190 with external jobid '55848698'.
+
+[Fri Dec 13 16:50:53 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7755_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7755_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7755_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7755_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7755_FNF_Ankle_1.log
+    jobid: 192
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7755_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7755_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7755_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7755_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7755_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 192 with external jobid '55848699'.
+
+[Fri Dec 13 16:50:54 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7717_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7717_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7717_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7717_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7717_CTL_Ankle_1.log
+    jobid: 181
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7717_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7717_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7717_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7717_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7717_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 181 with external jobid '55848700'.
+
+[Fri Dec 13 16:50:55 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7765_CTL_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7765_CTL_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7765_CTL_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7765_CTL_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7765_CTL_Ankle_1.log
+    jobid: 195
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7765_CTL_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7765_CTL_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7765_CTL_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7765_CTL_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7765_CTL_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 195 with external jobid '55848701'.
+
+[Fri Dec 13 16:50:56 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7735_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7735_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7735_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7735_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7735_FNF_Ankle_1.log
+    jobid: 188
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7735_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7735_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7735_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7735_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7735_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 188 with external jobid '55848702'.
+
+[Fri Dec 13 16:50:57 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7786_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7786_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7786_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7786_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7786_FNF_Ankle_1.log
+    jobid: 212
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7786_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7786_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7786_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7786_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7786_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 212 with external jobid '55848703'.
+
+[Fri Dec 13 16:50:58 2024]
+rule merge:
+    input: output/wasp/filtered_bam/CQTL_AM7769_FNF_Ankle_1.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.keep.bam
+    output: output/wasp/merge/CQTL_AM7769_FNF_Ankle_1.keep.merge.bam, output/wasp/merge/CQTL_AM7769_FNF_Ankle_1.sort_keep.merge.bam, output/wasp/merge/CQTL_AM7769_FNF_Ankle_1.sort_keep.merge.bam.bai
+    log: output/logs/merge_CQTL_AM7769_FNF_Ankle_1.log
+    jobid: 198
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 4
+
+
+        module load samtools/1.21
+        mkdir -p output/wasp/merge
+
+        samtools merge output/wasp/merge/CQTL_AM7769_FNF_Ankle_1.keep.merge.bam output/wasp/filtered_bam/CQTL_AM7769_FNF_Ankle_1.keep.bam output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.keep.bam
+        samtools sort -o output/wasp/merge/CQTL_AM7769_FNF_Ankle_1.sort_keep.merge.bam output/wasp/merge/CQTL_AM7769_FNF_Ankle_1.keep.merge.bam
+        samtools index output/wasp/merge/CQTL_AM7769_FNF_Ankle_1.sort_keep.merge.bam
+
+        
+Submitted job 198 with external jobid '55848704'.
+[Fri Dec 13 17:05:21 2024]
+Finished job 181.
+1 of 85 steps (1%) done
+
+[Fri Dec 13 17:05:22 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7717_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7717_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7717_CTL_Ankle_1.out
+    jobid: 95
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7717_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7717_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7717_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7717_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7717_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7717_CTL_Ankle_1.err
+
+        
+Submitted job 95 with external jobid '55848920'.
+[Fri Dec 13 17:15:43 2024]
+Finished job 185.
+2 of 85 steps (2%) done
+
+[Fri Dec 13 17:15:44 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7727_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7727_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7727_CTL_Ankle_1.out
+    jobid: 99
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7727_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7727_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7727_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7727_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7727_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7727_CTL_Ankle_1.err
+
+        
+Submitted job 99 with external jobid '55849282'.
+[Fri Dec 13 17:21:24 2024]
+Finished job 186.
+3 of 85 steps (4%) done
+
+[Fri Dec 13 17:21:25 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7727_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7727_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7727_FNF_Ankle_1.out
+    jobid: 100
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7727_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7727_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7727_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7727_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7727_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7727_FNF_Ankle_1.err
+
+        
+Submitted job 100 with external jobid '55849414'.
+[Fri Dec 13 17:25:06 2024]
+Finished job 171.
+4 of 85 steps (5%) done
+
+[Fri Dec 13 17:25:07 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7677_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7677_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7677_CTL_Ankle_1.out
+    jobid: 85
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7677_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7677_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7677_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7677_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7677_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7677_CTL_Ankle_1.err
+
+        
+Submitted job 85 with external jobid '55849470'.
+[Fri Dec 13 17:25:07 2024]
+Finished job 177.
+5 of 85 steps (6%) done
+
+[Fri Dec 13 17:25:08 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7711_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7711_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7711_CTL_Ankle_1.out
+    jobid: 91
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7711_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7711_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7711_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7711_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7711_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7711_CTL_Ankle_1.err
+
+        
+Submitted job 91 with external jobid '55849471'.
+[Fri Dec 13 17:25:26 2024]
+Finished job 95.
+6 of 85 steps (7%) done
+[Fri Dec 13 17:25:46 2024]
+Finished job 183.
+7 of 85 steps (8%) done
+
+[Fri Dec 13 17:25:47 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7726_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7726_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7726_CTL_Ankle_1.out
+    jobid: 97
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7726_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7726_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7726_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7726_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7726_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7726_CTL_Ankle_1.err
+
+        
+Submitted job 97 with external jobid '55849480'.
+[Fri Dec 13 17:25:55 2024]
+Finished job 182.
+8 of 85 steps (9%) done
+
+[Fri Dec 13 17:25:56 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7717_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7717_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7717_FNF_Ankle_1.out
+    jobid: 96
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7717_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7717_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7717_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7717_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7717_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7717_FNF_Ankle_1.err
+
+        
+Submitted job 96 with external jobid '55849484'.
+[Fri Dec 13 17:26:00 2024]
+Finished job 207.
+9 of 85 steps (11%) done
+
+[Fri Dec 13 17:26:02 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7781_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7781_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7781_CTL_Ankle_1.out
+    jobid: 121
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7781_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7781_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7781_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7781_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7781_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7781_CTL_Ankle_1.err
+
+        
+Submitted job 121 with external jobid '55849485'.
+[Fri Dec 13 17:26:56 2024]
+Finished job 200.
+10 of 85 steps (12%) done
+
+[Fri Dec 13 17:26:57 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7771_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7771_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7771_FNF_Ankle_1.out
+    jobid: 114
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7771_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7771_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7771_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7771_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7771_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7771_FNF_Ankle_1.err
+
+        
+Submitted job 114 with external jobid '55849498'.
+[Fri Dec 13 17:27:25 2024]
+Finished job 194.
+11 of 85 steps (13%) done
+
+[Fri Dec 13 17:27:26 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7763_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7763_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7763_FNF_Ankle_1.out
+    jobid: 108
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7763_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7763_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7763_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7763_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7763_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7763_FNF_Ankle_1.err
+
+        
+Submitted job 108 with external jobid '55849505'.
+[Fri Dec 13 17:29:09 2024]
+Finished job 180.
+12 of 85 steps (14%) done
+
+[Fri Dec 13 17:29:10 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7712_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7712_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7712_FNF_Ankle_1.out
+    jobid: 94
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7712_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7712_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7712_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7712_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7712_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7712_FNF_Ankle_1.err
+
+        
+Submitted job 94 with external jobid '55849522'.
+[Fri Dec 13 17:29:34 2024]
+Finished job 196.
+13 of 85 steps (15%) done
+
+[Fri Dec 13 17:29:36 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7765_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7765_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7765_FNF_Ankle_1.out
+    jobid: 110
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7765_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7765_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7765_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7765_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7765_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7765_FNF_Ankle_1.err
+
+        
+Submitted job 110 with external jobid '55849529'.
+[Fri Dec 13 17:30:17 2024]
+Finished job 212.
+14 of 85 steps (16%) done
+
+[Fri Dec 13 17:30:18 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7786_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7786_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7786_FNF_Ankle_1.out
+    jobid: 126
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7786_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7786_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7786_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7786_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7786_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7786_FNF_Ankle_1.err
+
+        
+Submitted job 126 with external jobid '55849540'.
+[Fri Dec 13 17:33:14 2024]
+Finished job 179.
+15 of 85 steps (18%) done
+
+[Fri Dec 13 17:33:15 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7712_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7712_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7712_CTL_Ankle_1.out
+    jobid: 93
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7712_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7712_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7712_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7712_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7712_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7712_CTL_Ankle_1.err
+
+        
+Submitted job 93 with external jobid '55849588'.
+[Fri Dec 13 17:34:09 2024]
+Finished job 173.
+16 of 85 steps (19%) done
+
+[Fri Dec 13 17:34:10 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7678_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7678_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7678_CTL_Ankle_1.out
+    jobid: 87
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7678_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7678_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7678_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7678_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7678_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7678_CTL_Ankle_1.err
+
+        
+Submitted job 87 with external jobid '55849602'.
+[Fri Dec 13 17:36:28 2024]
+Finished job 176.
+17 of 85 steps (20%) done
+
+[Fri Dec 13 17:36:29 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7679_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7679_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7679_FNF_Ankle_1.out
+    jobid: 90
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7679_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7679_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7679_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7679_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7679_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7679_FNF_Ankle_1.err
+
+        
+Submitted job 90 with external jobid '55849633'.
+[Fri Dec 13 17:38:24 2024]
+Finished job 195.
+18 of 85 steps (21%) done
+
+[Fri Dec 13 17:38:25 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7765_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7765_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7765_CTL_Ankle_1.out
+    jobid: 109
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7765_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7765_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7765_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7765_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7765_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7765_CTL_Ankle_1.err
+
+        
+Submitted job 109 with external jobid '55849661'.
+[Fri Dec 13 17:38:26 2024]
+Finished job 198.
+19 of 85 steps (22%) done
+
+[Fri Dec 13 17:38:27 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7769_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7769_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7769_FNF_Ankle_1.out
+    jobid: 112
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7769_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7769_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7769_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7769_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7769_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7769_FNF_Ankle_1.err
+
+        
+Submitted job 112 with external jobid '55849662'.
+[Fri Dec 13 17:38:40 2024]
+Finished job 184.
+20 of 85 steps (24%) done
+
+[Fri Dec 13 17:38:41 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7726_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7726_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7726_FNF_Ankle_1.out
+    jobid: 98
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7726_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7726_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7726_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7726_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7726_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7726_FNF_Ankle_1.err
+
+        
+Submitted job 98 with external jobid '55849663'.
+[Fri Dec 13 17:39:16 2024]
+Finished job 197.
+21 of 85 steps (25%) done
+
+[Fri Dec 13 17:39:17 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7769_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7769_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7769_CTL_Ankle_1.out
+    jobid: 111
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7769_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7769_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7769_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7769_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7769_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7769_CTL_Ankle_1.err
+
+        
+Submitted job 111 with external jobid '55849671'.
+[Fri Dec 13 17:39:27 2024]
+Finished job 199.
+22 of 85 steps (26%) done
+
+[Fri Dec 13 17:39:28 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7771_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7771_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7771_CTL_Ankle_1.out
+    jobid: 113
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7771_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7771_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7771_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7771_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7771_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7771_CTL_Ankle_1.err
+
+        
+Submitted job 113 with external jobid '55849675'.
+[Fri Dec 13 17:39:37 2024]
+Finished job 178.
+23 of 85 steps (27%) done
+
+[Fri Dec 13 17:39:38 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7711_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7711_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7711_FNF_Ankle_1.out
+    jobid: 92
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7711_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7711_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7711_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7711_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7711_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7711_FNF_Ankle_1.err
+
+        
+Submitted job 92 with external jobid '55849676'.
+[Fri Dec 13 17:41:03 2024]
+Finished job 189.
+24 of 85 steps (28%) done
+
+[Fri Dec 13 17:41:04 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7754_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7754_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7754_CTL_Ankle_1.out
+    jobid: 103
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7754_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7754_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7754_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7754_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7754_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7754_CTL_Ankle_1.err
+
+        
+Submitted job 103 with external jobid '55849699'.
+[Fri Dec 13 17:42:04 2024]
+Finished job 192.
+25 of 85 steps (29%) done
+
+[Fri Dec 13 17:42:05 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7755_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7755_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7755_FNF_Ankle_1.out
+    jobid: 106
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7755_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7755_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7755_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7755_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7755_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7755_FNF_Ankle_1.err
+
+        
+Submitted job 106 with external jobid '55849708'.
+[Fri Dec 13 17:42:18 2024]
+Finished job 203.
+26 of 85 steps (31%) done
+
+[Fri Dec 13 17:42:19 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7778_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7778_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7778_CTL_Ankle_1.out
+    jobid: 117
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7778_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7778_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7778_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7778_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7778_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7778_CTL_Ankle_1.err
+
+        
+Submitted job 117 with external jobid '55849709'.
+[Fri Dec 13 17:43:54 2024]
+Finished job 187.
+27 of 85 steps (32%) done
+
+[Fri Dec 13 17:43:55 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7735_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7735_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7735_CTL_Ankle_1.out
+    jobid: 101
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7735_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7735_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7735_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7735_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7735_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7735_CTL_Ankle_1.err
+
+        
+Submitted job 101 with external jobid '55849734'.
+[Fri Dec 13 17:44:45 2024]
+Finished job 211.
+28 of 85 steps (33%) done
+
+[Fri Dec 13 17:44:46 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7786_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7786_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7786_CTL_Ankle_1.out
+    jobid: 125
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7786_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7786_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7786_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7786_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7786_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7786_CTL_Ankle_1.err
+
+        
+Submitted job 125 with external jobid '55849745'.
+[Fri Dec 13 17:46:31 2024]
+Finished job 99.
+29 of 85 steps (34%) done
+[Fri Dec 13 17:46:47 2024]
+Finished job 191.
+30 of 85 steps (35%) done
+
+[Fri Dec 13 17:46:48 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7755_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7755_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7755_CTL_Ankle_1.out
+    jobid: 105
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7755_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7755_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7755_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7755_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7755_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7755_CTL_Ankle_1.err
+
+        
+Submitted job 105 with external jobid '55849770'.
+[Fri Dec 13 17:47:30 2024]
+Finished job 188.
+31 of 85 steps (36%) done
+
+[Fri Dec 13 17:47:31 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7735_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7735_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7735_FNF_Ankle_1.out
+    jobid: 102
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7735_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7735_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7735_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7735_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7735_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7735_FNF_Ankle_1.err
+
+        
+Submitted job 102 with external jobid '55849779'.
+[Fri Dec 13 17:47:31 2024]
+Finished job 193.
+32 of 85 steps (38%) done
+
+[Fri Dec 13 17:47:32 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7763_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7763_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7763_CTL_Ankle_1.out
+    jobid: 107
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7763_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7763_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7763_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7763_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7763_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7763_CTL_Ankle_1.err
+
+        
+Submitted job 107 with external jobid '55849780'.
+[Fri Dec 13 17:48:26 2024]
+Finished job 202.
+33 of 85 steps (39%) done
+
+[Fri Dec 13 17:48:27 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7775_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7775_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7775_FNF_Ankle_1.out
+    jobid: 116
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7775_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7775_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7775_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7775_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7775_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7775_FNF_Ankle_1.err
+
+        
+Submitted job 116 with external jobid '55849789'.
+[Fri Dec 13 17:48:30 2024]
+Finished job 206.
+34 of 85 steps (40%) done
+
+[Fri Dec 13 17:48:31 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7780_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7780_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7780_FNF_Ankle_1.out
+    jobid: 120
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7780_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7780_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7780_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7780_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7780_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7780_FNF_Ankle_1.err
+
+        
+Submitted job 120 with external jobid '55849791'.
+[Fri Dec 13 17:49:20 2024]
+Finished job 208.
+35 of 85 steps (41%) done
+
+[Fri Dec 13 17:49:21 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7781_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7781_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7781_FNF_Ankle_1.out
+    jobid: 122
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7781_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7781_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7781_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7781_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7781_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7781_FNF_Ankle_1.err
+
+        
+Submitted job 122 with external jobid '55849802'.
+[Fri Dec 13 17:49:23 2024]
+Finished job 210.
+36 of 85 steps (42%) done
+
+[Fri Dec 13 17:49:24 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7785_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7785_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7785_FNF_Ankle_1.out
+    jobid: 124
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7785_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7785_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7785_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7785_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7785_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7785_FNF_Ankle_1.err
+
+        
+Submitted job 124 with external jobid '55849803'.
+[Fri Dec 13 17:50:15 2024]
+Finished job 190.
+37 of 85 steps (44%) done
+
+[Fri Dec 13 17:50:16 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7754_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7754_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7754_FNF_Ankle_1.out
+    jobid: 104
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7754_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7754_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7754_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7754_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7754_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7754_FNF_Ankle_1.err
+
+        
+Submitted job 104 with external jobid '55849817'.
+[Fri Dec 13 17:50:20 2024]
+Finished job 205.
+38 of 85 steps (45%) done
+
+[Fri Dec 13 17:50:21 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7780_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7780_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7780_CTL_Ankle_1.out
+    jobid: 119
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7780_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7780_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7780_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7780_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7780_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7780_CTL_Ankle_1.err
+
+        
+Submitted job 119 with external jobid '55849818'.
+[Fri Dec 13 17:52:04 2024]
+Finished job 209.
+39 of 85 steps (46%) done
+
+[Fri Dec 13 17:52:05 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7785_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7785_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7785_CTL_Ankle_1.out
+    jobid: 123
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7785_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7785_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7785_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7785_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7785_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7785_CTL_Ankle_1.err
+
+        
+Submitted job 123 with external jobid '55849834'.
+[Fri Dec 13 17:52:07 2024]
+Finished job 174.
+40 of 85 steps (47%) done
+
+[Fri Dec 13 17:52:08 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7678_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7678_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7678_FNF_Ankle_1.out
+    jobid: 88
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7678_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7678_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7678_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7678_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7678_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7678_FNF_Ankle_1.err
+
+        
+Submitted job 88 with external jobid '55849835'.
+[Fri Dec 13 17:53:53 2024]
+Finished job 175.
+41 of 85 steps (48%) done
+
+[Fri Dec 13 17:53:54 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7679_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7679_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7679_CTL_Ankle_1.out
+    jobid: 89
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7679_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7679_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7679_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7679_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7679_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7679_CTL_Ankle_1.err
+
+        
+Submitted job 89 with external jobid '55851849'.
+[Fri Dec 13 17:55:38 2024]
+Finished job 204.
+42 of 85 steps (49%) done
+
+[Fri Dec 13 17:55:39 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7778_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7778_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7778_FNF_Ankle_1.out
+    jobid: 118
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7778_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7778_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7778_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7778_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7778_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7778_FNF_Ankle_1.err
+
+        
+Submitted job 118 with external jobid '55851869'.
+[Fri Dec 13 17:56:33 2024]
+Finished job 172.
+43 of 85 steps (51%) done
+
+[Fri Dec 13 17:56:34 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7677_FNF_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7677_FNF_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7677_FNF_Ankle_1.out
+    jobid: 86
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7677_FNF_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7677_FNF_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7677_FNF_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7677_FNF_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7677_FNF_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7677_FNF_Ankle_1.err
+
+        
+Submitted job 86 with external jobid '55851880'.
+[Fri Dec 13 17:57:25 2024]
+Finished job 100.
+44 of 85 steps (52%) done
+[Fri Dec 13 18:01:43 2024]
+Finished job 85.
+45 of 85 steps (53%) done
+[Fri Dec 13 18:05:09 2024]
+Finished job 91.
+46 of 85 steps (54%) done
+[Fri Dec 13 18:06:00 2024]
+Finished job 201.
+47 of 85 steps (55%) done
+
+[Fri Dec 13 18:06:01 2024]
+rule rmDupWASP:
+    input: output/wasp/merge/CQTL_AM7775_CTL_Ankle_1.sort_keep.merge.bam
+    output: output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1_stats.txt
+    log: output/logs/rmdup_wasp_CQTL_AM7775_CTL_Ankle_1.err, output/logs/rmdup_wasp_CQTL_AM7775_CTL_Ankle_1.out
+    jobid: 115
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 8
+
+
+        module add wasp/2023-02
+        module load samtools/1.21
+        module load python/3.9.6
+        mkdir -p output/wasp/rmdup
+
+        python /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/mapping/rmdup_pe.py output/wasp/merge/CQTL_AM7775_CTL_Ankle_1.sort_keep.merge.bam output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.rmdup.bam
+
+        samtools sort -o output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.rmdup.bam 1> output/logs/rmdup_wasp_CQTL_AM7775_CTL_Ankle_1.out 2> output/logs/rmdup_wasp_CQTL_AM7775_CTL_Ankle_1.err
+        samtools index output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam 1>> output/logs/rmdup_wasp_CQTL_AM7775_CTL_Ankle_1.out 2>> output/logs/rmdup_wasp_CQTL_AM7775_CTL_Ankle_1.err
+        samtools flagstat output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam > output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1_stats.txt 2>> output/logs/rmdup_wasp_CQTL_AM7775_CTL_Ankle_1.err
+
+        
+Submitted job 115 with external jobid '55851974'.
+[Fri Dec 13 18:07:39 2024]
+Finished job 96.
+48 of 85 steps (56%) done
+[Fri Dec 13 18:09:17 2024]
+Finished job 97.
+49 of 85 steps (58%) done
+[Fri Dec 13 18:10:08 2024]
+Finished job 121.
+50 of 85 steps (59%) done
+[Fri Dec 13 18:11:40 2024]
+Finished job 108.
+51 of 85 steps (60%) done
+[Fri Dec 13 18:11:41 2024]
+Finished job 114.
+52 of 85 steps (61%) done
+[Fri Dec 13 18:13:54 2024]
+Finished job 126.
+53 of 85 steps (62%) done
+[Fri Dec 13 18:14:40 2024]
+Finished job 110.
+54 of 85 steps (64%) done
+[Fri Dec 13 18:16:05 2024]
+Finished job 94.
+55 of 85 steps (65%) done
+[Fri Dec 13 18:18:48 2024]
+Finished job 87.
+56 of 85 steps (66%) done
+[Fri Dec 13 18:22:52 2024]
+Finished job 93.
+57 of 85 steps (67%) done
+[Fri Dec 13 18:28:04 2024]
+Finished job 90.
+58 of 85 steps (68%) done
+[Fri Dec 13 18:28:43 2024]
+Finished job 92.
+59 of 85 steps (69%) done
+[Fri Dec 13 18:29:55 2024]
+Finished job 113.
+60 of 85 steps (71%) done
+[Fri Dec 13 18:30:32 2024]
+Finished job 109.
+61 of 85 steps (72%) done
+[Fri Dec 13 18:34:37 2024]
+Finished job 98.
+62 of 85 steps (73%) done
+[Fri Dec 13 18:36:16 2024]
+Finished job 111.
+63 of 85 steps (74%) done
+[Fri Dec 13 18:36:17 2024]
+Finished job 112.
+64 of 85 steps (75%) done
+[Fri Dec 13 18:41:34 2024]
+Finished job 103.
+65 of 85 steps (76%) done
+[Fri Dec 13 18:43:05 2024]
+Finished job 106.
+66 of 85 steps (78%) done
+[Fri Dec 13 18:46:01 2024]
+Finished job 101.
+67 of 85 steps (79%) done
+[Fri Dec 13 18:46:02 2024]
+Finished job 117.
+68 of 85 steps (80%) done
+[Fri Dec 13 18:49:13 2024]
+Finished job 125.
+69 of 85 steps (81%) done
+[Fri Dec 13 18:50:57 2024]
+Finished job 105.
+70 of 85 steps (82%) done
+[Fri Dec 13 18:53:31 2024]
+Finished job 107.
+71 of 85 steps (84%) done
+[Fri Dec 13 18:53:55 2024]
+Finished job 102.
+72 of 85 steps (85%) done
+[Fri Dec 13 18:54:38 2024]
+Finished job 124.
+73 of 85 steps (86%) done
+[Fri Dec 13 18:56:28 2024]
+Finished job 116.
+74 of 85 steps (87%) done
+[Fri Dec 13 18:58:31 2024]
+Finished job 104.
+75 of 85 steps (88%) done
+[Fri Dec 13 18:59:09 2024]
+Finished job 123.
+76 of 85 steps (89%) done
+[Fri Dec 13 18:59:32 2024]
+Finished job 120.
+77 of 85 steps (91%) done
+[Fri Dec 13 19:00:25 2024]
+Finished job 122.
+78 of 85 steps (92%) done
+[Fri Dec 13 19:00:58 2024]
+Finished job 119.
+79 of 85 steps (93%) done
+[Fri Dec 13 19:02:15 2024]
+Finished job 88.
+80 of 85 steps (94%) done
+[Fri Dec 13 19:05:35 2024]
+Finished job 89.
+81 of 85 steps (95%) done
+[Fri Dec 13 19:11:46 2024]
+Finished job 118.
+82 of 85 steps (96%) done
+[Fri Dec 13 19:12:10 2024]
+Finished job 86.
+83 of 85 steps (98%) done
+[Fri Dec 13 19:35:05 2024]
+Finished job 115.
+84 of 85 steps (99%) done
+
+[Fri Dec 13 19:35:06 2024]
+localrule all:
+    input: output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7677_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7677_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7678_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7679_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7711_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7712_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7717_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7726_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7727_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7735_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7754_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7763_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7765_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7769_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7771_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7775_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7778_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7780_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7781_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7785_FNF_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_CTL_Ankle_1_filtered.keep.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.remap.fq1.gz, output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.remap.fq2.gz, output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.to.remap.bam, output/wasp/filter_remapped_reads/CQTL_AM7786_FNF_Ankle_1_filtered.keep.bam, output/wasp/filtered_bam/CQTL_AM7677_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7677_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7678_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7678_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7679_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7679_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7711_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7711_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7712_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7712_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7717_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7717_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7726_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7726_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7727_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7727_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7735_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7735_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7754_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7754_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7755_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7755_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7763_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7763_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7765_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7765_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7769_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7769_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7771_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7771_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7775_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7775_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7778_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7778_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7780_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7780_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7781_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7781_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7785_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7785_FNF_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7786_CTL_Ankle_1.keep.bam, output/wasp/filtered_bam/CQTL_AM7786_FNF_Ankle_1.keep.bam, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7677_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7677_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7678_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7678_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7679_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7679_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7711_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7711_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7712_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7712_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7717_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7717_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7726_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7726_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7727_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7727_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7735_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7735_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7763_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7763_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7765_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7765_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7769_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7769_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7771_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7771_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7775_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7775_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7778_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7778_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7780_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7780_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7781_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7781_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7785_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7785_FNF_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7786_CTL_Ankle_1_stats.txt, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.rmdup.bam, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1.sorted_wasp.bam.bai, output/wasp/rmdup/CQTL_AM7786_FNF_Ankle_1_stats.txt
+    jobid: 0
+
+[Fri Dec 13 19:35:06 2024]
+Finished job 0.
+85 of 85 steps (100%) done
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-13T165009.126994.snakemake.log

@@ -40,29 +40,27 @@ rule all:
     input:
         expand("output/wasp/filter_remapped_reads/{sampleName}_filtered.{ext}",
                sampleName=bam_files.keys(),
-               ext=['remap.fq1.gz', 'remap.fq2.gz','to.remap.bam','keep.bam']), 
+               ext=['remap.fq1.gz', 'remap.fq2.gz', 'to.remap.bam', 'keep.bam']),
         expand("output/wasp/filtered_bam/{sampleName}.keep.bam",
-                sampleName=bam_files.keys()),
+               sampleName=bam_files.keys()),
         expand("output/wasp/rmdup/{sampleName}{ext}",
-                sampleName=bam_files.keys(),
-                ext=['.rmdup.bam','.sorted_wasp.bam','.sorted_wasp.bam.bai','_stats.txt']),
+               sampleName=bam_files.keys(),
+               ext=['.rmdup.bam', '.sorted_wasp.bam', '.sorted_wasp.bam.bai', '_stats.txt']),
         expand("output/wasp/blk_filter/{sampleName}{ext}",
-                sampleName=bam_files.keys(),
-                ext=[".blkfilter.bam",".sorted_final.bam",".sorted_final.bam.bai","_stats.txt"]),
-        ataqv = expand("output/wasp/ataqv/{sampleName}.ataqv.json", sampleName=bam_files.keys()),
-        ataqv_txt = expand("output/wasp/ataqv/{sampleName}.ataqv.txt", sampleName=bam_files.keys()),
-        bamqc = [expand("output/wasp/bamQC/{sampleName}_bamqQC", sampleName=key) for key in bam_files.keys()],
-        #merged by condition
-        cond_macs3 = expand("output/peaks/merged_cond/{cond}_macs3_merged{ext}",ext=['.bed','.saf','_counts.txt'], cond=['CTL','FNF']),
-        # Merged files (single files, no expand needed)
-        merged_bed = expand("output/peaks/merged/allsamples_{tool}_merged.bed",tool=['macs3','macs2','hmmratac','rocco']),
-        merged_saf = expand("output/peaks/merged/allsamples_{tool}_merged.saf",tool=['macs3','macs2','hmmratac','rocco']),
-        merged_counts = expand("output/peaks/merged/allsamples_{tool}_merged_counts.txt",tool=['macs3','macs2','hmmratac','rocco']),
-        # Individual files
-        indv_counts = expand("output/peaks/{tool}/indv/{sampleName}_count.txt", tool=['macs3','macs2','hmmratac','rocco'],sampleName=bam_files.keys()),
-        # Signal files
-        signal = expand("output/signals/merged_signal/{cond}_merged.bw", cond=['CTL','FNF']),
-        indv_signal = expand("output/signals/indv/{sampleName}.bw", sampleName=bam_files.keys())
+               sampleName=bam_files.keys(),
+               ext=[".blkfilter.bam", ".sorted_final.bam", ".sorted_final.bam.bai", "_stats.txt"]),
+        expand("output/wasp/ataqv/{sampleName}.ataqv.json", sampleName=bam_files.keys()),
+        expand("output/wasp/ataqv/{sampleName}.ataqv.txt", sampleName=bam_files.keys()),
+        [expand("output/wasp/bamQC/{sampleName}_bamqQC", sampleName=key) for key in bam_files.keys()],
+        expand("output/peaks/merged_cond/{cond}_macs3_merged{ext}",
+               ext=['.bed', '.saf', '_counts.txt'], cond=['CTL', 'FNF']),
+        expand("output/peaks/merged/allsamples_{tool}_merged.bed", tool=['macs3', 'macs2', 'hmmratac', 'rocco']),
+        expand("output/peaks/merged/allsamples_{tool}_merged.saf", tool=['macs3', 'macs2', 'hmmratac', 'rocco']),
+        expand("output/peaks/merged/allsamples_{tool}_merged_counts.txt", tool=['macs3', 'macs2', 'hmmratac', 'rocco']),
+        expand("output/peaks/{tool}/indv/{sampleName}_count.txt",
+               tool=['macs3', 'macs2', 'hmmratac', 'rocco'], sampleName=bam_files.keys()),
+        expand("output/signals/merged_signal/{cond}_merged.bw", cond=['CTL', 'FNF']),
+        expand("output/signals/indv/{sampleName}.bw", sampleName=bam_files.keys())
 
 
 rule extract_sample_ids:

@@ -1,0 +1,783 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all_subset
+	1	extract_sample_ids
+	6	filter_remapped_reads
+	6	find_intersecting_snps
+	6	merge
+	22	reheader_imputed
+	6	remap_wasp_reads
+	6	rmDupWASP
+	6	run_ataqv_subset
+	1	snp2h5
+	61
+
+[Tue Dec 24 15:41:29 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr5.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr5.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr5.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr5_rename.log, output/logs/imputed_FNF_OTHER_chr5_rename.log
+    jobid: 12
+    wildcards: chrom=5
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=5
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_5_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_5_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_5_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr5.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr5.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr5_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_5_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr5.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr5.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr5_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr5.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr5.fnf.rename.vcf.gz
+        
+Submitted job 12 with external jobid '56365596'.
+
+[Tue Dec 24 15:41:34 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr10.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr10.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr10.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr10_rename.log, output/logs/imputed_FNF_OTHER_chr10_rename.log
+    jobid: 17
+    wildcards: chrom=10
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=10
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_10_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_10_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_10_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr10.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr10.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr10_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_10_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr10.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr10.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr10_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr10.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr10.fnf.rename.vcf.gz
+        
+Submitted job 17 with external jobid '56365597'.
+
+[Tue Dec 24 15:41:39 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr20.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr20.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr20.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr20_rename.log, output/logs/imputed_FNF_OTHER_chr20_rename.log
+    jobid: 27
+    wildcards: chrom=20
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=20
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_20_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_20_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_20_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr20.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr20.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr20_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_20_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr20.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr20.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr20_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr20.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr20.fnf.rename.vcf.gz
+        
+Submitted job 27 with external jobid '56365598'.
+
+[Tue Dec 24 15:41:45 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr22.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr22.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr22.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr22_rename.log, output/logs/imputed_FNF_OTHER_chr22_rename.log
+    jobid: 29
+    wildcards: chrom=22
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=22
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_22_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_22_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_22_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr22.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr22.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr22_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_22_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr22.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr22.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr22_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr22.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr22.fnf.rename.vcf.gz
+        
+Submitted job 29 with external jobid '56365599'.
+
+[Tue Dec 24 15:41:50 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr14.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr14.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr14.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr14_rename.log, output/logs/imputed_FNF_OTHER_chr14_rename.log
+    jobid: 21
+    wildcards: chrom=14
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=14
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_14_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_14_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_14_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr14.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr14.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr14_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_14_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr14.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr14.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr14_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr14.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr14.fnf.rename.vcf.gz
+        
+Submitted job 21 with external jobid '56365600'.
+Waiting at most 500 seconds for missing files.
+
+[Tue Dec 24 15:41:55 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr4.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr4.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr4.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr4_rename.log, output/logs/imputed_FNF_OTHER_chr4_rename.log
+    jobid: 11
+    wildcards: chrom=4
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=4
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_4_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_4_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_4_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr4.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr4.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr4_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_4_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr4.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr4.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr4_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr4.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr4.fnf.rename.vcf.gz
+        
+Submitted job 11 with external jobid '56365601'.
+
+[Tue Dec 24 15:42:00 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr7.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr7.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr7.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr7_rename.log, output/logs/imputed_FNF_OTHER_chr7_rename.log
+    jobid: 14
+    wildcards: chrom=7
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=7
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_7_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_7_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_7_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr7.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr7.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr7_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_7_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr7.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr7.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr7_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr7.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr7.fnf.rename.vcf.gz
+        
+Submitted job 14 with external jobid '56365602'.
+
+[Tue Dec 24 15:42:05 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr2.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr2.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr2.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr2_rename.log, output/logs/imputed_FNF_OTHER_chr2_rename.log
+    jobid: 9
+    wildcards: chrom=2
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=2
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_2_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_2_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_2_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr2.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr2.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr2_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_2_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr2.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr2.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr2_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr2.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr2.fnf.rename.vcf.gz
+        
+Submitted job 9 with external jobid '56365603'.
+
+[Tue Dec 24 15:42:10 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr8.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr8.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr8.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr8_rename.log, output/logs/imputed_FNF_OTHER_chr8_rename.log
+    jobid: 15
+    wildcards: chrom=8
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=8
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_8_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_8_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_8_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr8.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr8.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr8_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_8_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr8.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr8.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr8_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr8.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr8.fnf.rename.vcf.gz
+        
+Submitted job 15 with external jobid '56365604'.
+
+[Tue Dec 24 15:42:15 2024]
+rule extract_sample_ids:
+    input: output/geno/pbs_geno_other/CTL_samples_with_replacements.txt, output/geno/fnf_geno_other/FNF_samples_with_replacements.txt
+    output: output/wasp/pbs_subset_sample_ids.txt, output/wasp/fnf_subset_sample_ids.txt
+    log: output/logs/extract_sample_ids_pbs_subset.log, output/logs/extract_sample_ids_fnf_subset.log
+    jobid: 87
+
+
+
+        # Extract the first column for PBS sample IDs
+        cut -d' ' -f1 output/geno/pbs_geno_other/CTL_samples_with_replacements.txt > output/wasp/pbs_subset_sample_ids.txt 2> output/logs/extract_sample_ids_pbs_subset.log
+
+        # Extract the first column for FNF sample IDs
+        cut -d' ' -f1 output/geno/fnf_geno_other/FNF_samples_with_replacements.txt > output/wasp/fnf_subset_sample_ids.txt 2> output/logs/extract_sample_ids_fnf_subset.log
+        
+Submitted job 87 with external jobid '56365605'.
+
+[Tue Dec 24 15:42:21 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr13.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr13.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr13.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr13_rename.log, output/logs/imputed_FNF_OTHER_chr13_rename.log
+    jobid: 20
+    wildcards: chrom=13
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=13
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_13_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_13_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_13_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr13.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr13.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr13_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_13_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr13.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr13.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr13_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr13.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr13.fnf.rename.vcf.gz
+        
+Submitted job 20 with external jobid '56365606'.
+
+[Tue Dec 24 15:42:26 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr16.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr16.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr16.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr16_rename.log, output/logs/imputed_FNF_OTHER_chr16_rename.log
+    jobid: 23
+    wildcards: chrom=16
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=16
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_16_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_16_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_16_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr16.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr16.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr16_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_16_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr16.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr16.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr16_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr16.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr16.fnf.rename.vcf.gz
+        
+Submitted job 23 with external jobid '56365607'.
+[Tue Dec 24 15:42:29 2024]
+Finished job 27.
+1 of 61 steps (2%) done
+[Tue Dec 24 15:42:30 2024]
+Finished job 12.
+2 of 61 steps (3%) done
+
+[Tue Dec 24 15:42:31 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr3.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr3.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr3.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr3_rename.log, output/logs/imputed_FNF_OTHER_chr3_rename.log
+    jobid: 10
+    wildcards: chrom=3
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=3
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_3_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_3_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_3_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr3.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr3.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr3_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_3_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr3.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr3.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr3_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr3.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr3.fnf.rename.vcf.gz
+        
+Submitted job 10 with external jobid '56365608'.
+[Tue Dec 24 15:42:31 2024]
+Finished job 17.
+3 of 61 steps (5%) done
+[Tue Dec 24 15:42:32 2024]
+Finished job 29.
+4 of 61 steps (7%) done
+[Tue Dec 24 15:42:34 2024]
+Finished job 21.
+5 of 61 steps (8%) done
+
+[Tue Dec 24 15:42:36 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr1.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr1.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr1.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr1_rename.log, output/logs/imputed_FNF_OTHER_chr1_rename.log
+    jobid: 8
+    wildcards: chrom=1
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=1
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_1_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_1_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_1_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr1.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr1.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr1_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_1_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr1.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr1.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr1_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr1.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr1.fnf.rename.vcf.gz
+        
+Submitted job 8 with external jobid '56365610'.
+
+[Tue Dec 24 15:42:41 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr9.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr9.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr9.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr9_rename.log, output/logs/imputed_FNF_OTHER_chr9_rename.log
+    jobid: 16
+    wildcards: chrom=9
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=9
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_9_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_9_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_9_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr9.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr9.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr9_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_9_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr9.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr9.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr9_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr9.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr9.fnf.rename.vcf.gz
+        
+Submitted job 16 with external jobid '56365611'.
+[Tue Dec 24 15:42:45 2024]
+Finished job 11.
+6 of 61 steps (10%) done
+[Tue Dec 24 15:42:46 2024]
+Finished job 14.
+7 of 61 steps (11%) done
+
+[Tue Dec 24 15:42:46 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr15.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr15.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr15.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr15_rename.log, output/logs/imputed_FNF_OTHER_chr15_rename.log
+    jobid: 22
+    wildcards: chrom=15
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=15
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_15_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_15_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_15_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr15.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr15.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr15_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_15_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr15.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr15.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr15_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr15.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr15.fnf.rename.vcf.gz
+        
+Submitted job 22 with external jobid '56365612'.
+[Tue Dec 24 15:42:47 2024]
+Finished job 9.
+8 of 61 steps (13%) done
+[Tue Dec 24 15:42:48 2024]
+Finished job 15.
+9 of 61 steps (15%) done
+[Tue Dec 24 15:42:49 2024]
+Finished job 87.
+10 of 61 steps (16%) done
+[Tue Dec 24 15:42:50 2024]
+Finished job 20.
+11 of 61 steps (18%) done
+[Tue Dec 24 15:42:51 2024]
+Finished job 23.
+12 of 61 steps (20%) done
+
+[Tue Dec 24 15:42:51 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr12.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr12.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr12.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr12_rename.log, output/logs/imputed_FNF_OTHER_chr12_rename.log
+    jobid: 19
+    wildcards: chrom=12
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=12
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_12_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_12_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_12_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr12.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr12.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr12_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_12_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr12.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr12.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr12_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr12.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr12.fnf.rename.vcf.gz
+        
+Submitted job 19 with external jobid '56365613'.
+[Tue Dec 24 15:42:52 2024]
+Finished job 10.
+13 of 61 steps (21%) done
+[Tue Dec 24 15:42:53 2024]
+Finished job 8.
+14 of 61 steps (23%) done
+[Tue Dec 24 15:42:55 2024]
+Finished job 16.
+15 of 61 steps (25%) done
+
+[Tue Dec 24 15:42:57 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr21.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr21.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr21.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr21_rename.log, output/logs/imputed_FNF_OTHER_chr21_rename.log
+    jobid: 28
+    wildcards: chrom=21
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=21
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_21_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_21_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_21_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr21.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr21.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr21_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_21_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr21.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr21.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr21_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr21.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr21.fnf.rename.vcf.gz
+        
+Submitted job 28 with external jobid '56365614'.
+
+[Tue Dec 24 15:43:02 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr6.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr6.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr6.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr6_rename.log, output/logs/imputed_FNF_OTHER_chr6_rename.log
+    jobid: 13
+    wildcards: chrom=6
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=6
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_6_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_6_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_6_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr6.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr6.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr6_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_6_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr6.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr6.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr6_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr6.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr6.fnf.rename.vcf.gz
+        
+Submitted job 13 with external jobid '56365615'.
+[Tue Dec 24 15:43:06 2024]
+Finished job 22.
+16 of 61 steps (26%) done
+
+[Tue Dec 24 15:43:07 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr17.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr17.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr17.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr17_rename.log, output/logs/imputed_FNF_OTHER_chr17_rename.log
+    jobid: 24
+    wildcards: chrom=17
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=17
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_17_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_17_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_17_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr17.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr17.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr17_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_17_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr17.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr17.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr17_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr17.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr17.fnf.rename.vcf.gz
+        
+Submitted job 24 with external jobid '56365616'.
+[Tue Dec 24 15:43:08 2024]
+Finished job 28.
+17 of 61 steps (28%) done
+
+[Tue Dec 24 15:43:12 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr18.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr18.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr18.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr18_rename.log, output/logs/imputed_FNF_OTHER_chr18_rename.log
+    jobid: 25
+    wildcards: chrom=18
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=18
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_18_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_18_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_18_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr18.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr18.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr18_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_18_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr18.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr18.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr18_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr18.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr18.fnf.rename.vcf.gz
+        
+Submitted job 25 with external jobid '56365617'.
+
+[Tue Dec 24 15:43:17 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr11.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr11.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr11.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr11_rename.log, output/logs/imputed_FNF_OTHER_chr11_rename.log
+    jobid: 18
+    wildcards: chrom=11
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=11
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_11_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_11_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_11_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr11.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr11.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr11_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_11_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr11.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr11.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr11_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr11.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr11.fnf.rename.vcf.gz
+        
+Submitted job 18 with external jobid '56365618'.
+[Tue Dec 24 15:43:21 2024]
+Finished job 19.
+18 of 61 steps (30%) done
+[Tue Dec 24 15:43:22 2024]
+Finished job 13.
+19 of 61 steps (31%) done
+
+[Tue Dec 24 15:43:22 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr19.dose.vcf.gz, output/geno/pbs_geno_other/mappings/sample_name_mapping.txt, output/geno/fnf_geno_other/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno_other/wasp_vcf/chr19.pbs.rename.vcf.gz, output/geno/fnf_geno_other/wasp_vcf/chr19.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_OTHER_chr19_rename.log, output/logs/imputed_FNF_OTHER_chr19_rename.log
+    jobid: 26
+    wildcards: chrom=19
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=19
+
+        mkdir -p output/geno/pbs_geno_other/wasp_vcf output/geno/fnf_geno_other/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno_other/mappings/sample_name_mapping.txt > output/geno/pbs_geno_other/mappings/imputed_pbs_19_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno_other/mappings/sample_name_mapping.txt > output/geno/fnf_geno_other/mappings/imputed_fnf_19_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno_other/mappings/imputed_pbs_19_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr19.dose.vcf.gz             -o output/geno/pbs_geno_other/wasp_vcf/chr19.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_OTHER_chr19_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno_other/mappings/imputed_fnf_19_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr19.dose.vcf.gz             -o output/geno/fnf_geno_other/wasp_vcf/chr19.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_OTHER_chr19_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno_other/wasp_vcf/chr19.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno_other/wasp_vcf/chr19.fnf.rename.vcf.gz
+        
+Submitted job 26 with external jobid '56365619'.
+
+[Tue Dec 24 15:43:28 2024]
+rule snp2h5:
+    input: output/wasp/pbs_subset_sample_ids.txt, output/wasp/fnf_subset_sample_ids.txt
+    output: output/wasp/pbs_rep/haplotypes.h5, output/wasp/pbs_rep/snp_index.h5, output/wasp/pbs_rep/snp_tab.h5, output/wasp/fnf_rep/haplotypes.h5, output/wasp/fnf_rep/snp_index.h5, output/wasp/fnf_rep/snp_tab.h5
+    log: output/logs/pbs_rep_snp2h5.err, output/logs/fnf_rep_snp2h5.err
+    jobid: 86
+
+
+        module add wasp/2023-02
+        mkdir -p output/wasp/pbs_rep output/wasp/fnf_rep
+
+        # Process PBS VCF
+        /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/snp2h5/snp2h5         --chrom /proj/phanstiel_lab/References/chromSizes/hg38_chromSizes_filt_chr.txt         --format vcf         --haplotype output/wasp/pbs_rep/haplotypes.h5         --snp_index output/wasp/pbs_rep/snp_index.h5         --snp_tab output/wasp/pbs_rep/snp_tab.h5         output/geno/pbs_geno_other/wasp_vcf/chr*.pbs.rename.vcf.gz 2> output/logs/pbs_rep_snp2h5.err
+
+        # Process FNF VCF
+        /nas/longleaf/rhel8/apps/wasp/2023-02/WASP/snp2h5/snp2h5         --chrom /proj/phanstiel_lab/References/chromSizes/hg38_chromSizes_filt_chr.txt         --format vcf         --haplotype output/wasp/fnf_rep/haplotypes.h5         --snp_index output/wasp/fnf_rep/snp_index.h5         --snp_tab output/wasp/fnf_rep/snp_tab.h5         output/geno/fnf_geno_other/wasp_vcf/chr*.fnf.rename.vcf.gz 2> output/logs/fnf_rep_snp2h5.err
+        
+Submitted job 86 with external jobid '56365621'.
+Waiting at most 500 seconds for missing files.
+[Tue Dec 24 15:43:53 2024]
+Finished job 26.
+20 of 61 steps (33%) done
+[Tue Dec 24 15:43:54 2024]
+Finished job 24.
+21 of 61 steps (34%) done
+[Tue Dec 24 15:43:55 2024]
+Finished job 25.
+22 of 61 steps (36%) done
+[Tue Dec 24 15:43:56 2024]
+Finished job 18.
+23 of 61 steps (38%) done

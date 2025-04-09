@@ -10,8 +10,8 @@
 
 
 #This is PBS
-sh ./vcf_cleanup_for_rasqual.sh /work/users/s/e/seyoun/CQTL_AI/output/geno/pbs_geno /work/users/s/e/seyoun/CQTL_AI/output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz 
+sh ./00_vcf_cleanup_for_rasqual.sh /work/users/s/e/seyoun/CQTL_AI/output/geno/pbs_geno /work/users/s/e/seyoun/CQTL_AI/output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz 
 
 #This is FNF
-sh ./vcf_cleanup_for_rasqual.sh /work/users/s/e/seyoun/CQTL_AI/output/geno/fnf_geno /work/users/s/e/seyoun/CQTL_AI/output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+sh ./00_vcf_cleanup_for_rasqual.sh /work/users/s/e/seyoun/CQTL_AI/output/geno/fnf_geno /work/users/s/e/seyoun/CQTL_AI/output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
 

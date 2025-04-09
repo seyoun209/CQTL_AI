@@ -1,0 +1,2369 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	58	add_read_groups
+	1	all
+	58	filter_mitochondrial_reads
+	58	mark_duplicates
+	58	run_ataqv
+	233
+
+[Wed Nov 20 11:53:43 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7775_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7775_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7775_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7775_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.out
+    jobid: 441
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7775_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7775_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7775_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7775_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.err
+        
+Submitted job 441 with external jobid '54555457'.
+
+[Wed Nov 20 11:53:52 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7781_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7781_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7781_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7781_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.out
+    jobid: 449
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7781_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7781_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7781_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7781_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.err
+        
+Submitted job 449 with external jobid '54555458'.
+
+[Wed Nov 20 11:54:01 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7727_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7727_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7727_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7727_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.out
+    jobid: 421
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7727_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7727_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7727_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7727_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.err
+        
+Submitted job 421 with external jobid '54555503'.
+
+[Wed Nov 20 11:54:08 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7786_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7786_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7786_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7786_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.out
+    jobid: 454
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7786_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7786_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7786_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7786_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.err
+        
+Submitted job 454 with external jobid '54555506'.
+
+[Wed Nov 20 11:54:16 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0022_CTL_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0022_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0022_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0022_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.out
+    jobid: 459
+    wildcards: sampleName=FACT_23-0022_CTL_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0022_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0022_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0022_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0022_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.err
+        
+Submitted job 459 with external jobid '54555509'.
+
+[Wed Nov 20 11:54:25 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7771_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7771_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7771_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7771_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.out
+    jobid: 439
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7771_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7771_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7771_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7771_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.err
+        
+Submitted job 439 with external jobid '54555510'.
+
+[Wed Nov 20 11:54:33 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7678_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7678_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7678_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7678_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.out
+    jobid: 410
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7678_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7678_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7678_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7678_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.err
+        
+Submitted job 410 with external jobid '54555561'.
+
+[Wed Nov 20 11:54:40 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0016_CTL_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0016_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0016_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0016_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.out
+    jobid: 457
+    wildcards: sampleName=FACT_23-0016_CTL_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0016_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0016_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0016_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0016_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.err
+        
+Submitted job 457 with external jobid '54555563'.
+
+[Wed Nov 20 11:54:49 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7755_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7755_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7755_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7755_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.out
+    jobid: 431
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7755_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7755_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7755_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7755_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.err
+        
+Submitted job 431 with external jobid '54555564'.
+
+[Wed Nov 20 11:54:57 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7778_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7778_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7778_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7778_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.out
+    jobid: 445
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7778_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7778_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7778_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7778_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.err
+        
+Submitted job 445 with external jobid '54555613'.
+
+[Wed Nov 20 11:55:05 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0013_CTL_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0013_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0013_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0013_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.out
+    jobid: 455
+    wildcards: sampleName=FACT_23-0013_CTL_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0013_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0013_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0013_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0013_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.err
+        
+Submitted job 455 with external jobid '54555622'.
+
+[Wed Nov 20 11:55:14 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7712_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7712_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7712_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7712_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.out
+    jobid: 415
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7712_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7712_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7712_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7712_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.err
+        
+Submitted job 415 with external jobid '54555670'.
+
+[Wed Nov 20 11:55:23 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7711_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7711_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7711_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7711_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.out
+    jobid: 414
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7711_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7711_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7711_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7711_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.err
+        
+Submitted job 414 with external jobid '54555672'.
+
+[Wed Nov 20 11:55:33 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7677_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7677_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7677_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7677_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.out
+    jobid: 407
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7677_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7677_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7677_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7677_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.err
+        
+Submitted job 407 with external jobid '54555721'.
+
+[Wed Nov 20 11:55:41 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7755_FNF_Ankle_replicate_sorted.bam
+    output: output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dedup.bam, output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dup_metrics.txt, output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.out
+    jobid: 432
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7755_FNF_Ankle_replicate_sorted.bam             O=output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dedup.bam             M=output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.err
+
+        samtools index output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.out 2>> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+Submitted job 432 with external jobid '54555738'.
+
+[Wed Nov 20 11:55:49 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7679_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7679_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7679_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7679_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.out
+    jobid: 411
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7679_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7679_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7679_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7679_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.err
+        
+Submitted job 411 with external jobid '54555739'.
+
+[Wed Nov 20 11:55:57 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7775_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7775_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7775_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7775_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.out
+    jobid: 442
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7775_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7775_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7775_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7775_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.err
+        
+Submitted job 442 with external jobid '54555789'.
+
+[Wed Nov 20 11:56:05 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0025_FNF_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0025_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0025_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0025_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.out
+    jobid: 464
+    wildcards: sampleName=FACT_23-0025_FNF_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0025_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0025_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0025_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0025_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.err
+        
+Submitted job 464 with external jobid '54555791'.
+
+[Wed Nov 20 11:56:14 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7780_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7780_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7780_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7780_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.out
+    jobid: 447
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7780_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7780_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7780_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7780_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.err
+        
+Submitted job 447 with external jobid '54555792'.
+
+[Wed Nov 20 11:56:22 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7781_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7781_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7781_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7781_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.out
+    jobid: 450
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7781_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7781_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7781_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7781_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.err
+        
+Submitted job 450 with external jobid '54555843'.
+
+[Wed Nov 20 11:56:30 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7677_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7677_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7677_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7677_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.out
+    jobid: 408
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7677_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7677_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7677_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7677_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.err
+        
+Submitted job 408 with external jobid '54555844'.
+
+[Wed Nov 20 11:56:38 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7763_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7763_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7763_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7763_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.out
+    jobid: 433
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7763_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7763_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7763_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7763_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.err
+        
+Submitted job 433 with external jobid '54555894'.
+
+[Wed Nov 20 11:56:46 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7769_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7769_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7769_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7769_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.out
+    jobid: 437
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7769_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7769_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7769_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7769_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.err
+        
+Submitted job 437 with external jobid '54555896'.
+
+[Wed Nov 20 11:56:54 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0023_FNF_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0023_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0023_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0023_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.out
+    jobid: 462
+    wildcards: sampleName=FACT_23-0023_FNF_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0023_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0023_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0023_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0023_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.err
+        
+Submitted job 462 with external jobid '54555897'.
+
+[Wed Nov 20 11:57:04 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7755_CTL_Ankle_replicate_sorted.bam
+    output: output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dedup.bam, output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dup_metrics.txt, output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.out
+    jobid: 430
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7755_CTL_Ankle_replicate_sorted.bam             O=output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dedup.bam             M=output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.err
+
+        samtools index output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.out 2>> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+Submitted job 430 with external jobid '54555951'.
+
+[Wed Nov 20 11:57:14 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7778FE_CTL_Femur_1_sorted.bam
+    output: output/dedup/CQTL_AM7778FE_CTL_Femur_1_dedup.bam, output/dedup/CQTL_AM7778FE_CTL_Femur_1_dup_metrics.txt, output/dedup/CQTL_AM7778FE_CTL_Femur_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.err, output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.out
+    jobid: 443
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7778FE_CTL_Femur_1_sorted.bam             O=output/dedup/CQTL_AM7778FE_CTL_Femur_1_dedup.bam             M=output/dedup/CQTL_AM7778FE_CTL_Femur_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.out 2> output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.err
+
+        samtools index output/dedup/CQTL_AM7778FE_CTL_Femur_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.out 2>> output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 443 with external jobid '54555953'.
+
+[Wed Nov 20 11:57:22 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7763_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7763_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7763_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7763_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.out
+    jobid: 434
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7763_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7763_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7763_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7763_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.err
+        
+Submitted job 434 with external jobid '54556006'.
+
+[Wed Nov 20 11:57:31 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7754_FNF_Ankle_replicate_sorted.bam
+    output: output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dedup.bam, output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dup_metrics.txt, output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.out
+    jobid: 428
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7754_FNF_Ankle_replicate_sorted.bam             O=output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dedup.bam             M=output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.err
+
+        samtools index output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.out 2>> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+Submitted job 428 with external jobid '54556007'.
+
+[Wed Nov 20 11:57:39 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7786_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7786_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7786_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7786_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.out
+    jobid: 453
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7786_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7786_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7786_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7786_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.err
+        
+Submitted job 453 with external jobid '54556057'.
+
+[Wed Nov 20 11:57:47 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7780_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7780_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7780_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7780_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.out
+    jobid: 448
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7780_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7780_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7780_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7780_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.err
+        
+Submitted job 448 with external jobid '54556059'.
+
+[Wed Nov 20 11:57:57 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7727_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7727_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7727_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7727_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.out
+    jobid: 422
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7727_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7727_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7727_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7727_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.err
+        
+Submitted job 422 with external jobid '54556060'.
+
+[Wed Nov 20 11:58:06 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7765_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7765_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7765_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7765_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.out
+    jobid: 436
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7765_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7765_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7765_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7765_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.err
+        
+Submitted job 436 with external jobid '54556111'.
+
+[Wed Nov 20 11:58:14 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7679_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7679_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7679_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7679_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.out
+    jobid: 412
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7679_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7679_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7679_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7679_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.err
+        
+Submitted job 412 with external jobid '54556114'.
+
+[Wed Nov 20 11:58:24 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7726_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7726_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7726_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7726_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.out
+    jobid: 419
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7726_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7726_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7726_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7726_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.err
+        
+Submitted job 419 with external jobid '54556164'.
+
+[Wed Nov 20 11:58:32 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7754_CTL_Ankle_replicate_sorted.bam
+    output: output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dedup.bam, output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dup_metrics.txt, output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.out
+    jobid: 426
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7754_CTL_Ankle_replicate_sorted.bam             O=output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dedup.bam             M=output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.err
+
+        samtools index output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.out 2>> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+Submitted job 426 with external jobid '54556166'.
+
+[Wed Nov 20 11:58:40 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7754_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7754_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7754_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7754_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.out
+    jobid: 427
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7754_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7754_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7754_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7754_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.err
+        
+Submitted job 427 with external jobid '54556167'.
+
+[Wed Nov 20 11:58:47 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7765_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7765_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7765_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7765_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.out
+    jobid: 435
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7765_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7765_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7765_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7765_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.err
+        
+Submitted job 435 with external jobid '54556217'.
+
+[Wed Nov 20 11:58:55 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7769_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7769_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7769_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7769_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.out
+    jobid: 438
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7769_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7769_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7769_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7769_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.err
+        
+Submitted job 438 with external jobid '54556219'.
+
+[Wed Nov 20 11:59:03 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7678_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7678_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7678_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7678_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.out
+    jobid: 409
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7678_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7678_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7678_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7678_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.err
+        
+Submitted job 409 with external jobid '54556277'.
+
+[Wed Nov 20 11:59:10 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0023_CTL_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0023_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0023_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0023_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.out
+    jobid: 461
+    wildcards: sampleName=FACT_23-0023_CTL_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0023_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0023_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0023_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0023_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.err
+        
+Submitted job 461 with external jobid '54556279'.
+
+[Wed Nov 20 11:59:18 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0022_FNF_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0022_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0022_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0022_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.out
+    jobid: 460
+    wildcards: sampleName=FACT_23-0022_FNF_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0022_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0022_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0022_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0022_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.err
+        
+Submitted job 460 with external jobid '54556280'.
+
+[Wed Nov 20 11:59:27 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7717_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7717_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7717_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7717_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.out
+    jobid: 417
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7717_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7717_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7717_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7717_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.err
+        
+Submitted job 417 with external jobid '54556329'.
+
+[Wed Nov 20 11:59:35 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7778FE_FNF_Femur_1_sorted.bam
+    output: output/dedup/CQTL_AM7778FE_FNF_Femur_1_dedup.bam, output/dedup/CQTL_AM7778FE_FNF_Femur_1_dup_metrics.txt, output/dedup/CQTL_AM7778FE_FNF_Femur_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.out
+    jobid: 444
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7778FE_FNF_Femur_1_sorted.bam             O=output/dedup/CQTL_AM7778FE_FNF_Femur_1_dedup.bam             M=output/dedup/CQTL_AM7778FE_FNF_Femur_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.err
+
+        samtools index output/dedup/CQTL_AM7778FE_FNF_Femur_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.out 2>> output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 444 with external jobid '54556330'.
+
+[Wed Nov 20 11:59:43 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7754_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7754_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7754_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7754_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.out
+    jobid: 425
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7754_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7754_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7754_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7754_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.err
+        
+Submitted job 425 with external jobid '54556380'.
+
+[Wed Nov 20 11:59:52 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0013_FNF_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0013_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0013_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0013_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.out
+    jobid: 456
+    wildcards: sampleName=FACT_23-0013_FNF_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0013_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0013_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0013_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0013_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.err
+        
+Submitted job 456 with external jobid '54556382'.
+
+[Wed Nov 20 12:00:01 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7735_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7735_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7735_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7735_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.out
+    jobid: 423
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7735_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7735_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7735_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7735_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.err
+        
+Submitted job 423 with external jobid '54556394'.
+
+[Wed Nov 20 12:00:11 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7711_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7711_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7711_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7711_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.out
+    jobid: 413
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7711_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7711_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7711_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7711_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.err
+        
+Submitted job 413 with external jobid '54556444'.
+
+[Wed Nov 20 12:00:19 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7726_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7726_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7726_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7726_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.out
+    jobid: 420
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7726_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7726_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7726_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7726_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.err
+        
+Submitted job 420 with external jobid '54556446'.
+
+[Wed Nov 20 12:00:28 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7735_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7735_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7735_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7735_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.out
+    jobid: 424
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7735_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7735_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7735_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7735_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.err
+        
+Submitted job 424 with external jobid '54556495'.
+
+[Wed Nov 20 12:00:35 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7771_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7771_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7771_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7771_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.out
+    jobid: 440
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7771_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7771_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7771_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7771_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.err
+        
+Submitted job 440 with external jobid '54556496'.
+
+[Wed Nov 20 12:00:44 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7717_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7717_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7717_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7717_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.out
+    jobid: 418
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7717_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7717_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7717_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7717_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.err
+        
+Submitted job 418 with external jobid '54556497'.
+
+[Wed Nov 20 12:00:51 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7785_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7785_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7785_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7785_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.out
+    jobid: 451
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7785_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7785_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7785_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7785_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.err
+        
+Submitted job 451 with external jobid '54556548'.
+
+[Wed Nov 20 12:00:59 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7785_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7785_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7785_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7785_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.out
+    jobid: 452
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7785_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7785_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7785_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7785_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.err
+        
+Submitted job 452 with external jobid '54556551'.
+
+[Wed Nov 20 12:01:08 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7712_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7712_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7712_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7712_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.out
+    jobid: 416
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7712_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7712_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7712_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7712_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.err
+        
+Submitted job 416 with external jobid '54556610'.
+
+[Wed Nov 20 12:01:19 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0025_CTL_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0025_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0025_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0025_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.out
+    jobid: 463
+    wildcards: sampleName=FACT_23-0025_CTL_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0025_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0025_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0025_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0025_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.err
+        
+Submitted job 463 with external jobid '54556611'.
+
+[Wed Nov 20 12:01:27 2024]
+rule mark_duplicates:
+    input: output/align/FACT_23-0016_FNF_synovium_1_sorted.bam
+    output: output/dedup/FACT_23-0016_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0016_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0016_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.out
+    jobid: 458
+    wildcards: sampleName=FACT_23-0016_FNF_synovium_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0016_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0016_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0016_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0016_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.err
+        
+Submitted job 458 with external jobid '54556660'.
+
+[Wed Nov 20 12:01:38 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7755_CTL_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7755_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7755_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7755_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_1.out
+    jobid: 429
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7755_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7755_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7755_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7755_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_1.err
+        
+Submitted job 429 with external jobid '54556664'.
+
+[Wed Nov 20 12:01:49 2024]
+rule mark_duplicates:
+    input: output/align/CQTL_AM7778_FNF_Ankle_1_sorted.bam
+    output: output/dedup/CQTL_AM7778_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7778_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7778_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.out
+    jobid: 446
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 4
+
+
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7778_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7778_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7778_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7778_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.err
+        
+Submitted job 446 with external jobid '54556716'.
+[Wed Nov 20 12:17:41 2024]
+Error in rule mark_duplicates:
+    jobid: 464
+    output: output/dedup/FACT_23-0025_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0025_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0025_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0025_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0025_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0025_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0025_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0025_FNF_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555791
+
+Error executing rule mark_duplicates on cluster (jobid: 464, external: 54555791, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.464.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:18:58 2024]
+Error in rule mark_duplicates:
+    jobid: 457
+    output: output/dedup/FACT_23-0016_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0016_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0016_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0016_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0016_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0016_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0016_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0016_CTL_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555563
+
+Error executing rule mark_duplicates on cluster (jobid: 457, external: 54555563, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.457.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:19:54 2024]
+Error in rule mark_duplicates:
+    jobid: 462
+    output: output/dedup/FACT_23-0023_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0023_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0023_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0023_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0023_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0023_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0023_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0023_FNF_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555897
+
+Error executing rule mark_duplicates on cluster (jobid: 462, external: 54555897, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.462.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:21:26 2024]
+Error in rule mark_duplicates:
+    jobid: 459
+    output: output/dedup/FACT_23-0022_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0022_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0022_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0022_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0022_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0022_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0022_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0022_CTL_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555509
+
+Error executing rule mark_duplicates on cluster (jobid: 459, external: 54555509, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.459.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:22:46 2024]
+Error in rule mark_duplicates:
+    jobid: 421
+    output: output/dedup/CQTL_AM7727_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7727_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7727_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7727_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7727_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7727_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7727_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7727_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555503
+
+Error executing rule mark_duplicates on cluster (jobid: 421, external: 54555503, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.421.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:24:32 2024]
+Error in rule mark_duplicates:
+    jobid: 463
+    output: output/dedup/FACT_23-0025_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0025_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0025_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0025_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0025_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0025_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0025_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0025_CTL_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556611
+
+Error executing rule mark_duplicates on cluster (jobid: 463, external: 54556611, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.463.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:25:25 2024]
+Error in rule mark_duplicates:
+    jobid: 461
+    output: output/dedup/FACT_23-0023_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0023_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0023_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0023_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0023_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0023_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0023_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0023_CTL_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556279
+
+Error executing rule mark_duplicates on cluster (jobid: 461, external: 54556279, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.461.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:25:53 2024]
+Error in rule mark_duplicates:
+    jobid: 456
+    output: output/dedup/FACT_23-0013_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0013_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0013_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0013_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0013_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0013_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0013_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0013_FNF_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556382
+
+Error executing rule mark_duplicates on cluster (jobid: 456, external: 54556382, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.456.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:26:13 2024]
+Error in rule mark_duplicates:
+    jobid: 443
+    output: output/dedup/CQTL_AM7778FE_CTL_Femur_1_dedup.bam, output/dedup/CQTL_AM7778FE_CTL_Femur_1_dup_metrics.txt, output/dedup/CQTL_AM7778FE_CTL_Femur_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.err, output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7778FE_CTL_Femur_1_sorted.bam             O=output/dedup/CQTL_AM7778FE_CTL_Femur_1_dedup.bam             M=output/dedup/CQTL_AM7778FE_CTL_Femur_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.out 2> output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.err
+
+        samtools index output/dedup/CQTL_AM7778FE_CTL_Femur_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.out 2>> output/logs/mark_duplicates_CQTL_AM7778FE_CTL_Femur_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555953
+
+Error executing rule mark_duplicates on cluster (jobid: 443, external: 54555953, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.443.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:26:59 2024]
+Error in rule mark_duplicates:
+    jobid: 458
+    output: output/dedup/FACT_23-0016_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0016_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0016_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0016_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0016_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0016_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0016_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0016_FNF_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556660
+
+Error executing rule mark_duplicates on cluster (jobid: 458, external: 54556660, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.458.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:28:51 2024]
+Error in rule mark_duplicates:
+    jobid: 455
+    output: output/dedup/FACT_23-0013_CTL_synovium_1_dedup.bam, output/dedup/FACT_23-0013_CTL_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0013_CTL_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.err, output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0013_CTL_synovium_1_sorted.bam             O=output/dedup/FACT_23-0013_CTL_synovium_1_dedup.bam             M=output/dedup/FACT_23-0013_CTL_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0013_CTL_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0013_CTL_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555622
+
+Error executing rule mark_duplicates on cluster (jobid: 455, external: 54555622, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.455.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:29:55 2024]
+Error in rule mark_duplicates:
+    jobid: 454
+    output: output/dedup/CQTL_AM7786_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7786_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7786_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7786_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7786_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7786_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7786_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7786_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555506
+
+Error executing rule mark_duplicates on cluster (jobid: 454, external: 54555506, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.454.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:30:01 2024]
+Error in rule mark_duplicates:
+    jobid: 434
+    output: output/dedup/CQTL_AM7763_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7763_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7763_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7763_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7763_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7763_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7763_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7763_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556006
+
+Error executing rule mark_duplicates on cluster (jobid: 434, external: 54556006, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.434.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:30:25 2024]
+Error in rule mark_duplicates:
+    jobid: 460
+    output: output/dedup/FACT_23-0022_FNF_synovium_1_dedup.bam, output/dedup/FACT_23-0022_FNF_synovium_1_dup_metrics.txt, output/dedup/FACT_23-0022_FNF_synovium_1_dedup.bai
+    log: output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.err, output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/FACT_23-0022_FNF_synovium_1_sorted.bam             O=output/dedup/FACT_23-0022_FNF_synovium_1_dedup.bam             M=output/dedup/FACT_23-0022_FNF_synovium_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.out 2> output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.err
+
+        samtools index output/dedup/FACT_23-0022_FNF_synovium_1_dedup.bam 1>> output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.out 2>> output/logs/mark_duplicates_FACT_23-0022_FNF_synovium_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556280
+
+Error executing rule mark_duplicates on cluster (jobid: 460, external: 54556280, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.460.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:30:26 2024]
+Error in rule mark_duplicates:
+    jobid: 417
+    output: output/dedup/CQTL_AM7717_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7717_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7717_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7717_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7717_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7717_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7717_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7717_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556329
+
+Error executing rule mark_duplicates on cluster (jobid: 417, external: 54556329, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.417.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:30:43 2024]
+Error in rule mark_duplicates:
+    jobid: 422
+    output: output/dedup/CQTL_AM7727_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7727_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7727_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7727_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7727_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7727_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7727_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7727_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556060
+
+Error executing rule mark_duplicates on cluster (jobid: 422, external: 54556060, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.422.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:33:06 2024]
+Error in rule mark_duplicates:
+    jobid: 431
+    output: output/dedup/CQTL_AM7755_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7755_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7755_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7755_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7755_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7755_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7755_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555564
+
+Error executing rule mark_duplicates on cluster (jobid: 431, external: 54555564, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.431.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:33:07 2024]
+Error in rule mark_duplicates:
+    jobid: 407
+    output: output/dedup/CQTL_AM7677_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7677_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7677_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7677_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7677_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7677_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7677_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7677_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555721
+
+Error executing rule mark_duplicates on cluster (jobid: 407, external: 54555721, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.407.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:33:49 2024]
+Error in rule mark_duplicates:
+    jobid: 437
+    output: output/dedup/CQTL_AM7769_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7769_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7769_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7769_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7769_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7769_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7769_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7769_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555896
+
+Error executing rule mark_duplicates on cluster (jobid: 437, external: 54555896, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.437.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:34:06 2024]
+Error in rule mark_duplicates:
+    jobid: 439
+    output: output/dedup/CQTL_AM7771_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7771_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7771_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7771_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7771_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7771_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7771_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7771_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555510
+
+Error executing rule mark_duplicates on cluster (jobid: 439, external: 54555510, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.439.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:34:41 2024]
+Error in rule mark_duplicates:
+    jobid: 438
+    output: output/dedup/CQTL_AM7769_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7769_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7769_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7769_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7769_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7769_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7769_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7769_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556219
+
+Error executing rule mark_duplicates on cluster (jobid: 438, external: 54556219, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.438.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:34:47 2024]
+Error in rule mark_duplicates:
+    jobid: 436
+    output: output/dedup/CQTL_AM7765_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7765_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7765_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7765_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7765_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7765_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7765_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7765_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556111
+
+Error executing rule mark_duplicates on cluster (jobid: 436, external: 54556111, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.436.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:35:25 2024]
+Error in rule mark_duplicates:
+    jobid: 416
+    output: output/dedup/CQTL_AM7712_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7712_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7712_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7712_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7712_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7712_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7712_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7712_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556610
+
+Error executing rule mark_duplicates on cluster (jobid: 416, external: 54556610, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.416.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:35:32 2024]
+Error in rule mark_duplicates:
+    jobid: 419
+    output: output/dedup/CQTL_AM7726_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7726_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7726_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7726_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7726_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7726_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7726_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7726_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556164
+
+Error executing rule mark_duplicates on cluster (jobid: 419, external: 54556164, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.419.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:35:42 2024]
+Error in rule mark_duplicates:
+    jobid: 430
+    output: output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dedup.bam, output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dup_metrics.txt, output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7755_CTL_Ankle_replicate_sorted.bam             O=output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dedup.bam             M=output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.err
+
+        samtools index output/dedup/CQTL_AM7755_CTL_Ankle_replicate_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.out 2>> output/logs/mark_duplicates_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555951
+
+Error executing rule mark_duplicates on cluster (jobid: 430, external: 54555951, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.430.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:36:15 2024]
+Error in rule mark_duplicates:
+    jobid: 418
+    output: output/dedup/CQTL_AM7717_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7717_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7717_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7717_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7717_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7717_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7717_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7717_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556497
+
+Error executing rule mark_duplicates on cluster (jobid: 418, external: 54556497, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.418.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:36:28 2024]
+Error in rule mark_duplicates:
+    jobid: 409
+    output: output/dedup/CQTL_AM7678_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7678_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7678_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7678_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7678_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7678_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7678_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7678_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556277
+
+Error executing rule mark_duplicates on cluster (jobid: 409, external: 54556277, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.409.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:36:46 2024]
+Error in rule mark_duplicates:
+    jobid: 449
+    output: output/dedup/CQTL_AM7781_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7781_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7781_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7781_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7781_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7781_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7781_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7781_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555458
+
+Error executing rule mark_duplicates on cluster (jobid: 449, external: 54555458, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.449.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:37:09 2024]
+Error in rule mark_duplicates:
+    jobid: 444
+    output: output/dedup/CQTL_AM7778FE_FNF_Femur_1_dedup.bam, output/dedup/CQTL_AM7778FE_FNF_Femur_1_dup_metrics.txt, output/dedup/CQTL_AM7778FE_FNF_Femur_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7778FE_FNF_Femur_1_sorted.bam             O=output/dedup/CQTL_AM7778FE_FNF_Femur_1_dedup.bam             M=output/dedup/CQTL_AM7778FE_FNF_Femur_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.err
+
+        samtools index output/dedup/CQTL_AM7778FE_FNF_Femur_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.out 2>> output/logs/mark_duplicates_CQTL_AM7778FE_FNF_Femur_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556330
+
+Error executing rule mark_duplicates on cluster (jobid: 444, external: 54556330, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.444.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:37:16 2024]
+Error in rule mark_duplicates:
+    jobid: 435
+    output: output/dedup/CQTL_AM7765_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7765_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7765_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7765_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7765_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7765_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7765_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7765_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556217
+
+Error executing rule mark_duplicates on cluster (jobid: 435, external: 54556217, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.435.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:37:29 2024]
+Error in rule mark_duplicates:
+    jobid: 414
+    output: output/dedup/CQTL_AM7711_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7711_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7711_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7711_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7711_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7711_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7711_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7711_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555672
+
+Error executing rule mark_duplicates on cluster (jobid: 414, external: 54555672, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.414.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:38:14 2024]
+Error in rule mark_duplicates:
+    jobid: 445
+    output: output/dedup/CQTL_AM7778_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7778_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7778_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7778_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7778_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7778_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7778_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7778_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555613
+
+Error executing rule mark_duplicates on cluster (jobid: 445, external: 54555613, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.445.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:38:55 2024]
+Error in rule mark_duplicates:
+    jobid: 415
+    output: output/dedup/CQTL_AM7712_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7712_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7712_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7712_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7712_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7712_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7712_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7712_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555670
+
+Error executing rule mark_duplicates on cluster (jobid: 415, external: 54555670, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.415.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:39:39 2024]
+Error in rule mark_duplicates:
+    jobid: 433
+    output: output/dedup/CQTL_AM7763_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7763_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7763_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7763_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7763_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7763_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7763_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7763_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555894
+
+Error executing rule mark_duplicates on cluster (jobid: 433, external: 54555894, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.433.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:39:41 2024]
+Error in rule mark_duplicates:
+    jobid: 412
+    output: output/dedup/CQTL_AM7679_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7679_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7679_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7679_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7679_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7679_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7679_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7679_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556114
+
+Error executing rule mark_duplicates on cluster (jobid: 412, external: 54556114, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.412.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:39:55 2024]
+Error in rule mark_duplicates:
+    jobid: 440
+    output: output/dedup/CQTL_AM7771_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7771_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7771_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7771_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7771_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7771_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7771_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7771_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556496
+
+Error executing rule mark_duplicates on cluster (jobid: 440, external: 54556496, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.440.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:40:37 2024]
+Error in rule mark_duplicates:
+    jobid: 425
+    output: output/dedup/CQTL_AM7754_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7754_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7754_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7754_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7754_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7754_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7754_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556380
+
+Error executing rule mark_duplicates on cluster (jobid: 425, external: 54556380, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.425.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:40:50 2024]
+Error in rule mark_duplicates:
+    jobid: 432
+    output: output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dedup.bam, output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dup_metrics.txt, output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7755_FNF_Ankle_replicate_sorted.bam             O=output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dedup.bam             M=output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.err
+
+        samtools index output/dedup/CQTL_AM7755_FNF_Ankle_replicate_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.out 2>> output/logs/mark_duplicates_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555738
+
+Error executing rule mark_duplicates on cluster (jobid: 432, external: 54555738, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.432.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:41:27 2024]
+Error in rule mark_duplicates:
+    jobid: 442
+    output: output/dedup/CQTL_AM7775_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7775_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7775_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7775_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7775_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7775_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7775_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7775_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555789
+
+Error executing rule mark_duplicates on cluster (jobid: 442, external: 54555789, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.442.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:43:08 2024]
+Error in rule mark_duplicates:
+    jobid: 410
+    output: output/dedup/CQTL_AM7678_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7678_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7678_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7678_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7678_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7678_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7678_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7678_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555561
+
+Error executing rule mark_duplicates on cluster (jobid: 410, external: 54555561, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.410.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:43:26 2024]
+Error in rule mark_duplicates:
+    jobid: 452
+    output: output/dedup/CQTL_AM7785_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7785_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7785_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7785_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7785_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7785_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7785_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7785_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556551
+
+Error executing rule mark_duplicates on cluster (jobid: 452, external: 54556551, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.452.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:43:55 2024]
+Error in rule mark_duplicates:
+    jobid: 424
+    output: output/dedup/CQTL_AM7735_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7735_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7735_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7735_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7735_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7735_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7735_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7735_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556495
+
+Error executing rule mark_duplicates on cluster (jobid: 424, external: 54556495, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.424.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:43:56 2024]
+Error in rule mark_duplicates:
+    jobid: 451
+    output: output/dedup/CQTL_AM7785_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7785_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7785_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7785_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7785_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7785_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7785_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7785_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556548
+
+Error executing rule mark_duplicates on cluster (jobid: 451, external: 54556548, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.451.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:45:08 2024]
+Error in rule mark_duplicates:
+    jobid: 411
+    output: output/dedup/CQTL_AM7679_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7679_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7679_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7679_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7679_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7679_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7679_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7679_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555739
+
+Error executing rule mark_duplicates on cluster (jobid: 411, external: 54555739, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.411.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:51:45 2024]
+Error in rule mark_duplicates:
+    jobid: 426
+    output: output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dedup.bam, output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dup_metrics.txt, output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7754_CTL_Ankle_replicate_sorted.bam             O=output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dedup.bam             M=output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.err
+
+        samtools index output/dedup/CQTL_AM7754_CTL_Ankle_replicate_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.out 2>> output/logs/mark_duplicates_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556166
+
+Error executing rule mark_duplicates on cluster (jobid: 426, external: 54556166, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.426.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:56:28 2024]
+Error in rule mark_duplicates:
+    jobid: 423
+    output: output/dedup/CQTL_AM7735_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7735_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7735_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7735_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7735_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7735_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7735_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7735_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556394
+
+Error executing rule mark_duplicates on cluster (jobid: 423, external: 54556394, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.423.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:56:30 2024]
+Error in rule mark_duplicates:
+    jobid: 413
+    output: output/dedup/CQTL_AM7711_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7711_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7711_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7711_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7711_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7711_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7711_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7711_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556444
+
+Error executing rule mark_duplicates on cluster (jobid: 413, external: 54556444, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.413.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:56:31 2024]
+Error in rule mark_duplicates:
+    jobid: 427
+    output: output/dedup/CQTL_AM7754_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7754_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7754_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7754_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7754_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7754_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7754_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556167
+
+Error executing rule mark_duplicates on cluster (jobid: 427, external: 54556167, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.427.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:56:40 2024]
+Error in rule mark_duplicates:
+    jobid: 441
+    output: output/dedup/CQTL_AM7775_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7775_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7775_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7775_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7775_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7775_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7775_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7775_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555457
+
+Error executing rule mark_duplicates on cluster (jobid: 441, external: 54555457, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.441.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:56:56 2024]
+Error in rule mark_duplicates:
+    jobid: 453
+    output: output/dedup/CQTL_AM7786_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7786_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7786_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7786_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7786_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7786_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7786_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7786_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556057
+
+Error executing rule mark_duplicates on cluster (jobid: 453, external: 54556057, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.453.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:56:57 2024]
+Error in rule mark_duplicates:
+    jobid: 448
+    output: output/dedup/CQTL_AM7780_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7780_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7780_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7780_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7780_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7780_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7780_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7780_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556059
+
+Error executing rule mark_duplicates on cluster (jobid: 448, external: 54556059, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.448.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:56:58 2024]
+Error in rule mark_duplicates:
+    jobid: 447
+    output: output/dedup/CQTL_AM7780_CTL_Ankle_1_dedup.bam, output/dedup/CQTL_AM7780_CTL_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7780_CTL_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7780_CTL_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7780_CTL_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7780_CTL_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7780_CTL_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7780_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555792
+
+Error executing rule mark_duplicates on cluster (jobid: 447, external: 54555792, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.447.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:57:00 2024]
+Error in rule mark_duplicates:
+    jobid: 450
+    output: output/dedup/CQTL_AM7781_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7781_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7781_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7781_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7781_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7781_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7781_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7781_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555843
+
+Error executing rule mark_duplicates on cluster (jobid: 450, external: 54555843, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.450.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:57:02 2024]
+Error in rule mark_duplicates:
+    jobid: 420
+    output: output/dedup/CQTL_AM7726_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7726_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7726_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7726_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7726_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7726_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7726_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7726_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556446
+
+Error executing rule mark_duplicates on cluster (jobid: 420, external: 54556446, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.420.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:57:14 2024]
+Error in rule mark_duplicates:
+    jobid: 446
+    output: output/dedup/CQTL_AM7778_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7778_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7778_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7778_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7778_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7778_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7778_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7778_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556716
+
+Error executing rule mark_duplicates on cluster (jobid: 446, external: 54556716, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.446.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:57:16 2024]
+Error in rule mark_duplicates:
+    jobid: 428
+    output: output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dedup.bam, output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dup_metrics.txt, output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7754_FNF_Ankle_replicate_sorted.bam             O=output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dedup.bam             M=output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.err
+
+        samtools index output/dedup/CQTL_AM7754_FNF_Ankle_replicate_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.out 2>> output/logs/mark_duplicates_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54556007
+
+Error executing rule mark_duplicates on cluster (jobid: 428, external: 54556007, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.428.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Nov 20 12:57:17 2024]
+Error in rule mark_duplicates:
+    jobid: 408
+    output: output/dedup/CQTL_AM7677_FNF_Ankle_1_dedup.bam, output/dedup/CQTL_AM7677_FNF_Ankle_1_dup_metrics.txt, output/dedup/CQTL_AM7677_FNF_Ankle_1_dedup.bai
+    log: output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.err, output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load java/17.0.2
+        module load picard/2.26.11
+        module load samtools/1.21
+        mkdir -p output/dedup
+
+        java -Xmx16g -jar /nas/longleaf/apps/picard/2.26.11/picard-2.26.11/picard.jar MarkDuplicates             I=output/align/CQTL_AM7677_FNF_Ankle_1_sorted.bam             O=output/dedup/CQTL_AM7677_FNF_Ankle_1_dedup.bam             M=output/dedup/CQTL_AM7677_FNF_Ankle_1_dup_metrics.txt             REMOVE_DUPLICATES=true             1> output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.out 2> output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.err
+
+        samtools index output/dedup/CQTL_AM7677_FNF_Ankle_1_dedup.bam 1>> output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.out 2>> output/logs/mark_duplicates_CQTL_AM7677_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 54555844
+
+Error executing rule mark_duplicates on cluster (jobid: 408, external: 54555844, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.t4_03027/snakejob.mark_duplicates.408.sh). For error details see the cluster log and the log files of the involved rule(s).

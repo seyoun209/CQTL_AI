@@ -1,0 +1,5 @@
+Building DAG of jobs...
+InputFunctionException in line 238 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_counting.smk:
+AttributeError: 'Wildcards' object has no attribute 'sampleName'
+Wildcards:
+tissue=synovium

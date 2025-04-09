@@ -1,0 +1,1659 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all
+	58	fastqc
+	58	trim
+	117
+
+[Tue Nov 12 12:11:35 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7727_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7727_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7727_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7727_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7727_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7727_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7727_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7727_FNF_Ankle_1.out
+    jobid: 132
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7727_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7727_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7727_FNF_Ankle_1.err
+        
+Submitted job 132 with external jobid '53968524'.
+
+[Tue Nov 12 12:11:40 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7735_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7735_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7735_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7735_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7735_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7735_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7735_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7735_FNF_Ankle_1.out
+    jobid: 134
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7735_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7735_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7735_FNF_Ankle_1.err
+        
+Submitted job 134 with external jobid '53968528'.
+
+[Tue Nov 12 12:11:45 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7778_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7778_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7778_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7778_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7778_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7778_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7778_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7778_CTL_Ankle_1.out
+    jobid: 97
+    benchmark: output/benchmarks/fastqc_CQTL_AM7778_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7778_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7778_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7778_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7778_CTL_Ankle_1.err;
+                
+Submitted job 97 with external jobid '53968532'.
+
+[Tue Nov 12 12:11:51 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7727_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7727_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7727_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7727_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7727_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7727_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7727_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7727_CTL_Ankle_1.out
+    jobid: 73
+    benchmark: output/benchmarks/fastqc_CQTL_AM7727_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7727_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7727_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7727_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7727_CTL_Ankle_1.err;
+                
+Submitted job 73 with external jobid '53968533'.
+
+[Tue Nov 12 12:11:56 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7712_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7712_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7712_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7712_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7712_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7712_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7712_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7712_CTL_Ankle_1.out
+    jobid: 125
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7712_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7712_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7712_CTL_Ankle_1.err
+        
+Submitted job 125 with external jobid '53968534'.
+
+[Tue Nov 12 12:12:01 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7717_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7717_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7717_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7717_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7717_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7717_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7717_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7717_CTL_Ankle_1.out
+    jobid: 69
+    benchmark: output/benchmarks/fastqc_CQTL_AM7717_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7717_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7717_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7717_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7717_CTL_Ankle_1.err;
+                
+Submitted job 69 with external jobid '53968535'.
+
+[Tue Nov 12 12:12:06 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7780_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7780_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7780_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7780_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7780_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7780_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7780_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7780_CTL_Ankle_1.out
+    jobid: 157
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7780_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7780_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7780_CTL_Ankle_1.err
+        
+Submitted job 157 with external jobid '53968536'.
+
+[Tue Nov 12 12:12:12 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7763_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7763_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7763_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7763_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7763_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7763_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7763_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7763_FNF_Ankle_1.out
+    jobid: 86
+    benchmark: output/benchmarks/fastqc_CQTL_AM7763_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7763_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7763_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7763_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7763_FNF_Ankle_1.err;
+                
+Submitted job 86 with external jobid '53968538'.
+
+[Tue Nov 12 12:12:17 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7781_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7781_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7781_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7781_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7781_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7781_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7781_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7781_CTL_Ankle_1.out
+    jobid: 159
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7781_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7781_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7781_CTL_Ankle_1.err
+        
+Submitted job 159 with external jobid '53968541'.
+
+[Tue Nov 12 12:12:22 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7780_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7780_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7780_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7780_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7780_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7780_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7780_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7780_FNF_Ankle_1.out
+    jobid: 158
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7780_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7780_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7780_FNF_Ankle_1.err
+        
+Submitted job 158 with external jobid '53968542'.
+
+[Tue Nov 12 12:12:27 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7712_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7712_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7712_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7712_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7712_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7712_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7712_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7712_FNF_Ankle_1.out
+    jobid: 126
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7712_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7712_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7712_FNF_Ankle_1.err
+        
+Submitted job 126 with external jobid '53968543'.
+
+[Tue Nov 12 12:12:32 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7717_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7717_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7717_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7717_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7717_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7717_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7717_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7717_FNF_Ankle_1.out
+    jobid: 128
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7717_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7717_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7717_FNF_Ankle_1.err
+        
+Submitted job 128 with external jobid '53968544'.
+
+[Tue Nov 12 12:12:37 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7754_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7754_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7754_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7754_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7754_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7754_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7754_FNF_Ankle_1.out
+    jobid: 79
+    benchmark: output/benchmarks/fastqc_CQTL_AM7754_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7754_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7754_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7754_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7754_FNF_Ankle_1.err;
+                
+Submitted job 79 with external jobid '53968546'.
+
+[Tue Nov 12 12:12:43 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7727_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7727_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7727_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7727_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7727_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7727_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7727_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7727_FNF_Ankle_1.out
+    jobid: 74
+    benchmark: output/benchmarks/fastqc_CQTL_AM7727_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7727_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7727_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7727_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7727_FNF_Ankle_1.err;
+                
+Submitted job 74 with external jobid '53968547'.
+
+[Tue Nov 12 12:12:48 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7778_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7778_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7778_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7778_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7778_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7778_CTL_Ankle_1.out
+    jobid: 155
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7778_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7778_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7778_CTL_Ankle_1.err
+        
+Submitted job 155 with external jobid '53968548'.
+
+[Tue Nov 12 12:12:53 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7735_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7735_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7735_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7735_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7735_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7735_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7735_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7735_FNF_Ankle_1.out
+    jobid: 76
+    benchmark: output/benchmarks/fastqc_CQTL_AM7735_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7735_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7735_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7735_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7735_FNF_Ankle_1.err;
+                
+Submitted job 76 with external jobid '53968550'.
+
+[Tue Nov 12 12:12:58 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7712_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7712_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7712_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7712_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7712_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7712_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7712_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7712_CTL_Ankle_1.out
+    jobid: 67
+    benchmark: output/benchmarks/fastqc_CQTL_AM7712_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7712_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7712_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7712_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7712_CTL_Ankle_1.err;
+                
+Submitted job 67 with external jobid '53968551'.
+
+[Tue Nov 12 12:13:03 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7727_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7727_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7727_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7727_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7727_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7727_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7727_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7727_CTL_Ankle_1.out
+    jobid: 131
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7727_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7727_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7727_CTL_Ankle_1.err
+        
+Submitted job 131 with external jobid '53968553'.
+
+[Tue Nov 12 12:13:08 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7780_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7780_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7780_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7780_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7780_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7780_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7780_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7780_CTL_Ankle_1.out
+    jobid: 99
+    benchmark: output/benchmarks/fastqc_CQTL_AM7780_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7780_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7780_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7780_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7780_CTL_Ankle_1.err;
+                
+Submitted job 99 with external jobid '53968556'.
+
+[Tue Nov 12 12:13:14 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7717_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7717_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7717_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7717_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7717_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7717_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7717_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7717_CTL_Ankle_1.out
+    jobid: 127
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7717_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7717_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7717_CTL_Ankle_1.err
+        
+Submitted job 127 with external jobid '53968558'.
+
+[Tue Nov 12 12:13:19 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7780_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7780_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7780_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7780_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7780_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7780_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7780_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7780_FNF_Ankle_1.out
+    jobid: 100
+    benchmark: output/benchmarks/fastqc_CQTL_AM7780_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7780_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7780_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7780_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7780_FNF_Ankle_1.err;
+                
+Submitted job 100 with external jobid '53968559'.
+
+[Tue Nov 12 12:13:24 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7781_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7781_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7781_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7781_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7781_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7781_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7781_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7781_CTL_Ankle_1.out
+    jobid: 101
+    benchmark: output/benchmarks/fastqc_CQTL_AM7781_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7781_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7781_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7781_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7781_CTL_Ankle_1.err;
+                
+Submitted job 101 with external jobid '53968561'.
+
+[Tue Nov 12 12:13:30 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7763_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7763_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7763_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7763_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7763_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7763_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7763_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7763_FNF_Ankle_1.out
+    jobid: 144
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7763_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7763_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7763_FNF_Ankle_1.err
+        
+Submitted job 144 with external jobid '53968564'.
+
+[Tue Nov 12 12:13:35 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7712_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7712_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7712_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7712_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7712_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7712_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7712_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7712_FNF_Ankle_1.out
+    jobid: 68
+    benchmark: output/benchmarks/fastqc_CQTL_AM7712_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7712_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7712_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7712_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7712_FNF_Ankle_1.err;
+                
+Submitted job 68 with external jobid '53968566'.
+
+[Tue Nov 12 12:13:40 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7754_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7754_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7754_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7754_FNF_Ankle_1.out
+    jobid: 137
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7754_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7754_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7754_FNF_Ankle_1.err
+        
+Submitted job 137 with external jobid '53968567'.
+
+[Tue Nov 12 12:13:45 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7717_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7717_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7717_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7717_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7717_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7717_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7717_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7717_FNF_Ankle_1.out
+    jobid: 70
+    benchmark: output/benchmarks/fastqc_CQTL_AM7717_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7717_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7717_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7717_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7717_FNF_Ankle_1.err;
+                
+Submitted job 70 with external jobid '53968571'.
+
+[Tue Nov 12 12:13:50 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7763_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7763_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7763_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7763_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7763_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7763_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7763_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7763_CTL_Ankle_1.out
+    jobid: 143
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7763_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7763_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7763_CTL_Ankle_1.err
+        
+Submitted job 143 with external jobid '53968572'.
+
+[Tue Nov 12 12:13:55 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7755_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7755_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7755_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7755_FNF_Ankle_1.out
+    jobid: 141
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7755_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7755_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7755_FNF_Ankle_1.err
+        
+Submitted job 141 with external jobid '53968573'.
+
+[Tue Nov 12 12:14:01 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7677_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7677_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7677_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7677_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7677_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7677_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7677_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7677_CTL_Ankle_1.out
+    jobid: 117
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7677_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7677_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7677_CTL_Ankle_1.err
+        
+Submitted job 117 with external jobid '53968574'.
+
+[Tue Nov 12 12:14:06 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7785_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7785_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7785_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7785_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7785_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7785_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7785_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7785_FNF_Ankle_1.out
+    jobid: 162
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7785_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7785_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7785_FNF_Ankle_1.err
+        
+Submitted job 162 with external jobid '53968576'.
+
+[Tue Nov 12 12:14:11 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7785_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7785_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7785_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7785_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7785_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7785_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7785_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7785_CTL_Ankle_1.out
+    jobid: 161
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7785_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7785_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7785_CTL_Ankle_1.err
+        
+Submitted job 161 with external jobid '53968577'.
+
+[Tue Nov 12 12:14:16 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7763_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7763_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7763_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7763_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7763_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7763_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7763_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7763_CTL_Ankle_1.out
+    jobid: 85
+    benchmark: output/benchmarks/fastqc_CQTL_AM7763_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7763_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7763_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7763_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7763_CTL_Ankle_1.err;
+                
+Submitted job 85 with external jobid '53968580'.
+
+[Tue Nov 12 12:14:22 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7677_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7677_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7677_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7677_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7677_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7677_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7677_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7677_CTL_Ankle_1.out
+    jobid: 59
+    benchmark: output/benchmarks/fastqc_CQTL_AM7677_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7677_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7677_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7677_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7677_CTL_Ankle_1.err;
+                
+Submitted job 59 with external jobid '53968581'.
+
+[Tue Nov 12 12:14:28 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7755_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7755_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7755_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7755_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7755_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7755_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7755_FNF_Ankle_1.out
+    jobid: 83
+    benchmark: output/benchmarks/fastqc_CQTL_AM7755_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7755_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7755_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7755_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7755_FNF_Ankle_1.err;
+                
+Submitted job 83 with external jobid '53968582'.
+
+[Tue Nov 12 12:14:33 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7785_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7785_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7785_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7785_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7785_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7785_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7785_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7785_FNF_Ankle_1.out
+    jobid: 104
+    benchmark: output/benchmarks/fastqc_CQTL_AM7785_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7785_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7785_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7785_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7785_FNF_Ankle_1.err;
+                
+Submitted job 104 with external jobid '53968583'.
+
+[Tue Nov 12 12:14:38 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7785_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7785_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7785_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7785_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7785_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7785_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7785_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7785_CTL_Ankle_1.out
+    jobid: 103
+    benchmark: output/benchmarks/fastqc_CQTL_AM7785_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7785_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7785_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7785_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7785_CTL_Ankle_1.err;
+                
+Submitted job 103 with external jobid '53968585'.
+
+[Tue Nov 12 12:14:43 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7765_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7765_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7765_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7765_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7765_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7765_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7765_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7765_FNF_Ankle_1.out
+    jobid: 146
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7765_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7765_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7765_FNF_Ankle_1.err
+        
+Submitted job 146 with external jobid '53968586'.
+
+[Tue Nov 12 12:14:48 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7679_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7679_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7679_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7679_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7679_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7679_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7679_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7679_CTL_Ankle_1.out
+    jobid: 121
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7679_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7679_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7679_CTL_Ankle_1.err
+        
+Submitted job 121 with external jobid '53968587'.
+
+[Tue Nov 12 12:14:53 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R2.fastq.gz
+    output: output/trim/CQTL_AM7754_CTL_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_replicate_R2_val_2.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_replicate_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_CTL_Ankle_replicate_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/trim_CQTL_AM7754_CTL_Ankle_replicate.out
+    jobid: 136
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R1.fastq.gz output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R2.fastq.gz 2> output/logs/trim_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+Submitted job 136 with external jobid '53968588'.
+
+[Tue Nov 12 12:14:58 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7678_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7678_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7678_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7678_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7678_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7678_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7678_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7678_CTL_Ankle_1.out
+    jobid: 119
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7678_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7678_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7678_CTL_Ankle_1.err
+        
+Submitted job 119 with external jobid '53968589'.
+
+[Tue Nov 12 12:15:03 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7754_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7754_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7754_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7754_CTL_Ankle_1.out
+    jobid: 135
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7754_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7754_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7754_CTL_Ankle_1.err
+        
+Submitted job 135 with external jobid '53968590'.
+
+[Tue Nov 12 12:15:09 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7775_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7775_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7775_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7775_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7775_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7775_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7775_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7775_FNF_Ankle_1.out
+    jobid: 152
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7775_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7775_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7775_FNF_Ankle_1.err
+        
+Submitted job 152 with external jobid '53968592'.
+
+[Tue Nov 12 12:15:14 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R2.fastq.gz
+    output: output/trim/CQTL_AM7755_CTL_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_replicate_R2_val_2.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_replicate_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_CTL_Ankle_replicate_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/trim_CQTL_AM7755_CTL_Ankle_replicate.out
+    jobid: 140
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R1.fastq.gz output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R2.fastq.gz 2> output/logs/trim_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+Submitted job 140 with external jobid '53968593'.
+
+[Tue Nov 12 12:15:19 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7711_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7711_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7711_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7711_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7711_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7711_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7711_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7711_FNF_Ankle_1.out
+    jobid: 124
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7711_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7711_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7711_FNF_Ankle_1.err
+        
+Submitted job 124 with external jobid '53968595'.
+
+[Tue Nov 12 12:15:24 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7775_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7775_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7775_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7775_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7775_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7775_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7775_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7775_CTL_Ankle_1.out
+    jobid: 151
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7775_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7775_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7775_CTL_Ankle_1.err
+        
+Submitted job 151 with external jobid '53968596'.
+
+[Tue Nov 12 12:15:29 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7769_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7769_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7769_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7769_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7769_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7769_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7769_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7769_FNF_Ankle_1.out
+    jobid: 90
+    benchmark: output/benchmarks/fastqc_CQTL_AM7769_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7769_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7769_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7769_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7769_FNF_Ankle_1.err;
+                
+Submitted job 90 with external jobid '53968598'.
+
+[Tue Nov 12 12:15:34 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7771_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7771_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7771_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7771_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7771_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7771_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7771_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7771_FNF_Ankle_1.out
+    jobid: 150
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7771_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7771_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7771_FNF_Ankle_1.err
+        
+Submitted job 150 with external jobid '53968599'.
+
+[Tue Nov 12 12:15:39 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7679_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7679_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7679_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7679_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7679_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7679_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7679_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7679_FNF_Ankle_1.out
+    jobid: 122
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7679_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7679_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7679_FNF_Ankle_1.err
+        
+Submitted job 122 with external jobid '53968600'.
+
+[Tue Nov 12 12:15:44 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7778FE_FNF_Femur_1_R1.fastq.gz, output/fastq/CQTL_AM7778FE_FNF_Femur_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7778FE_FNF_Femur_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778FE_FNF_Femur_1_R2_val_2.fq.gz, output/trim/CQTL_AM7778FE_FNF_Femur_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778FE_FNF_Femur_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/trim_CQTL_AM7778FE_FNF_Femur_1.out
+    jobid: 154
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7778FE_FNF_Femur_1_R1.fastq.gz output/fastq/CQTL_AM7778FE_FNF_Femur_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 154 with external jobid '53968601'.
+
+[Tue Nov 12 12:15:49 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7735_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7735_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7735_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7735_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7735_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7735_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7735_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7735_CTL_Ankle_1.out
+    jobid: 75
+    benchmark: output/benchmarks/fastqc_CQTL_AM7735_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7735_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7735_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7735_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7735_CTL_Ankle_1.err;
+                
+Submitted job 75 with external jobid '53968602'.
+
+[Tue Nov 12 12:15:55 2024]
+rule fastqc:
+    input: output/fastq/FACT_23-0013_CTL_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0013_CTL_synovium_1_R2.fastq.gz
+    output: output/QC/FACT_23-0013_CTL_synovium_1_R1_fastqc.zip, output/QC/FACT_23-0013_CTL_synovium_1_R2_fastqc.zip, output/QC/FACT_23-0013_CTL_synovium_1_R1_fastqc.html, output/QC/FACT_23-0013_CTL_synovium_1_R2_fastqc.html
+    log: output/logs/fastqc_FACT_23-0013_CTL_synovium_1.err, output/logs/fastqc_FACT_23-0013_CTL_synovium_1.out
+    jobid: 107
+    benchmark: output/benchmarks/fastqc_FACT_23-0013_CTL_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0013_CTL_synovium_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/FACT_23-0013_CTL_synovium_1_R1.fastq.gz output/fastq/FACT_23-0013_CTL_synovium_1_R2.fastq.gz 1> output/logs/fastqc_FACT_23-0013_CTL_synovium_1.out 2> output/logs/fastqc_FACT_23-0013_CTL_synovium_1.err;
+                
+Submitted job 107 with external jobid '53968603'.
+
+[Tue Nov 12 12:16:00 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7769_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7769_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7769_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7769_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7769_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7769_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7769_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7769_CTL_Ankle_1.out
+    jobid: 147
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7769_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7769_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7769_CTL_Ankle_1.err
+        
+Submitted job 147 with external jobid '53968605'.
+
+[Tue Nov 12 12:16:05 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7726_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7726_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7726_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7726_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7726_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7726_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7726_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7726_FNF_Ankle_1.out
+    jobid: 130
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7726_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7726_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7726_FNF_Ankle_1.err
+        
+Submitted job 130 with external jobid '53968607'.
+
+[Tue Nov 12 12:16:10 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7781_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7781_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7781_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7781_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7781_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7781_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7781_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7781_FNF_Ankle_1.out
+    jobid: 102
+    benchmark: output/benchmarks/fastqc_CQTL_AM7781_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7781_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7781_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7781_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7781_FNF_Ankle_1.err;
+                
+Submitted job 102 with external jobid '53968610'.
+
+[Tue Nov 12 12:16:16 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7771_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7771_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7771_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7771_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7771_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7771_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7771_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7771_CTL_Ankle_1.out
+    jobid: 149
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7771_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7771_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7771_CTL_Ankle_1.err
+        
+Submitted job 149 with external jobid '53968611'.
+
+[Tue Nov 12 12:16:21 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R2.fastq.gz
+    output: output/QC/CQTL_AM7754_FNF_Ankle_replicate_R1_fastqc.zip, output/QC/CQTL_AM7754_FNF_Ankle_replicate_R2_fastqc.zip, output/QC/CQTL_AM7754_FNF_Ankle_replicate_R1_fastqc.html, output/QC/CQTL_AM7754_FNF_Ankle_replicate_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/fastqc_CQTL_AM7754_FNF_Ankle_replicate.out
+    jobid: 80
+    benchmark: output/benchmarks/fastqc_CQTL_AM7754_FNF_Ankle_replicate.tsv
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R1.fastq.gz output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/fastqc_CQTL_AM7754_FNF_Ankle_replicate.err;
+                
+Submitted job 80 with external jobid '53968615'.
+
+[Tue Nov 12 12:16:26 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7679_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7679_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7679_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7679_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7679_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7679_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7679_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7679_CTL_Ankle_1.out
+    jobid: 63
+    benchmark: output/benchmarks/fastqc_CQTL_AM7679_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7679_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7679_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7679_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7679_CTL_Ankle_1.err;
+                
+Submitted job 63 with external jobid '53968617'.
+
+[Tue Nov 12 12:16:31 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7775_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7775_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7775_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7775_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7775_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7775_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7775_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7775_FNF_Ankle_1.out
+    jobid: 94
+    benchmark: output/benchmarks/fastqc_CQTL_AM7775_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7775_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7775_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7775_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7775_FNF_Ankle_1.err;
+                
+Submitted job 94 with external jobid '53968618'.
+
+[Tue Nov 12 12:16:36 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7754_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7754_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7754_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7754_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7754_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7754_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7754_CTL_Ankle_1.out
+    jobid: 77
+    benchmark: output/benchmarks/fastqc_CQTL_AM7754_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7754_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7754_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7754_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7754_CTL_Ankle_1.err;
+                
+Submitted job 77 with external jobid '53968619'.
+
+[Tue Nov 12 12:16:42 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7678_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7678_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7678_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7678_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7678_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7678_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7678_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7678_CTL_Ankle_1.out
+    jobid: 61
+    benchmark: output/benchmarks/fastqc_CQTL_AM7678_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7678_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7678_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7678_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7678_CTL_Ankle_1.err;
+                
+Submitted job 61 with external jobid '53968620'.
+
+[Tue Nov 12 12:16:47 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R2.fastq.gz
+    output: output/QC/CQTL_AM7754_CTL_Ankle_replicate_R1_fastqc.zip, output/QC/CQTL_AM7754_CTL_Ankle_replicate_R2_fastqc.zip, output/QC/CQTL_AM7754_CTL_Ankle_replicate_R1_fastqc.html, output/QC/CQTL_AM7754_CTL_Ankle_replicate_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/fastqc_CQTL_AM7754_CTL_Ankle_replicate.out
+    jobid: 78
+    benchmark: output/benchmarks/fastqc_CQTL_AM7754_CTL_Ankle_replicate.tsv
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R1.fastq.gz output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/fastqc_CQTL_AM7754_CTL_Ankle_replicate.err;
+                
+Submitted job 78 with external jobid '53968621'.
+
+[Tue Nov 12 12:16:52 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R2.fastq.gz
+    output: output/QC/CQTL_AM7755_CTL_Ankle_replicate_R1_fastqc.zip, output/QC/CQTL_AM7755_CTL_Ankle_replicate_R2_fastqc.zip, output/QC/CQTL_AM7755_CTL_Ankle_replicate_R1_fastqc.html, output/QC/CQTL_AM7755_CTL_Ankle_replicate_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/fastqc_CQTL_AM7755_CTL_Ankle_replicate.out
+    jobid: 82
+    benchmark: output/benchmarks/fastqc_CQTL_AM7755_CTL_Ankle_replicate.tsv
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R1.fastq.gz output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/fastqc_CQTL_AM7755_CTL_Ankle_replicate.err;
+                
+Submitted job 82 with external jobid '53968622'.
+
+[Tue Nov 12 12:16:57 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7711_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7711_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7711_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7711_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7711_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7711_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7711_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7711_FNF_Ankle_1.out
+    jobid: 66
+    benchmark: output/benchmarks/fastqc_CQTL_AM7711_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7711_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7711_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7711_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7711_FNF_Ankle_1.err;
+                
+Submitted job 66 with external jobid '53968623'.
+
+[Tue Nov 12 12:17:02 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7775_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7775_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7775_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7775_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7775_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7775_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7775_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7775_CTL_Ankle_1.out
+    jobid: 93
+    benchmark: output/benchmarks/fastqc_CQTL_AM7775_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7775_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7775_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7775_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7775_CTL_Ankle_1.err;
+                
+Submitted job 93 with external jobid '53968625'.
+
+[Tue Nov 12 12:17:08 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7771_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7771_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7771_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7771_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7771_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7771_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7771_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7771_FNF_Ankle_1.out
+    jobid: 92
+    benchmark: output/benchmarks/fastqc_CQTL_AM7771_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7771_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7771_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7771_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7771_FNF_Ankle_1.err;
+                
+Submitted job 92 with external jobid '53968627'.
+
+[Tue Nov 12 12:17:13 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7769_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7769_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7769_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7769_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7769_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7769_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7769_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7769_FNF_Ankle_1.out
+    jobid: 148
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7769_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7769_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7769_FNF_Ankle_1.err
+        
+Submitted job 148 with external jobid '53968632'.
+
+[Tue Nov 12 12:17:19 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7778FE_FNF_Femur_1_R1.fastq.gz, output/fastq/CQTL_AM7778FE_FNF_Femur_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7778FE_FNF_Femur_1_R1_fastqc.zip, output/QC/CQTL_AM7778FE_FNF_Femur_1_R2_fastqc.zip, output/QC/CQTL_AM7778FE_FNF_Femur_1_R1_fastqc.html, output/QC/CQTL_AM7778FE_FNF_Femur_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/fastqc_CQTL_AM7778FE_FNF_Femur_1.out
+    jobid: 96
+    benchmark: output/benchmarks/fastqc_CQTL_AM7778FE_FNF_Femur_1.tsv
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7778FE_FNF_Femur_1_R1.fastq.gz output/fastq/CQTL_AM7778FE_FNF_Femur_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/fastqc_CQTL_AM7778FE_FNF_Femur_1.err;
+                
+Submitted job 96 with external jobid '53968634'.
+
+[Tue Nov 12 12:17:24 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7679_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7679_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7679_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7679_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7679_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7679_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7679_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7679_FNF_Ankle_1.out
+    jobid: 64
+    benchmark: output/benchmarks/fastqc_CQTL_AM7679_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7679_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7679_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7679_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7679_FNF_Ankle_1.err;
+                
+Submitted job 64 with external jobid '53968635'.
+
+[Tue Nov 12 12:17:29 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7726_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7726_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7726_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7726_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7726_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7726_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7726_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7726_FNF_Ankle_1.out
+    jobid: 72
+    benchmark: output/benchmarks/fastqc_CQTL_AM7726_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7726_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7726_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7726_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7726_FNF_Ankle_1.err;
+                
+Submitted job 72 with external jobid '53968636'.
+
+[Tue Nov 12 12:17:34 2024]
+rule trim:
+    input: output/fastq/FACT_23-0013_CTL_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0013_CTL_synovium_1_R2.fastq.gz
+    output: output/trim/FACT_23-0013_CTL_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0013_CTL_synovium_1_R2_val_2.fq.gz, output/trim/FACT_23-0013_CTL_synovium_1_R1.fastq.gz_trimming_report.txt, output/trim/FACT_23-0013_CTL_synovium_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_FACT_23-0013_CTL_synovium_1.err, output/logs/trim_FACT_23-0013_CTL_synovium_1.out
+    jobid: 165
+    wildcards: sampleName=FACT_23-0013_CTL_synovium_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/FACT_23-0013_CTL_synovium_1_R1.fastq.gz output/fastq/FACT_23-0013_CTL_synovium_1_R2.fastq.gz 2> output/logs/trim_FACT_23-0013_CTL_synovium_1.err
+        
+Submitted job 165 with external jobid '53968637'.
+
+[Tue Nov 12 12:17:39 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7735_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7735_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7735_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7735_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7735_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7735_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7735_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7735_CTL_Ankle_1.out
+    jobid: 133
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7735_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7735_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7735_CTL_Ankle_1.err
+        
+Submitted job 133 with external jobid '53968638'.
+
+[Tue Nov 12 12:17:44 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7769_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7769_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7769_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7769_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7769_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7769_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7769_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7769_CTL_Ankle_1.out
+    jobid: 89
+    benchmark: output/benchmarks/fastqc_CQTL_AM7769_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7769_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7769_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7769_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7769_CTL_Ankle_1.err;
+                
+Submitted job 89 with external jobid '53968640'.
+
+[Tue Nov 12 12:17:49 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R2.fastq.gz
+    output: output/trim/CQTL_AM7754_FNF_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_replicate_R2_val_2.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_replicate_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7754_FNF_Ankle_replicate_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/trim_CQTL_AM7754_FNF_Ankle_replicate.out
+    jobid: 138
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R1.fastq.gz output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R2.fastq.gz 2> output/logs/trim_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+Submitted job 138 with external jobid '53968718'.
+
+[Tue Nov 12 12:17:54 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7771_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7771_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7771_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7771_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7771_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7771_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7771_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7771_CTL_Ankle_1.out
+    jobid: 91
+    benchmark: output/benchmarks/fastqc_CQTL_AM7771_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7771_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7771_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7771_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7771_CTL_Ankle_1.err;
+                
+Submitted job 91 with external jobid '53968719'.
+
+[Tue Nov 12 12:18:00 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7781_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7781_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7781_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7781_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7781_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7781_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7781_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7781_FNF_Ankle_1.out
+    jobid: 160
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7781_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7781_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7781_FNF_Ankle_1.err
+        
+Submitted job 160 with external jobid '53968721'.
+
+[Tue Nov 12 12:18:05 2024]
+rule fastqc:
+    input: output/fastq/FACT_23-0022_FNF_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0022_FNF_synovium_1_R2.fastq.gz
+    output: output/QC/FACT_23-0022_FNF_synovium_1_R1_fastqc.zip, output/QC/FACT_23-0022_FNF_synovium_1_R2_fastqc.zip, output/QC/FACT_23-0022_FNF_synovium_1_R1_fastqc.html, output/QC/FACT_23-0022_FNF_synovium_1_R2_fastqc.html
+    log: output/logs/fastqc_FACT_23-0022_FNF_synovium_1.err, output/logs/fastqc_FACT_23-0022_FNF_synovium_1.out
+    jobid: 112
+    benchmark: output/benchmarks/fastqc_FACT_23-0022_FNF_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0022_FNF_synovium_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/FACT_23-0022_FNF_synovium_1_R1.fastq.gz output/fastq/FACT_23-0022_FNF_synovium_1_R2.fastq.gz 1> output/logs/fastqc_FACT_23-0022_FNF_synovium_1.out 2> output/logs/fastqc_FACT_23-0022_FNF_synovium_1.err;
+                
+Submitted job 112 with external jobid '53968722'.
+
+[Tue Nov 12 12:18:10 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7726_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7726_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7726_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7726_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7726_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7726_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7726_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7726_CTL_Ankle_1.out
+    jobid: 129
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7726_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7726_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7726_CTL_Ankle_1.err
+        
+Submitted job 129 with external jobid '53968723'.
+
+[Tue Nov 12 12:18:15 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7765_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7765_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7765_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7765_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7765_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7765_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7765_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7765_CTL_Ankle_1.out
+    jobid: 145
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7765_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7765_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7765_CTL_Ankle_1.err
+        
+Submitted job 145 with external jobid '53968784'.
+
+[Tue Nov 12 12:18:20 2024]
+rule trim:
+    input: output/fastq/FACT_23-0013_FNF_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0013_FNF_synovium_1_R2.fastq.gz
+    output: output/trim/FACT_23-0013_FNF_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0013_FNF_synovium_1_R2_val_2.fq.gz, output/trim/FACT_23-0013_FNF_synovium_1_R1.fastq.gz_trimming_report.txt, output/trim/FACT_23-0013_FNF_synovium_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_FACT_23-0013_FNF_synovium_1.err, output/logs/trim_FACT_23-0013_FNF_synovium_1.out
+    jobid: 166
+    wildcards: sampleName=FACT_23-0013_FNF_synovium_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/FACT_23-0013_FNF_synovium_1_R1.fastq.gz output/fastq/FACT_23-0013_FNF_synovium_1_R2.fastq.gz 2> output/logs/trim_FACT_23-0013_FNF_synovium_1.err
+        
+Submitted job 166 with external jobid '53968793'.
+
+[Tue Nov 12 12:18:25 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7677_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7677_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7677_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7677_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7677_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7677_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7677_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7677_FNF_Ankle_1.out
+    jobid: 60
+    benchmark: output/benchmarks/fastqc_CQTL_AM7677_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7677_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7677_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7677_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7677_FNF_Ankle_1.err;
+                
+Submitted job 60 with external jobid '53968794'.
+
+[Tue Nov 12 12:18:30 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7786_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7786_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7786_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7786_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7786_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7786_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7786_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7786_FNF_Ankle_1.out
+    jobid: 164
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7786_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7786_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7786_FNF_Ankle_1.err
+        
+Submitted job 164 with external jobid '53968795'.
+
+[Tue Nov 12 12:18:36 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7678_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7678_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7678_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7678_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7678_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7678_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7678_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7678_FNF_Ankle_1.out
+    jobid: 62
+    benchmark: output/benchmarks/fastqc_CQTL_AM7678_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7678_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7678_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7678_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7678_FNF_Ankle_1.err;
+                
+Submitted job 62 with external jobid '53968796'.
+
+[Tue Nov 12 12:18:41 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7755_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7755_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7755_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7755_CTL_Ankle_1.out
+    jobid: 139
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7755_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7755_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7755_CTL_Ankle_1.err
+        
+Submitted job 139 with external jobid '53968797'.
+
+[Tue Nov 12 12:18:46 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R2.fastq.gz
+    output: output/QC/CQTL_AM7755_FNF_Ankle_replicate_R1_fastqc.zip, output/QC/CQTL_AM7755_FNF_Ankle_replicate_R2_fastqc.zip, output/QC/CQTL_AM7755_FNF_Ankle_replicate_R1_fastqc.html, output/QC/CQTL_AM7755_FNF_Ankle_replicate_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/fastqc_CQTL_AM7755_FNF_Ankle_replicate.out
+    jobid: 84
+    benchmark: output/benchmarks/fastqc_CQTL_AM7755_FNF_Ankle_replicate.tsv
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R1.fastq.gz output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/fastqc_CQTL_AM7755_FNF_Ankle_replicate.err;
+                
+Submitted job 84 with external jobid '53968798'.
+
+[Tue Nov 12 12:18:51 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7778_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7778_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7778_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7778_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7778_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7778_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7778_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7778_FNF_Ankle_1.out
+    jobid: 98
+    benchmark: output/benchmarks/fastqc_CQTL_AM7778_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7778_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7778_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7778_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7778_FNF_Ankle_1.err;
+                
+Submitted job 98 with external jobid '53968799'.
+
+[Tue Nov 12 12:18:56 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7765_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7765_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7765_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7765_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7765_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7765_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7765_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7765_FNF_Ankle_1.out
+    jobid: 88
+    benchmark: output/benchmarks/fastqc_CQTL_AM7765_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7765_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7765_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7765_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7765_FNF_Ankle_1.err;
+                
+Submitted job 88 with external jobid '53968801'.
+
+[Tue Nov 12 12:19:02 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7711_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7711_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7711_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7711_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7711_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7711_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7711_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7711_CTL_Ankle_1.out
+    jobid: 123
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7711_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7711_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7711_CTL_Ankle_1.err
+        
+Submitted job 123 with external jobid '53968802'.
+
+[Tue Nov 12 12:19:07 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7786_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7786_CTL_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7786_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7786_CTL_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7786_CTL_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7786_CTL_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7786_CTL_Ankle_1.err, output/logs/trim_CQTL_AM7786_CTL_Ankle_1.out
+    jobid: 163
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7786_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7786_CTL_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7786_CTL_Ankle_1.err
+        
+Submitted job 163 with external jobid '53968804'.
+
+[Tue Nov 12 12:19:12 2024]
+rule trim:
+    input: output/fastq/FACT_23-0022_FNF_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0022_FNF_synovium_1_R2.fastq.gz
+    output: output/trim/FACT_23-0022_FNF_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0022_FNF_synovium_1_R2_val_2.fq.gz, output/trim/FACT_23-0022_FNF_synovium_1_R1.fastq.gz_trimming_report.txt, output/trim/FACT_23-0022_FNF_synovium_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_FACT_23-0022_FNF_synovium_1.err, output/logs/trim_FACT_23-0022_FNF_synovium_1.out
+    jobid: 170
+    wildcards: sampleName=FACT_23-0022_FNF_synovium_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/FACT_23-0022_FNF_synovium_1_R1.fastq.gz output/fastq/FACT_23-0022_FNF_synovium_1_R2.fastq.gz 2> output/logs/trim_FACT_23-0022_FNF_synovium_1.err
+        
+Submitted job 170 with external jobid '53968805'.
+
+[Tue Nov 12 12:19:17 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7726_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7726_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7726_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7726_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7726_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7726_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7726_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7726_CTL_Ankle_1.out
+    jobid: 71
+    benchmark: output/benchmarks/fastqc_CQTL_AM7726_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7726_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7726_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7726_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7726_CTL_Ankle_1.err;
+                
+Submitted job 71 with external jobid '53968806'.
+
+[Tue Nov 12 12:19:22 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7765_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7765_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7765_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7765_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7765_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7765_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7765_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7765_CTL_Ankle_1.out
+    jobid: 87
+    benchmark: output/benchmarks/fastqc_CQTL_AM7765_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7765_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7765_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7765_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7765_CTL_Ankle_1.err;
+                
+Submitted job 87 with external jobid '53968807'.
+
+[Tue Nov 12 12:19:27 2024]
+rule fastqc:
+    input: output/fastq/FACT_23-0013_FNF_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0013_FNF_synovium_1_R2.fastq.gz
+    output: output/QC/FACT_23-0013_FNF_synovium_1_R1_fastqc.zip, output/QC/FACT_23-0013_FNF_synovium_1_R2_fastqc.zip, output/QC/FACT_23-0013_FNF_synovium_1_R1_fastqc.html, output/QC/FACT_23-0013_FNF_synovium_1_R2_fastqc.html
+    log: output/logs/fastqc_FACT_23-0013_FNF_synovium_1.err, output/logs/fastqc_FACT_23-0013_FNF_synovium_1.out
+    jobid: 108
+    benchmark: output/benchmarks/fastqc_FACT_23-0013_FNF_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0013_FNF_synovium_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/FACT_23-0013_FNF_synovium_1_R1.fastq.gz output/fastq/FACT_23-0013_FNF_synovium_1_R2.fastq.gz 1> output/logs/fastqc_FACT_23-0013_FNF_synovium_1.out 2> output/logs/fastqc_FACT_23-0013_FNF_synovium_1.err;
+                
+Submitted job 108 with external jobid '53968809'.
+
+[Tue Nov 12 12:19:33 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7786_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7786_FNF_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7786_FNF_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7786_FNF_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7786_FNF_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7786_FNF_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7786_FNF_Ankle_1.err, output/logs/fastqc_CQTL_AM7786_FNF_Ankle_1.out
+    jobid: 106
+    benchmark: output/benchmarks/fastqc_CQTL_AM7786_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7786_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7786_FNF_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7786_FNF_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7786_FNF_Ankle_1.err;
+                
+Submitted job 106 with external jobid '53968810'.
+
+[Tue Nov 12 12:19:38 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7677_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7677_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7677_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7677_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7677_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7677_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7677_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7677_FNF_Ankle_1.out
+    jobid: 118
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7677_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7677_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7677_FNF_Ankle_1.err
+        
+Submitted job 118 with external jobid '53968811'.
+
+[Tue Nov 12 12:19:43 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R2.fastq.gz
+    output: output/trim/CQTL_AM7755_FNF_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_replicate_R2_val_2.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_replicate_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7755_FNF_Ankle_replicate_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/trim_CQTL_AM7755_FNF_Ankle_replicate.out
+    jobid: 142
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R1.fastq.gz output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R2.fastq.gz 2> output/logs/trim_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+Submitted job 142 with external jobid '53968814'.
+
+[Tue Nov 12 12:19:48 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7755_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7755_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7755_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7755_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7755_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7755_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7755_CTL_Ankle_1.out
+    jobid: 81
+    benchmark: output/benchmarks/fastqc_CQTL_AM7755_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7755_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7755_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7755_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7755_CTL_Ankle_1.err;
+                
+Submitted job 81 with external jobid '53968815'.
+
+[Tue Nov 12 12:19:53 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7678_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7678_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7678_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7678_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7678_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7678_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7678_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7678_FNF_Ankle_1.out
+    jobid: 120
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7678_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7678_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7678_FNF_Ankle_1.err
+        
+Submitted job 120 with external jobid '53968816'.
+
+[Tue Nov 12 12:19:59 2024]
+rule trim:
+    input: output/fastq/CQTL_AM7778_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7778_FNF_Ankle_1_R2.fastq.gz
+    output: output/trim/CQTL_AM7778_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778_FNF_Ankle_1_R2_val_2.fq.gz, output/trim/CQTL_AM7778_FNF_Ankle_1_R1.fastq.gz_trimming_report.txt, output/trim/CQTL_AM7778_FNF_Ankle_1_R2.fastq.gz_trimming_report.txt
+    log: output/logs/trim_CQTL_AM7778_FNF_Ankle_1.err, output/logs/trim_CQTL_AM7778_FNF_Ankle_1.out
+    jobid: 156
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 4
+
+
+        module load trim_galore/0.6.7
+        module load python/3.9.6
+        module load pigz
+        mkdir -p output/trim
+        trim_galore -o output/trim --cores 4 --paired output/fastq/CQTL_AM7778_FNF_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7778_FNF_Ankle_1_R2.fastq.gz 2> output/logs/trim_CQTL_AM7778_FNF_Ankle_1.err
+        
+Submitted job 156 with external jobid '53968817'.
+
+[Tue Nov 12 12:20:04 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7786_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7786_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7786_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7786_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7786_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7786_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7786_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7786_CTL_Ankle_1.out
+    jobid: 105
+    benchmark: output/benchmarks/fastqc_CQTL_AM7786_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7786_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7786_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7786_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7786_CTL_Ankle_1.err;
+                
+Submitted job 105 with external jobid '53968821'.
+
+[Tue Nov 12 12:20:10 2024]
+rule fastqc:
+    input: output/fastq/CQTL_AM7711_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7711_CTL_Ankle_1_R2.fastq.gz
+    output: output/QC/CQTL_AM7711_CTL_Ankle_1_R1_fastqc.zip, output/QC/CQTL_AM7711_CTL_Ankle_1_R2_fastqc.zip, output/QC/CQTL_AM7711_CTL_Ankle_1_R1_fastqc.html, output/QC/CQTL_AM7711_CTL_Ankle_1_R2_fastqc.html
+    log: output/logs/fastqc_CQTL_AM7711_CTL_Ankle_1.err, output/logs/fastqc_CQTL_AM7711_CTL_Ankle_1.out
+    jobid: 65
+    benchmark: output/benchmarks/fastqc_CQTL_AM7711_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+
+
+                module load fastqc/0.12.1;
+                fastqc -o output/QC output/fastq/CQTL_AM7711_CTL_Ankle_1_R1.fastq.gz output/fastq/CQTL_AM7711_CTL_Ankle_1_R2.fastq.gz 1> output/logs/fastqc_CQTL_AM7711_CTL_Ankle_1.out 2> output/logs/fastqc_CQTL_AM7711_CTL_Ankle_1.err;
+                
+Submitted job 65 with external jobid '53968822'.

@@ -1,0 +1,279 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	12	signal
+	13
+
+[Wed Dec 25 18:00:01 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/signals/Ankle_replicate/CQTL_AM7755_CTL_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Ankle_replicate_CQTL_AM7755_CTL_Ankle_replicate_replicate.err
+    jobid: 9
+    wildcards: tissue=Ankle_replicate, sampleName=CQTL_AM7755_CTL_Ankle_replicate_replicate
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Ankle_replicate
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam             -o output/signals/Ankle_replicate/CQTL_AM7755_CTL_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Ankle_replicate_CQTL_AM7755_CTL_Ankle_replicate_replicate.err 2>&1
+
+        
+Submitted job 9 with external jobid '56399605'.
+
+[Wed Dec 25 18:00:02 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/signals/Femur/CQTL_AM7755_CTL_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Femur_CQTL_AM7755_CTL_Ankle_replicate_replicate.err
+    jobid: 3
+    wildcards: tissue=Femur, sampleName=CQTL_AM7755_CTL_Ankle_replicate_replicate
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Femur
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam             -o output/signals/Femur/CQTL_AM7755_CTL_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Femur_CQTL_AM7755_CTL_Ankle_replicate_replicate.err 2>&1
+
+        
+Submitted job 3 with external jobid '56399606'.
+
+[Wed Dec 25 18:00:03 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/signals/Ankle_replicate/CQTL_AM7754_CTL_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Ankle_replicate_CQTL_AM7754_CTL_Ankle_replicate_replicate.err
+    jobid: 7
+    wildcards: tissue=Ankle_replicate, sampleName=CQTL_AM7754_CTL_Ankle_replicate_replicate
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Ankle_replicate
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam             -o output/signals/Ankle_replicate/CQTL_AM7754_CTL_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Ankle_replicate_CQTL_AM7754_CTL_Ankle_replicate_replicate.err 2>&1
+
+        
+Submitted job 7 with external jobid '56399607'.
+
+[Wed Dec 25 18:00:04 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/signals/Femur/CQTL_AM7754_CTL_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Femur_CQTL_AM7754_CTL_Ankle_replicate_replicate.err
+    jobid: 1
+    wildcards: tissue=Femur, sampleName=CQTL_AM7754_CTL_Ankle_replicate_replicate
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Femur
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam             -o output/signals/Femur/CQTL_AM7754_CTL_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Femur_CQTL_AM7754_CTL_Ankle_replicate_replicate.err 2>&1
+
+        
+Submitted job 1 with external jobid '56399608'.
+
+[Wed Dec 25 18:00:05 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/signals/Femur/CQTL_AM7754_FNF_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Femur_CQTL_AM7754_FNF_Ankle_replicate_replicate.err
+    jobid: 2
+    wildcards: tissue=Femur, sampleName=CQTL_AM7754_FNF_Ankle_replicate_replicate
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Femur
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam             -o output/signals/Femur/CQTL_AM7754_FNF_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Femur_CQTL_AM7754_FNF_Ankle_replicate_replicate.err 2>&1
+
+        
+Submitted job 2 with external jobid '56399609'.
+
+[Wed Dec 25 18:00:07 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/signals/Ankle_replicate/CQTL_AM7754_FNF_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Ankle_replicate_CQTL_AM7754_FNF_Ankle_replicate_replicate.err
+    jobid: 8
+    wildcards: tissue=Ankle_replicate, sampleName=CQTL_AM7754_FNF_Ankle_replicate_replicate
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Ankle_replicate
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam             -o output/signals/Ankle_replicate/CQTL_AM7754_FNF_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Ankle_replicate_CQTL_AM7754_FNF_Ankle_replicate_replicate.err 2>&1
+
+        
+Submitted job 8 with external jobid '56399611'.
+
+[Wed Dec 25 18:00:08 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam
+    output: output/signals/Femur/CQTL_AM7778FE_CTL_Femur_1.bw
+    log: output/logs/signal_Femur_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 5
+    wildcards: tissue=Femur, sampleName=CQTL_AM7778FE_CTL_Femur_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Femur
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam             -o output/signals/Femur/CQTL_AM7778FE_CTL_Femur_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Femur_CQTL_AM7778FE_CTL_Femur_1.err 2>&1
+
+        
+Submitted job 5 with external jobid '56399612'.
+
+[Wed Dec 25 18:00:09 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/signals/Ankle_replicate/CQTL_AM7755_FNF_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Ankle_replicate_CQTL_AM7755_FNF_Ankle_replicate_replicate.err
+    jobid: 10
+    wildcards: tissue=Ankle_replicate, sampleName=CQTL_AM7755_FNF_Ankle_replicate_replicate
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Ankle_replicate
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam             -o output/signals/Ankle_replicate/CQTL_AM7755_FNF_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Ankle_replicate_CQTL_AM7755_FNF_Ankle_replicate_replicate.err 2>&1
+
+        
+Submitted job 10 with external jobid '56399613'.
+
+[Wed Dec 25 18:00:10 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/signals/Femur/CQTL_AM7755_FNF_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Femur_CQTL_AM7755_FNF_Ankle_replicate_replicate.err
+    jobid: 4
+    wildcards: tissue=Femur, sampleName=CQTL_AM7755_FNF_Ankle_replicate_replicate
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Femur
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam             -o output/signals/Femur/CQTL_AM7755_FNF_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Femur_CQTL_AM7755_FNF_Ankle_replicate_replicate.err 2>&1
+
+        
+Submitted job 4 with external jobid '56399614'.
+
+[Wed Dec 25 18:00:11 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam
+    output: output/signals/Ankle_replicate/CQTL_AM7778FE_CTL_Femur_1.bw
+    log: output/logs/signal_Ankle_replicate_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 11
+    wildcards: tissue=Ankle_replicate, sampleName=CQTL_AM7778FE_CTL_Femur_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Ankle_replicate
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam             -o output/signals/Ankle_replicate/CQTL_AM7778FE_CTL_Femur_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Ankle_replicate_CQTL_AM7778FE_CTL_Femur_1.err 2>&1
+
+        
+Submitted job 11 with external jobid '56399615'.
+
+[Wed Dec 25 18:00:12 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam
+    output: output/signals/Ankle_replicate/CQTL_AM7778FE_FNF_Femur_1.bw
+    log: output/logs/signal_Ankle_replicate_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 12
+    wildcards: tissue=Ankle_replicate, sampleName=CQTL_AM7778FE_FNF_Femur_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Ankle_replicate
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam             -o output/signals/Ankle_replicate/CQTL_AM7778FE_FNF_Femur_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Ankle_replicate_CQTL_AM7778FE_FNF_Femur_1.err 2>&1
+
+        
+Submitted job 12 with external jobid '56399616'.
+
+[Wed Dec 25 18:00:13 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam
+    output: output/signals/Femur/CQTL_AM7778FE_FNF_Femur_1.bw
+    log: output/logs/signal_Femur_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 6
+    wildcards: tissue=Femur, sampleName=CQTL_AM7778FE_FNF_Femur_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Femur
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam             -o output/signals/Femur/CQTL_AM7778FE_FNF_Femur_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Femur_CQTL_AM7778FE_FNF_Femur_1.err 2>&1
+
+        
+Submitted job 6 with external jobid '56399617'.
+[Wed Dec 25 18:00:36 2024]
+Error in rule signal:
+    jobid: 7
+    output: output/signals/Ankle_replicate/CQTL_AM7754_CTL_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Ankle_replicate_CQTL_AM7754_CTL_Ankle_replicate_replicate.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Ankle_replicate
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam             -o output/signals/Ankle_replicate/CQTL_AM7754_CTL_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Ankle_replicate_CQTL_AM7754_CTL_Ankle_replicate_replicate.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56399607
+
+Error executing rule signal on cluster (jobid: 7, external: 56399607, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jcs27zq1/snakejob.signal.7.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Dec 25 18:00:37 2024]
+Error in rule signal:
+    jobid: 1
+    output: output/signals/Femur/CQTL_AM7754_CTL_Ankle_replicate_replicate.bw
+    log: output/logs/signal_Femur_CQTL_AM7754_CTL_Ankle_replicate_replicate.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Femur
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam             -o output/signals/Femur/CQTL_AM7754_CTL_Ankle_replicate_replicate.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_Femur_CQTL_AM7754_CTL_Ankle_replicate_replicate.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56399608
+
+Error executing rule signal on cluster (jobid: 1, external: 56399608, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.jcs27zq1/snakejob.signal.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Wed Dec 25 18:25:08 2024]
+Finished job 11.
+1 of 13 steps (8%) done
+[Wed Dec 25 18:28:33 2024]
+Finished job 5.
+2 of 13 steps (15%) done
+[Wed Dec 25 18:32:30 2024]
+Finished job 12.
+3 of 13 steps (23%) done
+[Wed Dec 25 18:35:14 2024]
+Finished job 8.
+4 of 13 steps (31%) done
+[Wed Dec 25 18:35:16 2024]
+Finished job 4.
+5 of 13 steps (38%) done
+[Wed Dec 25 18:35:30 2024]
+Finished job 2.
+6 of 13 steps (46%) done
+[Wed Dec 25 18:35:42 2024]
+Finished job 6.
+7 of 13 steps (54%) done
+[Wed Dec 25 18:36:25 2024]
+Finished job 10.
+8 of 13 steps (62%) done
+[Wed Dec 25 18:36:36 2024]
+Finished job 9.
+9 of 13 steps (69%) done
+[Wed Dec 25 18:37:00 2024]
+Finished job 3.
+10 of 13 steps (77%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-25T175959.891350.snakemake.log

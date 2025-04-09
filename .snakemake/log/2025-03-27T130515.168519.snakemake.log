@@ -1,0 +1,2151 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	1	generate_bam_samplesheet
+	48	qc_r
+	35	run_ataqv
+	85
+
+[Thu Mar 27 13:05:22 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7679_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7679_FNF_Ankle_1.out
+    jobid: 246
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7679_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7679_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 246 with external jobid '63140784'.
+
+[Thu Mar 27 13:05:23 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7771_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7771_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7771_FNF_Ankle_1.out
+    jobid: 322
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7771_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7771_FNF_Ankle_1.err
+        
+Submitted job 322 with external jobid '63140785'.
+
+[Thu Mar 27 13:05:24 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7778_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7778_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7778_CTL_Ankle_1.out
+    jobid: 327
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7778_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7778_CTL_Ankle_1.err
+        
+Submitted job 327 with external jobid '63140786'.
+
+[Thu Mar 27 13:05:25 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam
+    output: output/bamQC/CQTL_AM7755_FNF_Ankle_replicate_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_replicate.out
+    jobid: 314
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+Submitted job 314 with external jobid '63140791'.
+
+[Thu Mar 27 13:05:26 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7781_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7781_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7781_CTL_Ankle_1.out
+    jobid: 331
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7781_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7781_CTL_Ankle_1.err
+        
+Submitted job 331 with external jobid '63140792'.
+
+[Thu Mar 27 13:05:27 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7781_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7781_FNF_Ankle_1.out
+    jobid: 284
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7781_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7781_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 284 with external jobid '63140793'.
+
+[Thu Mar 27 13:05:29 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7785_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7785_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7785_FNF_Ankle_1.out
+    jobid: 334
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7785_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7785_FNF_Ankle_1.err
+        
+Submitted job 334 with external jobid '63140794'.
+
+[Thu Mar 27 13:05:30 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7678_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7678_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7678_FNF_Ankle_1.out
+    jobid: 292
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7678_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7678_FNF_Ankle_1.err
+        
+Submitted job 292 with external jobid '63140795'.
+
+[Thu Mar 27 13:05:31 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7679_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7679_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7679_FNF_Ankle_1.out
+    jobid: 294
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7679_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7679_FNF_Ankle_1.err
+        
+Submitted job 294 with external jobid '63140796'.
+
+[Thu Mar 27 13:05:32 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7717_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7717_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7717_FNF_Ankle_1.out
+    jobid: 300
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7717_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7717_FNF_Ankle_1.err
+        
+Submitted job 300 with external jobid '63140797'.
+
+[Thu Mar 27 13:05:33 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7785_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7785_FNF_Ankle_1.out
+    jobid: 286
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7785_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7785_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 286 with external jobid '63140798'.
+
+[Thu Mar 27 13:05:34 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7712_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7712_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7712_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7712_FNF_Ankle_1.out
+    jobid: 298
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7712_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7712_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7712_FNF_Ankle_1.err
+        
+Submitted job 298 with external jobid '63140799'.
+
+[Thu Mar 27 13:05:35 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7678_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7678_FNF_Ankle_1.out
+    jobid: 244
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7678_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7678_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 244 with external jobid '63140800'.
+
+[Thu Mar 27 13:05:37 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7778FE_CTL_Femur_1_RG.bam
+    output: output/bamQC/CQTL_AM7778FE_CTL_Femur_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7778FE_CTL_Femur_1.err, output/logs/atacseqQC_CQTL_AM7778FE_CTL_Femur_1.out
+    jobid: 325
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7778FE_CTL_Femur_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7778FE_CTL_Femur_1.out 2> output/logs/atacseqQC_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 325 with external jobid '63140801'.
+
+[Thu Mar 27 13:05:38 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7778_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7778_CTL_Ankle_1.out
+    jobid: 279
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7778_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7778_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 279 with external jobid '63140802'.
+
+[Thu Mar 27 13:05:39 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam
+    output: output/ataqv/CQTL_AM7755_FNF_Ankle_replicate.ataqv.txt, output/ataqv/CQTL_AM7755_FNF_Ankle_replicate.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/ataqv_CQTL_AM7755_FNF_Ankle_replicate.out
+    jobid: 266
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7755_FNF_Ankle_replicate.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam > output/ataqv/CQTL_AM7755_FNF_Ankle_replicate.ataqv.txt             2> output/logs/ataqv_CQTL_AM7755_FNF_Ankle_replicate.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 266 with external jobid '63140805'.
+
+[Thu Mar 27 13:05:40 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7781_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7781_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7781_FNF_Ankle_1.out
+    jobid: 332
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7781_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7781_FNF_Ankle_1.err
+        
+Submitted job 332 with external jobid '63140806'.
+
+[Thu Mar 27 13:05:41 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7726_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7726_FNF_Ankle_1.out
+    jobid: 254
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7726_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7726_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 254 with external jobid '63140807'.
+
+[Thu Mar 27 13:05:42 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7754_FNF_Ankle_replicate_RG.bam
+    output: output/bamQC/CQTL_AM7754_FNF_Ankle_replicate_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_replicate.out
+    jobid: 310
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7754_FNF_Ankle_replicate_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+Submitted job 310 with external jobid '63140808'.
+
+[Thu Mar 27 13:05:43 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7778FE_FNF_Femur_1_RG.bam
+    output: output/bamQC/CQTL_AM7778FE_FNF_Femur_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/atacseqQC_CQTL_AM7778FE_FNF_Femur_1.out
+    jobid: 326
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7778FE_FNF_Femur_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/atacseqQC_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 326 with external jobid '63140809'.
+
+[Thu Mar 27 13:05:44 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7727_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7727_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7727_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7727_CTL_Ankle_1.out
+    jobid: 303
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7727_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7727_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7727_CTL_Ankle_1.err
+        
+Submitted job 303 with external jobid '63140810'.
+
+[Thu Mar 27 13:05:45 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7778_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7778_FNF_Ankle_1.out
+    jobid: 280
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7778_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7778_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 280 with external jobid '63140817'.
+
+[Thu Mar 27 13:05:47 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7717_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7717_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7717_CTL_Ankle_1.out
+    jobid: 299
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7717_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7717_CTL_Ankle_1.err
+        
+Submitted job 299 with external jobid '63140818'.
+
+[Thu Mar 27 13:05:48 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7711_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7711_FNF_Ankle_1.out
+    jobid: 248
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7711_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7711_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 248 with external jobid '63140819'.
+
+[Thu Mar 27 13:05:49 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7755_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_1.out
+    jobid: 311
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_1.err
+        
+Submitted job 311 with external jobid '63140820'.
+
+[Thu Mar 27 13:05:50 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7711_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7711_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7711_CTL_Ankle_1.out
+    jobid: 295
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7711_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7711_CTL_Ankle_1.err
+        
+Submitted job 295 with external jobid '63140837'.
+
+[Thu Mar 27 13:05:51 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7679_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7679_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7679_CTL_Ankle_1.out
+    jobid: 293
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7679_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7679_CTL_Ankle_1.err
+        
+Submitted job 293 with external jobid '63140838'.
+
+[Thu Mar 27 13:05:52 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7769_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7769_CTL_Ankle_1.out
+    jobid: 271
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7769_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7769_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 271 with external jobid '63140841'.
+
+[Thu Mar 27 13:05:53 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7769_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7769_FNF_Ankle_1.out
+    jobid: 272
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7769_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7769_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 272 with external jobid '63140842'.
+
+[Thu Mar 27 13:05:54 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7677_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7677_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7677_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7677_CTL_Ankle_1.out
+    jobid: 289
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7677_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7677_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7677_CTL_Ankle_1.err
+        
+Submitted job 289 with external jobid '63140843'.
+
+[Thu Mar 27 13:05:55 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7755_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7755_CTL_Ankle_1.out
+    jobid: 263
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7755_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7755_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 263 with external jobid '63140844'.
+
+[Thu Mar 27 13:05:57 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7711_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7711_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7711_FNF_Ankle_1.out
+    jobid: 296
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7711_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7711_FNF_Ankle_1.err
+        
+Submitted job 296 with external jobid '63140845'.
+
+[Thu Mar 27 13:05:58 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7778_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7778_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7778_FNF_Ankle_1.out
+    jobid: 328
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7778_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7778_FNF_Ankle_1.err
+        
+Submitted job 328 with external jobid '63140846'.
+
+[Thu Mar 27 13:05:59 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7754_FNF_Ankle_replicate_RG.bam
+    output: output/ataqv/CQTL_AM7754_FNF_Ankle_replicate.ataqv.txt, output/ataqv/CQTL_AM7754_FNF_Ankle_replicate.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/ataqv_CQTL_AM7754_FNF_Ankle_replicate.out
+    jobid: 262
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7754_FNF_Ankle_replicate.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7754_FNF_Ankle_replicate_RG.bam > output/ataqv/CQTL_AM7754_FNF_Ankle_replicate.ataqv.txt             2> output/logs/ataqv_CQTL_AM7754_FNF_Ankle_replicate.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 262 with external jobid '63140847'.
+
+[Thu Mar 27 13:06:00 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7726_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7726_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7726_FNF_Ankle_1.out
+    jobid: 302
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7726_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7726_FNF_Ankle_1.err
+        
+Submitted job 302 with external jobid '63140848'.
+
+[Thu Mar 27 13:06:01 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7778FE_FNF_Femur_1_RG.bam
+    output: output/ataqv/CQTL_AM7778FE_FNF_Femur_1.ataqv.txt, output/ataqv/CQTL_AM7778FE_FNF_Femur_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/ataqv_CQTL_AM7778FE_FNF_Femur_1.out
+    jobid: 278
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7778FE_FNF_Femur_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7778FE_FNF_Femur_1_RG.bam > output/ataqv/CQTL_AM7778FE_FNF_Femur_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7778FE_FNF_Femur_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 278 with external jobid '63140849'.
+
+[Thu Mar 27 13:06:02 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7769_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7769_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7769_CTL_Ankle_1.out
+    jobid: 319
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7769_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7769_CTL_Ankle_1.err
+        
+Submitted job 319 with external jobid '63140851'.
+
+[Thu Mar 27 13:06:03 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7769_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7769_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7769_FNF_Ankle_1.out
+    jobid: 320
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7769_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7769_FNF_Ankle_1.err
+        
+Submitted job 320 with external jobid '63140852'.
+
+[Thu Mar 27 13:06:04 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7679_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7679_CTL_Ankle_1.out
+    jobid: 245
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7679_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7679_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 245 with external jobid '63140853'.
+
+[Thu Mar 27 13:06:05 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7678_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7678_CTL_Ankle_1.out
+    jobid: 243
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7678_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7678_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 243 with external jobid '63140858'.
+
+[Thu Mar 27 13:06:07 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7785_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7785_CTL_Ankle_1.out
+    jobid: 285
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7785_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7785_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 285 with external jobid '63140859'.
+
+[Thu Mar 27 13:06:08 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7780_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7780_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7780_CTL_Ankle_1.out
+    jobid: 329
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7780_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7780_CTL_Ankle_1.err
+        
+Submitted job 329 with external jobid '63140860'.
+
+[Thu Mar 27 13:06:09 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7735_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7735_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7735_FNF_Ankle_1.out
+    jobid: 306
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7735_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7735_FNF_Ankle_1.err
+        
+Submitted job 306 with external jobid '63140861'.
+
+[Thu Mar 27 13:06:10 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7754_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7754_CTL_Ankle_1.out
+    jobid: 259
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7754_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7754_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 259 with external jobid '63140862'.
+
+[Thu Mar 27 13:06:11 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7735_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7735_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7735_CTL_Ankle_1.out
+    jobid: 305
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7735_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7735_CTL_Ankle_1.err
+        
+Submitted job 305 with external jobid '63140863'.
+
+[Thu Mar 27 13:06:12 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7786_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7786_CTL_Ankle_1.out
+    jobid: 287
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7786_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7786_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 287 with external jobid '63140864'.
+
+[Thu Mar 27 13:06:13 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7755_CTL_Ankle_replicate_RG.bam
+    output: output/ataqv/CQTL_AM7755_CTL_Ankle_replicate.ataqv.txt, output/ataqv/CQTL_AM7755_CTL_Ankle_replicate.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/ataqv_CQTL_AM7755_CTL_Ankle_replicate.out
+    jobid: 264
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7755_CTL_Ankle_replicate.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7755_CTL_Ankle_replicate_RG.bam > output/ataqv/CQTL_AM7755_CTL_Ankle_replicate.ataqv.txt             2> output/logs/ataqv_CQTL_AM7755_CTL_Ankle_replicate.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 264 with external jobid '63140865'.
+
+[Thu Mar 27 13:06:14 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7771_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7771_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7771_CTL_Ankle_1.out
+    jobid: 321
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7771_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7771_CTL_Ankle_1.err
+        
+Submitted job 321 with external jobid '63140866'.
+
+[Thu Mar 27 13:06:15 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7754_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_1.out
+    jobid: 309
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_1.err
+        
+Submitted job 309 with external jobid '63140867'.
+
+[Thu Mar 27 13:06:17 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7780_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7780_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7780_FNF_Ankle_1.out
+    jobid: 330
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7780_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7780_FNF_Ankle_1.err
+        
+Submitted job 330 with external jobid '63140870'.
+
+[Thu Mar 27 13:06:18 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7677_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7677_FNF_Ankle_1.out
+    jobid: 242
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7677_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7677_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 242 with external jobid '63140871'.
+
+[Thu Mar 27 13:06:19 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7763_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7763_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7763_FNF_Ankle_1.out
+    jobid: 316
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7763_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7763_FNF_Ankle_1.err
+        
+Submitted job 316 with external jobid '63140874'.
+
+[Thu Mar 27 13:06:20 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7735_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7735_CTL_Ankle_1.out
+    jobid: 257
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7735_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7735_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 257 with external jobid '63140896'.
+
+[Thu Mar 27 13:06:21 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7755_CTL_Ankle_replicate_RG.bam
+    output: output/bamQC/CQTL_AM7755_CTL_Ankle_replicate_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_replicate.out
+    jobid: 312
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7755_CTL_Ankle_replicate_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+Submitted job 312 with external jobid '63140897'.
+
+[Thu Mar 27 13:06:22 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7786_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7786_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7786_CTL_Ankle_1.out
+    jobid: 335
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7786_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7786_CTL_Ankle_1.err
+        
+Submitted job 335 with external jobid '63140898'.
+
+[Thu Mar 27 13:06:24 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7678_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7678_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7678_CTL_Ankle_1.out
+    jobid: 291
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7678_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7678_CTL_Ankle_1.err
+        
+Submitted job 291 with external jobid '63140899'.
+
+[Thu Mar 27 13:06:25 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7780_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7780_CTL_Ankle_1.out
+    jobid: 281
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7780_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7780_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 281 with external jobid '63140900'.
+
+[Thu Mar 27 13:06:26 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7785_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7785_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7785_CTL_Ankle_1.out
+    jobid: 333
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7785_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7785_CTL_Ankle_1.err
+        
+Submitted job 333 with external jobid '63140901'.
+
+[Thu Mar 27 13:06:27 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7754_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_1.out
+    jobid: 307
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_1.err
+        
+Submitted job 307 with external jobid '63140902'.
+
+[Thu Mar 27 13:06:28 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7735_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7735_FNF_Ankle_1.out
+    jobid: 258
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7735_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7735_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 258 with external jobid '63140903'.
+
+[Thu Mar 27 13:06:29 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7677_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7677_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7677_FNF_Ankle_1.out
+    jobid: 290
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7677_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7677_FNF_Ankle_1.err
+        
+Submitted job 290 with external jobid '63140904'.
+
+[Thu Mar 27 13:06:30 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7771_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7771_CTL_Ankle_1.out
+    jobid: 273
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7771_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7771_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 273 with external jobid '63140905'.
+
+[Thu Mar 27 13:06:31 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7780_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7780_FNF_Ankle_1.out
+    jobid: 282
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7780_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7780_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 282 with external jobid '63140906'.
+
+[Thu Mar 27 13:06:32 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7754_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7754_FNF_Ankle_1.out
+    jobid: 261
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7754_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7754_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 261 with external jobid '63140907'.
+
+[Thu Mar 27 13:06:33 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7765_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7765_FNF_Ankle_1.out
+    jobid: 270
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7765_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7765_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 270 with external jobid '63140917'.
+
+[Thu Mar 27 13:06:34 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7755_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_1.out
+    jobid: 313
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_1.err
+        
+Submitted job 313 with external jobid '63140930'.
+
+[Thu Mar 27 13:06:36 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7765_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7765_CTL_Ankle_1.out
+    jobid: 269
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7765_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7765_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 269 with external jobid '63140931'.
+
+[Thu Mar 27 13:06:37 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7775_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7775_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7775_CTL_Ankle_1.out
+    jobid: 323
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7775_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7775_CTL_Ankle_1.err
+        
+Submitted job 323 with external jobid '63140932'.
+
+[Thu Mar 27 13:06:38 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7754_CTL_Ankle_replicate_RG.bam
+    output: output/ataqv/CQTL_AM7754_CTL_Ankle_replicate.ataqv.txt, output/ataqv/CQTL_AM7754_CTL_Ankle_replicate.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/ataqv_CQTL_AM7754_CTL_Ankle_replicate.out
+    jobid: 260
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7754_CTL_Ankle_replicate.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7754_CTL_Ankle_replicate_RG.bam > output/ataqv/CQTL_AM7754_CTL_Ankle_replicate.ataqv.txt             2> output/logs/ataqv_CQTL_AM7754_CTL_Ankle_replicate.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 260 with external jobid '63140933'.
+
+[Thu Mar 27 13:06:39 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7763_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7763_CTL_Ankle_1.out
+    jobid: 267
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7763_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7763_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 267 with external jobid '63140934'.
+
+[Thu Mar 27 13:06:40 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7712_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7712_CTL_Ankle_1.out
+    jobid: 249
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7712_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7712_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 249 with external jobid '63140935'.
+
+[Thu Mar 27 13:06:41 2025]
+rule generate_bam_samplesheet:
+    input: output/filtered/blk_filter/CQTL_AM7677_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7677_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7678_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7678_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7679_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7679_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7711_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7711_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7712_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7712_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7717_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7717_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7726_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7726_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7727_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7727_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7735_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7735_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7763_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7763_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7765_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7765_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7769_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7769_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7771_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7771_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7775_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7775_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7778_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7778_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7780_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7780_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7781_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7781_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7785_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7785_FNF_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7786_CTL_Ankle_1.sorted_final.bam, output/filtered/blk_filter/CQTL_AM7786_FNF_Ankle_1.sorted_final.bam
+    output: bam_atac_CQTL_all_samplesheet.txt
+    jobid: 337
+
+Submitted job 337 with external jobid '63140936'.
+
+[Thu Mar 27 13:06:42 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7727_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7727_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7727_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7727_FNF_Ankle_1.out
+    jobid: 304
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7727_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7727_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7727_FNF_Ankle_1.err
+        
+Submitted job 304 with external jobid '63140937'.
+
+[Thu Mar 27 13:06:43 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7775_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7775_FNF_Ankle_1.out
+    jobid: 276
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7775_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7775_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 276 with external jobid '63140938'.
+
+[Thu Mar 27 13:06:44 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7755_FNF_Ankle_1.err, output/logs/ataqv_CQTL_AM7755_FNF_Ankle_1.out
+    jobid: 265
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam > output/ataqv/CQTL_AM7755_FNF_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7755_FNF_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 265 with external jobid '63140939'.
+
+[Thu Mar 27 13:06:45 2025]
+rule run_ataqv:
+    input: output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam
+    output: output/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.txt, output/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.json
+    log: output/logs/ataqv_CQTL_AM7775_CTL_Ankle_1.err, output/logs/ataqv_CQTL_AM7775_CTL_Ankle_1.out
+    jobid: 275
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 6
+
+
+        module load ataqv/1.0.0
+        mkdir -p output/ataqv
+
+        ataqv             --tss-file /users/s/e/seyoun/Ref/genome/gencode.v45.annotation.tss.bed.gz             --tss-extension 2000             --metrics-file output/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.json             --ignore-read-groups human             output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam > output/ataqv/CQTL_AM7775_CTL_Ankle_1.ataqv.txt             2> output/logs/ataqv_CQTL_AM7775_CTL_Ankle_1.err
+         #mkarv /work/users/s/e/seyoun/CQTL_AI/output/ataqv/qc_atac_summary *.json   
+        
+Submitted job 275 with external jobid '63140940'.
+
+[Thu Mar 27 13:06:47 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7765_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7765_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7765_CTL_Ankle_1.out
+    jobid: 317
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7765_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7765_CTL_Ankle_1.err
+        
+Submitted job 317 with external jobid '63140943'.
+
+[Thu Mar 27 13:06:48 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7786_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7786_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7786_FNF_Ankle_1.out
+    jobid: 336
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7786_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7786_FNF_Ankle_1.err
+        
+Submitted job 336 with external jobid '63140944'.
+
+[Thu Mar 27 13:06:49 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7765_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7765_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7765_FNF_Ankle_1.out
+    jobid: 318
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7765_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7765_FNF_Ankle_1.err
+        
+Submitted job 318 with external jobid '63140945'.
+
+[Thu Mar 27 13:06:50 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7726_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7726_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7726_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7726_CTL_Ankle_1.out
+    jobid: 301
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7726_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7726_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7726_CTL_Ankle_1.err
+        
+Submitted job 301 with external jobid '63140946'.
+
+[Thu Mar 27 13:06:51 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7775_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7775_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7775_FNF_Ankle_1.out
+    jobid: 324
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7775_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7775_FNF_Ankle_1.err
+        
+Submitted job 324 with external jobid '63140964'.
+
+[Thu Mar 27 13:06:52 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7754_CTL_Ankle_replicate_RG.bam
+    output: output/bamQC/CQTL_AM7754_CTL_Ankle_replicate_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_replicate.out
+    jobid: 308
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7754_CTL_Ankle_replicate_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+Submitted job 308 with external jobid '63140965'.
+
+[Thu Mar 27 13:06:53 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7763_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7763_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7763_CTL_Ankle_1.out
+    jobid: 315
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7763_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7763_CTL_Ankle_1.err
+        
+Submitted job 315 with external jobid '63140966'.
+
+[Thu Mar 27 13:06:54 2025]
+rule qc_r:
+    input: output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam
+    output: output/bamQC/CQTL_AM7712_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7712_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7712_CTL_Ankle_1.out
+    jobid: 297
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 6
+
+
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7712_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7712_CTL_Ankle_1.err
+        
+Submitted job 297 with external jobid '63140967'.
+[Thu Mar 27 13:07:59 2025]
+Finished job 337.
+1 of 85 steps (1%) done
+[Thu Mar 27 13:22:27 2025]
+Error in rule qc_r:
+    jobid: 299
+    output: output/bamQC/CQTL_AM7717_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7717_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7717_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7717_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7717_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140818
+
+Error executing rule qc_r on cluster (jobid: 299, external: 63140818, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.299.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:27:22 2025]
+Error in rule qc_r:
+    jobid: 303
+    output: output/bamQC/CQTL_AM7727_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7727_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7727_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7727_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7727_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7727_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140810
+
+Error executing rule qc_r on cluster (jobid: 303, external: 63140810, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.303.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:28:14 2025]
+Error in rule qc_r:
+    jobid: 289
+    output: output/bamQC/CQTL_AM7677_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7677_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7677_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7677_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7677_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7677_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140843
+
+Error executing rule qc_r on cluster (jobid: 289, external: 63140843, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.289.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:28:44 2025]
+Error in rule qc_r:
+    jobid: 325
+    output: output/bamQC/CQTL_AM7778FE_CTL_Femur_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7778FE_CTL_Femur_1.err, output/logs/atacseqQC_CQTL_AM7778FE_CTL_Femur_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7778FE_CTL_Femur_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7778FE_CTL_Femur_1.out 2> output/logs/atacseqQC_CQTL_AM7778FE_CTL_Femur_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140801
+
+Error executing rule qc_r on cluster (jobid: 325, external: 63140801, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.325.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:29:36 2025]
+Error in rule qc_r:
+    jobid: 304
+    output: output/bamQC/CQTL_AM7727_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7727_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7727_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7727_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7727_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7727_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140937
+
+Error executing rule qc_r on cluster (jobid: 304, external: 63140937, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.304.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:30:28 2025]
+Error in rule qc_r:
+    jobid: 331
+    output: output/bamQC/CQTL_AM7781_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7781_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7781_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7781_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7781_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140792
+
+Error executing rule qc_r on cluster (jobid: 331, external: 63140792, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.331.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:31:51 2025]
+Error in rule qc_r:
+    jobid: 300
+    output: output/bamQC/CQTL_AM7717_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7717_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7717_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7717_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7717_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140797
+
+Error executing rule qc_r on cluster (jobid: 300, external: 63140797, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.300.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:32:14 2025]
+Error in rule qc_r:
+    jobid: 295
+    output: output/bamQC/CQTL_AM7711_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7711_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7711_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7711_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7711_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140837
+
+Error executing rule qc_r on cluster (jobid: 295, external: 63140837, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.295.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:32:52 2025]
+Error in rule qc_r:
+    jobid: 301
+    output: output/bamQC/CQTL_AM7726_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7726_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7726_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7726_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7726_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7726_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140946
+
+Error executing rule qc_r on cluster (jobid: 301, external: 63140946, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.301.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:33:25 2025]
+Error in rule qc_r:
+    jobid: 298
+    output: output/bamQC/CQTL_AM7712_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7712_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7712_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7712_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7712_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7712_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140799
+
+Error executing rule qc_r on cluster (jobid: 298, external: 63140799, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.298.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:33:32 2025]
+Error in rule qc_r:
+    jobid: 322
+    output: output/bamQC/CQTL_AM7771_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7771_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7771_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7771_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7771_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140785
+
+Error executing rule qc_r on cluster (jobid: 322, external: 63140785, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.322.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:33:42 2025]
+Error in rule qc_r:
+    jobid: 326
+    output: output/bamQC/CQTL_AM7778FE_FNF_Femur_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/atacseqQC_CQTL_AM7778FE_FNF_Femur_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7778FE_FNF_Femur_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/atacseqQC_CQTL_AM7778FE_FNF_Femur_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140809
+
+Error executing rule qc_r on cluster (jobid: 326, external: 63140809, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.326.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:33:49 2025]
+Error in rule qc_r:
+    jobid: 291
+    output: output/bamQC/CQTL_AM7678_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7678_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7678_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7678_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7678_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7678_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140899
+
+Error executing rule qc_r on cluster (jobid: 291, external: 63140899, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.291.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:34:20 2025]
+Error in rule qc_r:
+    jobid: 317
+    output: output/bamQC/CQTL_AM7765_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7765_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7765_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7765_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7765_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140943
+
+Error executing rule qc_r on cluster (jobid: 317, external: 63140943, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.317.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:34:40 2025]
+Finished job 243.
+2 of 85 steps (2%) done
+[Thu Mar 27 13:35:06 2025]
+Error in rule qc_r:
+    jobid: 294
+    output: output/bamQC/CQTL_AM7679_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7679_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7679_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7679_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7679_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7679_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140796
+
+Error executing rule qc_r on cluster (jobid: 294, external: 63140796, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.294.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:35:45 2025]
+Error in rule qc_r:
+    jobid: 336
+    output: output/bamQC/CQTL_AM7786_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7786_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7786_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7786_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7786_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140944
+
+Error executing rule qc_r on cluster (jobid: 336, external: 63140944, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.336.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:35:47 2025]
+Error in rule qc_r:
+    jobid: 318
+    output: output/bamQC/CQTL_AM7765_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7765_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7765_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7765_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7765_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140945
+
+Error executing rule qc_r on cluster (jobid: 318, external: 63140945, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.318.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:35:56 2025]
+Error in rule qc_r:
+    jobid: 296
+    output: output/bamQC/CQTL_AM7711_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7711_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7711_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7711_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7711_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140845
+
+Error executing rule qc_r on cluster (jobid: 296, external: 63140845, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.296.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:36:00 2025]
+Error in rule qc_r:
+    jobid: 302
+    output: output/bamQC/CQTL_AM7726_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7726_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7726_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7726_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7726_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7726_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140848
+
+Error executing rule qc_r on cluster (jobid: 302, external: 63140848, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.302.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:36:13 2025]
+Error in rule qc_r:
+    jobid: 321
+    output: output/bamQC/CQTL_AM7771_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7771_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7771_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7771_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7771_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140866
+
+Error executing rule qc_r on cluster (jobid: 321, external: 63140866, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.321.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:36:17 2025]
+Error in rule qc_r:
+    jobid: 316
+    output: output/bamQC/CQTL_AM7763_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7763_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7763_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7763_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7763_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140874
+
+Error executing rule qc_r on cluster (jobid: 316, external: 63140874, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.316.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:36:25 2025]
+Error in rule qc_r:
+    jobid: 327
+    output: output/bamQC/CQTL_AM7778_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7778_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7778_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7778_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7778_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140786
+
+Error executing rule qc_r on cluster (jobid: 327, external: 63140786, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.327.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:36:58 2025]
+Error in rule qc_r:
+    jobid: 313
+    output: output/bamQC/CQTL_AM7755_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140930
+
+Error executing rule qc_r on cluster (jobid: 313, external: 63140930, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.313.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:37:19 2025]
+Finished job 278.
+3 of 85 steps (4%) done
+[Thu Mar 27 13:37:20 2025]
+Error in rule qc_r:
+    jobid: 319
+    output: output/bamQC/CQTL_AM7769_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7769_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7769_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7769_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7769_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140851
+
+Error executing rule qc_r on cluster (jobid: 319, external: 63140851, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.319.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:37:52 2025]
+Error in rule qc_r:
+    jobid: 312
+    output: output/bamQC/CQTL_AM7755_CTL_Ankle_replicate_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7755_CTL_Ankle_replicate_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140897
+
+Error executing rule qc_r on cluster (jobid: 312, external: 63140897, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.312.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:38:26 2025]
+Error in rule qc_r:
+    jobid: 297
+    output: output/bamQC/CQTL_AM7712_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7712_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7712_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7712_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7712_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7712_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140967
+
+Error executing rule qc_r on cluster (jobid: 297, external: 63140967, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.297.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:38:33 2025]
+Error in rule qc_r:
+    jobid: 320
+    output: output/bamQC/CQTL_AM7769_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7769_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7769_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7769_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7769_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140852
+
+Error executing rule qc_r on cluster (jobid: 320, external: 63140852, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.320.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:38:40 2025]
+Error in rule qc_r:
+    jobid: 305
+    output: output/bamQC/CQTL_AM7735_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7735_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7735_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7735_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7735_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140863
+
+Error executing rule qc_r on cluster (jobid: 305, external: 63140863, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.305.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:38:51 2025]
+Error in rule qc_r:
+    jobid: 332
+    output: output/bamQC/CQTL_AM7781_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7781_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7781_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7781_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7781_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140806
+
+Error executing rule qc_r on cluster (jobid: 332, external: 63140806, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.332.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:38:53 2025]
+Error in rule qc_r:
+    jobid: 314
+    output: output/bamQC/CQTL_AM7755_FNF_Ankle_replicate_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140791
+
+Error executing rule qc_r on cluster (jobid: 314, external: 63140791, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.314.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:38:56 2025]
+Error in rule qc_r:
+    jobid: 292
+    output: output/bamQC/CQTL_AM7678_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7678_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7678_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7678_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7678_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7678_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140795
+
+Error executing rule qc_r on cluster (jobid: 292, external: 63140795, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.292.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:38:58 2025]
+Error in rule qc_r:
+    jobid: 310
+    output: output/bamQC/CQTL_AM7754_FNF_Ankle_replicate_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7754_FNF_Ankle_replicate_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140808
+
+Error executing rule qc_r on cluster (jobid: 310, external: 63140808, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.310.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:39:07 2025]
+Error in rule qc_r:
+    jobid: 307
+    output: output/bamQC/CQTL_AM7754_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140902
+
+Error executing rule qc_r on cluster (jobid: 307, external: 63140902, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.307.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:39:30 2025]
+Finished job 249.
+4 of 85 steps (5%) done
+[Thu Mar 27 13:39:37 2025]
+Error in rule qc_r:
+    jobid: 293
+    output: output/bamQC/CQTL_AM7679_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7679_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7679_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7679_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7679_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7679_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140838
+
+Error executing rule qc_r on cluster (jobid: 293, external: 63140838, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.293.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:39:38 2025]
+Finished job 271.
+5 of 85 steps (6%) done
+[Thu Mar 27 13:39:48 2025]
+Finished job 259.
+6 of 85 steps (7%) done
+[Thu Mar 27 13:39:57 2025]
+Finished job 279.
+7 of 85 steps (8%) done
+[Thu Mar 27 13:40:00 2025]
+Finished job 246.
+8 of 85 steps (9%) done
+[Thu Mar 27 13:40:05 2025]
+Finished job 248.
+9 of 85 steps (11%) done
+[Thu Mar 27 13:40:06 2025]
+Error in rule qc_r:
+    jobid: 311
+    output: output/bamQC/CQTL_AM7755_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7755_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140820
+
+Error executing rule qc_r on cluster (jobid: 311, external: 63140820, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.311.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:40:08 2025]
+Error in rule qc_r:
+    jobid: 335
+    output: output/bamQC/CQTL_AM7786_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7786_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7786_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7786_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7786_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140898
+
+Error executing rule qc_r on cluster (jobid: 335, external: 63140898, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.335.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:40:24 2025]
+Finished job 273.
+10 of 85 steps (12%) done
+[Thu Mar 27 13:40:52 2025]
+Error in rule qc_r:
+    jobid: 330
+    output: output/bamQC/CQTL_AM7780_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7780_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7780_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7780_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7780_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140870
+
+Error executing rule qc_r on cluster (jobid: 330, external: 63140870, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.330.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:40:55 2025]
+Finished job 244.
+11 of 85 steps (13%) done
+[Thu Mar 27 13:40:59 2025]
+Error in rule qc_r:
+    jobid: 334
+    output: output/bamQC/CQTL_AM7785_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7785_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7785_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7785_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7785_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140794
+
+Error executing rule qc_r on cluster (jobid: 334, external: 63140794, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.334.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:41:39 2025]
+Error in rule qc_r:
+    jobid: 329
+    output: output/bamQC/CQTL_AM7780_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7780_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7780_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7780_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7780_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140860
+
+Error executing rule qc_r on cluster (jobid: 329, external: 63140860, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.329.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:41:44 2025]
+Finished job 242.
+12 of 85 steps (14%) done
+[Thu Mar 27 13:41:48 2025]
+Finished job 284.
+13 of 85 steps (15%) done
+[Thu Mar 27 13:42:53 2025]
+Finished job 282.
+14 of 85 steps (16%) done
+[Thu Mar 27 13:43:09 2025]
+Finished job 263.
+15 of 85 steps (18%) done
+[Thu Mar 27 13:43:18 2025]
+Error in rule qc_r:
+    jobid: 309
+    output: output/bamQC/CQTL_AM7754_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7754_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140867
+
+Error executing rule qc_r on cluster (jobid: 309, external: 63140867, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.309.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:43:28 2025]
+Error in rule qc_r:
+    jobid: 290
+    output: output/bamQC/CQTL_AM7677_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7677_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7677_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7677_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7677_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7677_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140904
+
+Error executing rule qc_r on cluster (jobid: 290, external: 63140904, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.290.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:43:40 2025]
+Finished job 270.
+16 of 85 steps (19%) done
+[Thu Mar 27 13:43:49 2025]
+Error in rule qc_r:
+    jobid: 324
+    output: output/bamQC/CQTL_AM7775_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7775_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7775_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7775_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7775_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140964
+
+Error executing rule qc_r on cluster (jobid: 324, external: 63140964, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.324.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:43:53 2025]
+Finished job 272.
+17 of 85 steps (20%) done
+[Thu Mar 27 13:43:58 2025]
+Error in rule qc_r:
+    jobid: 306
+    output: output/bamQC/CQTL_AM7735_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7735_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7735_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7735_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7735_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140861
+
+Error executing rule qc_r on cluster (jobid: 306, external: 63140861, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.306.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:44:00 2025]
+Finished job 287.
+18 of 85 steps (21%) done
+[Thu Mar 27 13:44:34 2025]
+Finished job 245.
+19 of 85 steps (22%) done
+[Thu Mar 27 13:44:40 2025]
+Finished job 254.
+20 of 85 steps (24%) done
+[Thu Mar 27 13:45:08 2025]
+Error in rule qc_r:
+    jobid: 328
+    output: output/bamQC/CQTL_AM7778_FNF_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7778_FNF_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7778_FNF_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7778_FNF_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7778_FNF_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140846
+
+Error executing rule qc_r on cluster (jobid: 328, external: 63140846, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.328.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:45:32 2025]
+Finished job 269.
+21 of 85 steps (25%) done
+[Thu Mar 27 13:45:47 2025]
+Finished job 266.
+22 of 85 steps (26%) done
+[Thu Mar 27 13:46:10 2025]
+Finished job 265.
+23 of 85 steps (27%) done
+[Thu Mar 27 13:46:16 2025]
+Finished job 264.
+24 of 85 steps (28%) done
+[Thu Mar 27 13:46:42 2025]
+Error in rule qc_r:
+    jobid: 315
+    output: output/bamQC/CQTL_AM7763_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7763_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7763_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7763_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7763_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140966
+
+Error executing rule qc_r on cluster (jobid: 315, external: 63140966, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.315.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:47:38 2025]
+Finished job 285.
+25 of 85 steps (29%) done
+[Thu Mar 27 13:47:59 2025]
+Finished job 267.
+26 of 85 steps (31%) done
+[Thu Mar 27 13:48:03 2025]
+Error in rule qc_r:
+    jobid: 308
+    output: output/bamQC/CQTL_AM7754_CTL_Ankle_replicate_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7754_CTL_Ankle_replicate_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140965
+
+Error executing rule qc_r on cluster (jobid: 308, external: 63140965, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.308.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:48:05 2025]
+Finished job 286.
+27 of 85 steps (32%) done
+[Thu Mar 27 13:49:12 2025]
+Finished job 262.
+28 of 85 steps (33%) done
+[Thu Mar 27 13:49:14 2025]
+Finished job 257.
+29 of 85 steps (34%) done
+[Thu Mar 27 13:49:58 2025]
+Finished job 258.
+30 of 85 steps (35%) done
+[Thu Mar 27 13:50:15 2025]
+Finished job 280.
+31 of 85 steps (36%) done
+[Thu Mar 27 13:51:09 2025]
+Finished job 276.
+32 of 85 steps (38%) done
+[Thu Mar 27 13:51:11 2025]
+Finished job 281.
+33 of 85 steps (39%) done
+[Thu Mar 27 13:53:15 2025]
+Finished job 260.
+34 of 85 steps (40%) done
+[Thu Mar 27 13:54:13 2025]
+Error in rule qc_r:
+    jobid: 323
+    output: output/bamQC/CQTL_AM7775_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7775_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7775_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7775_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7775_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140932
+
+Error executing rule qc_r on cluster (jobid: 323, external: 63140932, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.323.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:54:16 2025]
+Error in rule qc_r:
+    jobid: 333
+    output: output/bamQC/CQTL_AM7785_CTL_Ankle_1_bamqQC
+    log: output/logs/atacseqQC_CQTL_AM7785_CTL_Ankle_1.err, output/logs/atacseqQC_CQTL_AM7785_CTL_Ankle_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam "output/bamQC/" "_RG.bam" 1> output/logs/atacseqQC_CQTL_AM7785_CTL_Ankle_1.out 2> output/logs/atacseqQC_CQTL_AM7785_CTL_Ankle_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 63140901
+
+Error executing rule qc_r on cluster (jobid: 333, external: 63140901, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.26b39vwb/snakejob.qc_r.333.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Mar 27 13:55:53 2025]
+Finished job 261.
+35 of 85 steps (41%) done
+[Thu Mar 27 14:05:32 2025]
+Finished job 275.
+36 of 85 steps (42%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2025-03-27T130515.168519.snakemake.log

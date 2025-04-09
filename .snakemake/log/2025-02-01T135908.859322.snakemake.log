@@ -1,0 +1,3 @@
+KeyError in line 584 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/SubsetPreprocess.smk:
+'chrsize'
+  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/SubsetPreprocess.smk", line 584, in <module>

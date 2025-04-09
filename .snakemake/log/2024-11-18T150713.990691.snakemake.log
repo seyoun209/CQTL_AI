@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all
+	1	process_vcf
+	1	reheader
+	3
+
+[Mon Nov 18 15:07:14 2024]
+rule process_vcf:
+    input: output/CTL_samples.txt, output/FNF_samples.txt
+    output: output/geno/cQTL_21_filtered.vcf.gz, output/geno/pbs_geno/pbs_matched.txt, output/geno/fnf_geno/fnf_matched.txt
+    log: output/logs/process_vcf.out, output/logs/process_vcf.err
+    jobid: 2
+    benchmark: output/benchmarks/process_vcf.txt
+
+
+        mkdir -p output/geno
+        mkdir -p output/geno/pbs_geno output/geno/fnf_geno
+        mkdir -p output/benchmarks
+        mkdir -p output/logs
+        
+        # Copy sample files
+        cp output/CTL_samples.txt output/geno/pbs_geno/pbs_matched.txt 2>> output/logs/process_vcf.err
+        cp output/FNF_samples.txt output/geno/fnf_geno/fnf_matched.txt 2>> output/logs/process_vcf.err
+        
+        # Process VCF
+        ml samtools/1.21
+        if [ ! -z "" ]; then
+           bcftools view -s "^" /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/vcf/CQTL_COA9_10_ALL_qc.vcf.gz -Oz -o output/geno/cQTL_21_filtered.vcf.gz 1> output/logs/process_vcf.out 2> output/logs/process_vcf.err
+       else
+           cp /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/vcf/CQTL_COA9_10_ALL_qc.vcf.gz output/geno/cQTL_21_filtered.vcf.gz 2>> output/logs/process_vcf.err
+        fi
+        tabix -p vcf output/geno/cQTL_21_filtered.vcf.gz 2>> output/logs/process_vcf.err
+        
+Submitted job 2 with external jobid '54395459'.

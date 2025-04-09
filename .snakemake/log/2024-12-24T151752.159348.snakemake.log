@@ -1,0 +1,747 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all
+	22	reheader_imputed
+	23
+
+[Tue Dec 24 15:17:55 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr3.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr3.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr3.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr3_rename.log, output/logs/imputed_FNF_chr3_rename.log
+    jobid: 46
+    wildcards: chrom=3
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=3
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_3_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_3_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_3_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr3.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr3.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr3_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_3_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr3.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr3.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr3_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr3.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr3.fnf.rename.vcf.gz
+        
+Submitted job 46 with external jobid '56357293'.
+
+[Tue Dec 24 15:18:00 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr14.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr14.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr14.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr14_rename.log, output/logs/imputed_FNF_chr14_rename.log
+    jobid: 57
+    wildcards: chrom=14
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=14
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_14_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_14_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_14_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr14.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr14.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr14_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_14_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr14.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr14.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr14_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr14.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr14.fnf.rename.vcf.gz
+        
+Submitted job 57 with external jobid '56357294'.
+
+[Tue Dec 24 15:18:06 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr18.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr18.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr18.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr18_rename.log, output/logs/imputed_FNF_chr18_rename.log
+    jobid: 61
+    wildcards: chrom=18
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=18
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_18_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_18_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_18_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr18.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr18.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr18_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_18_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr18.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr18.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr18_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr18.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr18.fnf.rename.vcf.gz
+        
+Submitted job 61 with external jobid '56357295'.
+
+[Tue Dec 24 15:18:12 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr11.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr11.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr11.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr11_rename.log, output/logs/imputed_FNF_chr11_rename.log
+    jobid: 54
+    wildcards: chrom=11
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=11
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_11_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_11_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_11_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr11.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr11.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr11_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_11_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr11.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr11.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr11_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr11.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr11.fnf.rename.vcf.gz
+        
+Submitted job 54 with external jobid '56357296'.
+
+[Tue Dec 24 15:18:17 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr10.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr10.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr10.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr10_rename.log, output/logs/imputed_FNF_chr10_rename.log
+    jobid: 53
+    wildcards: chrom=10
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=10
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_10_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_10_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_10_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr10.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr10.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr10_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_10_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr10.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr10.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr10_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr10.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr10.fnf.rename.vcf.gz
+        
+Submitted job 53 with external jobid '56357297'.
+Waiting at most 500 seconds for missing files.
+
+[Tue Dec 24 15:18:22 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr16.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr16.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr16.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr16_rename.log, output/logs/imputed_FNF_chr16_rename.log
+    jobid: 59
+    wildcards: chrom=16
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=16
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_16_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_16_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_16_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr16.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr16.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr16_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_16_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr16.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr16.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr16_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr16.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr16.fnf.rename.vcf.gz
+        
+Submitted job 59 with external jobid '56357301'.
+[Tue Dec 24 15:18:24 2024]
+Finished job 46.
+1 of 23 steps (4%) done
+[Tue Dec 24 15:18:26 2024]
+Finished job 57.
+2 of 23 steps (9%) done
+
+[Tue Dec 24 15:18:27 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr17.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr17.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr17.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr17_rename.log, output/logs/imputed_FNF_chr17_rename.log
+    jobid: 60
+    wildcards: chrom=17
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=17
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_17_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_17_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_17_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr17.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr17.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr17_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_17_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr17.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr17.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr17_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr17.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr17.fnf.rename.vcf.gz
+        
+Submitted job 60 with external jobid '56357302'.
+
+[Tue Dec 24 15:18:32 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr1.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr1.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr1.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr1_rename.log, output/logs/imputed_FNF_chr1_rename.log
+    jobid: 44
+    wildcards: chrom=1
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=1
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_1_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_1_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_1_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr1.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr1.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr1_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_1_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr1.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr1.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr1_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr1.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr1.fnf.rename.vcf.gz
+        
+Submitted job 44 with external jobid '56357304'.
+
+[Tue Dec 24 15:18:37 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr5.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr5.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr5.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr5_rename.log, output/logs/imputed_FNF_chr5_rename.log
+    jobid: 48
+    wildcards: chrom=5
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=5
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_5_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_5_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_5_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr5.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr5.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr5_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_5_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr5.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr5.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr5_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr5.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr5.fnf.rename.vcf.gz
+        
+Submitted job 48 with external jobid '56357305'.
+[Tue Dec 24 15:18:39 2024]
+Finished job 53.
+3 of 23 steps (13%) done
+[Tue Dec 24 15:18:40 2024]
+Finished job 59.
+4 of 23 steps (17%) done
+[Tue Dec 24 15:18:42 2024]
+Finished job 61.
+5 of 23 steps (22%) done
+
+[Tue Dec 24 15:18:43 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr2.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr2.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr2.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr2_rename.log, output/logs/imputed_FNF_chr2_rename.log
+    jobid: 45
+    wildcards: chrom=2
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=2
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_2_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_2_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_2_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr2.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr2.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr2_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_2_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr2.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr2.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr2_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr2.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr2.fnf.rename.vcf.gz
+        
+[Tue Dec 24 15:18:43 2024]
+Finished job 54.
+6 of 23 steps (26%) done
+Submitted job 45 with external jobid '56357306'.
+
+[Tue Dec 24 15:18:48 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr13.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr13.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr13.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr13_rename.log, output/logs/imputed_FNF_chr13_rename.log
+    jobid: 56
+    wildcards: chrom=13
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=13
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_13_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_13_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_13_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr13.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr13.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr13_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_13_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr13.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr13.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr13_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr13.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr13.fnf.rename.vcf.gz
+        
+Submitted job 56 with external jobid '56357307'.
+
+[Tue Dec 24 15:18:53 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr22.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr22.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr22.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr22_rename.log, output/logs/imputed_FNF_chr22_rename.log
+    jobid: 65
+    wildcards: chrom=22
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=22
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_22_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_22_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_22_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr22.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr22.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr22_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_22_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr22.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr22.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr22_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr22.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr22.fnf.rename.vcf.gz
+        
+Submitted job 65 with external jobid '56357308'.
+[Tue Dec 24 15:18:56 2024]
+Finished job 45.
+7 of 23 steps (30%) done
+[Tue Dec 24 15:18:57 2024]
+Finished job 60.
+8 of 23 steps (35%) done
+[Tue Dec 24 15:18:58 2024]
+Finished job 44.
+9 of 23 steps (39%) done
+
+[Tue Dec 24 15:18:59 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr19.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr19.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr19.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr19_rename.log, output/logs/imputed_FNF_chr19_rename.log
+    jobid: 62
+    wildcards: chrom=19
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=19
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_19_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_19_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_19_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr19.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr19.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr19_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_19_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr19.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr19.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr19_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr19.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr19.fnf.rename.vcf.gz
+        
+Submitted job 62 with external jobid '56357480'.
+[Tue Dec 24 15:19:00 2024]
+Finished job 48.
+10 of 23 steps (43%) done
+
+[Tue Dec 24 15:19:04 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr9.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr9.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr9.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr9_rename.log, output/logs/imputed_FNF_chr9_rename.log
+    jobid: 52
+    wildcards: chrom=9
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=9
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_9_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_9_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_9_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr9.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr9.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr9_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_9_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr9.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr9.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr9_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr9.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr9.fnf.rename.vcf.gz
+        
+Submitted job 52 with external jobid '56357727'.
+
+[Tue Dec 24 15:19:09 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr20.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr20.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr20.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr20_rename.log, output/logs/imputed_FNF_chr20_rename.log
+    jobid: 63
+    wildcards: chrom=20
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=20
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_20_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_20_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_20_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr20.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr20.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr20_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_20_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr20.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr20.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr20_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr20.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr20.fnf.rename.vcf.gz
+        
+Submitted job 63 with external jobid '56357946'.
+Waiting at most 500 seconds for missing files.
+
+[Tue Dec 24 15:19:14 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr7.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr7.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr7.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr7_rename.log, output/logs/imputed_FNF_chr7_rename.log
+    jobid: 50
+    wildcards: chrom=7
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=7
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_7_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_7_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_7_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr7.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr7.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr7_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_7_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr7.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr7.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr7_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr7.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr7.fnf.rename.vcf.gz
+        
+[Tue Dec 24 15:19:14 2024]
+Finished job 62.
+11 of 23 steps (48%) done
+Submitted job 50 with external jobid '56358173'.
+[Tue Dec 24 15:19:15 2024]
+Finished job 56.
+12 of 23 steps (52%) done
+[Tue Dec 24 15:19:16 2024]
+Finished job 65.
+13 of 23 steps (57%) done
+[Tue Dec 24 15:19:17 2024]
+Finished job 52.
+14 of 23 steps (61%) done
+
+[Tue Dec 24 15:19:19 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr8.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr8.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr8.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr8_rename.log, output/logs/imputed_FNF_chr8_rename.log
+    jobid: 51
+    wildcards: chrom=8
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=8
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_8_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_8_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_8_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr8.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr8.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr8_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_8_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr8.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr8.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr8_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr8.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr8.fnf.rename.vcf.gz
+        
+Submitted job 51 with external jobid '56358253'.
+
+[Tue Dec 24 15:19:25 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr6.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr6.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr6.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr6_rename.log, output/logs/imputed_FNF_chr6_rename.log
+    jobid: 49
+    wildcards: chrom=6
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=6
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_6_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_6_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_6_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr6.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr6.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr6_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_6_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr6.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr6.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr6_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr6.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr6.fnf.rename.vcf.gz
+        
+Submitted job 49 with external jobid '56358468'.
+[Tue Dec 24 15:19:31 2024]
+Finished job 63.
+15 of 23 steps (65%) done
+
+[Tue Dec 24 15:19:31 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr12.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr12.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr12.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr12_rename.log, output/logs/imputed_FNF_chr12_rename.log
+    jobid: 55
+    wildcards: chrom=12
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=12
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_12_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_12_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_12_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr12.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr12.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr12_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_12_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr12.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr12.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr12_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr12.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr12.fnf.rename.vcf.gz
+        
+Submitted job 55 with external jobid '56358651'.
+
+[Tue Dec 24 15:19:36 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr21.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr21.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr21.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr21_rename.log, output/logs/imputed_FNF_chr21_rename.log
+    jobid: 64
+    wildcards: chrom=21
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=21
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_21_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_21_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_21_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr21.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr21.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr21_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_21_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr21.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr21.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr21_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr21.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr21.fnf.rename.vcf.gz
+        
+Submitted job 64 with external jobid '56358830'.
+
+[Tue Dec 24 15:19:41 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr4.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr4.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr4.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr4_rename.log, output/logs/imputed_FNF_chr4_rename.log
+    jobid: 47
+    wildcards: chrom=4
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=4
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_4_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_4_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_4_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr4.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr4.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr4_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_4_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr4.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr4.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr4_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr4.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr4.fnf.rename.vcf.gz
+        
+Submitted job 47 with external jobid '56359060'.
+[Tue Dec 24 15:19:45 2024]
+Finished job 50.
+16 of 23 steps (70%) done
+
+[Tue Dec 24 15:19:46 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr15.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr15.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr15.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr15_rename.log, output/logs/imputed_FNF_chr15_rename.log
+    jobid: 58
+    wildcards: chrom=15
+
+
+        module load samtools/1.21
+        # Get the chromosome number from wildcards
+        chrom=15
+
+        mkdir -p output/geno/pbs_geno/wasp_vcf output/geno/fnf_geno/wasp_vcf
+
+        sed 's/^0_//' output/geno/pbs_geno/mappings/sample_name_mapping.txt > output/geno/pbs_geno/mappings/imputed_pbs_15_mapping.txt
+        sed 's/^0_//' output/geno/fnf_geno/mappings/sample_name_mapping.txt > output/geno/fnf_geno/mappings/imputed_fnf_15_mapping.txt
+
+        # PBS files
+        bcftools reheader             --samples output/geno/pbs_geno/mappings/imputed_pbs_15_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr15.dose.vcf.gz             -o output/geno/pbs_geno/wasp_vcf/chr15.pbs.rename.vcf.gz 2> output/logs/imputed_PBS_chr15_rename.log
+
+        # FNF files
+        bcftools reheader             --samples output/geno/fnf_geno/mappings/imputed_fnf_15_mapping.txt             /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr15.dose.vcf.gz             -o output/geno/fnf_geno/wasp_vcf/chr15.fnf.rename.vcf.gz 2> output/logs/imputed_FNF_chr15_rename.log
+
+        # Index files
+        tabix -p vcf output/geno/pbs_geno/wasp_vcf/chr15.pbs.rename.vcf.gz
+        tabix -p vcf output/geno/fnf_geno/wasp_vcf/chr15.fnf.rename.vcf.gz
+        
+Submitted job 58 with external jobid '56359305'.
+[Tue Dec 24 15:19:46 2024]
+Finished job 51.
+17 of 23 steps (74%) done
+[Tue Dec 24 15:19:47 2024]
+Finished job 49.
+18 of 23 steps (78%) done
+Waiting at most 500 seconds for missing files.
+[Tue Dec 24 15:20:18 2024]
+Finished job 58.
+19 of 23 steps (83%) done
+[Tue Dec 24 15:20:19 2024]
+Finished job 55.
+20 of 23 steps (87%) done
+[Tue Dec 24 15:20:20 2024]
+Finished job 64.
+21 of 23 steps (91%) done
+[Tue Dec 24 15:20:21 2024]
+Finished job 47.
+22 of 23 steps (96%) done
+
+[Tue Dec 24 15:20:26 2024]
+localrule all:
+    input: output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz, output/QC/CQTL_AM7677_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7677_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7677_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7677_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7677_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7677_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7677_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7677_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7677_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7677_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7677_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7677_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7678_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7678_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7678_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7678_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7678_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7678_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7678_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7678_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7678_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7678_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7678_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7678_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7679_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7679_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7679_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7679_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7679_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7679_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7679_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7679_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7679_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7679_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7679_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7679_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7712_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7712_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7712_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7712_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7712_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7712_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7712_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7712_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7712_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7712_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7712_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7712_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7726_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7726_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7726_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7726_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7726_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7726_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7726_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7726_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7726_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7726_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7726_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7726_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7727_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7727_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7727_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7727_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7727_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7727_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7727_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7727_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7727_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7727_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7727_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7727_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.depthSM, output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.selfSM, output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.selfRG, output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.bestRG, output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.bestSM, output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.depthRG, output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.depthSM, output/geno/pbs_geno/wasp_vcf/chr1.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr2.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr3.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr4.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr5.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr6.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr7.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr8.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr9.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr10.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr11.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr12.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr13.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr14.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr15.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr16.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr17.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr18.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr19.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr20.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr21.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr22.pbs.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr1.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr2.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr3.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr4.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr5.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr6.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr7.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr8.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr9.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr10.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr11.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr12.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr13.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr14.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr15.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr16.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr17.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr18.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr19.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr20.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr21.fnf.rename.vcf.gz, output/geno/fnf_geno/wasp_vcf/chr22.fnf.rename.vcf.gz
+    jobid: 0
+
+[Tue Dec 24 15:20:26 2024]
+Finished job 0.
+23 of 23 steps (100%) done
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-24T151752.159348.snakemake.log

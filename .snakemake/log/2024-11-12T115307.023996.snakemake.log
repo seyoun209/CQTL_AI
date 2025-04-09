@@ -1,0 +1,880 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all
+	58	catReads
+	58	fastqc
+	58	trim
+	175
+
+[Tue Nov 12 11:53:09 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7754_A_CTL_18_1_S1_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7754_A_CTL_18_1_S1_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7754_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7754_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7754_CTL_Ankle_1_R2_catReads.err
+    jobid: 19
+    benchmark: output/benchmarks/CQTL_AM7754_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7754_A_CTL_18_1_S1_R1_001.fastq.gz > output/fastq/CQTL_AM7754_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7754_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7754_A_CTL_18_1_S1_R2_001.fastq.gz > output/fastq/CQTL_AM7754_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7754_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 19 with external jobid '53966841'.
+
+[Tue Nov 12 11:53:14 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7786_A_CTL_18_1_S3_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7786_A_CTL_18_1_S3_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7786_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7786_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7786_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7786_CTL_Ankle_1_R2_catReads.err
+    jobid: 47
+    benchmark: output/benchmarks/CQTL_AM7786_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7786_A_CTL_18_1_S3_R1_001.fastq.gz > output/fastq/CQTL_AM7786_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7786_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7786_A_CTL_18_1_S3_R2_001.fastq.gz > output/fastq/CQTL_AM7786_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7786_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 47 with external jobid '53966843'.
+
+[Tue Nov 12 11:53:19 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7755_A_CTL_18_1_S3_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7755_A_CTL_18_1_S3_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7755_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7755_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7755_CTL_Ankle_1_R2_catReads.err
+    jobid: 23
+    benchmark: output/benchmarks/CQTL_AM7755_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7755_A_CTL_18_1_S3_R1_001.fastq.gz > output/fastq/CQTL_AM7755_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7755_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7755_A_CTL_18_1_S3_R2_001.fastq.gz > output/fastq/CQTL_AM7755_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7755_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 23 with external jobid '53966844'.
+
+[Tue Nov 12 11:53:25 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7711_A_CTL_18_1_S1_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7711_A_CTL_18_1_S1_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7711_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7711_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7711_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7711_CTL_Ankle_1_R2_catReads.err
+    jobid: 7
+    benchmark: output/benchmarks/CQTL_AM7711_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7711_A_CTL_18_1_S1_R1_001.fastq.gz > output/fastq/CQTL_AM7711_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7711_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7711_A_CTL_18_1_S1_R2_001.fastq.gz > output/fastq/CQTL_AM7711_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7711_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 7 with external jobid '53966845'.
+
+[Tue Nov 12 11:53:30 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7781_A_FNF_18_1_S4_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7781_A_FNF_18_1_S4_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7781_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7781_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7781_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7781_FNF_Ankle_1_R2_catReads.err
+    jobid: 44
+    benchmark: output/benchmarks/CQTL_AM7781_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7781_A_FNF_18_1_S4_R1_001.fastq.gz > output/fastq/CQTL_AM7781_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7781_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7781_A_FNF_18_1_S4_R2_001.fastq.gz > output/fastq/CQTL_AM7781_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7781_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 44 with external jobid '53966846'.
+
+[Tue Nov 12 11:53:35 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0013_A_FNF_18_1_S2_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0013_A_FNF_18_1_S2_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0013_FNF_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0013_FNF_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0013_FNF_synovium_1_R1_catReads.err, output/logs/FACT_23-0013_FNF_synovium_1_R2_catReads.err
+    jobid: 50
+    benchmark: output/benchmarks/FACT_23-0013_FNF_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0013_FNF_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0013_A_FNF_18_1_S2_R1_001.fastq.gz > output/fastq/FACT_23-0013_FNF_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0013_FNF_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0013_A_FNF_18_1_S2_R2_001.fastq.gz > output/fastq/FACT_23-0013_FNF_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0013_FNF_synovium_1_R2_catReads.err
+        
+Submitted job 50 with external jobid '53966847'.
+
+[Tue Nov 12 11:53:40 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7771_A_CTL_18_1_S5_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7771_A_CTL_18_1_S5_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7771_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7771_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7771_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7771_CTL_Ankle_1_R2_catReads.err
+    jobid: 33
+    benchmark: output/benchmarks/CQTL_AM7771_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7771_A_CTL_18_1_S5_R1_001.fastq.gz > output/fastq/CQTL_AM7771_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7771_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7771_A_CTL_18_1_S5_R2_001.fastq.gz > output/fastq/CQTL_AM7771_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7771_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 33 with external jobid '53966848'.
+
+[Tue Nov 12 11:53:45 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7786_A_FNF_18_1_S4_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7786_A_FNF_18_1_S4_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7786_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7786_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7786_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7786_FNF_Ankle_1_R2_catReads.err
+    jobid: 48
+    benchmark: output/benchmarks/CQTL_AM7786_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7786_A_FNF_18_1_S4_R1_001.fastq.gz > output/fastq/CQTL_AM7786_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7786_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7786_A_FNF_18_1_S4_R2_001.fastq.gz > output/fastq/CQTL_AM7786_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7786_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 48 with external jobid '53966849'.
+
+[Tue Nov 12 11:53:51 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0025_A_CTL_18_1_S9_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0025_A_CTL_18_1_S9_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0025_CTL_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0025_CTL_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0025_CTL_synovium_1_R1_catReads.err, output/logs/FACT_23-0025_CTL_synovium_1_R2_catReads.err
+    jobid: 57
+    benchmark: output/benchmarks/FACT_23-0025_CTL_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0025_CTL_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0025_A_CTL_18_1_S9_R1_001.fastq.gz > output/fastq/FACT_23-0025_CTL_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0025_CTL_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0025_A_CTL_18_1_S9_R2_001.fastq.gz > output/fastq/FACT_23-0025_CTL_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0025_CTL_synovium_1_R2_catReads.err
+        
+Submitted job 57 with external jobid '53966850'.
+
+[Tue Nov 12 11:53:56 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM7775_A_CTL_18_1_S1_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM7775_A_CTL_18_1_S1_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7775_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7775_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7775_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7775_CTL_Ankle_1_R2_catReads.err
+    jobid: 35
+    benchmark: output/benchmarks/CQTL_AM7775_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM7775_A_CTL_18_1_S1_R1_001.fastq.gz > output/fastq/CQTL_AM7775_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7775_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM7775_A_CTL_18_1_S1_R2_001.fastq.gz > output/fastq/CQTL_AM7775_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7775_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 35 with external jobid '53966852'.
+
+[Tue Nov 12 11:54:01 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7755_A_FNF_18_2_S6_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7755_A_FNF_18_2_S6_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R2.fastq.gz
+    log: output/logs/CQTL_AM7755_FNF_Ankle_replicate_R1_catReads.err, output/logs/CQTL_AM7755_FNF_Ankle_replicate_R2_catReads.err
+    jobid: 26
+    benchmark: output/benchmarks/CQTL_AM7755_FNF_Ankle_replicate_catReads.tsv
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7755_A_FNF_18_2_S6_R1_001.fastq.gz > output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R1.fastq.gz 2> output/logs/CQTL_AM7755_FNF_Ankle_replicate_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7755_A_FNF_18_2_S6_R2_001.fastq.gz > output/fastq/CQTL_AM7755_FNF_Ankle_replicate_R2.fastq.gz 2> output/logs/CQTL_AM7755_FNF_Ankle_replicate_R2_catReads.err
+        
+Submitted job 26 with external jobid '53966854'.
+
+[Tue Nov 12 11:54:06 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7755_A_CTL_18_2_S5_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7755_A_CTL_18_2_S5_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R2.fastq.gz
+    log: output/logs/CQTL_AM7755_CTL_Ankle_replicate_R1_catReads.err, output/logs/CQTL_AM7755_CTL_Ankle_replicate_R2_catReads.err
+    jobid: 24
+    benchmark: output/benchmarks/CQTL_AM7755_CTL_Ankle_replicate_catReads.tsv
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7755_A_CTL_18_2_S5_R1_001.fastq.gz > output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R1.fastq.gz 2> output/logs/CQTL_AM7755_CTL_Ankle_replicate_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7755_A_CTL_18_2_S5_R2_001.fastq.gz > output/fastq/CQTL_AM7755_CTL_Ankle_replicate_R2.fastq.gz 2> output/logs/CQTL_AM7755_CTL_Ankle_replicate_R2_catReads.err
+        
+Submitted job 24 with external jobid '53966856'.
+
+[Tue Nov 12 11:54:11 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7781_A_CTL_18_1_S3_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7781_A_CTL_18_1_S3_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7781_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7781_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7781_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7781_CTL_Ankle_1_R2_catReads.err
+    jobid: 43
+    benchmark: output/benchmarks/CQTL_AM7781_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7781_A_CTL_18_1_S3_R1_001.fastq.gz > output/fastq/CQTL_AM7781_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7781_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7781_A_CTL_18_1_S3_R2_001.fastq.gz > output/fastq/CQTL_AM7781_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7781_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 43 with external jobid '53966857'.
+
+[Tue Nov 12 11:54:16 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7679_A_CTL_18_1_S5_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7679_A_CTL_18_1_S5_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7679_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7679_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7679_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7679_CTL_Ankle_1_R2_catReads.err
+    jobid: 5
+    benchmark: output/benchmarks/CQTL_AM7679_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7679_A_CTL_18_1_S5_R1_001.fastq.gz > output/fastq/CQTL_AM7679_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7679_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7679_A_CTL_18_1_S5_R2_001.fastq.gz > output/fastq/CQTL_AM7679_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7679_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 5 with external jobid '53966858'.
+
+[Tue Nov 12 11:54:21 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7769_A_CTL_18_2_S3_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7769_A_CTL_18_2_S3_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7769_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7769_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7769_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7769_CTL_Ankle_1_R2_catReads.err
+    jobid: 31
+    benchmark: output/benchmarks/CQTL_AM7769_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7769_A_CTL_18_2_S3_R1_001.fastq.gz > output/fastq/CQTL_AM7769_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7769_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7769_A_CTL_18_2_S3_R2_001.fastq.gz > output/fastq/CQTL_AM7769_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7769_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 31 with external jobid '53966859'.
+
+[Tue Nov 12 11:54:27 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0016_A_CTL_18_1_S3_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0016_A_CTL_18_1_S3_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0016_CTL_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0016_CTL_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0016_CTL_synovium_1_R1_catReads.err, output/logs/FACT_23-0016_CTL_synovium_1_R2_catReads.err
+    jobid: 51
+    benchmark: output/benchmarks/FACT_23-0016_CTL_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0016_CTL_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0016_A_CTL_18_1_S3_R1_001.fastq.gz > output/fastq/FACT_23-0016_CTL_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0016_CTL_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0016_A_CTL_18_1_S3_R2_001.fastq.gz > output/fastq/FACT_23-0016_CTL_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0016_CTL_synovium_1_R2_catReads.err
+        
+Submitted job 51 with external jobid '53966860'.
+
+[Tue Nov 12 11:54:33 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778FE_A_CTL_18_1_S5_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778FE_A_CTL_18_1_S5_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7778FE_CTL_Femur_1_R1.fastq.gz, output/fastq/CQTL_AM7778FE_CTL_Femur_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7778FE_CTL_Femur_1_R1_catReads.err, output/logs/CQTL_AM7778FE_CTL_Femur_1_R2_catReads.err
+    jobid: 37
+    benchmark: output/benchmarks/CQTL_AM7778FE_CTL_Femur_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778FE_A_CTL_18_1_S5_R1_001.fastq.gz > output/fastq/CQTL_AM7778FE_CTL_Femur_1_R1.fastq.gz 2> output/logs/CQTL_AM7778FE_CTL_Femur_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778FE_A_CTL_18_1_S5_R2_001.fastq.gz > output/fastq/CQTL_AM7778FE_CTL_Femur_1_R2.fastq.gz 2> output/logs/CQTL_AM7778FE_CTL_Femur_1_R2_catReads.err
+        
+Submitted job 37 with external jobid '53966861'.
+
+[Tue Nov 12 11:54:38 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778AN_A_CTL_18_1_S3_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778AN_A_CTL_18_1_S3_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7778_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7778_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7778_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7778_CTL_Ankle_1_R2_catReads.err
+    jobid: 39
+    benchmark: output/benchmarks/CQTL_AM7778_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778AN_A_CTL_18_1_S3_R1_001.fastq.gz > output/fastq/CQTL_AM7778_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7778_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778AN_A_CTL_18_1_S3_R2_001.fastq.gz > output/fastq/CQTL_AM7778_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7778_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 39 with external jobid '53966862'.
+
+[Tue Nov 12 11:54:43 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7635_A_CTL_18_2_S5_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7635_A_CTL_18_2_S5_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7735_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7735_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7735_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7735_CTL_Ankle_1_R2_catReads.err
+    jobid: 17
+    benchmark: output/benchmarks/CQTL_AM7735_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7635_A_CTL_18_2_S5_R1_001.fastq.gz > output/fastq/CQTL_AM7735_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7735_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7635_A_CTL_18_2_S5_R2_001.fastq.gz > output/fastq/CQTL_AM7735_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7735_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 17 with external jobid '53966864'.
+
+[Tue Nov 12 11:54:48 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0016_A_FNF_18_1_S4_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0016_A_FNF_18_1_S4_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0016_FNF_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0016_FNF_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0016_FNF_synovium_1_R1_catReads.err, output/logs/FACT_23-0016_FNF_synovium_1_R2_catReads.err
+    jobid: 52
+    benchmark: output/benchmarks/FACT_23-0016_FNF_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0016_FNF_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0016_A_FNF_18_1_S4_R1_001.fastq.gz > output/fastq/FACT_23-0016_FNF_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0016_FNF_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0016_A_FNF_18_1_S4_R2_001.fastq.gz > output/fastq/FACT_23-0016_FNF_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0016_FNF_synovium_1_R2_catReads.err
+        
+Submitted job 52 with external jobid '53966866'.
+
+[Tue Nov 12 11:54:54 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0022_A_FNF_18_1_S6_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0022_A_FNF_18_1_S6_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0022_FNF_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0022_FNF_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0022_FNF_synovium_1_R1_catReads.err, output/logs/FACT_23-0022_FNF_synovium_1_R2_catReads.err
+    jobid: 54
+    benchmark: output/benchmarks/FACT_23-0022_FNF_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0022_FNF_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0022_A_FNF_18_1_S6_R1_001.fastq.gz > output/fastq/FACT_23-0022_FNF_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0022_FNF_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0022_A_FNF_18_1_S6_R2_001.fastq.gz > output/fastq/FACT_23-0022_FNF_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0022_FNF_synovium_1_R2_catReads.err
+        
+Submitted job 54 with external jobid '53966867'.
+
+[Tue Nov 12 11:54:59 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0025_A_FNF_18_1_S10_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0025_A_FNF_18_1_S10_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0025_FNF_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0025_FNF_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0025_FNF_synovium_1_R1_catReads.err, output/logs/FACT_23-0025_FNF_synovium_1_R2_catReads.err
+    jobid: 58
+    benchmark: output/benchmarks/FACT_23-0025_FNF_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0025_FNF_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0025_A_FNF_18_1_S10_R1_001.fastq.gz > output/fastq/FACT_23-0025_FNF_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0025_FNF_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0025_A_FNF_18_1_S10_R2_001.fastq.gz > output/fastq/FACT_23-0025_FNF_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0025_FNF_synovium_1_R2_catReads.err
+        
+Submitted job 58 with external jobid '53966868'.
+
+[Tue Nov 12 11:55:05 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0022_A_CTL_18_1_S5_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0022_A_CTL_18_1_S5_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0022_CTL_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0022_CTL_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0022_CTL_synovium_1_R1_catReads.err, output/logs/FACT_23-0022_CTL_synovium_1_R2_catReads.err
+    jobid: 53
+    benchmark: output/benchmarks/FACT_23-0022_CTL_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0022_CTL_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0022_A_CTL_18_1_S5_R1_001.fastq.gz > output/fastq/FACT_23-0022_CTL_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0022_CTL_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0022_A_CTL_18_1_S5_R2_001.fastq.gz > output/fastq/FACT_23-0022_CTL_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0022_CTL_synovium_1_R2_catReads.err
+        
+Submitted job 53 with external jobid '53966869'.
+
+[Tue Nov 12 11:55:10 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0013_A_CTL_18_1_S1_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0013_A_CTL_18_1_S1_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0013_CTL_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0013_CTL_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0013_CTL_synovium_1_R1_catReads.err, output/logs/FACT_23-0013_CTL_synovium_1_R2_catReads.err
+    jobid: 49
+    benchmark: output/benchmarks/FACT_23-0013_CTL_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0013_CTL_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0013_A_CTL_18_1_S1_R1_001.fastq.gz > output/fastq/FACT_23-0013_CTL_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0013_CTL_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0013_A_CTL_18_1_S1_R2_001.fastq.gz > output/fastq/FACT_23-0013_CTL_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0013_CTL_synovium_1_R2_catReads.err
+        
+Submitted job 49 with external jobid '53966870'.
+
+[Tue Nov 12 11:55:15 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7712_A_FNF_18_1_S4_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7712_A_FNF_18_1_S4_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7712_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7712_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7712_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7712_FNF_Ankle_1_R2_catReads.err
+    jobid: 10
+    benchmark: output/benchmarks/CQTL_AM7712_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7712_A_FNF_18_1_S4_R1_001.fastq.gz > output/fastq/CQTL_AM7712_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7712_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7712_A_FNF_18_1_S4_R2_001.fastq.gz > output/fastq/CQTL_AM7712_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7712_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 10 with external jobid '53966871'.
+
+[Tue Nov 12 11:55:20 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0023_A_CTL_18_1_S7_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0023_A_CTL_18_1_S7_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0023_CTL_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0023_CTL_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0023_CTL_synovium_1_R1_catReads.err, output/logs/FACT_23-0023_CTL_synovium_1_R2_catReads.err
+    jobid: 55
+    benchmark: output/benchmarks/FACT_23-0023_CTL_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0023_CTL_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0023_A_CTL_18_1_S7_R1_001.fastq.gz > output/fastq/FACT_23-0023_CTL_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0023_CTL_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0023_A_CTL_18_1_S7_R2_001.fastq.gz > output/fastq/FACT_23-0023_CTL_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0023_CTL_synovium_1_R2_catReads.err
+        
+Submitted job 55 with external jobid '53966873'.
+
+[Tue Nov 12 11:55:25 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7769_A_FNF_18_1_S4_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7769_A_FNF_18_1_S4_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7769_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7769_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7769_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7769_FNF_Ankle_1_R2_catReads.err
+    jobid: 32
+    benchmark: output/benchmarks/CQTL_AM7769_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7769_A_FNF_18_1_S4_R1_001.fastq.gz > output/fastq/CQTL_AM7769_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7769_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7769_A_FNF_18_1_S4_R2_001.fastq.gz > output/fastq/CQTL_AM7769_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7769_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 32 with external jobid '53966875'.
+
+[Tue Nov 12 11:55:30 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7754_A_FNF_18_2_S6_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7754_A_FNF_18_2_S6_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R2.fastq.gz
+    log: output/logs/CQTL_AM7754_FNF_Ankle_replicate_R1_catReads.err, output/logs/CQTL_AM7754_FNF_Ankle_replicate_R2_catReads.err
+    jobid: 22
+    benchmark: output/benchmarks/CQTL_AM7754_FNF_Ankle_replicate_catReads.tsv
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7754_A_FNF_18_2_S6_R1_001.fastq.gz > output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R1.fastq.gz 2> output/logs/CQTL_AM7754_FNF_Ankle_replicate_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7754_A_FNF_18_2_S6_R2_001.fastq.gz > output/fastq/CQTL_AM7754_FNF_Ankle_replicate_R2.fastq.gz 2> output/logs/CQTL_AM7754_FNF_Ankle_replicate_R2_catReads.err
+        
+Submitted job 22 with external jobid '53966876'.
+
+[Tue Nov 12 11:55:36 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7627_A_FNF_18_1_S4_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7627_A_FNF_18_1_S4_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7727_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7727_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7727_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7727_FNF_Ankle_1_R2_catReads.err
+    jobid: 16
+    benchmark: output/benchmarks/CQTL_AM7727_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7627_A_FNF_18_1_S4_R1_001.fastq.gz > output/fastq/CQTL_AM7727_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7727_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7627_A_FNF_18_1_S4_R2_001.fastq.gz > output/fastq/CQTL_AM7727_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7727_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 16 with external jobid '53966877'.
+
+[Tue Nov 12 11:55:41 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7677_A_FNF_18_1_S2_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7677_A_FNF_18_1_S2_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7677_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7677_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7677_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7677_FNF_Ankle_1_R2_catReads.err
+    jobid: 2
+    benchmark: output/benchmarks/CQTL_AM7677_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7677_A_FNF_18_1_S2_R1_001.fastq.gz > output/fastq/CQTL_AM7677_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7677_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7677_A_FNF_18_1_S2_R2_001.fastq.gz > output/fastq/CQTL_AM7677_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7677_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 2 with external jobid '53966878'.
+
+[Tue Nov 12 11:55:46 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7712_A_CTL_18_1_S3_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7712_A_CTL_18_1_S3_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7712_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7712_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7712_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7712_CTL_Ankle_1_R2_catReads.err
+    jobid: 9
+    benchmark: output/benchmarks/CQTL_AM7712_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7712_A_CTL_18_1_S3_R1_001.fastq.gz > output/fastq/CQTL_AM7712_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7712_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7712_A_CTL_18_1_S3_R2_001.fastq.gz > output/fastq/CQTL_AM7712_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7712_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 9 with external jobid '53966879'.
+
+[Tue Nov 12 11:55:52 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7677_A_CTL_18_1_S1_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7677_A_CTL_18_1_S1_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7677_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7677_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7677_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7677_CTL_Ankle_1_R2_catReads.err
+    jobid: 1
+    benchmark: output/benchmarks/CQTL_AM7677_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7677_A_CTL_18_1_S1_R1_001.fastq.gz > output/fastq/CQTL_AM7677_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7677_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7677_A_CTL_18_1_S1_R2_001.fastq.gz > output/fastq/CQTL_AM7677_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7677_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 1 with external jobid '53966880'.
+
+[Tue Nov 12 11:55:57 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7678_A_CTL_18_1_S3_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7678_A_CTL_18_1_S3_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7678_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7678_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7678_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7678_CTL_Ankle_1_R2_catReads.err
+    jobid: 3
+    benchmark: output/benchmarks/CQTL_AM7678_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7678_A_CTL_18_1_S3_R1_001.fastq.gz > output/fastq/CQTL_AM7678_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7678_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7678_A_CTL_18_1_S3_R2_001.fastq.gz > output/fastq/CQTL_AM7678_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7678_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 3 with external jobid '53966882'.
+
+[Tue Nov 12 11:56:02 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7627_A_CTL_18_1_S3_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7627_A_CTL_18_1_S3_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7727_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7727_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7727_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7727_CTL_Ankle_1_R2_catReads.err
+    jobid: 15
+    benchmark: output/benchmarks/CQTL_AM7727_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7627_A_CTL_18_1_S3_R1_001.fastq.gz > output/fastq/CQTL_AM7727_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7727_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7627_A_CTL_18_1_S3_R2_001.fastq.gz > output/fastq/CQTL_AM7727_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7727_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 15 with external jobid '53966883'.
+
+[Tue Nov 12 11:56:08 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778AN_A_FNF_18_1_S4_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778AN_A_FNF_18_1_S4_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7778_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7778_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7778_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7778_FNF_Ankle_1_R2_catReads.err
+    jobid: 40
+    benchmark: output/benchmarks/CQTL_AM7778_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778AN_A_FNF_18_1_S4_R1_001.fastq.gz > output/fastq/CQTL_AM7778_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7778_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778AN_A_FNF_18_1_S4_R2_001.fastq.gz > output/fastq/CQTL_AM7778_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7778_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 40 with external jobid '53966884'.
+
+[Tue Nov 12 11:56:13 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7754_A_FNF_18_1_S2_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7754_A_FNF_18_1_S2_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7754_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7754_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7754_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7754_FNF_Ankle_1_R2_catReads.err
+    jobid: 21
+    benchmark: output/benchmarks/CQTL_AM7754_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7754_A_FNF_18_1_S2_R1_001.fastq.gz > output/fastq/CQTL_AM7754_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7754_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7754_A_FNF_18_1_S2_R2_001.fastq.gz > output/fastq/CQTL_AM7754_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7754_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 21 with external jobid '53966885'.
+
+[Tue Nov 12 11:56:18 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7711_A_FNF_18_1_S2_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7711_A_FNF_18_1_S2_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7711_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7711_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7711_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7711_FNF_Ankle_1_R2_catReads.err
+    jobid: 8
+    benchmark: output/benchmarks/CQTL_AM7711_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7711_A_FNF_18_1_S2_R1_001.fastq.gz > output/fastq/CQTL_AM7711_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7711_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7711_A_FNF_18_1_S2_R2_001.fastq.gz > output/fastq/CQTL_AM7711_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7711_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 8 with external jobid '53966886'.
+
+[Tue Nov 12 11:56:23 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7765_A_CTL_18_1_S1_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7765_A_CTL_18_1_S1_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7765_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7765_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7765_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7765_CTL_Ankle_1_R2_catReads.err
+    jobid: 29
+    benchmark: output/benchmarks/CQTL_AM7765_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7765_A_CTL_18_1_S1_R1_001.fastq.gz > output/fastq/CQTL_AM7765_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7765_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7765_A_CTL_18_1_S1_R2_001.fastq.gz > output/fastq/CQTL_AM7765_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7765_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 29 with external jobid '53966887'.
+
+[Tue Nov 12 11:56:28 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7765_A_FNF_18_1_S2_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7765_A_FNF_18_1_S2_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7765_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7765_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7765_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7765_FNF_Ankle_1_R2_catReads.err
+    jobid: 30
+    benchmark: output/benchmarks/CQTL_AM7765_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7765_A_FNF_18_1_S2_R1_001.fastq.gz > output/fastq/CQTL_AM7765_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7765_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7765_A_FNF_18_1_S2_R2_001.fastq.gz > output/fastq/CQTL_AM7765_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7765_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 30 with external jobid '53966888'.
+
+[Tue Nov 12 11:56:33 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778FE_A_FNF_18_1_S6_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778FE_A_FNF_18_1_S6_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7778FE_FNF_Femur_1_R1.fastq.gz, output/fastq/CQTL_AM7778FE_FNF_Femur_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7778FE_FNF_Femur_1_R1_catReads.err, output/logs/CQTL_AM7778FE_FNF_Femur_1_R2_catReads.err
+    jobid: 38
+    benchmark: output/benchmarks/CQTL_AM7778FE_FNF_Femur_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778FE_A_FNF_18_1_S6_R1_001.fastq.gz > output/fastq/CQTL_AM7778FE_FNF_Femur_1_R1.fastq.gz 2> output/logs/CQTL_AM7778FE_FNF_Femur_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM778FE_A_FNF_18_1_S6_R2_001.fastq.gz > output/fastq/CQTL_AM7778FE_FNF_Femur_1_R2.fastq.gz 2> output/logs/CQTL_AM7778FE_FNF_Femur_1_R2_catReads.err
+        
+Submitted job 38 with external jobid '53966889'.
+
+[Tue Nov 12 11:56:38 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7780_A_FNF_18_2_S2_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7780_A_FNF_18_2_S2_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7780_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7780_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7780_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7780_FNF_Ankle_1_R2_catReads.err
+    jobid: 42
+    benchmark: output/benchmarks/CQTL_AM7780_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7780_A_FNF_18_2_S2_R1_001.fastq.gz > output/fastq/CQTL_AM7780_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7780_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7780_A_FNF_18_2_S2_R2_001.fastq.gz > output/fastq/CQTL_AM7780_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7780_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 42 with external jobid '53966890'.
+
+[Tue Nov 12 11:56:44 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7763_A_FNF_18_1_S6_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7763_A_FNF_18_1_S6_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7763_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7763_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7763_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7763_FNF_Ankle_1_R2_catReads.err
+    jobid: 28
+    benchmark: output/benchmarks/CQTL_AM7763_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7763_A_FNF_18_1_S6_R1_001.fastq.gz > output/fastq/CQTL_AM7763_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7763_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7763_A_FNF_18_1_S6_R2_001.fastq.gz > output/fastq/CQTL_AM7763_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7763_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 28 with external jobid '53966891'.
+
+[Tue Nov 12 11:56:49 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7717_A_FNF_18_1_S6_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7717_A_FNF_18_1_S6_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7717_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7717_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7717_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7717_FNF_Ankle_1_R2_catReads.err
+    jobid: 12
+    benchmark: output/benchmarks/CQTL_AM7717_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7717_A_FNF_18_1_S6_R1_001.fastq.gz > output/fastq/CQTL_AM7717_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7717_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7717_A_FNF_18_1_S6_R2_001.fastq.gz > output/fastq/CQTL_AM7717_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7717_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 12 with external jobid '53966893'.
+
+[Tue Nov 12 11:56:54 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7678_A_FNF_18_1_S4_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7678_A_FNF_18_1_S4_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7678_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7678_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7678_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7678_FNF_Ankle_1_R2_catReads.err
+    jobid: 4
+    benchmark: output/benchmarks/CQTL_AM7678_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7678_A_FNF_18_1_S4_R1_001.fastq.gz > output/fastq/CQTL_AM7678_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7678_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7678_A_FNF_18_1_S4_R2_001.fastq.gz > output/fastq/CQTL_AM7678_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7678_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 4 with external jobid '53966896'.
+
+[Tue Nov 12 11:56:59 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7626_A_CTL_18_2_S1_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7626_A_CTL_18_2_S1_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7726_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7726_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7726_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7726_CTL_Ankle_1_R2_catReads.err
+    jobid: 13
+    benchmark: output/benchmarks/CQTL_AM7726_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7626_A_CTL_18_2_S1_R1_001.fastq.gz > output/fastq/CQTL_AM7726_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7726_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7626_A_CTL_18_2_S1_R2_001.fastq.gz > output/fastq/CQTL_AM7726_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7726_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 13 with external jobid '53966897'.
+
+[Tue Nov 12 11:57:05 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7771_A_FNF_18_2_S6_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7771_A_FNF_18_2_S6_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7771_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7771_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7771_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7771_FNF_Ankle_1_R2_catReads.err
+    jobid: 34
+    benchmark: output/benchmarks/CQTL_AM7771_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7771_A_FNF_18_2_S6_R1_001.fastq.gz > output/fastq/CQTL_AM7771_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7771_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06232023_nextseq_i7/CQTL_AM7771_A_FNF_18_2_S6_R2_001.fastq.gz > output/fastq/CQTL_AM7771_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7771_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 34 with external jobid '53966898'.
+
+[Tue Nov 12 11:57:10 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7763_A_CTL_18_1_S5_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7763_A_CTL_18_1_S5_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7763_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7763_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7763_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7763_CTL_Ankle_1_R2_catReads.err
+    jobid: 27
+    benchmark: output/benchmarks/CQTL_AM7763_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7763_A_CTL_18_1_S5_R1_001.fastq.gz > output/fastq/CQTL_AM7763_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7763_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7763_A_CTL_18_1_S5_R2_001.fastq.gz > output/fastq/CQTL_AM7763_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7763_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 27 with external jobid '53966900'.
+
+[Tue Nov 12 11:57:15 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7626_A_FNF_18_2_S2_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7626_A_FNF_18_2_S2_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7726_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7726_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7726_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7726_FNF_Ankle_1_R2_catReads.err
+    jobid: 14
+    benchmark: output/benchmarks/CQTL_AM7726_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7626_A_FNF_18_2_S2_R1_001.fastq.gz > output/fastq/CQTL_AM7726_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7726_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7626_A_FNF_18_2_S2_R2_001.fastq.gz > output/fastq/CQTL_AM7726_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7726_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 14 with external jobid '53966901'.
+
+[Tue Nov 12 11:57:20 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7679_A_FNF_18_1_S6_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7679_A_FNF_18_1_S6_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7679_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7679_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7679_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7679_FNF_Ankle_1_R2_catReads.err
+    jobid: 6
+    benchmark: output/benchmarks/CQTL_AM7679_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7679_A_FNF_18_1_S6_R1_001.fastq.gz > output/fastq/CQTL_AM7679_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7679_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/12072022_nextseq_i7/fastq/CQTL_AM7679_A_FNF_18_1_S6_R2_001.fastq.gz > output/fastq/CQTL_AM7679_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7679_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 6 with external jobid '53966902'.
+
+[Tue Nov 12 11:57:25 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7785_A_FNF_18_2_S2_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7785_A_FNF_18_2_S2_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7785_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7785_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7785_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7785_FNF_Ankle_1_R2_catReads.err
+    jobid: 46
+    benchmark: output/benchmarks/CQTL_AM7785_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7785_A_FNF_18_2_S2_R1_001.fastq.gz > output/fastq/CQTL_AM7785_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7785_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7785_A_FNF_18_2_S2_R2_001.fastq.gz > output/fastq/CQTL_AM7785_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7785_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 46 with external jobid '53966903'.
+
+[Tue Nov 12 11:57:31 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7755_A_FNF_18_1_S4_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7755_A_FNF_18_1_S4_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7755_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7755_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7755_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7755_FNF_Ankle_1_R2_catReads.err
+    jobid: 25
+    benchmark: output/benchmarks/CQTL_AM7755_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7755_A_FNF_18_1_S4_R1_001.fastq.gz > output/fastq/CQTL_AM7755_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7755_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06022023_nextse_i7/CQTL_AM7755_A_FNF_18_1_S4_R2_001.fastq.gz > output/fastq/CQTL_AM7755_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7755_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 25 with external jobid '53966904'.
+
+[Tue Nov 12 11:57:36 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM7775_A_FNF_18_1_S2_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM7775_A_FNF_18_1_S2_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7775_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7775_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7775_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7775_FNF_Ankle_1_R2_catReads.err
+    jobid: 36
+    benchmark: output/benchmarks/CQTL_AM7775_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM7775_A_FNF_18_1_S2_R1_001.fastq.gz > output/fastq/CQTL_AM7775_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7775_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/06292023_nextseq_i7/CQTL_AM7775_A_FNF_18_1_S2_R2_001.fastq.gz > output/fastq/CQTL_AM7775_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7775_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 36 with external jobid '53966905'.
+
+[Tue Nov 12 11:57:41 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0023_A_FNF_18_1_S8_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0023_A_FNF_18_1_S8_R2_001.fastq.gz
+    output: output/fastq/FACT_23-0023_FNF_synovium_1_R1.fastq.gz, output/fastq/FACT_23-0023_FNF_synovium_1_R2.fastq.gz
+    log: output/logs/FACT_23-0023_FNF_synovium_1_R1_catReads.err, output/logs/FACT_23-0023_FNF_synovium_1_R2_catReads.err
+    jobid: 56
+    benchmark: output/benchmarks/FACT_23-0023_FNF_synovium_1_catReads.tsv
+    wildcards: sampleName=FACT_23-0023_FNF_synovium_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0023_A_FNF_18_1_S8_R1_001.fastq.gz > output/fastq/FACT_23-0023_FNF_synovium_1_R1.fastq.gz 2> output/logs/FACT_23-0023_FNF_synovium_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/FACT/atac/FACT_23-0023_A_FNF_18_1_S8_R2_001.fastq.gz > output/fastq/FACT_23-0023_FNF_synovium_1_R2.fastq.gz 2> output/logs/FACT_23-0023_FNF_synovium_1_R2_catReads.err
+        
+Submitted job 56 with external jobid '53966907'.
+
+[Tue Nov 12 11:57:46 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7635_A_FNF_18_2_S6_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7635_A_FNF_18_2_S6_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7735_FNF_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7735_FNF_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7735_FNF_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7735_FNF_Ankle_1_R2_catReads.err
+    jobid: 18
+    benchmark: output/benchmarks/CQTL_AM7735_FNF_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7635_A_FNF_18_2_S6_R1_001.fastq.gz > output/fastq/CQTL_AM7735_FNF_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7735_FNF_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/05012023_nextseq_i7/CQTL_AM7635_A_FNF_18_2_S6_R2_001.fastq.gz > output/fastq/CQTL_AM7735_FNF_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7735_FNF_Ankle_1_R2_catReads.err
+        
+Submitted job 18 with external jobid '53966908'.
+
+[Tue Nov 12 11:57:51 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7717_A_CTL_18_1_S5_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7717_A_CTL_18_1_S5_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7717_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7717_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7717_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7717_CTL_Ankle_1_R2_catReads.err
+    jobid: 11
+    benchmark: output/benchmarks/CQTL_AM7717_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7717_A_CTL_18_1_S5_R1_001.fastq.gz > output/fastq/CQTL_AM7717_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7717_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/02132023_nextseq_i7/CQTL_AM7717_A_CTL_18_1_S5_R2_001.fastq.gz > output/fastq/CQTL_AM7717_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7717_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 11 with external jobid '53966909'.
+
+[Tue Nov 12 11:57:56 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7785_A_CTL_18_2_S1_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7785_A_CTL_18_2_S1_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7785_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7785_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7785_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7785_CTL_Ankle_1_R2_catReads.err
+    jobid: 45
+    benchmark: output/benchmarks/CQTL_AM7785_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7785_A_CTL_18_2_S1_R1_001.fastq.gz > output/fastq/CQTL_AM7785_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7785_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/08022023_nextseq_i7/CQTL_AM7785_A_CTL_18_2_S1_R2_001.fastq.gz > output/fastq/CQTL_AM7785_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7785_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 45 with external jobid '53966910'.
+
+[Tue Nov 12 11:58:01 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7754_A_CTL_18_2_S5_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7754_A_CTL_18_2_S5_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R1.fastq.gz, output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R2.fastq.gz
+    log: output/logs/CQTL_AM7754_CTL_Ankle_replicate_R1_catReads.err, output/logs/CQTL_AM7754_CTL_Ankle_replicate_R2_catReads.err
+    jobid: 20
+    benchmark: output/benchmarks/CQTL_AM7754_CTL_Ankle_replicate_catReads.tsv
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7754_A_CTL_18_2_S5_R1_001.fastq.gz > output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R1.fastq.gz 2> output/logs/CQTL_AM7754_CTL_Ankle_replicate_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7754_A_CTL_18_2_S5_R2_001.fastq.gz > output/fastq/CQTL_AM7754_CTL_Ankle_replicate_R2.fastq.gz 2> output/logs/CQTL_AM7754_CTL_Ankle_replicate_R2_catReads.err
+        
+Submitted job 20 with external jobid '53966911'.
+
+[Tue Nov 12 11:58:06 2024]
+rule catReads:
+    input: /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7780_A_CTL_18_2_S1_R1_001.fastq.gz, /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7780_A_CTL_18_2_S1_R2_001.fastq.gz
+    output: output/fastq/CQTL_AM7780_CTL_Ankle_1_R1.fastq.gz, output/fastq/CQTL_AM7780_CTL_Ankle_1_R2.fastq.gz
+    log: output/logs/CQTL_AM7780_CTL_Ankle_1_R1_catReads.err, output/logs/CQTL_AM7780_CTL_Ankle_1_R2_catReads.err
+    jobid: 41
+    benchmark: output/benchmarks/CQTL_AM7780_CTL_Ankle_1_catReads.tsv
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+
+
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7780_A_CTL_18_2_S1_R1_001.fastq.gz > output/fastq/CQTL_AM7780_CTL_Ankle_1_R1.fastq.gz 2> output/logs/CQTL_AM7780_CTL_Ankle_1_R1_catReads.err
+        cat /proj/phanstiel_lab/Data/raw/CQTL/atac/07182023_nextseq_i7/CQTL_AM7780_A_CTL_18_2_S1_R2_001.fastq.gz > output/fastq/CQTL_AM7780_CTL_Ankle_1_R2.fastq.gz 2> output/logs/CQTL_AM7780_CTL_Ankle_1_R2_catReads.err
+        
+Submitted job 41 with external jobid '53966912'.

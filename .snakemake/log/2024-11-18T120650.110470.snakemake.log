@@ -1,0 +1,1226 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	58	align
+	1	all
+	59
+
+[Mon Nov 18 12:06:54 2024]
+rule align:
+    input: output/trim/CQTL_AM7771_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7771_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7771_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7771_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7771_FNF_Ankle_1.err, output/logs/align_CQTL_AM7771_FNF_Ankle_1.out
+    jobid: 208
+    benchmark: output/benchmarks/align_CQTL_AM7771_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7771_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7771_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7771_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7771_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7771_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7771_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7771_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7771_FNF_Ankle_1.err
+        
+Submitted job 208 with external jobid '54385465'.
+
+[Mon Nov 18 12:06:59 2024]
+rule align:
+    input: output/trim/CQTL_AM7727_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7727_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7727_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7727_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7727_FNF_Ankle_1.err, output/logs/align_CQTL_AM7727_FNF_Ankle_1.out
+    jobid: 190
+    benchmark: output/benchmarks/align_CQTL_AM7727_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7727_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7727_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7727_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7727_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7727_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7727_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7727_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7727_FNF_Ankle_1.err
+        
+Submitted job 190 with external jobid '54385466'.
+
+[Mon Nov 18 12:07:04 2024]
+rule align:
+    input: output/trim/CQTL_AM7778_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7778_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7778_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7778_CTL_Ankle_1.err, output/logs/align_CQTL_AM7778_CTL_Ankle_1.out
+    jobid: 213
+    benchmark: output/benchmarks/align_CQTL_AM7778_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7778_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7778_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7778_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7778_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7778_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7778_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7778_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7778_CTL_Ankle_1.err
+        
+Submitted job 213 with external jobid '54385468'.
+
+[Mon Nov 18 12:07:10 2024]
+rule align:
+    input: output/trim/CQTL_AM7754_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7754_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7754_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7754_CTL_Ankle_1.err, output/logs/align_CQTL_AM7754_CTL_Ankle_1.out
+    jobid: 193
+    benchmark: output/benchmarks/align_CQTL_AM7754_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7754_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7754_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7754_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7754_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7754_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7754_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7754_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7754_CTL_Ankle_1.err
+        
+Submitted job 193 with external jobid '54385470'.
+
+[Mon Nov 18 12:07:15 2024]
+rule align:
+    input: output/trim/FACT_23-0013_FNF_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0013_FNF_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0013_FNF_synovium_1_sorted.bam, output/align/FACT_23-0013_FNF_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0013_FNF_synovium_1.err, output/logs/align_FACT_23-0013_FNF_synovium_1.out
+    jobid: 224
+    benchmark: output/benchmarks/align_FACT_23-0013_FNF_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0013_FNF_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0013_FNF_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0013_FNF_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0013_FNF_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0013_FNF_synovium_1.out 2> output/logs/align_FACT_23-0013_FNF_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0013_FNF_synovium_1_sorted.bam > output/align/FACT_23-0013_FNF_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0013_FNF_synovium_1.err
+        
+Submitted job 224 with external jobid '54385471'.
+
+[Mon Nov 18 12:07:21 2024]
+rule align:
+    input: output/trim/CQTL_AM7678_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7678_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7678_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7678_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7678_FNF_Ankle_1.err, output/logs/align_CQTL_AM7678_FNF_Ankle_1.out
+    jobid: 178
+    benchmark: output/benchmarks/align_CQTL_AM7678_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7678_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7678_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7678_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7678_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7678_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7678_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7678_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7678_FNF_Ankle_1.err
+        
+Submitted job 178 with external jobid '54385472'.
+
+[Mon Nov 18 12:07:27 2024]
+rule align:
+    input: output/trim/CQTL_AM7778_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7778_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7778_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7778_FNF_Ankle_1.err, output/logs/align_CQTL_AM7778_FNF_Ankle_1.out
+    jobid: 214
+    benchmark: output/benchmarks/align_CQTL_AM7778_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7778_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7778_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7778_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7778_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7778_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7778_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7778_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7778_FNF_Ankle_1.err
+        
+Submitted job 214 with external jobid '54385474'.
+
+[Mon Nov 18 12:07:33 2024]
+rule align:
+    input: output/trim/FACT_23-0023_FNF_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0023_FNF_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0023_FNF_synovium_1_sorted.bam, output/align/FACT_23-0023_FNF_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0023_FNF_synovium_1.err, output/logs/align_FACT_23-0023_FNF_synovium_1.out
+    jobid: 230
+    benchmark: output/benchmarks/align_FACT_23-0023_FNF_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0023_FNF_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0023_FNF_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0023_FNF_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0023_FNF_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0023_FNF_synovium_1.out 2> output/logs/align_FACT_23-0023_FNF_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0023_FNF_synovium_1_sorted.bam > output/align/FACT_23-0023_FNF_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0023_FNF_synovium_1.err
+        
+Submitted job 230 with external jobid '54385476'.
+
+[Mon Nov 18 12:07:39 2024]
+rule align:
+    input: output/trim/CQTL_AM7679_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7679_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7679_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7679_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7679_FNF_Ankle_1.err, output/logs/align_CQTL_AM7679_FNF_Ankle_1.out
+    jobid: 180
+    benchmark: output/benchmarks/align_CQTL_AM7679_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7679_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7679_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7679_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7679_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7679_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7679_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7679_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7679_FNF_Ankle_1.err
+        
+Submitted job 180 with external jobid '54385477'.
+
+[Mon Nov 18 12:07:45 2024]
+rule align:
+    input: output/trim/CQTL_AM7754_CTL_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7754_CTL_Ankle_replicate_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7754_CTL_Ankle_replicate_sorted.bam, output/align/CQTL_AM7754_CTL_Ankle_replicate_stats.txt
+    log: output/logs/align_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/align_CQTL_AM7754_CTL_Ankle_replicate.out
+    jobid: 194
+    benchmark: output/benchmarks/align_CQTL_AM7754_CTL_Ankle_replicate.tsv
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7754_CTL_Ankle_replicate_R1_val_1.fq.gz output/trim/CQTL_AM7754_CTL_Ankle_replicate_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7754_CTL_Ankle_replicate_sorted.bam 1> output/logs/align_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/align_CQTL_AM7754_CTL_Ankle_replicate.err
+
+        samtools flagstat output/align/CQTL_AM7754_CTL_Ankle_replicate_sorted.bam > output/align/CQTL_AM7754_CTL_Ankle_replicate_stats.txt 2>> output/logs/align_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+Submitted job 194 with external jobid '54385480'.
+
+[Mon Nov 18 12:07:50 2024]
+rule align:
+    input: output/trim/CQTL_AM7780_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7780_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7780_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7780_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7780_FNF_Ankle_1.err, output/logs/align_CQTL_AM7780_FNF_Ankle_1.out
+    jobid: 216
+    benchmark: output/benchmarks/align_CQTL_AM7780_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7780_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7780_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7780_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7780_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7780_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7780_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7780_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7780_FNF_Ankle_1.err
+        
+Submitted job 216 with external jobid '54385482'.
+
+[Mon Nov 18 12:07:56 2024]
+rule align:
+    input: output/trim/CQTL_AM7754_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7754_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7754_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7754_FNF_Ankle_1.err, output/logs/align_CQTL_AM7754_FNF_Ankle_1.out
+    jobid: 195
+    benchmark: output/benchmarks/align_CQTL_AM7754_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7754_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7754_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7754_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7754_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7754_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7754_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7754_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7754_FNF_Ankle_1.err
+        
+Submitted job 195 with external jobid '54385483'.
+
+[Mon Nov 18 12:08:01 2024]
+rule align:
+    input: output/trim/CQTL_AM7765_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7765_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7765_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7765_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7765_CTL_Ankle_1.err, output/logs/align_CQTL_AM7765_CTL_Ankle_1.out
+    jobid: 203
+    benchmark: output/benchmarks/align_CQTL_AM7765_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7765_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7765_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7765_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7765_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7765_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7765_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7765_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7765_CTL_Ankle_1.err
+        
+Submitted job 203 with external jobid '54385484'.
+
+[Mon Nov 18 12:08:06 2024]
+rule align:
+    input: output/trim/CQTL_AM7712_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7712_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7712_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7712_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7712_FNF_Ankle_1.err, output/logs/align_CQTL_AM7712_FNF_Ankle_1.out
+    jobid: 184
+    benchmark: output/benchmarks/align_CQTL_AM7712_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7712_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7712_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7712_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7712_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7712_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7712_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7712_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7712_FNF_Ankle_1.err
+        
+Submitted job 184 with external jobid '54385485'.
+
+[Mon Nov 18 12:08:11 2024]
+rule align:
+    input: output/trim/CQTL_AM7769_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7769_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7769_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7769_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7769_CTL_Ankle_1.err, output/logs/align_CQTL_AM7769_CTL_Ankle_1.out
+    jobid: 205
+    benchmark: output/benchmarks/align_CQTL_AM7769_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7769_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7769_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7769_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7769_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7769_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7769_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7769_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7769_CTL_Ankle_1.err
+        
+Submitted job 205 with external jobid '54385486'.
+
+[Mon Nov 18 12:08:16 2024]
+rule align:
+    input: output/trim/CQTL_AM7755_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7755_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7755_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7755_CTL_Ankle_1.err, output/logs/align_CQTL_AM7755_CTL_Ankle_1.out
+    jobid: 197
+    benchmark: output/benchmarks/align_CQTL_AM7755_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7755_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7755_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7755_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7755_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7755_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7755_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7755_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7755_CTL_Ankle_1.err
+        
+Submitted job 197 with external jobid '54385488'.
+
+[Mon Nov 18 12:08:22 2024]
+rule align:
+    input: output/trim/CQTL_AM7763_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7763_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7763_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7763_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7763_CTL_Ankle_1.err, output/logs/align_CQTL_AM7763_CTL_Ankle_1.out
+    jobid: 201
+    benchmark: output/benchmarks/align_CQTL_AM7763_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7763_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7763_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7763_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7763_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7763_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7763_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7763_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7763_CTL_Ankle_1.err
+        
+Submitted job 201 with external jobid '54385489'.
+
+[Mon Nov 18 12:08:27 2024]
+rule align:
+    input: output/trim/CQTL_AM7780_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7780_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7780_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7780_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7780_CTL_Ankle_1.err, output/logs/align_CQTL_AM7780_CTL_Ankle_1.out
+    jobid: 215
+    benchmark: output/benchmarks/align_CQTL_AM7780_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7780_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7780_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7780_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7780_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7780_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7780_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7780_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7780_CTL_Ankle_1.err
+        
+Submitted job 215 with external jobid '54385491'.
+
+[Mon Nov 18 12:08:34 2024]
+rule align:
+    input: output/trim/FACT_23-0016_FNF_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0016_FNF_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0016_FNF_synovium_1_sorted.bam, output/align/FACT_23-0016_FNF_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0016_FNF_synovium_1.err, output/logs/align_FACT_23-0016_FNF_synovium_1.out
+    jobid: 226
+    benchmark: output/benchmarks/align_FACT_23-0016_FNF_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0016_FNF_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0016_FNF_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0016_FNF_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0016_FNF_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0016_FNF_synovium_1.out 2> output/logs/align_FACT_23-0016_FNF_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0016_FNF_synovium_1_sorted.bam > output/align/FACT_23-0016_FNF_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0016_FNF_synovium_1.err
+        
+Submitted job 226 with external jobid '54385493'.
+
+[Mon Nov 18 12:08:40 2024]
+rule align:
+    input: output/trim/CQTL_AM7778FE_FNF_Femur_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778FE_FNF_Femur_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7778FE_FNF_Femur_1_sorted.bam, output/align/CQTL_AM7778FE_FNF_Femur_1_stats.txt
+    log: output/logs/align_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/align_CQTL_AM7778FE_FNF_Femur_1.out
+    jobid: 212
+    benchmark: output/benchmarks/align_CQTL_AM7778FE_FNF_Femur_1.tsv
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7778FE_FNF_Femur_1_R1_val_1.fq.gz output/trim/CQTL_AM7778FE_FNF_Femur_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7778FE_FNF_Femur_1_sorted.bam 1> output/logs/align_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/align_CQTL_AM7778FE_FNF_Femur_1.err
+
+        samtools flagstat output/align/CQTL_AM7778FE_FNF_Femur_1_sorted.bam > output/align/CQTL_AM7778FE_FNF_Femur_1_stats.txt 2>> output/logs/align_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 212 with external jobid '54385494'.
+
+[Mon Nov 18 12:08:46 2024]
+rule align:
+    input: output/trim/CQTL_AM7765_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7765_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7765_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7765_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7765_FNF_Ankle_1.err, output/logs/align_CQTL_AM7765_FNF_Ankle_1.out
+    jobid: 204
+    benchmark: output/benchmarks/align_CQTL_AM7765_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7765_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7765_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7765_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7765_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7765_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7765_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7765_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7765_FNF_Ankle_1.err
+        
+Submitted job 204 with external jobid '54385495'.
+
+[Mon Nov 18 12:08:51 2024]
+rule align:
+    input: output/trim/CQTL_AM7755_CTL_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7755_CTL_Ankle_replicate_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7755_CTL_Ankle_replicate_sorted.bam, output/align/CQTL_AM7755_CTL_Ankle_replicate_stats.txt
+    log: output/logs/align_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/align_CQTL_AM7755_CTL_Ankle_replicate.out
+    jobid: 198
+    benchmark: output/benchmarks/align_CQTL_AM7755_CTL_Ankle_replicate.tsv
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7755_CTL_Ankle_replicate_R1_val_1.fq.gz output/trim/CQTL_AM7755_CTL_Ankle_replicate_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7755_CTL_Ankle_replicate_sorted.bam 1> output/logs/align_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/align_CQTL_AM7755_CTL_Ankle_replicate.err
+
+        samtools flagstat output/align/CQTL_AM7755_CTL_Ankle_replicate_sorted.bam > output/align/CQTL_AM7755_CTL_Ankle_replicate_stats.txt 2>> output/logs/align_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+Submitted job 198 with external jobid '54385497'.
+
+[Mon Nov 18 12:08:56 2024]
+rule align:
+    input: output/trim/CQTL_AM7781_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7781_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7781_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7781_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7781_FNF_Ankle_1.err, output/logs/align_CQTL_AM7781_FNF_Ankle_1.out
+    jobid: 218
+    benchmark: output/benchmarks/align_CQTL_AM7781_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7781_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7781_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7781_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7781_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7781_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7781_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7781_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7781_FNF_Ankle_1.err
+        
+Submitted job 218 with external jobid '54385499'.
+
+[Mon Nov 18 12:09:01 2024]
+rule align:
+    input: output/trim/CQTL_AM7711_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7711_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7711_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7711_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7711_CTL_Ankle_1.err, output/logs/align_CQTL_AM7711_CTL_Ankle_1.out
+    jobid: 181
+    benchmark: output/benchmarks/align_CQTL_AM7711_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7711_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7711_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7711_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7711_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7711_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7711_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7711_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7711_CTL_Ankle_1.err
+        
+Submitted job 181 with external jobid '54385500'.
+
+[Mon Nov 18 12:09:06 2024]
+rule align:
+    input: output/trim/CQTL_AM7711_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7711_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7711_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7711_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7711_FNF_Ankle_1.err, output/logs/align_CQTL_AM7711_FNF_Ankle_1.out
+    jobid: 182
+    benchmark: output/benchmarks/align_CQTL_AM7711_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7711_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7711_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7711_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7711_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7711_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7711_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7711_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7711_FNF_Ankle_1.err
+        
+Submitted job 182 with external jobid '54385501'.
+
+[Mon Nov 18 12:09:11 2024]
+rule align:
+    input: output/trim/CQTL_AM7785_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7785_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7785_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7785_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7785_CTL_Ankle_1.err, output/logs/align_CQTL_AM7785_CTL_Ankle_1.out
+    jobid: 219
+    benchmark: output/benchmarks/align_CQTL_AM7785_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7785_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7785_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7785_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7785_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7785_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7785_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7785_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7785_CTL_Ankle_1.err
+        
+Submitted job 219 with external jobid '54385503'.
+
+[Mon Nov 18 12:09:17 2024]
+rule align:
+    input: output/trim/CQTL_AM7786_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7786_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7786_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7786_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7786_FNF_Ankle_1.err, output/logs/align_CQTL_AM7786_FNF_Ankle_1.out
+    jobid: 222
+    benchmark: output/benchmarks/align_CQTL_AM7786_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7786_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7786_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7786_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7786_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7786_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7786_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7786_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7786_FNF_Ankle_1.err
+        
+Submitted job 222 with external jobid '54385505'.
+
+[Mon Nov 18 12:09:23 2024]
+rule align:
+    input: output/trim/CQTL_AM7677_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7677_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7677_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7677_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7677_CTL_Ankle_1.err, output/logs/align_CQTL_AM7677_CTL_Ankle_1.out
+    jobid: 175
+    benchmark: output/benchmarks/align_CQTL_AM7677_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7677_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7677_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7677_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7677_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7677_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7677_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7677_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7677_CTL_Ankle_1.err
+        
+Submitted job 175 with external jobid '54385506'.
+
+[Mon Nov 18 12:09:29 2024]
+rule align:
+    input: output/trim/CQTL_AM7678_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7678_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7678_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7678_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7678_CTL_Ankle_1.err, output/logs/align_CQTL_AM7678_CTL_Ankle_1.out
+    jobid: 177
+    benchmark: output/benchmarks/align_CQTL_AM7678_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7678_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7678_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7678_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7678_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7678_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7678_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7678_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7678_CTL_Ankle_1.err
+        
+Submitted job 177 with external jobid '54385507'.
+
+[Mon Nov 18 12:09:35 2024]
+rule align:
+    input: output/trim/CQTL_AM7755_FNF_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_replicate_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7755_FNF_Ankle_replicate_sorted.bam, output/align/CQTL_AM7755_FNF_Ankle_replicate_stats.txt
+    log: output/logs/align_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/align_CQTL_AM7755_FNF_Ankle_replicate.out
+    jobid: 200
+    benchmark: output/benchmarks/align_CQTL_AM7755_FNF_Ankle_replicate.tsv
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7755_FNF_Ankle_replicate_R1_val_1.fq.gz output/trim/CQTL_AM7755_FNF_Ankle_replicate_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7755_FNF_Ankle_replicate_sorted.bam 1> output/logs/align_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/align_CQTL_AM7755_FNF_Ankle_replicate.err
+
+        samtools flagstat output/align/CQTL_AM7755_FNF_Ankle_replicate_sorted.bam > output/align/CQTL_AM7755_FNF_Ankle_replicate_stats.txt 2>> output/logs/align_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+Submitted job 200 with external jobid '54385510'.
+
+[Mon Nov 18 12:09:41 2024]
+rule align:
+    input: output/trim/CQTL_AM7735_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7735_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7735_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7735_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7735_CTL_Ankle_1.err, output/logs/align_CQTL_AM7735_CTL_Ankle_1.out
+    jobid: 191
+    benchmark: output/benchmarks/align_CQTL_AM7735_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7735_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7735_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7735_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7735_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7735_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7735_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7735_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7735_CTL_Ankle_1.err
+        
+Submitted job 191 with external jobid '54385511'.
+
+[Mon Nov 18 12:09:47 2024]
+rule align:
+    input: output/trim/FACT_23-0016_CTL_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0016_CTL_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0016_CTL_synovium_1_sorted.bam, output/align/FACT_23-0016_CTL_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0016_CTL_synovium_1.err, output/logs/align_FACT_23-0016_CTL_synovium_1.out
+    jobid: 225
+    benchmark: output/benchmarks/align_FACT_23-0016_CTL_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0016_CTL_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0016_CTL_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0016_CTL_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0016_CTL_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0016_CTL_synovium_1.out 2> output/logs/align_FACT_23-0016_CTL_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0016_CTL_synovium_1_sorted.bam > output/align/FACT_23-0016_CTL_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0016_CTL_synovium_1.err
+        
+Submitted job 225 with external jobid '54385512'.
+
+[Mon Nov 18 12:09:52 2024]
+rule align:
+    input: output/trim/FACT_23-0013_CTL_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0013_CTL_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0013_CTL_synovium_1_sorted.bam, output/align/FACT_23-0013_CTL_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0013_CTL_synovium_1.err, output/logs/align_FACT_23-0013_CTL_synovium_1.out
+    jobid: 223
+    benchmark: output/benchmarks/align_FACT_23-0013_CTL_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0013_CTL_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0013_CTL_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0013_CTL_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0013_CTL_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0013_CTL_synovium_1.out 2> output/logs/align_FACT_23-0013_CTL_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0013_CTL_synovium_1_sorted.bam > output/align/FACT_23-0013_CTL_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0013_CTL_synovium_1.err
+        
+Submitted job 223 with external jobid '54385513'.
+
+[Mon Nov 18 12:09:57 2024]
+rule align:
+    input: output/trim/CQTL_AM7735_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7735_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7735_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7735_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7735_FNF_Ankle_1.err, output/logs/align_CQTL_AM7735_FNF_Ankle_1.out
+    jobid: 192
+    benchmark: output/benchmarks/align_CQTL_AM7735_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7735_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7735_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7735_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7735_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7735_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7735_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7735_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7735_FNF_Ankle_1.err
+        
+Submitted job 192 with external jobid '54385515'.
+
+[Mon Nov 18 12:10:02 2024]
+rule align:
+    input: output/trim/CQTL_AM7769_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7769_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7769_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7769_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7769_FNF_Ankle_1.err, output/logs/align_CQTL_AM7769_FNF_Ankle_1.out
+    jobid: 206
+    benchmark: output/benchmarks/align_CQTL_AM7769_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7769_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7769_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7769_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7769_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7769_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7769_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7769_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7769_FNF_Ankle_1.err
+        
+Submitted job 206 with external jobid '54385516'.
+
+[Mon Nov 18 12:10:07 2024]
+rule align:
+    input: output/trim/FACT_23-0022_FNF_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0022_FNF_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0022_FNF_synovium_1_sorted.bam, output/align/FACT_23-0022_FNF_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0022_FNF_synovium_1.err, output/logs/align_FACT_23-0022_FNF_synovium_1.out
+    jobid: 228
+    benchmark: output/benchmarks/align_FACT_23-0022_FNF_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0022_FNF_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0022_FNF_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0022_FNF_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0022_FNF_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0022_FNF_synovium_1.out 2> output/logs/align_FACT_23-0022_FNF_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0022_FNF_synovium_1_sorted.bam > output/align/FACT_23-0022_FNF_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0022_FNF_synovium_1.err
+        
+Submitted job 228 with external jobid '54385517'.
+
+[Mon Nov 18 12:10:12 2024]
+rule align:
+    input: output/trim/FACT_23-0023_CTL_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0023_CTL_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0023_CTL_synovium_1_sorted.bam, output/align/FACT_23-0023_CTL_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0023_CTL_synovium_1.err, output/logs/align_FACT_23-0023_CTL_synovium_1.out
+    jobid: 229
+    benchmark: output/benchmarks/align_FACT_23-0023_CTL_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0023_CTL_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0023_CTL_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0023_CTL_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0023_CTL_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0023_CTL_synovium_1.out 2> output/logs/align_FACT_23-0023_CTL_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0023_CTL_synovium_1_sorted.bam > output/align/FACT_23-0023_CTL_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0023_CTL_synovium_1.err
+        
+Submitted job 229 with external jobid '54385518'.
+
+[Mon Nov 18 12:10:17 2024]
+rule align:
+    input: output/trim/CQTL_AM7785_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7785_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7785_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7785_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7785_FNF_Ankle_1.err, output/logs/align_CQTL_AM7785_FNF_Ankle_1.out
+    jobid: 220
+    benchmark: output/benchmarks/align_CQTL_AM7785_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7785_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7785_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7785_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7785_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7785_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7785_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7785_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7785_FNF_Ankle_1.err
+        
+Submitted job 220 with external jobid '54385520'.
+
+[Mon Nov 18 12:10:23 2024]
+rule align:
+    input: output/trim/CQTL_AM7717_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7717_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7717_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7717_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7717_FNF_Ankle_1.err, output/logs/align_CQTL_AM7717_FNF_Ankle_1.out
+    jobid: 186
+    benchmark: output/benchmarks/align_CQTL_AM7717_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7717_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7717_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7717_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7717_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7717_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7717_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7717_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7717_FNF_Ankle_1.err
+        
+Submitted job 186 with external jobid '54385521'.
+
+[Mon Nov 18 12:10:29 2024]
+rule align:
+    input: output/trim/CQTL_AM7754_FNF_Ankle_replicate_R1_val_1.fq.gz, output/trim/CQTL_AM7754_FNF_Ankle_replicate_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7754_FNF_Ankle_replicate_sorted.bam, output/align/CQTL_AM7754_FNF_Ankle_replicate_stats.txt
+    log: output/logs/align_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/align_CQTL_AM7754_FNF_Ankle_replicate.out
+    jobid: 196
+    benchmark: output/benchmarks/align_CQTL_AM7754_FNF_Ankle_replicate.tsv
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7754_FNF_Ankle_replicate_R1_val_1.fq.gz output/trim/CQTL_AM7754_FNF_Ankle_replicate_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7754_FNF_Ankle_replicate_sorted.bam 1> output/logs/align_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/align_CQTL_AM7754_FNF_Ankle_replicate.err
+
+        samtools flagstat output/align/CQTL_AM7754_FNF_Ankle_replicate_sorted.bam > output/align/CQTL_AM7754_FNF_Ankle_replicate_stats.txt 2>> output/logs/align_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+Submitted job 196 with external jobid '54385522'.
+
+[Mon Nov 18 12:10:35 2024]
+rule align:
+    input: output/trim/CQTL_AM7775_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7775_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7775_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7775_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7775_FNF_Ankle_1.err, output/logs/align_CQTL_AM7775_FNF_Ankle_1.out
+    jobid: 210
+    benchmark: output/benchmarks/align_CQTL_AM7775_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7775_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7775_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7775_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7775_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7775_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7775_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7775_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7775_FNF_Ankle_1.err
+        
+Submitted job 210 with external jobid '54385523'.
+
+[Mon Nov 18 12:10:40 2024]
+rule align:
+    input: output/trim/FACT_23-0025_CTL_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0025_CTL_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0025_CTL_synovium_1_sorted.bam, output/align/FACT_23-0025_CTL_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0025_CTL_synovium_1.err, output/logs/align_FACT_23-0025_CTL_synovium_1.out
+    jobid: 231
+    benchmark: output/benchmarks/align_FACT_23-0025_CTL_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0025_CTL_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0025_CTL_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0025_CTL_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0025_CTL_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0025_CTL_synovium_1.out 2> output/logs/align_FACT_23-0025_CTL_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0025_CTL_synovium_1_sorted.bam > output/align/FACT_23-0025_CTL_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0025_CTL_synovium_1.err
+        
+Submitted job 231 with external jobid '54385525'.
+
+[Mon Nov 18 12:10:46 2024]
+rule align:
+    input: output/trim/CQTL_AM7763_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7763_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7763_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7763_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7763_FNF_Ankle_1.err, output/logs/align_CQTL_AM7763_FNF_Ankle_1.out
+    jobid: 202
+    benchmark: output/benchmarks/align_CQTL_AM7763_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7763_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7763_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7763_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7763_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7763_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7763_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7763_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7763_FNF_Ankle_1.err
+        
+Submitted job 202 with external jobid '54385526'.
+
+[Mon Nov 18 12:10:51 2024]
+rule align:
+    input: output/trim/FACT_23-0025_FNF_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0025_FNF_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0025_FNF_synovium_1_sorted.bam, output/align/FACT_23-0025_FNF_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0025_FNF_synovium_1.err, output/logs/align_FACT_23-0025_FNF_synovium_1.out
+    jobid: 232
+    benchmark: output/benchmarks/align_FACT_23-0025_FNF_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0025_FNF_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0025_FNF_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0025_FNF_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0025_FNF_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0025_FNF_synovium_1.out 2> output/logs/align_FACT_23-0025_FNF_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0025_FNF_synovium_1_sorted.bam > output/align/FACT_23-0025_FNF_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0025_FNF_synovium_1.err
+        
+Submitted job 232 with external jobid '54385527'.
+
+[Mon Nov 18 12:10:56 2024]
+rule align:
+    input: output/trim/CQTL_AM7677_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7677_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7677_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7677_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7677_FNF_Ankle_1.err, output/logs/align_CQTL_AM7677_FNF_Ankle_1.out
+    jobid: 176
+    benchmark: output/benchmarks/align_CQTL_AM7677_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7677_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7677_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7677_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7677_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7677_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7677_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7677_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7677_FNF_Ankle_1.err
+        
+Submitted job 176 with external jobid '54385535'.
+
+[Mon Nov 18 12:11:01 2024]
+rule align:
+    input: output/trim/CQTL_AM7755_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7755_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7755_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7755_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7755_FNF_Ankle_1.err, output/logs/align_CQTL_AM7755_FNF_Ankle_1.out
+    jobid: 199
+    benchmark: output/benchmarks/align_CQTL_AM7755_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7755_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7755_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7755_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7755_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7755_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7755_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7755_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7755_FNF_Ankle_1.err
+        
+Submitted job 199 with external jobid '54385537'.
+
+[Mon Nov 18 12:11:07 2024]
+rule align:
+    input: output/trim/CQTL_AM7786_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7786_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7786_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7786_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7786_CTL_Ankle_1.err, output/logs/align_CQTL_AM7786_CTL_Ankle_1.out
+    jobid: 221
+    benchmark: output/benchmarks/align_CQTL_AM7786_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7786_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7786_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7786_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7786_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7786_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7786_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7786_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7786_CTL_Ankle_1.err
+        
+Submitted job 221 with external jobid '54385538'.
+
+[Mon Nov 18 12:11:12 2024]
+rule align:
+    input: output/trim/CQTL_AM7778FE_CTL_Femur_1_R1_val_1.fq.gz, output/trim/CQTL_AM7778FE_CTL_Femur_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7778FE_CTL_Femur_1_sorted.bam, output/align/CQTL_AM7778FE_CTL_Femur_1_stats.txt
+    log: output/logs/align_CQTL_AM7778FE_CTL_Femur_1.err, output/logs/align_CQTL_AM7778FE_CTL_Femur_1.out
+    jobid: 211
+    benchmark: output/benchmarks/align_CQTL_AM7778FE_CTL_Femur_1.tsv
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7778FE_CTL_Femur_1_R1_val_1.fq.gz output/trim/CQTL_AM7778FE_CTL_Femur_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7778FE_CTL_Femur_1_sorted.bam 1> output/logs/align_CQTL_AM7778FE_CTL_Femur_1.out 2> output/logs/align_CQTL_AM7778FE_CTL_Femur_1.err
+
+        samtools flagstat output/align/CQTL_AM7778FE_CTL_Femur_1_sorted.bam > output/align/CQTL_AM7778FE_CTL_Femur_1_stats.txt 2>> output/logs/align_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 211 with external jobid '54385539'.
+
+[Mon Nov 18 12:11:17 2024]
+rule align:
+    input: output/trim/CQTL_AM7781_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7781_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7781_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7781_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7781_CTL_Ankle_1.err, output/logs/align_CQTL_AM7781_CTL_Ankle_1.out
+    jobid: 217
+    benchmark: output/benchmarks/align_CQTL_AM7781_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7781_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7781_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7781_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7781_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7781_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7781_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7781_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7781_CTL_Ankle_1.err
+        
+Submitted job 217 with external jobid '54385541'.
+
+[Mon Nov 18 12:11:23 2024]
+rule align:
+    input: output/trim/FACT_23-0022_CTL_synovium_1_R1_val_1.fq.gz, output/trim/FACT_23-0022_CTL_synovium_1_R2_val_2.fq.gz
+    output: output/align/FACT_23-0022_CTL_synovium_1_sorted.bam, output/align/FACT_23-0022_CTL_synovium_1_stats.txt
+    log: output/logs/align_FACT_23-0022_CTL_synovium_1.err, output/logs/align_FACT_23-0022_CTL_synovium_1.out
+    jobid: 227
+    benchmark: output/benchmarks/align_FACT_23-0022_CTL_synovium_1.tsv
+    wildcards: sampleName=FACT_23-0022_CTL_synovium_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/FACT_23-0022_CTL_synovium_1_R1_val_1.fq.gz output/trim/FACT_23-0022_CTL_synovium_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/FACT_23-0022_CTL_synovium_1_sorted.bam 1> output/logs/align_FACT_23-0022_CTL_synovium_1.out 2> output/logs/align_FACT_23-0022_CTL_synovium_1.err
+
+        samtools flagstat output/align/FACT_23-0022_CTL_synovium_1_sorted.bam > output/align/FACT_23-0022_CTL_synovium_1_stats.txt 2>> output/logs/align_FACT_23-0022_CTL_synovium_1.err
+        
+Submitted job 227 with external jobid '54385543'.
+
+[Mon Nov 18 12:11:29 2024]
+rule align:
+    input: output/trim/CQTL_AM7771_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7771_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7771_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7771_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7771_CTL_Ankle_1.err, output/logs/align_CQTL_AM7771_CTL_Ankle_1.out
+    jobid: 207
+    benchmark: output/benchmarks/align_CQTL_AM7771_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7771_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7771_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7771_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7771_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7771_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7771_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7771_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7771_CTL_Ankle_1.err
+        
+Submitted job 207 with external jobid '54385544'.
+
+[Mon Nov 18 12:11:35 2024]
+rule align:
+    input: output/trim/CQTL_AM7712_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7712_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7712_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7712_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7712_CTL_Ankle_1.err, output/logs/align_CQTL_AM7712_CTL_Ankle_1.out
+    jobid: 183
+    benchmark: output/benchmarks/align_CQTL_AM7712_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7712_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7712_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7712_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7712_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7712_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7712_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7712_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7712_CTL_Ankle_1.err
+        
+Submitted job 183 with external jobid '54385546'.
+
+[Mon Nov 18 12:11:41 2024]
+rule align:
+    input: output/trim/CQTL_AM7679_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7679_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7679_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7679_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7679_CTL_Ankle_1.err, output/logs/align_CQTL_AM7679_CTL_Ankle_1.out
+    jobid: 179
+    benchmark: output/benchmarks/align_CQTL_AM7679_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7679_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7679_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7679_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7679_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7679_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7679_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7679_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7679_CTL_Ankle_1.err
+        
+Submitted job 179 with external jobid '54385550'.
+
+[Mon Nov 18 12:11:46 2024]
+rule align:
+    input: output/trim/CQTL_AM7717_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7717_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7717_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7717_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7717_CTL_Ankle_1.err, output/logs/align_CQTL_AM7717_CTL_Ankle_1.out
+    jobid: 185
+    benchmark: output/benchmarks/align_CQTL_AM7717_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7717_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7717_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7717_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7717_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7717_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7717_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7717_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7717_CTL_Ankle_1.err
+        
+Submitted job 185 with external jobid '54385553'.
+
+[Mon Nov 18 12:11:51 2024]
+rule align:
+    input: output/trim/CQTL_AM7727_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7727_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7727_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7727_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7727_CTL_Ankle_1.err, output/logs/align_CQTL_AM7727_CTL_Ankle_1.out
+    jobid: 189
+    benchmark: output/benchmarks/align_CQTL_AM7727_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7727_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7727_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7727_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7727_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7727_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7727_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7727_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7727_CTL_Ankle_1.err
+        
+Submitted job 189 with external jobid '54385556'.
+
+[Mon Nov 18 12:11:56 2024]
+rule align:
+    input: output/trim/CQTL_AM7726_FNF_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7726_FNF_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7726_FNF_Ankle_1_sorted.bam, output/align/CQTL_AM7726_FNF_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7726_FNF_Ankle_1.err, output/logs/align_CQTL_AM7726_FNF_Ankle_1.out
+    jobid: 188
+    benchmark: output/benchmarks/align_CQTL_AM7726_FNF_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7726_FNF_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7726_FNF_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7726_FNF_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7726_FNF_Ankle_1.out 2> output/logs/align_CQTL_AM7726_FNF_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7726_FNF_Ankle_1_sorted.bam > output/align/CQTL_AM7726_FNF_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7726_FNF_Ankle_1.err
+        
+Submitted job 188 with external jobid '54385557'.
+
+[Mon Nov 18 12:12:01 2024]
+rule align:
+    input: output/trim/CQTL_AM7775_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7775_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7775_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7775_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7775_CTL_Ankle_1.err, output/logs/align_CQTL_AM7775_CTL_Ankle_1.out
+    jobid: 209
+    benchmark: output/benchmarks/align_CQTL_AM7775_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7775_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7775_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7775_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7775_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7775_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7775_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7775_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7775_CTL_Ankle_1.err
+        
+Submitted job 209 with external jobid '54385560'.
+
+[Mon Nov 18 12:12:07 2024]
+rule align:
+    input: output/trim/CQTL_AM7726_CTL_Ankle_1_R1_val_1.fq.gz, output/trim/CQTL_AM7726_CTL_Ankle_1_R2_val_2.fq.gz
+    output: output/align/CQTL_AM7726_CTL_Ankle_1_sorted.bam, output/align/CQTL_AM7726_CTL_Ankle_1_stats.txt
+    log: output/logs/align_CQTL_AM7726_CTL_Ankle_1.err, output/logs/align_CQTL_AM7726_CTL_Ankle_1.out
+    jobid: 187
+    benchmark: output/benchmarks/align_CQTL_AM7726_CTL_Ankle_1.tsv
+    wildcards: sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 8
+
+
+        module load bwa/0.7.17
+        module load samtools/1.21
+        mkdir -p output/align
+
+        bwa mem -t 8 -M /users/s/e/seyoun/Ref/genome/bwa_idx/hg38 output/trim/CQTL_AM7726_CTL_Ankle_1_R1_val_1.fq.gz output/trim/CQTL_AM7726_CTL_Ankle_1_R2_val_2.fq.gz |         samtools view -q 30 -b |         samtools sort -o output/align/CQTL_AM7726_CTL_Ankle_1_sorted.bam 1> output/logs/align_CQTL_AM7726_CTL_Ankle_1.out 2> output/logs/align_CQTL_AM7726_CTL_Ankle_1.err
+
+        samtools flagstat output/align/CQTL_AM7726_CTL_Ankle_1_sorted.bam > output/align/CQTL_AM7726_CTL_Ankle_1_stats.txt 2>> output/logs/align_CQTL_AM7726_CTL_Ankle_1.err
+        
+Submitted job 187 with external jobid '54385561'.

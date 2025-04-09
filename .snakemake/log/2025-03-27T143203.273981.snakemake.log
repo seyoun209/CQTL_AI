@@ -1,0 +1,3236 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	48	hmmratac_peaks
+	48	macs2_peaks
+	48	macs3_peaks
+	145
+
+[Thu Mar 27 14:32:05 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7726_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7726_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7726_CTL_Ankle_1.err
+    jobid: 13
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7726_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7726_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7726_CTL_Ankle_1.err
+        
+Submitted job 13 with external jobid '63153284'.
+
+[Thu Mar 27 14:32:06 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7712_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7712_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7712_CTL_Ankle_1.err
+    jobid: 9
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7712_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7712_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7712_CTL_Ankle_1.err
+        
+Submitted job 9 with external jobid '63153285'.
+
+[Thu Mar 27 14:32:07 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7778FE_FNF_Femur_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 86
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7778FE_FNF_Femur_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 86 with external jobid '63153286'.
+
+[Thu Mar 27 14:32:08 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7775_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7775_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7775_CTL_Ankle_1.err
+    jobid: 35
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7775_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7775_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7775_CTL_Ankle_1.err
+        
+Submitted job 35 with external jobid '63153287'.
+
+[Thu Mar 27 14:32:10 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7712_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7712_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7712_FNF_Ankle_1.err
+    jobid: 10
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7712_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7712_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7712_FNF_Ankle_1.err
+        
+Submitted job 10 with external jobid '63153305'.
+
+[Thu Mar 27 14:32:11 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7754_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7754_CTL_Ankle_1.err
+    jobid: 67
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7754_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7754_CTL_Ankle_1.err
+        
+Submitted job 67 with external jobid '63153308'.
+
+[Thu Mar 27 14:32:13 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7765_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7765_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7765_CTL_Ankle_1.err
+    jobid: 77
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7765_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7765_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7765_CTL_Ankle_1.err
+        
+Submitted job 77 with external jobid '63153310'.
+
+[Thu Mar 27 14:32:14 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7727_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7727_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7727_CTL_Ankle_1.err
+    jobid: 15
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7727_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7727_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7727_CTL_Ankle_1.err
+        
+Submitted job 15 with external jobid '63153311'.
+
+[Thu Mar 27 14:32:16 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7677_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7677_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7677_CTL_Ankle_1.err
+    jobid: 1
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7677_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7677_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7677_CTL_Ankle_1.err
+        
+Submitted job 1 with external jobid '63153318'.
+
+[Thu Mar 27 14:32:17 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7755_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7755_CTL_Ankle_1.err
+    jobid: 71
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7755_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7755_CTL_Ankle_1.err
+        
+Submitted job 71 with external jobid '63153327'.
+
+[Thu Mar 27 14:32:19 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7754_CTL_Ankle_replicate_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7754_CTL_Ankle_replicate.err
+    jobid: 116
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7754_CTL_Ankle_replicate             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7754_CTL_Ankle_replicate.err
+
+        
+Submitted job 116 with external jobid '63153333'.
+
+[Thu Mar 27 14:32:20 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7775_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7775_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7775_FNF_Ankle_1.err
+    jobid: 132
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7775_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7775_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7775_FNF_Ankle_1.err
+
+        
+Submitted job 132 with external jobid '63153334'.
+
+[Thu Mar 27 14:32:21 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7678_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7678_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7678_FNF_Ankle_1.err
+    jobid: 100
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7678_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7678_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7678_FNF_Ankle_1.err
+
+        
+Submitted job 100 with external jobid '63153335'.
+
+[Thu Mar 27 14:32:22 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7765_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7765_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7765_FNF_Ankle_1.err
+    jobid: 78
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7765_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7765_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7765_FNF_Ankle_1.err
+        
+Submitted job 78 with external jobid '63153336'.
+
+[Thu Mar 27 14:32:23 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7786_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7786_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7786_FNF_Ankle_1.err
+    jobid: 144
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7786_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7786_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7786_FNF_Ankle_1.err
+
+        
+Submitted job 144 with external jobid '63153337'.
+
+[Thu Mar 27 14:32:24 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7771_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7771_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7771_FNF_Ankle_1.err
+    jobid: 82
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7771_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7771_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7771_FNF_Ankle_1.err
+        
+Submitted job 82 with external jobid '63153338'.
+
+[Thu Mar 27 14:32:25 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7717_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7717_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7717_FNF_Ankle_1.err
+    jobid: 108
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7717_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7717_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7717_FNF_Ankle_1.err
+
+        
+Submitted job 108 with external jobid '63153339'.
+
+[Thu Mar 27 14:32:26 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7778FE_CTL_Femur_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 133
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7778FE_CTL_Femur_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7778FE_CTL_Femur_1.err
+
+        
+Submitted job 133 with external jobid '63153340'.
+
+[Thu Mar 27 14:32:28 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7711_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7711_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7711_FNF_Ankle_1.err
+    jobid: 8
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7711_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7711_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7711_FNF_Ankle_1.err
+        
+Submitted job 8 with external jobid '63153341'.
+
+[Thu Mar 27 14:32:29 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7754_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7754_FNF_Ankle_1.err
+    jobid: 117
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7754_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7754_FNF_Ankle_1.err
+
+        
+Submitted job 117 with external jobid '63153342'.
+
+[Thu Mar 27 14:32:30 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7717_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7717_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7717_FNF_Ankle_1.err
+    jobid: 60
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7717_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7717_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7717_FNF_Ankle_1.err
+        
+Submitted job 60 with external jobid '63153343'.
+
+[Thu Mar 27 14:32:31 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7778FE_CTL_Femur_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 85
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7778FE_CTL_Femur_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 85 with external jobid '63153344'.
+
+[Thu Mar 27 14:32:32 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7771_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7771_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7771_FNF_Ankle_1.err
+    jobid: 130
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7771_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7771_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7771_FNF_Ankle_1.err
+
+        
+Submitted job 130 with external jobid '63153345'.
+
+[Thu Mar 27 14:32:33 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7786_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7786_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7786_FNF_Ankle_1.err
+    jobid: 96
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7786_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7786_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7786_FNF_Ankle_1.err
+        
+Submitted job 96 with external jobid '63153347'.
+
+[Thu Mar 27 14:32:34 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7765_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7765_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7765_FNF_Ankle_1.err
+    jobid: 126
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7765_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7765_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7765_FNF_Ankle_1.err
+
+        
+Submitted job 126 with external jobid '63153348'.
+
+[Thu Mar 27 14:32:35 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7678_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7678_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7678_FNF_Ankle_1.err
+    jobid: 52
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7678_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7678_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7678_FNF_Ankle_1.err
+        
+Submitted job 52 with external jobid '63153349'.
+
+[Thu Mar 27 14:32:37 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7727_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7727_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7727_FNF_Ankle_1.err
+    jobid: 16
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7727_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7727_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7727_FNF_Ankle_1.err
+        
+Submitted job 16 with external jobid '63153350'.
+
+[Thu Mar 27 14:32:38 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7678_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7678_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7678_CTL_Ankle_1.err
+    jobid: 3
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7678_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7678_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7678_CTL_Ankle_1.err
+        
+Submitted job 3 with external jobid '63153351'.
+
+[Thu Mar 27 14:32:39 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7781_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7781_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7781_CTL_Ankle_1.err
+    jobid: 43
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7781_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7781_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7781_CTL_Ankle_1.err
+        
+Submitted job 43 with external jobid '63153352'.
+
+[Thu Mar 27 14:32:40 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7754_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7754_FNF_Ankle_1.err
+    jobid: 69
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7754_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7754_FNF_Ankle_1.err
+        
+Submitted job 69 with external jobid '63153353'.
+
+[Thu Mar 27 14:32:41 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7778_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7778_FNF_Ankle_1.err
+    jobid: 40
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7778_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7778_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7778_FNF_Ankle_1.err
+        
+Submitted job 40 with external jobid '63153354'.
+
+[Thu Mar 27 14:32:42 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7778FE_FNF_Femur_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 134
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7778FE_FNF_Femur_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7778FE_FNF_Femur_1.err
+
+        
+Submitted job 134 with external jobid '63153355'.
+
+[Thu Mar 27 14:32:43 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7735_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7735_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7735_FNF_Ankle_1.err
+    jobid: 18
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7735_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7735_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7735_FNF_Ankle_1.err
+        
+Submitted job 18 with external jobid '63153356'.
+
+[Thu Mar 27 14:32:44 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7775_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7775_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7775_FNF_Ankle_1.err
+    jobid: 84
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7775_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7775_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7775_FNF_Ankle_1.err
+        
+Submitted job 84 with external jobid '63153357'.
+
+[Thu Mar 27 14:32:45 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7754_CTL_Ankle_replicate_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7754_CTL_Ankle_replicate.err
+    jobid: 68
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7754_CTL_Ankle_replicate                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+Submitted job 68 with external jobid '63153358'.
+
+[Thu Mar 27 14:32:47 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7755_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7755_CTL_Ankle_1.err
+    jobid: 119
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7755_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7755_CTL_Ankle_1.err
+
+        
+Submitted job 119 with external jobid '63153359'.
+
+[Thu Mar 27 14:32:48 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7754_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7754_CTL_Ankle_1.err
+    jobid: 115
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7754_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7754_CTL_Ankle_1.err
+
+        
+Submitted job 115 with external jobid '63153360'.
+
+[Thu Mar 27 14:32:49 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7765_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7765_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7765_CTL_Ankle_1.err
+    jobid: 125
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7765_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7765_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7765_CTL_Ankle_1.err
+
+        
+Submitted job 125 with external jobid '63153378'.
+
+[Thu Mar 27 14:32:51 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7778_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7778_CTL_Ankle_1.err
+    jobid: 39
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7778_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7778_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7778_CTL_Ankle_1.err
+        
+Submitted job 39 with external jobid '63153379'.
+
+[Thu Mar 27 14:32:52 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7769_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7769_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7769_CTL_Ankle_1.err
+    jobid: 127
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7769_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7769_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7769_CTL_Ankle_1.err
+
+        
+Submitted job 127 with external jobid '63153380'.
+
+[Thu Mar 27 14:32:53 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7679_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7679_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7679_CTL_Ankle_1.err
+    jobid: 101
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7679_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7679_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7679_CTL_Ankle_1.err
+
+        
+Submitted job 101 with external jobid '63153381'.
+
+[Thu Mar 27 14:32:55 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7735_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7735_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7735_CTL_Ankle_1.err
+    jobid: 17
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7735_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7735_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7735_CTL_Ankle_1.err
+        
+Submitted job 17 with external jobid '63153383'.
+
+[Thu Mar 27 14:32:56 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7754_FNF_Ankle_replicate_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7754_FNF_Ankle_replicate.err
+    jobid: 70
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7754_FNF_Ankle_replicate                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+Submitted job 70 with external jobid '63153384'.
+
+[Thu Mar 27 14:32:58 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7769_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7769_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7769_FNF_Ankle_1.err
+    jobid: 32
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7769_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7769_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7769_FNF_Ankle_1.err
+        
+Submitted job 32 with external jobid '63153385'.
+
+[Thu Mar 27 14:32:59 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7786_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7786_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7786_CTL_Ankle_1.err
+    jobid: 47
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7786_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7786_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7786_CTL_Ankle_1.err
+        
+Submitted job 47 with external jobid '63153387'.
+
+[Thu Mar 27 14:33:00 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7755_CTL_Ankle_replicate_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7755_CTL_Ankle_replicate.err
+    jobid: 120
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7755_CTL_Ankle_replicate             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7755_CTL_Ankle_replicate.err
+
+        
+Submitted job 120 with external jobid '63153389'.
+
+[Thu Mar 27 14:33:02 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7711_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7711_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7711_CTL_Ankle_1.err
+    jobid: 7
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7711_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7711_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7711_CTL_Ankle_1.err
+        
+Submitted job 7 with external jobid '63153391'.
+
+[Thu Mar 27 14:33:03 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7755_FNF_Ankle_replicate_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7755_FNF_Ankle_replicate.err
+    jobid: 74
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7755_FNF_Ankle_replicate                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+Submitted job 74 with external jobid '63153392'.
+
+[Thu Mar 27 14:33:04 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7755_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7755_FNF_Ankle_1.err
+    jobid: 121
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7755_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7755_FNF_Ankle_1.err
+
+        
+Submitted job 121 with external jobid '63153393'.
+
+[Thu Mar 27 14:33:05 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7780_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7780_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7780_FNF_Ankle_1.err
+    jobid: 42
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7780_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7780_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7780_FNF_Ankle_1.err
+        
+Submitted job 42 with external jobid '63153394'.
+
+[Thu Mar 27 14:33:06 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7677_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7677_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7677_FNF_Ankle_1.err
+    jobid: 50
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7677_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7677_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7677_FNF_Ankle_1.err
+        
+Submitted job 50 with external jobid '63153395'.
+
+[Thu Mar 27 14:33:07 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7785_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7785_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7785_CTL_Ankle_1.err
+    jobid: 45
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7785_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7785_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7785_CTL_Ankle_1.err
+        
+Submitted job 45 with external jobid '63153396'.
+
+[Thu Mar 27 14:33:08 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7763_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7763_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7763_FNF_Ankle_1.err
+    jobid: 76
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7763_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7763_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7763_FNF_Ankle_1.err
+        
+Submitted job 76 with external jobid '63153397'.
+
+[Thu Mar 27 14:33:09 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7717_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7717_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7717_CTL_Ankle_1.err
+    jobid: 59
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7717_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7717_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7717_CTL_Ankle_1.err
+        
+Submitted job 59 with external jobid '63153398'.
+
+[Thu Mar 27 14:33:10 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7763_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7763_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7763_CTL_Ankle_1.err
+    jobid: 27
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7763_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7763_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7763_CTL_Ankle_1.err
+        
+Submitted job 27 with external jobid '63153399'.
+
+[Thu Mar 27 14:33:11 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7726_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7726_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7726_FNF_Ankle_1.err
+    jobid: 110
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7726_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7726_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7726_FNF_Ankle_1.err
+
+        
+Submitted job 110 with external jobid '63153400'.
+
+[Thu Mar 27 14:33:13 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7763_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7763_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7763_FNF_Ankle_1.err
+    jobid: 124
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7763_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7763_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7763_FNF_Ankle_1.err
+
+        
+Submitted job 124 with external jobid '63153403'.
+
+[Thu Mar 27 14:33:14 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7677_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7677_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7677_FNF_Ankle_1.err
+    jobid: 98
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7677_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7677_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7677_FNF_Ankle_1.err
+
+        
+Submitted job 98 with external jobid '63153404'.
+
+[Thu Mar 27 14:33:15 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7771_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7771_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7771_CTL_Ankle_1.err
+    jobid: 33
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7771_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7771_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7771_CTL_Ankle_1.err
+        
+Submitted job 33 with external jobid '63153405'.
+
+[Thu Mar 27 14:33:16 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7755_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7755_FNF_Ankle_1.err
+    jobid: 73
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7755_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7755_FNF_Ankle_1.err
+        
+Submitted job 73 with external jobid '63153406'.
+
+[Thu Mar 27 14:33:17 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7755_FNF_Ankle_replicate_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7755_FNF_Ankle_replicate.err
+    jobid: 122
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7755_FNF_Ankle_replicate             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7755_FNF_Ankle_replicate.err
+
+        
+Submitted job 122 with external jobid '63153407'.
+
+[Thu Mar 27 14:33:19 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7679_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7679_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7679_FNF_Ankle_1.err
+    jobid: 102
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7679_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7679_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7679_FNF_Ankle_1.err
+
+        
+Submitted job 102 with external jobid '63153408'.
+
+[Thu Mar 27 14:33:20 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7726_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7726_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7726_FNF_Ankle_1.err
+    jobid: 62
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7726_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7726_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7726_FNF_Ankle_1.err
+        
+Submitted job 62 with external jobid '63153409'.
+
+[Thu Mar 27 14:33:21 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7717_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7717_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7717_CTL_Ankle_1.err
+    jobid: 107
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7717_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7717_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7717_CTL_Ankle_1.err
+
+        
+Submitted job 107 with external jobid '63153410'.
+
+[Thu Mar 27 14:33:22 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7679_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7679_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7679_CTL_Ankle_1.err
+    jobid: 53
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7679_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7679_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7679_CTL_Ankle_1.err
+        
+Submitted job 53 with external jobid '63153411'.
+
+[Thu Mar 27 14:33:23 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7769_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7769_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7769_CTL_Ankle_1.err
+    jobid: 79
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7769_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7769_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7769_CTL_Ankle_1.err
+        
+Submitted job 79 with external jobid '63153412'.
+
+[Thu Mar 27 14:33:24 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7785_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7785_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7785_FNF_Ankle_1.err
+    jobid: 46
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7785_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7785_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7785_FNF_Ankle_1.err
+        
+Submitted job 46 with external jobid '63153413'.
+
+[Thu Mar 27 14:33:25 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7780_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7780_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7780_CTL_Ankle_1.err
+    jobid: 41
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7780_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7780_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7780_CTL_Ankle_1.err
+        
+Submitted job 41 with external jobid '63153414'.
+
+[Thu Mar 27 14:33:26 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7755_CTL_Ankle_replicate_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7755_CTL_Ankle_replicate.err
+    jobid: 72
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7755_CTL_Ankle_replicate                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+Submitted job 72 with external jobid '63153416'.
+
+[Thu Mar 27 14:33:28 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7679_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7679_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7679_FNF_Ankle_1.err
+    jobid: 6
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7679_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7679_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7679_FNF_Ankle_1.err
+        
+Submitted job 6 with external jobid '63153417'.
+
+[Thu Mar 27 14:33:29 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7754_FNF_Ankle_replicate_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7754_FNF_Ankle_replicate.err
+    jobid: 118
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7754_FNF_Ankle_replicate             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7754_FNF_Ankle_replicate.err
+
+        
+Submitted job 118 with external jobid '63153436'.
+
+[Thu Mar 27 14:33:31 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7781_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7781_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7781_FNF_Ankle_1.err
+    jobid: 44
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7781_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7781_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7781_FNF_Ankle_1.err
+        
+Submitted job 44 with external jobid '63153437'.
+
+[Thu Mar 27 14:33:32 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7726_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7726_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7726_CTL_Ankle_1.err
+    jobid: 109
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7726_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7726_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7726_CTL_Ankle_1.err
+
+        
+Submitted job 109 with external jobid '63153438'.
+
+[Thu Mar 27 14:33:33 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7735_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7735_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7735_FNF_Ankle_1.err
+    jobid: 66
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7735_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7735_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7735_FNF_Ankle_1.err
+        
+Submitted job 66 with external jobid '63153440'.
+
+[Thu Mar 27 14:33:35 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7775_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7775_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7775_CTL_Ankle_1.err
+    jobid: 131
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7775_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7775_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7775_CTL_Ankle_1.err
+
+        
+Submitted job 131 with external jobid '63153441'.
+
+[Thu Mar 27 14:33:36 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7778_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7778_FNF_Ankle_1.err
+    jobid: 88
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7778_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7778_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7778_FNF_Ankle_1.err
+        
+Submitted job 88 with external jobid '63153442'.
+
+[Thu Mar 27 14:33:38 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7712_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7712_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7712_CTL_Ankle_1.err
+    jobid: 105
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7712_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7712_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7712_CTL_Ankle_1.err
+
+        
+Submitted job 105 with external jobid '63153443'.
+
+[Thu Mar 27 14:33:39 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7712_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7712_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7712_FNF_Ankle_1.err
+    jobid: 106
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7712_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7712_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7712_FNF_Ankle_1.err
+
+        
+Submitted job 106 with external jobid '63153444'.
+
+[Thu Mar 27 14:33:40 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7754_CTL_Ankle_replicate_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7754_CTL_Ankle_replicate.err
+    jobid: 20
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7754_CTL_Ankle_replicate             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+Submitted job 20 with external jobid '63153445'.
+
+[Thu Mar 27 14:33:41 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7775_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7775_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7775_FNF_Ankle_1.err
+    jobid: 36
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7775_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7775_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7775_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7775_FNF_Ankle_1.err
+        
+Submitted job 36 with external jobid '63153446'.
+
+[Thu Mar 27 14:33:42 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7677_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7677_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7677_CTL_Ankle_1.err
+    jobid: 97
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7677_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7677_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7677_CTL_Ankle_1.err
+
+        
+Submitted job 97 with external jobid '63153447'.
+
+[Thu Mar 27 14:33:43 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7727_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7727_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7727_CTL_Ankle_1.err
+    jobid: 111
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7727_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7727_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7727_CTL_Ankle_1.err
+
+        
+Submitted job 111 with external jobid '63153448'.
+
+[Thu Mar 27 14:33:45 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7678_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7678_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7678_FNF_Ankle_1.err
+    jobid: 4
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7678_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7678_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7678_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7678_FNF_Ankle_1.err
+        
+Submitted job 4 with external jobid '63153449'.
+
+[Thu Mar 27 14:33:46 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7717_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7717_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7717_FNF_Ankle_1.err
+    jobid: 12
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7717_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7717_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7717_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7717_FNF_Ankle_1.err
+        
+Submitted job 12 with external jobid '63153450'.
+
+[Thu Mar 27 14:33:47 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7778FE_CTL_Femur_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 37
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7778FE_CTL_Femur_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 37 with external jobid '63153451'.
+
+[Thu Mar 27 14:33:48 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7786_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7786_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7786_FNF_Ankle_1.err
+    jobid: 48
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7786_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7786_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7786_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7786_FNF_Ankle_1.err
+        
+Submitted job 48 with external jobid '63153452'.
+
+[Thu Mar 27 14:33:49 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7711_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7711_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7711_FNF_Ankle_1.err
+    jobid: 104
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7711_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7711_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7711_FNF_Ankle_1.err
+
+        
+Submitted job 104 with external jobid '63153453'.
+
+[Thu Mar 27 14:33:50 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7754_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7754_FNF_Ankle_1.err
+    jobid: 21
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7754_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7754_FNF_Ankle_1.err
+        
+Submitted job 21 with external jobid '63153454'.
+
+[Thu Mar 27 14:33:51 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7678_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7678_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7678_CTL_Ankle_1.err
+    jobid: 51
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7678_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7678_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7678_CTL_Ankle_1.err
+        
+Submitted job 51 with external jobid '63153455'.
+
+[Thu Mar 27 14:33:53 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7727_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7727_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7727_FNF_Ankle_1.err
+    jobid: 64
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7727_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7727_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7727_FNF_Ankle_1.err
+        
+Submitted job 64 with external jobid '63153456'.
+
+[Thu Mar 27 14:33:54 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7781_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7781_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7781_CTL_Ankle_1.err
+    jobid: 91
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7781_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7781_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7781_CTL_Ankle_1.err
+        
+Submitted job 91 with external jobid '63153458'.
+
+[Thu Mar 27 14:33:55 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7771_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7771_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7771_FNF_Ankle_1.err
+    jobid: 34
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7771_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7771_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7771_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7771_FNF_Ankle_1.err
+        
+Submitted job 34 with external jobid '63153459'.
+
+[Thu Mar 27 14:33:56 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7765_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7765_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7765_FNF_Ankle_1.err
+    jobid: 30
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7765_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7765_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7765_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7765_FNF_Ankle_1.err
+        
+Submitted job 30 with external jobid '63153462'.
+
+[Thu Mar 27 14:33:57 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7727_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7727_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7727_FNF_Ankle_1.err
+    jobid: 112
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7727_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7727_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7727_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7727_FNF_Ankle_1.err
+
+        
+Submitted job 112 with external jobid '63153463'.
+
+[Thu Mar 27 14:33:58 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7678_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7678_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7678_CTL_Ankle_1.err
+    jobid: 99
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7678_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7678_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7678_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7678_CTL_Ankle_1.err
+
+        
+Submitted job 99 with external jobid '63153466'.
+
+[Thu Mar 27 14:33:59 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7781_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7781_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7781_CTL_Ankle_1.err
+    jobid: 139
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7781_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7781_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7781_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7781_CTL_Ankle_1.err
+
+        
+Submitted job 139 with external jobid '63153467'.
+
+[Thu Mar 27 14:34:00 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7711_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7711_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7711_FNF_Ankle_1.err
+    jobid: 56
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7711_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7711_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7711_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7711_FNF_Ankle_1.err
+        
+Submitted job 56 with external jobid '63153468'.
+
+[Thu Mar 27 14:34:01 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7778FE_FNF_Femur_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 38
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7778FE_FNF_Femur_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 38 with external jobid '63153469'.
+
+[Thu Mar 27 14:34:02 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7712_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7712_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7712_CTL_Ankle_1.err
+    jobid: 57
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7712_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7712_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7712_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7712_CTL_Ankle_1.err
+        
+Submitted job 57 with external jobid '63153470'.
+
+[Thu Mar 27 14:34:04 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7778_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7778_FNF_Ankle_1.err
+    jobid: 136
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7778_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7778_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7778_FNF_Ankle_1.err
+
+        
+Submitted job 136 with external jobid '63153471'.
+
+[Thu Mar 27 14:34:05 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7775_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7775_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7775_CTL_Ankle_1.err
+    jobid: 83
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7775_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7775_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7775_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7775_CTL_Ankle_1.err
+        
+Submitted job 83 with external jobid '63153472'.
+
+[Thu Mar 27 14:34:06 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7735_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7735_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7735_FNF_Ankle_1.err
+    jobid: 114
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7735_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7735_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7735_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7735_FNF_Ankle_1.err
+
+        
+Submitted job 114 with external jobid '63153473'.
+
+[Thu Mar 27 14:34:07 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7726_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7726_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7726_CTL_Ankle_1.err
+    jobid: 61
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7726_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7726_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7726_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7726_CTL_Ankle_1.err
+        
+Submitted job 61 with external jobid '63153474'.
+
+[Thu Mar 27 14:34:09 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7765_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7765_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7765_CTL_Ankle_1.err
+    jobid: 29
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7765_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7765_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7765_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7765_CTL_Ankle_1.err
+        
+Submitted job 29 with external jobid '63153492'.
+
+[Thu Mar 27 14:34:11 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7754_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7754_CTL_Ankle_1.err
+    jobid: 19
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7754_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7754_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7754_CTL_Ankle_1.err
+        
+Submitted job 19 with external jobid '63153494'.
+
+[Thu Mar 27 14:34:12 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7677_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7677_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7677_CTL_Ankle_1.err
+    jobid: 49
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7677_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7677_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7677_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7677_CTL_Ankle_1.err
+        
+Submitted job 49 with external jobid '63153495'.
+
+[Thu Mar 27 14:34:13 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7755_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7755_CTL_Ankle_1.err
+    jobid: 23
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7755_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7755_CTL_Ankle_1.err
+        
+Submitted job 23 with external jobid '63153496'.
+
+[Thu Mar 27 14:34:15 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7727_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7727_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7727_CTL_Ankle_1.err
+    jobid: 63
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7727_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7727_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7727_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7727_CTL_Ankle_1.err
+        
+Submitted job 63 with external jobid '63153497'.
+
+[Thu Mar 27 14:34:16 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7712_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7712_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7712_FNF_Ankle_1.err
+    jobid: 58
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7712_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7712_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7712_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7712_FNF_Ankle_1.err
+        
+Submitted job 58 with external jobid '63153498'.
+
+[Thu Mar 27 14:34:18 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7769_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7769_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7769_CTL_Ankle_1.err
+    jobid: 31
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7769_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7769_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7769_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7769_CTL_Ankle_1.err
+        
+Submitted job 31 with external jobid '63153499'.
+
+[Thu Mar 27 14:34:19 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7785_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7785_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7785_FNF_Ankle_1.err
+    jobid: 94
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7785_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7785_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7785_FNF_Ankle_1.err
+        
+Submitted job 94 with external jobid '63153500'.
+
+[Thu Mar 27 14:34:20 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7778_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7778_CTL_Ankle_1.err
+    jobid: 135
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7778_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7778_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7778_CTL_Ankle_1.err
+
+        
+Submitted job 135 with external jobid '63153501'.
+
+[Thu Mar 27 14:34:21 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7679_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7679_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7679_CTL_Ankle_1.err
+    jobid: 5
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7679_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7679_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7679_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7679_CTL_Ankle_1.err
+        
+Submitted job 5 with external jobid '63153502'.
+
+[Thu Mar 27 14:34:22 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7755_CTL_Ankle_replicate_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7755_CTL_Ankle_replicate.err
+    jobid: 24
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7755_CTL_Ankle_replicate             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+Submitted job 24 with external jobid '63153503'.
+
+[Thu Mar 27 14:34:23 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7679_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7679_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7679_FNF_Ankle_1.err
+    jobid: 54
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7679_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7679_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7679_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7679_FNF_Ankle_1.err
+        
+Submitted job 54 with external jobid '63153504'.
+
+[Thu Mar 27 14:34:24 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7769_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7769_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7769_FNF_Ankle_1.err
+    jobid: 128
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7769_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7769_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7769_FNF_Ankle_1.err
+
+        
+Submitted job 128 with external jobid '63153505'.
+
+[Thu Mar 27 14:34:25 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7735_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7735_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7735_CTL_Ankle_1.err
+    jobid: 113
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7735_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7735_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7735_CTL_Ankle_1.err
+
+        
+Submitted job 113 with external jobid '63153506'.
+
+[Thu Mar 27 14:34:26 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7786_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7786_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7786_CTL_Ankle_1.err
+    jobid: 143
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7786_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7786_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7786_CTL_Ankle_1.err
+
+        
+Submitted job 143 with external jobid '63153507'.
+
+[Thu Mar 27 14:34:28 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7781_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7781_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7781_FNF_Ankle_1.err
+    jobid: 92
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7781_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7781_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7781_FNF_Ankle_1.err
+        
+Submitted job 92 with external jobid '63153508'.
+
+[Thu Mar 27 14:34:29 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7711_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7711_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7711_CTL_Ankle_1.err
+    jobid: 103
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7711_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7711_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7711_CTL_Ankle_1.err
+
+        
+Submitted job 103 with external jobid '63153509'.
+
+[Thu Mar 27 14:34:30 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7780_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7780_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7780_CTL_Ankle_1.err
+    jobid: 89
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7780_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7780_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7780_CTL_Ankle_1.err
+        
+Submitted job 89 with external jobid '63153510'.
+
+[Thu Mar 27 14:34:31 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7755_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7755_FNF_Ankle_1.err
+    jobid: 25
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7755_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7755_FNF_Ankle_1.err
+        
+Submitted job 25 with external jobid '63153511'.
+
+[Thu Mar 27 14:34:32 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7785_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7785_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7785_CTL_Ankle_1.err
+    jobid: 141
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7785_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7785_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7785_CTL_Ankle_1.err
+
+        
+Submitted job 141 with external jobid '63153512'.
+
+[Thu Mar 27 14:34:33 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7771_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7771_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7771_CTL_Ankle_1.err
+    jobid: 81
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7771_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7771_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7771_CTL_Ankle_1.err
+        
+Submitted job 81 with external jobid '63153513'.
+
+[Thu Mar 27 14:34:34 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7780_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7780_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7780_FNF_Ankle_1.err
+    jobid: 138
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7780_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7780_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7780_FNF_Ankle_1.err
+
+        
+Submitted job 138 with external jobid '63153515'.
+
+[Thu Mar 27 14:34:35 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7726_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7726_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7726_FNF_Ankle_1.err
+    jobid: 14
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7726_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7726_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7726_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7726_FNF_Ankle_1.err
+        
+Submitted job 14 with external jobid '63153516'.
+
+[Thu Mar 27 14:34:37 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7763_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7763_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7763_CTL_Ankle_1.err
+    jobid: 123
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7763_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7763_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7763_CTL_Ankle_1.err
+
+        
+Submitted job 123 with external jobid '63153517'.
+
+[Thu Mar 27 14:34:38 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7780_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7780_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7780_FNF_Ankle_1.err
+    jobid: 90
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7780_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7780_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7780_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7780_FNF_Ankle_1.err
+        
+Submitted job 90 with external jobid '63153518'.
+
+[Thu Mar 27 14:34:39 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7677_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7677_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7677_FNF_Ankle_1.err
+    jobid: 2
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7677_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7677_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7677_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7677_FNF_Ankle_1.err
+        
+Submitted job 2 with external jobid '63153519'.
+
+[Thu Mar 27 14:34:40 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7771_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7771_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7771_CTL_Ankle_1.err
+    jobid: 129
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7771_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7771_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7771_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7771_CTL_Ankle_1.err
+
+        
+Submitted job 129 with external jobid '63153520'.
+
+[Thu Mar 27 14:34:41 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7785_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7785_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7785_CTL_Ankle_1.err
+    jobid: 93
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7785_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7785_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7785_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7785_CTL_Ankle_1.err
+        
+Submitted job 93 with external jobid '63153522'.
+
+[Thu Mar 27 14:34:42 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7763_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7763_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7763_FNF_Ankle_1.err
+    jobid: 28
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7763_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7763_FNF_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7763_FNF_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7763_FNF_Ankle_1.err
+        
+Submitted job 28 with external jobid '63153523'.
+
+[Thu Mar 27 14:34:43 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7755_FNF_Ankle_replicate_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7755_FNF_Ankle_replicate.err
+    jobid: 26
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7755_FNF_Ankle_replicate             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+Submitted job 26 with external jobid '63153524'.
+
+[Thu Mar 27 14:34:44 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7717_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7717_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7717_CTL_Ankle_1.err
+    jobid: 11
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7717_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7717_CTL_Ankle_1.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7717_CTL_Ankle_1             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7717_CTL_Ankle_1.err
+        
+Submitted job 11 with external jobid '63153525'.
+
+[Thu Mar 27 14:34:45 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7763_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7763_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7763_CTL_Ankle_1.err
+    jobid: 75
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7763_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7763_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7763_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7763_CTL_Ankle_1.err
+        
+Submitted job 75 with external jobid '63153526'.
+
+[Thu Mar 27 14:34:46 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7778_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7778_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7778_CTL_Ankle_1.err
+    jobid: 87
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7778_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7778_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7778_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7778_CTL_Ankle_1.err
+        
+Submitted job 87 with external jobid '63153544'.
+
+[Thu Mar 27 14:34:48 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7785_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7785_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7785_FNF_Ankle_1.err
+    jobid: 142
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7785_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7785_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7785_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7785_FNF_Ankle_1.err
+
+        
+Submitted job 142 with external jobid '63153545'.
+
+[Thu Mar 27 14:34:50 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7780_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7780_CTL_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7780_CTL_Ankle_1.err
+    jobid: 137
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7780_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7780_CTL_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7780_CTL_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7780_CTL_Ankle_1.err
+
+        
+Submitted job 137 with external jobid '63153546'.
+
+[Thu Mar 27 14:34:51 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7711_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7711_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7711_CTL_Ankle_1.err
+    jobid: 55
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7711_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7711_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7711_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7711_CTL_Ankle_1.err
+        
+Submitted job 55 with external jobid '63153547'.
+
+[Thu Mar 27 14:34:53 2025]
+rule hmmratac_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7781_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/hmmratac/CQTL_AM7781_FNF_Ankle_1_accessible_regions.narrowPeak
+    log: output/logs/Ankle_hmmratac_CQTL_AM7781_FNF_Ankle_1.err
+    jobid: 140
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7781_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/hmmratac
+
+         macs3 hmmratac             -i output/filtered/blk_filter/CQTL_AM7781_FNF_Ankle_1.sorted_final.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7781_FNF_Ankle_1             --outdir output/peaks/Ankle/hmmratac 2> output/logs/Ankle_hmmratac_CQTL_AM7781_FNF_Ankle_1.err
+
+        
+Submitted job 140 with external jobid '63153548'.
+
+[Thu Mar 27 14:34:54 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7735_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7735_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7735_CTL_Ankle_1.err
+    jobid: 65
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7735_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7735_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7735_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7735_CTL_Ankle_1.err
+        
+Submitted job 65 with external jobid '63153551'.
+
+[Thu Mar 27 14:34:56 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7769_FNF_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7769_FNF_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7769_FNF_Ankle_1.err
+    jobid: 80
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7769_FNF_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7769_FNF_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7769_FNF_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7769_FNF_Ankle_1.err
+        
+Submitted job 80 with external jobid '63153552'.
+
+[Thu Mar 27 14:34:57 2025]
+rule macs2_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/peaks/Ankle/macs2/CQTL_AM7754_FNF_Ankle_replicate_peaks.narrowPeak
+    log: output/logs/Ankle_macs2_CQTL_AM7754_FNF_Ankle_replicate.err
+    jobid: 22
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Ankle/macs2
+
+        macs2 callpeak -t output/filtered/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7754_FNF_Ankle_replicate             --outdir output/peaks/Ankle/macs2 2> output/logs/Ankle_macs2_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+Submitted job 22 with external jobid '63153553'.
+
+[Thu Mar 27 14:34:58 2025]
+rule macs3_peaks:
+    input: output/filtered/blk_filter/CQTL_AM7786_CTL_Ankle_1.sorted_final.bam
+    output: output/peaks/Ankle/macs3/CQTL_AM7786_CTL_Ankle_1_peaks.narrowPeak
+    log: output/logs/Ankle_macs3_CQTL_AM7786_CTL_Ankle_1.err
+    jobid: 95
+    wildcards: tissue=Ankle, sampleName=CQTL_AM7786_CTL_Ankle_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Ankle/macs3/
+
+        macs3 callpeak -t output/filtered/blk_filter/CQTL_AM7786_CTL_Ankle_1.sorted_final.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7786_CTL_Ankle_1                 --outdir output/peaks/Ankle/macs3 2> output/logs/Ankle_macs3_CQTL_AM7786_CTL_Ankle_1.err
+        
+Submitted job 95 with external jobid '63153554'.
+[Thu Mar 27 14:39:59 2025]
+Finished job 59.
+1 of 145 steps (0.69%) done
+[Thu Mar 27 14:41:17 2025]
+Finished job 1.
+2 of 145 steps (1%) done
+[Thu Mar 27 14:41:23 2025]
+Finished job 13.
+3 of 145 steps (2%) done
+[Thu Mar 27 14:41:28 2025]
+Finished job 10.
+4 of 145 steps (3%) done
+[Thu Mar 27 14:41:31 2025]
+Finished job 15.
+5 of 145 steps (3%) done
+[Thu Mar 27 14:41:40 2025]
+Finished job 85.
+6 of 145 steps (4%) done
+[Thu Mar 27 14:43:41 2025]
+Finished job 96.
+7 of 145 steps (5%) done
+[Thu Mar 27 14:43:44 2025]
+Finished job 16.
+8 of 145 steps (6%) done
+[Thu Mar 27 14:43:45 2025]
+Finished job 3.
+9 of 145 steps (6%) done
+[Thu Mar 27 14:43:46 2025]
+Finished job 43.
+10 of 145 steps (7%) done
+[Thu Mar 27 14:44:08 2025]
+Finished job 78.
+11 of 145 steps (8%) done
+[Thu Mar 27 14:44:09 2025]
+Finished job 9.
+12 of 145 steps (8%) done
+[Thu Mar 27 14:44:10 2025]
+Finished job 86.
+13 of 145 steps (9%) done
+[Thu Mar 27 14:44:14 2025]
+Finished job 77.
+14 of 145 steps (10%) done
+[Thu Mar 27 14:44:16 2025]
+Finished job 82.
+15 of 145 steps (10%) done
+[Thu Mar 27 14:44:21 2025]
+Finished job 60.
+16 of 145 steps (11%) done
+[Thu Mar 27 14:44:32 2025]
+Finished job 76.
+17 of 145 steps (12%) done
+[Thu Mar 27 14:46:03 2025]
+Finished job 37.
+18 of 145 steps (12%) done
+[Thu Mar 27 14:46:24 2025]
+Finished job 52.
+19 of 145 steps (13%) done
+[Thu Mar 27 14:46:35 2025]
+Finished job 39.
+20 of 145 steps (14%) done
+[Thu Mar 27 14:46:40 2025]
+Finished job 32.
+21 of 145 steps (14%) done
+[Thu Mar 27 14:46:41 2025]
+Finished job 71.
+22 of 145 steps (15%) done
+[Thu Mar 27 14:46:47 2025]
+Finished job 67.
+23 of 145 steps (16%) done
+[Thu Mar 27 14:46:51 2025]
+Finished job 8.
+24 of 145 steps (17%) done
+[Thu Mar 27 14:46:57 2025]
+Finished job 7.
+25 of 145 steps (17%) done
+[Thu Mar 27 14:46:58 2025]
+Finished job 74.
+26 of 145 steps (18%) done
+[Thu Mar 27 14:47:09 2025]
+Finished job 63.
+27 of 145 steps (19%) done
+[Thu Mar 27 14:47:45 2025]
+Finished job 28.
+28 of 145 steps (19%) done
+[Thu Mar 27 14:47:48 2025]
+Finished job 11.
+29 of 145 steps (20%) done
+[Thu Mar 27 14:47:56 2025]
+Finished job 80.
+30 of 145 steps (21%) done
+[Thu Mar 27 14:47:57 2025]
+Finished job 22.
+31 of 145 steps (21%) done
+[Thu Mar 27 14:47:59 2025]
+Finished job 95.
+32 of 145 steps (22%) done
+[Thu Mar 27 14:48:04 2025]
+Finished job 33.
+33 of 145 steps (23%) done
+[Thu Mar 27 14:48:05 2025]
+Finished job 73.
+34 of 145 steps (23%) done
+[Thu Mar 27 14:48:09 2025]
+Finished job 62.
+35 of 145 steps (24%) done
+[Thu Mar 27 14:48:11 2025]
+Finished job 53.
+36 of 145 steps (25%) done
+[Thu Mar 27 14:48:12 2025]
+Finished job 79.
+37 of 145 steps (26%) done
+[Thu Mar 27 14:48:16 2025]
+Finished job 6.
+38 of 145 steps (26%) done
+[Thu Mar 27 14:48:32 2025]
+Finished job 12.
+39 of 145 steps (27%) done
+[Thu Mar 27 14:48:33 2025]
+Finished job 48.
+40 of 145 steps (28%) done
+[Thu Mar 27 14:48:36 2025]
+Finished job 51.
+41 of 145 steps (28%) done
+[Thu Mar 27 14:48:37 2025]
+Finished job 64.
+42 of 145 steps (29%) done
+[Thu Mar 27 14:48:38 2025]
+Finished job 91.
+43 of 145 steps (30%) done
+[Thu Mar 27 14:48:39 2025]
+Finished job 34.
+44 of 145 steps (30%) done
+[Thu Mar 27 14:48:41 2025]
+Finished job 30.
+45 of 145 steps (31%) done
+[Thu Mar 27 14:48:53 2025]
+Finished job 69.
+46 of 145 steps (32%) done
+[Thu Mar 27 14:48:56 2025]
+Finished job 18.
+47 of 145 steps (32%) done
+[Thu Mar 27 14:48:57 2025]
+Finished job 84.
+48 of 145 steps (33%) done
+[Thu Mar 27 14:48:58 2025]
+Finished job 68.
+49 of 145 steps (34%) done
+[Thu Mar 27 14:49:05 2025]
+Finished job 17.
+50 of 145 steps (34%) done
+[Thu Mar 27 14:49:10 2025]
+Finished job 35.
+51 of 145 steps (35%) done
+[Thu Mar 27 14:49:20 2025]
+Finished job 42.
+52 of 145 steps (36%) done
+[Thu Mar 27 14:49:23 2025]
+Finished job 45.
+53 of 145 steps (37%) done
+[Thu Mar 27 14:49:24 2025]
+Finished job 61.
+54 of 145 steps (37%) done
+[Thu Mar 27 14:49:27 2025]
+Finished job 49.
+55 of 145 steps (38%) done
+[Thu Mar 27 14:49:29 2025]
+Finished job 58.
+56 of 145 steps (39%) done
+[Thu Mar 27 14:49:41 2025]
+Finished job 31.
+57 of 145 steps (39%) done
+[Thu Mar 27 14:49:45 2025]
+Finished job 24.
+58 of 145 steps (40%) done
+[Thu Mar 27 14:49:46 2025]
+Finished job 54.
+59 of 145 steps (41%) done
+[Thu Mar 27 14:49:54 2025]
+Finished job 25.
+60 of 145 steps (41%) done
+[Thu Mar 27 14:49:56 2025]
+Finished job 81.
+61 of 145 steps (42%) done
+[Thu Mar 27 14:49:58 2025]
+Finished job 14.
+62 of 145 steps (43%) done
+[Thu Mar 27 14:50:00 2025]
+Finished job 90.
+63 of 145 steps (43%) done
+[Thu Mar 27 14:50:10 2025]
+Finished job 55.
+64 of 145 steps (44%) done
+[Thu Mar 27 14:50:13 2025]
+Finished job 65.
+65 of 145 steps (45%) done
+[Thu Mar 27 14:50:14 2025]
+Finished job 27.
+66 of 145 steps (46%) done
+[Thu Mar 27 14:50:21 2025]
+Finished job 46.
+67 of 145 steps (46%) done
+[Thu Mar 27 14:50:23 2025]
+Finished job 41.
+68 of 145 steps (47%) done
+[Thu Mar 27 14:50:38 2025]
+Finished job 4.
+69 of 145 steps (48%) done
+[Thu Mar 27 14:50:45 2025]
+Finished job 56.
+70 of 145 steps (48%) done
+[Thu Mar 27 14:50:46 2025]
+Finished job 38.
+71 of 145 steps (49%) done
+[Thu Mar 27 14:50:47 2025]
+Finished job 57.
+72 of 145 steps (50%) done
+[Thu Mar 27 14:50:53 2025]
+Finished job 40.
+73 of 145 steps (50%) done
+[Thu Mar 27 14:51:00 2025]
+Finished job 70.
+74 of 145 steps (51%) done
+[Thu Mar 27 14:51:10 2025]
+Finished job 47.
+75 of 145 steps (52%) done
+[Thu Mar 27 14:51:13 2025]
+Finished job 50.
+76 of 145 steps (52%) done
+[Thu Mar 27 14:51:15 2025]
+Finished job 29.
+77 of 145 steps (53%) done
+[Thu Mar 27 14:51:16 2025]
+Finished job 19.
+78 of 145 steps (54%) done
+[Thu Mar 27 14:51:17 2025]
+Finished job 23.
+79 of 145 steps (54%) done
+[Thu Mar 27 14:51:28 2025]
+Finished job 94.
+80 of 145 steps (55%) done
+[Thu Mar 27 14:51:30 2025]
+Finished job 5.
+81 of 145 steps (56%) done
+[Thu Mar 27 14:51:37 2025]
+Finished job 89.
+82 of 145 steps (57%) done
+[Thu Mar 27 14:51:47 2025]
+Finished job 87.
+83 of 145 steps (57%) done
+[Thu Mar 27 14:51:58 2025]
+Finished job 72.
+84 of 145 steps (58%) done
+[Thu Mar 27 14:52:04 2025]
+Finished job 88.
+85 of 145 steps (59%) done
+[Thu Mar 27 14:52:07 2025]
+Finished job 20.
+86 of 145 steps (59%) done
+[Thu Mar 27 14:52:09 2025]
+Finished job 36.
+87 of 145 steps (60%) done
+[Thu Mar 27 14:52:13 2025]
+Finished job 21.
+88 of 145 steps (61%) done
+[Thu Mar 27 14:52:54 2025]
+Finished job 92.
+89 of 145 steps (61%) done
+[Thu Mar 27 14:53:00 2025]
+Finished job 2.
+90 of 145 steps (62%) done
+[Thu Mar 27 14:53:19 2025]
+Finished job 66.
+91 of 145 steps (63%) done
+[Thu Mar 27 14:54:26 2025]
+Finished job 44.
+92 of 145 steps (63%) done
+[Thu Mar 27 14:55:20 2025]
+Finished job 93.
+93 of 145 steps (64%) done
+[Thu Mar 27 14:56:53 2025]
+Finished job 83.
+94 of 145 steps (65%) done
+[Thu Mar 27 14:57:35 2025]
+Finished job 75.
+95 of 145 steps (66%) done
+[Thu Mar 27 15:00:46 2025]
+Finished job 26.
+96 of 145 steps (66%) done
+[Thu Mar 27 15:08:16 2025]
+Finished job 107.
+97 of 145 steps (67%) done
+[Thu Mar 27 15:25:51 2025]
+Finished job 111.
+98 of 145 steps (68%) done
+[Thu Mar 27 15:27:51 2025]
+Finished job 97.
+99 of 145 steps (68%) done
+[Thu Mar 27 15:27:53 2025]
+Finished job 112.
+100 of 145 steps (69%) done
+[Thu Mar 27 15:31:05 2025]
+Finished job 133.
+101 of 145 steps (70%) done
+[Thu Mar 27 15:31:40 2025]
+Finished job 109.
+102 of 145 steps (70%) done
+[Thu Mar 27 15:32:57 2025]
+Finished job 108.
+103 of 145 steps (71%) done
+[Thu Mar 27 15:35:17 2025]
+Finished job 124.
+104 of 145 steps (72%) done
+[Thu Mar 27 15:35:34 2025]
+Finished job 126.
+105 of 145 steps (72%) done
+[Thu Mar 27 15:35:46 2025]
+Finished job 144.
+106 of 145 steps (73%) done
+[Thu Mar 27 15:35:48 2025]
+Finished job 130.
+107 of 145 steps (74%) done
+[Thu Mar 27 15:37:14 2025]
+Finished job 99.
+108 of 145 steps (74%) done
+[Thu Mar 27 15:37:46 2025]
+Finished job 103.
+109 of 145 steps (75%) done
+[Thu Mar 27 15:38:05 2025]
+Finished job 139.
+110 of 145 steps (76%) done
+[Thu Mar 27 15:41:03 2025]
+Finished job 110.
+111 of 145 steps (77%) done
+[Thu Mar 27 15:41:39 2025]
+Finished job 128.
+112 of 145 steps (77%) done
+[Thu Mar 27 15:41:52 2025]
+Finished job 102.
+113 of 145 steps (78%) done
+[Thu Mar 27 15:41:58 2025]
+Finished job 104.
+114 of 145 steps (79%) done
+[Thu Mar 27 15:43:38 2025]
+Finished job 120.
+115 of 145 steps (79%) done
+[Thu Mar 27 15:44:48 2025]
+Finished job 106.
+116 of 145 steps (80%) done
+[Thu Mar 27 15:45:18 2025]
+Finished job 138.
+117 of 145 steps (81%) done
+[Thu Mar 27 15:45:26 2025]
+Finished job 118.
+118 of 145 steps (81%) done
+[Thu Mar 27 15:46:07 2025]
+Finished job 105.
+119 of 145 steps (82%) done
+[Thu Mar 27 15:46:10 2025]
+Finished job 134.
+120 of 145 steps (83%) done
+[Thu Mar 27 15:47:26 2025]
+Finished job 125.
+121 of 145 steps (83%) done
+[Thu Mar 27 15:48:19 2025]
+Finished job 135.
+122 of 145 steps (84%) done
+[Thu Mar 27 15:48:25 2025]
+Finished job 129.
+123 of 145 steps (85%) done
+[Thu Mar 27 15:50:13 2025]
+Finished job 115.
+124 of 145 steps (86%) done
+[Thu Mar 27 15:51:04 2025]
+Finished job 113.
+125 of 145 steps (86%) done
+[Thu Mar 27 15:51:54 2025]
+Finished job 117.
+126 of 145 steps (87%) done
+[Thu Mar 27 15:52:14 2025]
+Finished job 122.
+127 of 145 steps (88%) done
+[Thu Mar 27 15:53:48 2025]
+Finished job 100.
+128 of 145 steps (88%) done
+[Thu Mar 27 15:54:40 2025]
+Finished job 127.
+129 of 145 steps (89%) done
+[Thu Mar 27 15:55:06 2025]
+Finished job 119.
+130 of 145 steps (90%) done
+[Thu Mar 27 15:55:33 2025]
+Finished job 116.
+131 of 145 steps (90%) done
+[Thu Mar 27 15:55:34 2025]
+Finished job 132.
+132 of 145 steps (91%) done
+[Thu Mar 27 15:55:53 2025]
+Finished job 98.
+133 of 145 steps (92%) done
+[Thu Mar 27 15:56:20 2025]
+Finished job 121.
+134 of 145 steps (92%) done
+[Thu Mar 27 15:56:54 2025]
+Finished job 123.
+135 of 145 steps (93%) done
+[Thu Mar 27 15:56:58 2025]
+Finished job 140.
+136 of 145 steps (94%) done
+[Thu Mar 27 15:57:50 2025]
+Finished job 143.
+137 of 145 steps (94%) done
+[Thu Mar 27 15:59:08 2025]
+Finished job 101.
+138 of 145 steps (95%) done
+[Thu Mar 27 16:00:10 2025]
+Finished job 142.
+139 of 145 steps (96%) done
+[Thu Mar 27 16:01:13 2025]
+Finished job 137.
+140 of 145 steps (97%) done
+[Thu Mar 27 16:09:26 2025]
+Finished job 114.
+141 of 145 steps (97%) done
+[Thu Mar 27 16:11:10 2025]
+Finished job 141.
+142 of 145 steps (98%) done
+[Thu Mar 27 16:16:29 2025]
+Finished job 136.
+143 of 145 steps (99%) done
+[Thu Mar 27 16:23:19 2025]
+Finished job 131.
+144 of 145 steps (99%) done
+
+[Thu Mar 27 16:23:21 2025]
+localrule all:
+    input: output/peaks/Ankle/macs2/CQTL_AM7677_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7677_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7678_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7678_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7679_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7679_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7711_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7711_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7712_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7712_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7717_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7717_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7726_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7726_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7727_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7727_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7735_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7735_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7754_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7754_CTL_Ankle_replicate_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7754_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7754_FNF_Ankle_replicate_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7755_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7755_CTL_Ankle_replicate_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7755_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7755_FNF_Ankle_replicate_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7763_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7763_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7765_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7765_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7769_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7769_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7771_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7771_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7775_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7775_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7778FE_CTL_Femur_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7778FE_FNF_Femur_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7778_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7778_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7780_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7780_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7781_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7781_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7785_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7785_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7786_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs2/CQTL_AM7786_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7677_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7677_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7678_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7678_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7679_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7679_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7711_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7711_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7712_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7712_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7717_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7717_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7726_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7726_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7727_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7727_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7735_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7735_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7754_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7754_CTL_Ankle_replicate_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7754_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7754_FNF_Ankle_replicate_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7755_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7755_CTL_Ankle_replicate_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7755_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7755_FNF_Ankle_replicate_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7763_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7763_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7765_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7765_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7769_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7769_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7771_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7771_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7775_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7775_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7778FE_CTL_Femur_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7778FE_FNF_Femur_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7778_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7778_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7780_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7780_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7781_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7781_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7785_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7785_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7786_CTL_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/macs3/CQTL_AM7786_FNF_Ankle_1_peaks.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7677_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7677_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7678_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7678_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7679_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7679_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7711_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7711_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7712_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7712_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7717_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7717_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7726_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7726_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7727_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7727_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7735_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7735_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7754_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7754_CTL_Ankle_replicate_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7754_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7754_FNF_Ankle_replicate_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7755_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7755_CTL_Ankle_replicate_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7755_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7755_FNF_Ankle_replicate_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7763_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7763_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7765_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7765_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7769_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7769_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7771_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7771_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7775_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7775_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7778FE_CTL_Femur_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7778FE_FNF_Femur_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7778_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7778_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7780_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7780_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7781_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7781_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7785_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7785_FNF_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7786_CTL_Ankle_1_accessible_regions.narrowPeak, output/peaks/Ankle/hmmratac/CQTL_AM7786_FNF_Ankle_1_accessible_regions.narrowPeak
+    jobid: 0
+
+[Thu Mar 27 16:23:21 2025]
+Finished job 0.
+145 of 145 steps (100%) done
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2025-03-27T143203.273981.snakemake.log

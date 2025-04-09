@@ -1,0 +1,12 @@
+#!/bin/sh
+# properties = {"type": "single", "rule": "find_intersecting_snps", "local": false, "input": ["output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam", "output/wasp/pbs_rep/snp_tab.h5", "output/wasp/pbs_rep/snp_index.h5", "output/wasp/pbs_rep/haplotypes.h5", "output/wasp/fnf_rep/snp_tab.h5", "output/wasp/fnf_rep/snp_index.h5", "output/wasp/fnf_rep/haplotypes.h5", "output/wasp/pbs_subset_sample_ids.txt", "output/wasp/fnf_subset_sample_ids.txt"], "output": ["output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_replicate_filtered.remap.fq1.gz", "output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_replicate_filtered.remap.fq2.gz", "output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_replicate_filtered.to.remap.bam", "output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_replicate_filtered.keep.bam"], "wildcards": {"sampleName": "CQTL_AM7755_FNF_Ankle_replicate"}, "params": {"wasp_path": "/nas/longleaf/rhel8/apps/wasp/2023-02/WASP", "wasp_ver": "2023-02"}, "log": ["output/logs/find_intersecting_snps_pbs_rep_CQTL_AM7755_FNF_Ankle_replicate.err"], "threads": 4, "resources": {}, "jobid": 50, "cluster": {"name": "find_intersecting_snps,sampleName=CQTL_AM7755_FNF_Ankle_replicate", "partition": "general", "time": 4320, "cpusPerTask": "4", "memPerCpu": "16G", "nodes": 1, "ntasks": 1, "output": "output/logs_slurm/find_intersecting_snps.sampleName=CQTL_AM7755_FNF_Ankle_replicate.50.out", "error": "output/logs_slurm/find_intersecting_snps.sampleName=CQTL_AM7755_FNF_Ankle_replicate.50.err"}}
+cd /work/users/s/e/seyoun/CQTL_AI && \
+/work/users/s/e/seyoun/CQTL_AI/env/bin/python3 \
+-m snakemake output/wasp/filter_remapped_reads/CQTL_AM7755_FNF_Ankle_replicate_filtered.keep.bam --snakefile /work/users/s/e/seyoun/CQTL_AI/snakefiles/SubsetPreprocess.smk \
+--force -j --keep-target-files --keep-remote \
+--wait-for-files /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.21bxrvjd output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam output/wasp/pbs_rep/snp_tab.h5 output/wasp/pbs_rep/snp_index.h5 output/wasp/pbs_rep/haplotypes.h5 output/wasp/fnf_rep/snp_tab.h5 output/wasp/fnf_rep/snp_index.h5 output/wasp/fnf_rep/haplotypes.h5 output/wasp/pbs_subset_sample_ids.txt output/wasp/fnf_subset_sample_ids.txt --latency-wait 500 \
+ --attempt 1 --force-use-threads \
+--wrapper-prefix https://github.com/snakemake/snakemake-wrappers/raw/ \
+ --configfiles /work/users/s/e/seyoun/CQTL_AI/config/ATACconfig.yaml -p --allowed-rules find_intersecting_snps --nocolor --notemp --no-hooks --nolock \
+--mode 2  && exit 0 || exit 1
+

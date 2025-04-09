@@ -1,0 +1,122 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	1	create_count_matrices
+	2	hmmratac_merge_peaks_by_condition
+	1	merge_all_peaks_by_caller
+	5
+
+[Mon Dec 23 19:27:43 2024]
+rule merge_all_peaks_by_caller:
+    input: output/peaks/synovium/macs3/FACT_23-0013_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs3/FACT_23-0013_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs3/FACT_23-0016_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs3/FACT_23-0016_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs3/FACT_23-0022_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs3/FACT_23-0022_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs3/FACT_23-0023_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs3/FACT_23-0023_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs3/FACT_23-0025_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs3/FACT_23-0025_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0013_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0013_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0016_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0016_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0022_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0022_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0023_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0023_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0025_CTL_synovium_1_peaks.narrowPeak, output/peaks/synovium/macs2/FACT_23-0025_FNF_synovium_1_peaks.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0013_CTL_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0013_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0016_CTL_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0016_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0022_CTL_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0022_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0023_CTL_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0023_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0025_CTL_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0025_FNF_synovium_1_accessible_regions.narrowPeak
+    output: output/peaks/synovium/merged/all_macs3_merged.bed, output/peaks/synovium/merged/all_macs2_merged.bed, output/peaks/synovium/merged/all_hmmratac_merged.bed
+    log: output/logs/synovium_merge_peaks.err, output/logs/synovium_merge_peaks.out
+    jobid: 37
+    wildcards: tissue=synovium
+
+
+        module load bedtools/2.30
+        mkdir -p output/synovium/merged
+
+        # MACS3
+        cat output/peaks/synovium/macs3/FACT_23-0013_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs3/FACT_23-0013_FNF_synovium_1_peaks.narrowPeak output/peaks/synovium/macs3/FACT_23-0016_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs3/FACT_23-0016_FNF_synovium_1_peaks.narrowPeak output/peaks/synovium/macs3/FACT_23-0022_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs3/FACT_23-0022_FNF_synovium_1_peaks.narrowPeak output/peaks/synovium/macs3/FACT_23-0023_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs3/FACT_23-0023_FNF_synovium_1_peaks.narrowPeak output/peaks/synovium/macs3/FACT_23-0025_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs3/FACT_23-0025_FNF_synovium_1_peaks.narrowPeak | awk '{ OFS="	"} { print $1, $2, $3 }' |         sort -k1,1 -k2,2n | bedtools merge > output/peaks/synovium/merged/all_macs3_merged.bed 2>> output/logs/synovium_merge_peaks.err
+
+        # MACS2
+        cat output/peaks/synovium/macs2/FACT_23-0013_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs2/FACT_23-0013_FNF_synovium_1_peaks.narrowPeak output/peaks/synovium/macs2/FACT_23-0016_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs2/FACT_23-0016_FNF_synovium_1_peaks.narrowPeak output/peaks/synovium/macs2/FACT_23-0022_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs2/FACT_23-0022_FNF_synovium_1_peaks.narrowPeak output/peaks/synovium/macs2/FACT_23-0023_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs2/FACT_23-0023_FNF_synovium_1_peaks.narrowPeak output/peaks/synovium/macs2/FACT_23-0025_CTL_synovium_1_peaks.narrowPeak output/peaks/synovium/macs2/FACT_23-0025_FNF_synovium_1_peaks.narrowPeak | awk '{ OFS="	"} { print $1, $2, $3 }' |         sort -k1,1 -k2,2n | bedtools merge > output/peaks/synovium/merged/all_macs2_merged.bed 2>> output/logs/synovium_merge_peaks.err
+
+        # HMMRATAC
+        cat output/peaks/synovium/hmmratac/FACT_23-0013_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0013_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0016_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0016_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0022_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0022_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0023_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0023_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0025_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0025_FNF_synovium_1_accessible_regions.narrowPeak | awk '{ OFS="	"} { print $1, $2, $3 }' |         sort -k1,1 -k2,2n | bedtools merge > output/peaks/synovium/merged/all_hmmratac_merged.bed 2>> output/logs/synovium_merge_peaks.err
+
+        # Log peak counts
+        wc -l output/peaks/synovium/merged/all_macs3_merged.bed output/peaks/synovium/merged/all_macs2_merged.bed output/peaks/synovium/merged/all_hmmratac_merged.bed > output/logs/synovium_merge_peaks.out
+        
+Submitted job 37 with external jobid '56323921'.
+
+[Mon Dec 23 19:27:44 2024]
+rule hmmratac_merge_peaks_by_condition:
+    input: output/peaks/synovium/hmmratac/FACT_23-0013_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0016_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0022_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0023_FNF_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0025_FNF_synovium_1_accessible_regions.narrowPeak
+    output: output/peaks/synovium/FNF_consensus_hmmratac_peaks.bed
+    log: output/logs/synovium_hmmratac_merge_bedtools_FNF.err
+    jobid: 34
+    wildcards: tissue=synovium, cond=FNF
+
+
+        module load bedtools/2.30
+
+        mkdir -p output/peaks/synovium
+
+        # Merge peaks that appear in at least 50% of samples
+        multiIntersectBed -i output/peaks/synovium/hmmratac/FACT_23-0013_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0016_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0022_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0023_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0025_FNF_synovium_1_accessible_regions.narrowPeak | \     
+        awk -v min_samples=2 '$4 >= min_samples' |         bedtools merge > output/peaks/synovium/FNF_consensus_hmmratac_peaks.bed 2> output/logs/synovium_hmmratac_merge_bedtools_FNF.err
+
+        
+Submitted job 34 with external jobid '56323922'.
+
+[Mon Dec 23 19:27:45 2024]
+rule hmmratac_merge_peaks_by_condition:
+    input: output/peaks/synovium/hmmratac/FACT_23-0013_CTL_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0016_CTL_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0022_CTL_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0023_CTL_synovium_1_accessible_regions.narrowPeak, output/peaks/synovium/hmmratac/FACT_23-0025_CTL_synovium_1_accessible_regions.narrowPeak
+    output: output/peaks/synovium/CTL_consensus_hmmratac_peaks.bed
+    log: output/logs/synovium_hmmratac_merge_bedtools_CTL.err
+    jobid: 33
+    wildcards: tissue=synovium, cond=CTL
+
+
+        module load bedtools/2.30
+
+        mkdir -p output/peaks/synovium
+
+        # Merge peaks that appear in at least 50% of samples
+        multiIntersectBed -i output/peaks/synovium/hmmratac/FACT_23-0013_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0016_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0022_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0023_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0025_CTL_synovium_1_accessible_regions.narrowPeak | \     
+        awk -v min_samples=2 '$4 >= min_samples' |         bedtools merge > output/peaks/synovium/CTL_consensus_hmmratac_peaks.bed 2> output/logs/synovium_hmmratac_merge_bedtools_CTL.err
+
+        
+Submitted job 33 with external jobid '56323923'.
+[Mon Dec 23 19:28:08 2024]
+Error in rule hmmratac_merge_peaks_by_condition:
+    jobid: 34
+    output: output/peaks/synovium/FNF_consensus_hmmratac_peaks.bed
+    log: output/logs/synovium_hmmratac_merge_bedtools_FNF.err (check log file(s) for error message)
+    shell:
+        
+        module load bedtools/2.30
+
+        mkdir -p output/peaks/synovium
+
+        # Merge peaks that appear in at least 50% of samples
+        multiIntersectBed -i output/peaks/synovium/hmmratac/FACT_23-0013_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0016_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0022_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0023_FNF_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0025_FNF_synovium_1_accessible_regions.narrowPeak | \     
+        awk -v min_samples=2 '$4 >= min_samples' |         bedtools merge > output/peaks/synovium/FNF_consensus_hmmratac_peaks.bed 2> output/logs/synovium_hmmratac_merge_bedtools_FNF.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56323922
+
+Error executing rule hmmratac_merge_peaks_by_condition on cluster (jobid: 34, external: 56323922, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.2_hgi9sn/snakejob.hmmratac_merge_peaks_by_condition.34.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Mon Dec 23 19:28:09 2024]
+Error in rule hmmratac_merge_peaks_by_condition:
+    jobid: 33
+    output: output/peaks/synovium/CTL_consensus_hmmratac_peaks.bed
+    log: output/logs/synovium_hmmratac_merge_bedtools_CTL.err (check log file(s) for error message)
+    shell:
+        
+        module load bedtools/2.30
+
+        mkdir -p output/peaks/synovium
+
+        # Merge peaks that appear in at least 50% of samples
+        multiIntersectBed -i output/peaks/synovium/hmmratac/FACT_23-0013_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0016_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0022_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0023_CTL_synovium_1_accessible_regions.narrowPeak output/peaks/synovium/hmmratac/FACT_23-0025_CTL_synovium_1_accessible_regions.narrowPeak | \     
+        awk -v min_samples=2 '$4 >= min_samples' |         bedtools merge > output/peaks/synovium/CTL_consensus_hmmratac_peaks.bed 2> output/logs/synovium_hmmratac_merge_bedtools_CTL.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56323923
+
+Error executing rule hmmratac_merge_peaks_by_condition on cluster (jobid: 33, external: 56323923, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.2_hgi9sn/snakejob.hmmratac_merge_peaks_by_condition.33.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Mon Dec 23 19:29:26 2024]
+Finished job 37.
+1 of 5 steps (20%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-23T192742.823269.snakemake.log

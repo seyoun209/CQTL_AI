@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	reheader
+	1
+
+[Mon Mar 31 16:58:21 2025]
+rule reheader:
+    input: output/geno/cQTL_21_filtered.vcf.gz, output/geno/pbs_geno/pbs_matched.txt, output/geno/fnf_geno/fnf_matched.txt
+    output: output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz, output/geno/pbs_geno/pbs.rename.vcf.gz, output/geno/fnf_geno/fnf.rename.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    log: output/logs/PBS_rename.out, output/logs/PBS_rename.err, output/logs/FNF_rename.out, output/logs/FNF_rename.err
+    jobid: 2
+
+
+        mkdir -p output/logs
+        
+       sh /work/users/s/e/seyoun/CQTL_AI/scripts/rename.sh output/geno/cQTL_21_filtered.vcf.gz output/geno/pbs_geno/pbs_matched.txt output/geno/pbs_geno/pbs.rename.vcf.gz output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz 1> output/logs/PBS_rename.out 2> output/logs/PBS_rename.err
+        sh /work/users/s/e/seyoun/CQTL_AI/scripts/rename.sh output/geno/cQTL_21_filtered.vcf.gz output/geno/fnf_geno/fnf_matched.txt output/geno/fnf_geno/fnf.rename.vcf.gz output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz 1> output/logs/FNF_rename.out 2> output/logs/FNF_rename.err
+        
+Submitted job 2 with external jobid '63640009'.
+[Mon Mar 31 17:07:36 2025]
+Finished job 2.
+1 of 1 steps (100%) done
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2025-03-31T165819.041651.snakemake.log

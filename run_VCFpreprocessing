@@ -24,7 +24,7 @@ mkdir -p output/logs_slurm
 ## Execute ATAC_seq preprocess workflow1
 
 
-snakemake -s snakefiles/VCFpreprocess.smk --configfile "config/ATACconfig.yaml" --cluster-config "config/cluster.yaml" --cluster "sbatch -J {cluster.name} -p {cluster.partition} -t {cluster.time} -c {cluster.cpusPerTask} --mem-per-cpu={cluster.memPerCpu} -N {cluster.nodes} --output {cluster.output} --error {cluster.error} --parsable" --cluster-status snakefiles/utils/status.py -j 100 --max-jobs-per-second 0.2 --max-status-checks-per-second 0.2 --rerun-incomplete -p --latency-wait 500 
+snakemake -s snakefiles/VCFpreprocess.smk --configfile "config/ATACconfig.yaml" --cluster-config "config/cluster.yaml" --cluster "sbatch -J {cluster.name} -p {cluster.partition} -t {cluster.time} -c {cluster.cpusPerTask} --mem-per-cpu={cluster.memPerCpu} -N {cluster.nodes} --output {cluster.output} --error {cluster.error} --parsable" --cluster-status snakefiles/utils/status.py -j 100 --max-jobs-per-second 0.2 --max-status-checks-per-second 0.2 --rerun-incomplete -p --latency-wait 500 --until categorize_samples process_vcf reheader 
 
 ## Success message
 echo "Workflow completed successfully!"

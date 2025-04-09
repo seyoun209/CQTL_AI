@@ -1,0 +1,19 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all
+	22	reheader_imputed
+	23
+
+[Tue Dec 24 14:25:59 2024]
+rule reheader_imputed:
+    input: /work/users/s/e/seyoun/CQTL_AI/Genopipe/output/imputation/michigan_imputation_result/chr22.dose.vcf.gz, output/geno/pbs_geno/mappings/sample_name_mapping.txt, output/geno/fnf_geno/mappings/sample_name_mapping.txt
+    output: output/geno/pbs_geno/wasp_vcf/chr22.pbs.rename.vcf.gz, output/geno/pbs_geno/wasp_vcf/chr22.fnf.rename.vcf.gz
+    log: output/logs/imputed_PBS_chr22_rename.log, output/logs/imputed_FNF_chr22_rename.log
+    jobid: 65
+    wildcards: chrom=22
+
+RuleException in line 130 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/VCFpreprocess.smk:
+NameError: The name 'chrom' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}

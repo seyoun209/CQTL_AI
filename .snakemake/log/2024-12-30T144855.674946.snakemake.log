@@ -1,0 +1,422 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	6	hmmratac_peaks
+	6	macs2_peaks
+	6	macs3_peaks
+	19
+
+[Mon Dec 30 14:48:56 2024]
+rule macs2_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/macs2/CQTL_AM7755_CTL_Ankle_replicate_replicate_peaks.narrowPeak
+    log: output/logs/Femur_macs2_CQTL_AM7755_CTL_Ankle_replicate_replicate.err
+    jobid: 3
+    wildcards: tissue=Femur, sampleName=CQTL_AM7755_CTL_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Femur/macs2
+
+        macs2 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7755_CTL_Ankle_replicate_replicate             --outdir output/peaks/Femur/macs2 2> output/logs/Femur_macs2_CQTL_AM7755_CTL_Ankle_replicate_replicate.err
+        
+Submitted job 3 with external jobid '56521165'.
+
+[Mon Dec 30 14:48:57 2024]
+rule macs2_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/macs2/CQTL_AM7754_CTL_Ankle_replicate_replicate_peaks.narrowPeak
+    log: output/logs/Femur_macs2_CQTL_AM7754_CTL_Ankle_replicate_replicate.err
+    jobid: 1
+    wildcards: tissue=Femur, sampleName=CQTL_AM7754_CTL_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Femur/macs2
+
+        macs2 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7754_CTL_Ankle_replicate_replicate             --outdir output/peaks/Femur/macs2 2> output/logs/Femur_macs2_CQTL_AM7754_CTL_Ankle_replicate_replicate.err
+        
+Submitted job 1 with external jobid '56521167'.
+
+[Mon Dec 30 14:48:58 2024]
+rule macs3_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam
+    output: output/peaks/Femur/macs3/CQTL_AM7778FE_CTL_Femur_1_peaks.narrowPeak
+    log: output/logs/Femur_macs3_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 11
+    wildcards: tissue=Femur, sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/macs3/
+
+        macs3 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7778FE_CTL_Femur_1                 --outdir output/peaks/Femur/macs3 2> output/logs/Femur_macs3_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 11 with external jobid '56521168'.
+
+[Mon Dec 30 14:48:59 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam
+    output: output/peaks/Femur/hmmratac/CQTL_AM7778FE_FNF_Femur_1_accessible_regions.narrowPeak
+    log: output/logs/Femur_hmmratac_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 18
+    wildcards: tissue=Femur, sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7778FE_FNF_Femur_1             --outdir output/peaks/Femur/hmmratac 2> output/logs/Femur_hmmratac_CQTL_AM7778FE_FNF_Femur_1.err
+
+        
+Submitted job 18 with external jobid '56521169'.
+
+[Mon Dec 30 14:49:00 2024]
+rule macs2_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam
+    output: output/peaks/Femur/macs2/CQTL_AM7778FE_CTL_Femur_1_peaks.narrowPeak
+    log: output/logs/Femur_macs2_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 5
+    wildcards: tissue=Femur, sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Femur/macs2
+
+        macs2 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7778FE_CTL_Femur_1             --outdir output/peaks/Femur/macs2 2> output/logs/Femur_macs2_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 5 with external jobid '56521170'.
+
+[Mon Dec 30 14:49:01 2024]
+rule macs3_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/macs3/CQTL_AM7754_CTL_Ankle_replicate_replicate_peaks.narrowPeak
+    log: output/logs/Femur_macs3_CQTL_AM7754_CTL_Ankle_replicate_replicate.err
+    jobid: 7
+    wildcards: tissue=Femur, sampleName=CQTL_AM7754_CTL_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/macs3/
+
+        macs3 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7754_CTL_Ankle_replicate_replicate                 --outdir output/peaks/Femur/macs3 2> output/logs/Femur_macs3_CQTL_AM7754_CTL_Ankle_replicate_replicate.err
+        
+Submitted job 7 with external jobid '56521172'.
+
+[Mon Dec 30 14:49:03 2024]
+rule macs3_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/macs3/CQTL_AM7755_CTL_Ankle_replicate_replicate_peaks.narrowPeak
+    log: output/logs/Femur_macs3_CQTL_AM7755_CTL_Ankle_replicate_replicate.err
+    jobid: 9
+    wildcards: tissue=Femur, sampleName=CQTL_AM7755_CTL_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/macs3/
+
+        macs3 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7755_CTL_Ankle_replicate_replicate                 --outdir output/peaks/Femur/macs3 2> output/logs/Femur_macs3_CQTL_AM7755_CTL_Ankle_replicate_replicate.err
+        
+Submitted job 9 with external jobid '56521173'.
+
+[Mon Dec 30 14:49:04 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/hmmratac/CQTL_AM7754_FNF_Ankle_replicate_replicate_accessible_regions.narrowPeak
+    log: output/logs/Femur_hmmratac_CQTL_AM7754_FNF_Ankle_replicate_replicate.err
+    jobid: 14
+    wildcards: tissue=Femur, sampleName=CQTL_AM7754_FNF_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7754_FNF_Ankle_replicate_replicate             --outdir output/peaks/Femur/hmmratac 2> output/logs/Femur_hmmratac_CQTL_AM7754_FNF_Ankle_replicate_replicate.err
+
+        
+Submitted job 14 with external jobid '56521175'.
+
+[Mon Dec 30 14:49:05 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/hmmratac/CQTL_AM7755_FNF_Ankle_replicate_replicate_accessible_regions.narrowPeak
+    log: output/logs/Femur_hmmratac_CQTL_AM7755_FNF_Ankle_replicate_replicate.err
+    jobid: 16
+    wildcards: tissue=Femur, sampleName=CQTL_AM7755_FNF_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7755_FNF_Ankle_replicate_replicate             --outdir output/peaks/Femur/hmmratac 2> output/logs/Femur_hmmratac_CQTL_AM7755_FNF_Ankle_replicate_replicate.err
+
+        
+Submitted job 16 with external jobid '56521176'.
+
+[Mon Dec 30 14:49:06 2024]
+rule macs3_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/macs3/CQTL_AM7755_FNF_Ankle_replicate_replicate_peaks.narrowPeak
+    log: output/logs/Femur_macs3_CQTL_AM7755_FNF_Ankle_replicate_replicate.err
+    jobid: 10
+    wildcards: tissue=Femur, sampleName=CQTL_AM7755_FNF_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/macs3/
+
+        macs3 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7755_FNF_Ankle_replicate_replicate                 --outdir output/peaks/Femur/macs3 2> output/logs/Femur_macs3_CQTL_AM7755_FNF_Ankle_replicate_replicate.err
+        
+Submitted job 10 with external jobid '56521178'.
+
+[Mon Dec 30 14:49:07 2024]
+rule macs3_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/macs3/CQTL_AM7754_FNF_Ankle_replicate_replicate_peaks.narrowPeak
+    log: output/logs/Femur_macs3_CQTL_AM7754_FNF_Ankle_replicate_replicate.err
+    jobid: 8
+    wildcards: tissue=Femur, sampleName=CQTL_AM7754_FNF_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/macs3/
+
+        macs3 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7754_FNF_Ankle_replicate_replicate                 --outdir output/peaks/Femur/macs3 2> output/logs/Femur_macs3_CQTL_AM7754_FNF_Ankle_replicate_replicate.err
+        
+Submitted job 8 with external jobid '56521179'.
+
+[Mon Dec 30 14:49:08 2024]
+rule macs2_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam
+    output: output/peaks/Femur/macs2/CQTL_AM7778FE_FNF_Femur_1_peaks.narrowPeak
+    log: output/logs/Femur_macs2_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 6
+    wildcards: tissue=Femur, sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Femur/macs2
+
+        macs2 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7778FE_FNF_Femur_1             --outdir output/peaks/Femur/macs2 2> output/logs/Femur_macs2_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 6 with external jobid '56521180'.
+
+[Mon Dec 30 14:49:09 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/hmmratac/CQTL_AM7755_CTL_Ankle_replicate_replicate_accessible_regions.narrowPeak
+    log: output/logs/Femur_hmmratac_CQTL_AM7755_CTL_Ankle_replicate_replicate.err
+    jobid: 15
+    wildcards: tissue=Femur, sampleName=CQTL_AM7755_CTL_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_CTL_Ankle_replicate.sorted_wasp.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7755_CTL_Ankle_replicate_replicate             --outdir output/peaks/Femur/hmmratac 2> output/logs/Femur_hmmratac_CQTL_AM7755_CTL_Ankle_replicate_replicate.err
+
+        
+Submitted job 15 with external jobid '56521182'.
+
+[Mon Dec 30 14:49:11 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/hmmratac/CQTL_AM7754_CTL_Ankle_replicate_replicate_accessible_regions.narrowPeak
+    log: output/logs/Femur_hmmratac_CQTL_AM7754_CTL_Ankle_replicate_replicate.err
+    jobid: 13
+    wildcards: tissue=Femur, sampleName=CQTL_AM7754_CTL_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_CTL_Ankle_replicate.sorted_wasp.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7754_CTL_Ankle_replicate_replicate             --outdir output/peaks/Femur/hmmratac 2> output/logs/Femur_hmmratac_CQTL_AM7754_CTL_Ankle_replicate_replicate.err
+
+        
+Submitted job 13 with external jobid '56521184'.
+
+[Mon Dec 30 14:49:12 2024]
+rule macs2_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/macs2/CQTL_AM7755_FNF_Ankle_replicate_replicate_peaks.narrowPeak
+    log: output/logs/Femur_macs2_CQTL_AM7755_FNF_Ankle_replicate_replicate.err
+    jobid: 4
+    wildcards: tissue=Femur, sampleName=CQTL_AM7755_FNF_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Femur/macs2
+
+        macs2 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7755_FNF_Ankle_replicate.sorted_wasp.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7755_FNF_Ankle_replicate_replicate             --outdir output/peaks/Femur/macs2 2> output/logs/Femur_macs2_CQTL_AM7755_FNF_Ankle_replicate_replicate.err
+        
+Submitted job 4 with external jobid '56521185'.
+
+[Mon Dec 30 14:49:13 2024]
+rule macs2_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam
+    output: output/peaks/Femur/macs2/CQTL_AM7754_FNF_Ankle_replicate_replicate_peaks.narrowPeak
+    log: output/logs/Femur_macs2_CQTL_AM7754_FNF_Ankle_replicate_replicate.err
+    jobid: 2
+    wildcards: tissue=Femur, sampleName=CQTL_AM7754_FNF_Ankle_replicate_replicate
+    threads: 2
+
+
+        module load python/3.9.6
+        module load macs/2.2.9.1
+        
+        mkdir -p output/peaks/Femur/macs2
+
+        macs2 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7754_FNF_Ankle_replicate.sorted_wasp.bam             -f BAMPE             -g hs             --nomodel             --shift -75             --extsize 150             --keep-dup all             -p 0.01             --call-summits             -n CQTL_AM7754_FNF_Ankle_replicate_replicate             --outdir output/peaks/Femur/macs2 2> output/logs/Femur_macs2_CQTL_AM7754_FNF_Ankle_replicate_replicate.err
+        
+Submitted job 2 with external jobid '56521186'.
+
+[Mon Dec 30 14:49:14 2024]
+rule macs3_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam
+    output: output/peaks/Femur/macs3/CQTL_AM7778FE_FNF_Femur_1_peaks.narrowPeak
+    log: output/logs/Femur_macs3_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 12
+    wildcards: tissue=Femur, sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/macs3/
+
+        macs3 callpeak -t /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_FNF_Femur_1.sorted_wasp.bam                 -f BAMPE                 -g hs                 --nomodel                 --shift -75                 --extsize 150                 --keep-dup all                 -q 0.01                 --call-summits                 -n CQTL_AM7778FE_FNF_Femur_1                 --outdir output/peaks/Femur/macs3 2> output/logs/Femur_macs3_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 12 with external jobid '56521187'.
+
+[Mon Dec 30 14:49:15 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam
+    output: output/peaks/Femur/hmmratac/CQTL_AM7778FE_CTL_Femur_1_accessible_regions.narrowPeak
+    log: output/logs/Femur_hmmratac_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 17
+    wildcards: tissue=Femur, sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/Femur/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/wasp/rmdup/CQTL_AM7778FE_CTL_Femur_1.sorted_wasp.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n CQTL_AM7778FE_CTL_Femur_1             --outdir output/peaks/Femur/hmmratac 2> output/logs/Femur_hmmratac_CQTL_AM7778FE_CTL_Femur_1.err
+
+        
+Submitted job 17 with external jobid '56521189'.
+[Mon Dec 30 14:56:03 2024]
+Finished job 5.
+1 of 19 steps (5%) done
+[Mon Dec 30 14:56:30 2024]
+Finished job 11.
+2 of 19 steps (11%) done
+[Mon Dec 30 14:58:11 2024]
+Finished job 6.
+3 of 19 steps (16%) done
+[Mon Dec 30 14:58:16 2024]
+Finished job 12.
+4 of 19 steps (21%) done
+[Mon Dec 30 14:59:13 2024]
+Finished job 9.
+5 of 19 steps (26%) done
+[Mon Dec 30 14:59:52 2024]
+Finished job 8.
+6 of 19 steps (32%) done
+[Mon Dec 30 14:59:55 2024]
+Finished job 4.
+7 of 19 steps (37%) done
+[Mon Dec 30 14:59:58 2024]
+Finished job 3.
+8 of 19 steps (42%) done
+[Mon Dec 30 15:00:05 2024]
+Finished job 10.
+9 of 19 steps (47%) done
+[Mon Dec 30 15:00:18 2024]
+Finished job 2.
+10 of 19 steps (53%) done
+[Mon Dec 30 15:01:00 2024]
+Finished job 7.
+11 of 19 steps (58%) done
+[Mon Dec 30 15:01:16 2024]
+Finished job 1.
+12 of 19 steps (63%) done
+[Mon Dec 30 15:41:44 2024]
+Finished job 17.
+13 of 19 steps (68%) done
+[Mon Dec 30 15:53:16 2024]
+Finished job 15.
+14 of 19 steps (74%) done
+[Mon Dec 30 15:56:11 2024]
+Finished job 14.
+15 of 19 steps (79%) done
+[Mon Dec 30 15:57:31 2024]
+Finished job 16.
+16 of 19 steps (84%) done
+[Mon Dec 30 15:58:20 2024]
+Finished job 18.
+17 of 19 steps (89%) done
+[Mon Dec 30 16:05:32 2024]
+Finished job 13.
+18 of 19 steps (95%) done
+
+[Mon Dec 30 16:05:33 2024]
+localrule all:
+    input: output/peaks/Femur/macs2/CQTL_AM7754_CTL_Ankle_replicate_replicate_peaks.narrowPeak, output/peaks/Femur/macs2/CQTL_AM7754_FNF_Ankle_replicate_replicate_peaks.narrowPeak, output/peaks/Femur/macs2/CQTL_AM7755_CTL_Ankle_replicate_replicate_peaks.narrowPeak, output/peaks/Femur/macs2/CQTL_AM7755_FNF_Ankle_replicate_replicate_peaks.narrowPeak, output/peaks/Femur/macs2/CQTL_AM7778FE_CTL_Femur_1_peaks.narrowPeak, output/peaks/Femur/macs2/CQTL_AM7778FE_FNF_Femur_1_peaks.narrowPeak, output/peaks/Femur/macs3/CQTL_AM7754_CTL_Ankle_replicate_replicate_peaks.narrowPeak, output/peaks/Femur/macs3/CQTL_AM7754_FNF_Ankle_replicate_replicate_peaks.narrowPeak, output/peaks/Femur/macs3/CQTL_AM7755_CTL_Ankle_replicate_replicate_peaks.narrowPeak, output/peaks/Femur/macs3/CQTL_AM7755_FNF_Ankle_replicate_replicate_peaks.narrowPeak, output/peaks/Femur/macs3/CQTL_AM7778FE_CTL_Femur_1_peaks.narrowPeak, output/peaks/Femur/macs3/CQTL_AM7778FE_FNF_Femur_1_peaks.narrowPeak, output/peaks/Femur/hmmratac/CQTL_AM7754_CTL_Ankle_replicate_replicate_accessible_regions.narrowPeak, output/peaks/Femur/hmmratac/CQTL_AM7754_FNF_Ankle_replicate_replicate_accessible_regions.narrowPeak, output/peaks/Femur/hmmratac/CQTL_AM7755_CTL_Ankle_replicate_replicate_accessible_regions.narrowPeak, output/peaks/Femur/hmmratac/CQTL_AM7755_FNF_Ankle_replicate_replicate_accessible_regions.narrowPeak, output/peaks/Femur/hmmratac/CQTL_AM7778FE_CTL_Femur_1_accessible_regions.narrowPeak, output/peaks/Femur/hmmratac/CQTL_AM7778FE_FNF_Femur_1_accessible_regions.narrowPeak
+    jobid: 0
+
+[Mon Dec 30 16:05:33 2024]
+Finished job 0.
+19 of 19 steps (100%) done
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-30T144855.674946.snakemake.log

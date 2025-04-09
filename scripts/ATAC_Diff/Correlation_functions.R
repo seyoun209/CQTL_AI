@@ -1,7 +1,7 @@
 create_correlation_plot <- function(pca_df, condition = NULL, title = "") {
   # Filter data by condition if specified
   if (!is.null(condition)) {
-    pca_df <- pca_df[grep(condition, pca_df$Condition), ]
+    pca_df <- pca_df[pca_df$Condition == condition, ]
   }
   
   # Select relevant columns for correlation

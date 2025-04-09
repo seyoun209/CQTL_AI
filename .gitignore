@@ -2,7 +2,15 @@ output/*
 *.out
 Genotype/*
 env/
-samplesheet.txt
 *snakefiles/utils/__pycache__*
 tools/
-
+*.txt
+external/*
+rna_output/*
+hic_output/*
+Genopipe/*
+snakefiles/*.out
+scripts/rasqual/*.out
+scripts/rasqual/*.err
+scripts/rasqual/logs/*
+scripts/rasqual/logs_1kb/*

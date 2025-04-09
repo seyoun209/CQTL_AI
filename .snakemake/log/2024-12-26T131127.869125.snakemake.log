@@ -1,0 +1,58 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	2	mergeSignal
+	3
+
+[Thu Dec 26 13:11:28 2024]
+rule mergeSignal:
+    input: output/signals/Ankle/mergedAlign/CTL_sorted.bam
+    output: output/signals/Ankle/merged_signal/CTL_sorted_bw
+    log: output/logs/mergedSignal_Ankle_CTL.err
+    jobid: 43
+    wildcards: tissue=Ankle, cond=CTL
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Ankle/merged_signal
+
+        bamCoverage             --bam output/signals/Ankle/mergedAlign/CTL_sorted.bam             -o output/signals/Ankle/merged_signal/CTL_sorted_bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/mergedSignal_Ankle_CTL.err 2>&1
+
+        
+Submitted job 43 with external jobid '56427407'.
+
+[Thu Dec 26 13:11:30 2024]
+rule mergeSignal:
+    input: output/signals/Ankle/mergedAlign/FNF_sorted.bam
+    output: output/signals/Ankle/merged_signal/FNF_sorted_bw
+    log: output/logs/mergedSignal_Ankle_FNF.err
+    jobid: 44
+    wildcards: tissue=Ankle, cond=FNF
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/Ankle/merged_signal
+
+        bamCoverage             --bam output/signals/Ankle/mergedAlign/FNF_sorted.bam             -o output/signals/Ankle/merged_signal/FNF_sorted_bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/mergedSignal_Ankle_FNF.err 2>&1
+
+        
+Submitted job 44 with external jobid '56427408'.
+[Thu Dec 26 21:26:57 2024]
+Finished job 43.
+1 of 3 steps (33%) done
+[Thu Dec 26 23:29:12 2024]
+Finished job 44.
+2 of 3 steps (67%) done
+
+[Thu Dec 26 23:29:13 2024]
+localrule all:
+    input: output/signals/Ankle/CQTL_AM7677_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7677_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7678_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7678_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7679_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7679_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7711_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7711_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7712_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7712_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7717_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7717_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7726_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7726_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7727_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7727_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7735_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7735_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7754_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7754_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7755_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7755_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7763_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7763_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7765_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7765_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7769_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7769_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7771_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7771_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7775_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7775_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7778_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7778_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7780_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7780_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7781_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7781_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7785_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7785_FNF_Ankle_1.bw, output/signals/Ankle/CQTL_AM7786_CTL_Ankle_1.bw, output/signals/Ankle/CQTL_AM7786_FNF_Ankle_1.bw, output/signals/Ankle/merged_signal/CTL_sorted_bw, output/signals/Ankle/merged_signal/FNF_sorted_bw
+    jobid: 0
+
+[Thu Dec 26 23:29:13 2024]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-26T131127.869125.snakemake.log

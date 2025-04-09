@@ -1,0 +1,197 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all_subset
+	6	bamQC
+	7
+
+[Tue Feb  4 13:09:31 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7755_FNF_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.out
+    jobid: 38
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+Submitted job 38 with external jobid '58663702'.
+
+[Tue Feb  4 13:09:36 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7778FE_FNF_Femur_1_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.out
+    jobid: 36
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 36 with external jobid '58663707'.
+
+[Tue Feb  4 13:09:41 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7754_CTL_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.out
+    jobid: 40
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+Submitted job 40 with external jobid '58663711'.
+
+[Tue Feb  4 13:09:46 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7754_FNF_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.out
+    jobid: 37
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+Submitted job 37 with external jobid '58663716'.
+
+[Tue Feb  4 13:09:51 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7755_CTL_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.out
+    jobid: 41
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+Submitted job 41 with external jobid '58663721'.
+
+[Tue Feb  4 13:09:56 2025]
+rule bamQC:
+    input: output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam
+    output: output/wasp/bamQC/CQTL_AM7778FE_CTL_Femur_1_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.err, output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.out
+    jobid: 39
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+    threads: 6
+
+
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 39 with external jobid '58663727'.
+[Tue Feb  4 13:12:10 2025]
+Error in rule bamQC:
+    jobid: 41
+    output: output/wasp/bamQC/CQTL_AM7755_CTL_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7755_CTL_Ankle_replicate.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663721
+
+Error executing rule bamQC on cluster (jobid: 41, external: 58663721, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.0r279g4q/snakejob.bamQC.41.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Feb  4 13:12:21 2025]
+Error in rule bamQC:
+    jobid: 39
+    output: output/wasp/bamQC/CQTL_AM7778FE_CTL_Femur_1_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.err, output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7778FE_CTL_Femur_1.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_CTL_Femur_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663727
+
+Error executing rule bamQC on cluster (jobid: 39, external: 58663727, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.0r279g4q/snakejob.bamQC.39.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Feb  4 13:12:22 2025]
+Error in rule bamQC:
+    jobid: 40
+    output: output/wasp/bamQC/CQTL_AM7754_CTL_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7754_CTL_Ankle_replicate.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663711
+
+Error executing rule bamQC on cluster (jobid: 40, external: 58663711, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.0r279g4q/snakejob.bamQC.40.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Feb  4 13:12:23 2025]
+Error in rule bamQC:
+    jobid: 38
+    output: output/wasp/bamQC/CQTL_AM7755_FNF_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7755_FNF_Ankle_replicate.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663702
+
+Error executing rule bamQC on cluster (jobid: 38, external: 58663702, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.0r279g4q/snakejob.bamQC.38.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Feb  4 13:12:24 2025]
+Error in rule bamQC:
+    jobid: 36
+    output: output/wasp/bamQC/CQTL_AM7778FE_FNF_Femur_1_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.err, output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7778FE_FNF_Femur_1.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7778FE_FNF_Femur_1.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663707
+
+Error executing rule bamQC on cluster (jobid: 36, external: 58663707, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.0r279g4q/snakejob.bamQC.36.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Tue Feb  4 13:12:25 2025]
+Error in rule bamQC:
+    jobid: 37
+    output: output/wasp/bamQC/CQTL_AM7754_FNF_Ankle_replicate_bamQC
+    log: output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.err, output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.out (check log file(s) for error message)
+    shell:
+        
+        module load r/4.4.0
+        mkdir output/wasp/bamQC
+        Rscript /work/users/s/e/seyoun/CQTL_AI/scripts/ATACseq_QC.R output/wasp/blk_filter/CQTL_AM7754_FNF_Ankle_replicate.sorted_final.bam output/wasp/bamQC/ .sorted_final.bam  1> output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.out 2> output/logs/atacseqQC_afterWASP_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 58663716
+
+Error executing rule bamQC on cluster (jobid: 37, external: 58663716, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.0r279g4q/snakejob.bamQC.37.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2025-02-04T130816.335689.snakemake.log

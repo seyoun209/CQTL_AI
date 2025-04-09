@@ -1,0 +1,341 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all
+	30	verifybamid
+	31
+
+[Tue Dec  3 16:49:29 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7780_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7780_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7780_FNF_Ankle_1.err
+    jobid: 24
+    wildcards: sampleName=CQTL_AM7780_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:49:34 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7717_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7717_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7717_CTL_Ankle_1.err
+    jobid: 3
+    wildcards: sampleName=CQTL_AM7717_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:49:39 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7763_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7763_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7763_CTL_Ankle_1.err
+    jobid: 11
+    wildcards: sampleName=CQTL_AM7763_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:49:44 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7755_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7755_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7755_CTL_Ankle_1.err
+    jobid: 9
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:49:49 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7771_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7771_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7771_CTL_Ankle_1.err
+    jobid: 17
+    wildcards: sampleName=CQTL_AM7771_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:49:54 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7775_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7775_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7775_CTL_Ankle_1.err
+    jobid: 19
+    wildcards: sampleName=CQTL_AM7775_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:49:59 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7785_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7785_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7785_CTL_Ankle_1.err
+    jobid: 27
+    wildcards: sampleName=CQTL_AM7785_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:04 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7786_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7786_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7786_CTL_Ankle_1.err
+    jobid: 29
+    wildcards: sampleName=CQTL_AM7786_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:09 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7775_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7775_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7775_FNF_Ankle_1.err
+    jobid: 20
+    wildcards: sampleName=CQTL_AM7775_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:14 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7765_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7765_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7765_FNF_Ankle_1.err
+    jobid: 14
+    wildcards: sampleName=CQTL_AM7765_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:20 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7735_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7735_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7735_FNF_Ankle_1.err
+    jobid: 6
+    wildcards: sampleName=CQTL_AM7735_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:25 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7769_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7769_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7769_CTL_Ankle_1.err
+    jobid: 15
+    wildcards: sampleName=CQTL_AM7769_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:30 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7765_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7765_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7765_CTL_Ankle_1.err
+    jobid: 13
+    wildcards: sampleName=CQTL_AM7765_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:35 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7711_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7711_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7711_FNF_Ankle_1.err
+    jobid: 2
+    wildcards: sampleName=CQTL_AM7711_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:40 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7754_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7754_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7754_CTL_Ankle_1.err
+    jobid: 7
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:45 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7778_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7778_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7778_FNF_Ankle_1.err
+    jobid: 22
+    wildcards: sampleName=CQTL_AM7778_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:50 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7778_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7778_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7778_CTL_Ankle_1.err
+    jobid: 21
+    wildcards: sampleName=CQTL_AM7778_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:50:55 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7717_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7717_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7717_FNF_Ankle_1.err
+    jobid: 4
+    wildcards: sampleName=CQTL_AM7717_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:00 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7786_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7786_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7786_FNF_Ankle_1.err
+    jobid: 30
+    wildcards: sampleName=CQTL_AM7786_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:05 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7711_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7711_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7711_CTL_Ankle_1.err
+    jobid: 1
+    wildcards: sampleName=CQTL_AM7711_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:10 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7763_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7763_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7763_FNF_Ankle_1.err
+    jobid: 12
+    wildcards: sampleName=CQTL_AM7763_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:15 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7769_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7769_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7769_FNF_Ankle_1.err
+    jobid: 16
+    wildcards: sampleName=CQTL_AM7769_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:21 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7771_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7771_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7771_FNF_Ankle_1.err
+    jobid: 18
+    wildcards: sampleName=CQTL_AM7771_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:26 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7754_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7754_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7754_FNF_Ankle_1.err
+    jobid: 8
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:31 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7755_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7755_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7755_FNF_Ankle_1.err
+    jobid: 10
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:36 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7781_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7781_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7781_FNF_Ankle_1.err
+    jobid: 26
+    wildcards: sampleName=CQTL_AM7781_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:41 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7735_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7735_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7735_CTL_Ankle_1.err
+    jobid: 5
+    wildcards: sampleName=CQTL_AM7735_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:46 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7785_FNF_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7785_FNF_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7785_FNF_Ankle_1.err
+    jobid: 28
+    wildcards: sampleName=CQTL_AM7785_FNF_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:51 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7780_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7780_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7780_CTL_Ankle_1.err
+    jobid: 23
+    wildcards: sampleName=CQTL_AM7780_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+
+[Tue Dec  3 16:51:56 2024]
+rule verifybamid:
+    input: /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/rna_output/align/CQTL_AM7781_CTL_Ankle_1_RG.bam.bai, output/geno/pbs_geno/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno/fnf.rename_wCHR.vcf.gz
+    output: rna_output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.selfSM, rna_output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.selfRG, rna_output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.bestRG, rna_output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.bestSM, rna_output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.depthRG, rna_output/QC/CQTL_AM7781_CTL_Ankle_1_verifyBamID.depthSM
+    log: rna_output/logs/verifyBamID_CQTL_AM7781_CTL_Ankle_1.err
+    jobid: 25
+    wildcards: sampleName=CQTL_AM7781_CTL_Ankle_1
+
+Error submitting jobscript (exit code 127):
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-03T164927.399284.snakemake.log

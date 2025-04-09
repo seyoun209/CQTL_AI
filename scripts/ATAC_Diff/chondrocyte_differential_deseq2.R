@@ -1,7 +1,7 @@
 #Feb 2nd 
 #Author Seyoun Byun
 # 02.04.2024
-
+#This is updated to use the no-wasp
 setwd("/work/users/s/e/seyoun/CQTL_AI/output/")
 # Differential atac-seq -Chondrocyte
 #-------------------------------------------------------------------------------
@@ -10,6 +10,8 @@ library(DESeq2)
 library(Rsubread,lib.loc = "/nas/longleaf/home/seyoun/R/x86_64-pc-linux-gnu-library/4.2")
 library(GenomicRanges)
 library(base)
+library(data.table)
+library(tidyverse)
 
 
 #rocco <- read_and_clean_peaks("peaks/merged/allsamples_rocco_merged_counts.txt")

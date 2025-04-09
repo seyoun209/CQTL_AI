@@ -22,8 +22,9 @@ echo "$vcf_samples"
 while IFS=' ' read -r sample_name category; do
     if [[ $sample_name =~ AM([0-9]{4}) ]]; then
         am_num=${BASH_REMATCH[1]}
-        vcf_name=$(echo "$vcf_samples" | grep -P "^0_[0-9]+_AM${am_num}$")
-        
+        # Adjust pattern: use any leading number instead of literal "0_"
+        vcf_name=$(echo "$vcf_samples" | grep -P "^[0-9]+_AM${am_num}$")
+
         if [ ! -z "$vcf_name" ]; then
             echo "Exact match found: $vcf_name -> $sample_name"
             echo -e "$vcf_name\t$sample_name" >> "$mapping_file"
@@ -40,9 +41,9 @@ while IFS=' ' read -r sample_name category; do
         if [[ $sample_name =~ AM([0-9]{4}) ]]; then
             am_num=${BASH_REMATCH[1]}
             last_two=${am_num: -2}
-            # Exact match for Phanstiel format
-            vcf_name=$(echo "$vcf_samples" | grep -P "^0_[0-9]+_Phanstiel_${last_two}$")
-            
+            # Adjust pattern similarly here
+            vcf_name=$(echo "$vcf_samples" | grep -P "^[0-9]+_Phanstiel_${last_two}$")
+
             if [ ! -z "$vcf_name" ]; then
                 echo "Phanstiel match found: $vcf_name -> $sample_name"
                 echo -e "$vcf_name\t$sample_name" >> "$mapping_file"

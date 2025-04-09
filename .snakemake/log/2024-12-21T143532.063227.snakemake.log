@@ -1,0 +1,83 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	2	merge_peaks_by_condition
+	3
+
+[Sat Dec 21 14:35:34 2024]
+rule merge_peaks_by_condition:
+    input: output/peaks/macs3/FACT_23-0013_FNF_synovium_1_peaks.narrowPeak, output/peaks/macs3/FACT_23-0016_FNF_synovium_1_peaks.narrowPeak, output/peaks/macs3/FACT_23-0022_FNF_synovium_1_peaks.narrowPeak, output/peaks/macs3/FACT_23-0023_FNF_synovium_1_peaks.narrowPeak, output/peaks/macs3/FACT_23-0025_FNF_synovium_1_peaks.narrowPeak
+    output: output/peaks/FNF_consensus_macs3_peaks.bed
+    jobid: 32
+    wildcards: cond=FNF
+
+
+        module load bedtools/2.30
+
+        mkdir -p output/peaks/
+
+        # Merge peaks that appear in at least 50% of samples
+        bedtools multiIntersectBed -i output/peaks/macs3/FACT_23-0013_FNF_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0016_FNF_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0022_FNF_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0023_FNF_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0025_FNF_synovium_1_peaks.narrowPeak |         awk -v min_samples=2 '$4 >= min_samples' |         bedtools merge > output/peaks/FNF_consensus_macs3_peaks.bed
+
+        
+Submitted job 32 with external jobid '56261923'.
+
+[Sat Dec 21 14:35:35 2024]
+rule merge_peaks_by_condition:
+    input: output/peaks/macs3/FACT_23-0013_CTL_synovium_1_peaks.narrowPeak, output/peaks/macs3/FACT_23-0016_CTL_synovium_1_peaks.narrowPeak, output/peaks/macs3/FACT_23-0022_CTL_synovium_1_peaks.narrowPeak, output/peaks/macs3/FACT_23-0023_CTL_synovium_1_peaks.narrowPeak, output/peaks/macs3/FACT_23-0025_CTL_synovium_1_peaks.narrowPeak
+    output: output/peaks/CTL_consensus_macs3_peaks.bed
+    jobid: 31
+    wildcards: cond=CTL
+
+
+        module load bedtools/2.30
+
+        mkdir -p output/peaks/
+
+        # Merge peaks that appear in at least 50% of samples
+        bedtools multiIntersectBed -i output/peaks/macs3/FACT_23-0013_CTL_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0016_CTL_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0022_CTL_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0023_CTL_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0025_CTL_synovium_1_peaks.narrowPeak |         awk -v min_samples=2 '$4 >= min_samples' |         bedtools merge > output/peaks/CTL_consensus_macs3_peaks.bed
+
+        
+Submitted job 31 with external jobid '56261924'.
+[Sat Dec 21 14:35:56 2024]
+Error in rule merge_peaks_by_condition:
+    jobid: 32
+    output: output/peaks/FNF_consensus_macs3_peaks.bed
+    shell:
+        
+        module load bedtools/2.30
+
+        mkdir -p output/peaks/
+
+        # Merge peaks that appear in at least 50% of samples
+        bedtools multiIntersectBed -i output/peaks/macs3/FACT_23-0013_FNF_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0016_FNF_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0022_FNF_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0023_FNF_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0025_FNF_synovium_1_peaks.narrowPeak |         awk -v min_samples=2 '$4 >= min_samples' |         bedtools merge > output/peaks/FNF_consensus_macs3_peaks.bed
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56261923
+
+Error executing rule merge_peaks_by_condition on cluster (jobid: 32, external: 56261923, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.rfz2tlzi/snakejob.merge_peaks_by_condition.32.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Sat Dec 21 14:35:57 2024]
+Error in rule merge_peaks_by_condition:
+    jobid: 31
+    output: output/peaks/CTL_consensus_macs3_peaks.bed
+    shell:
+        
+        module load bedtools/2.30
+
+        mkdir -p output/peaks/
+
+        # Merge peaks that appear in at least 50% of samples
+        bedtools multiIntersectBed -i output/peaks/macs3/FACT_23-0013_CTL_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0016_CTL_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0022_CTL_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0023_CTL_synovium_1_peaks.narrowPeak output/peaks/macs3/FACT_23-0025_CTL_synovium_1_peaks.narrowPeak |         awk -v min_samples=2 '$4 >= min_samples' |         bedtools merge > output/peaks/CTL_consensus_macs3_peaks.bed
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56261924
+
+Error executing rule merge_peaks_by_condition on cluster (jobid: 31, external: 56261924, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.rfz2tlzi/snakejob.merge_peaks_by_condition.31.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-21T143532.063227.snakemake.log

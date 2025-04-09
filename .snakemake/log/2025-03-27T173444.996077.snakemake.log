@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in line 26 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_counting.smk:
+Missing input files for rule all:
+output/peaks/Ankle/counts/hmmratac_counts.txt
+output/peaks/Ankle/counts/macs2_counts.txt
+output/peaks/Ankle/counts/macs3_counts.txt

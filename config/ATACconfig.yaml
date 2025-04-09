@@ -1,8 +1,8 @@
 ## Path to sample sheet
-samplesheet: 'atac_samplesheet2.txt'
-#bam_samplesheet: 'bam_atac_CQLT_all_samplesheet.txt'
-#bam_samplesheet: 'bam_atac_cqtl_samplesheet.txt'
-bam_samplesheet: 'bam_atac_cqtl_others_samplesheet.txt'
+samplesheet: 'cqtl_atac_sample.txt'
+#bam_samplesheet: 'bam_atac_CQTL_all_samplesheet.txt'
+bam_samplesheet: 'bam_atac_CQTL_noRep_samplesheet.txt'
+#bam_samplesheet: 'bam_atac_cqtl_others_samplesheet.txt'
 #bam_samplesheet: 'bam_atac_samplsheet.txt'
 
 ## List columns to concatenate for file names 

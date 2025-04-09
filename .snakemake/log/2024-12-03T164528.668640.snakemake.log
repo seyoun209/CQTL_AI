@@ -1,0 +1,7 @@
+KeyError in line 33 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/RNA_verifyBamid.smk:
+'base_dir'
+  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/RNA_verifyBamid.smk", line 33, in <module>
+  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/core/groupby/groupby.py", line 1824, in apply
+  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/core/groupby/groupby.py", line 1885, in _python_apply_general
+  File "/work/users/s/e/seyoun/CQTL_AI/env/lib/python3.9/site-packages/pandas/core/groupby/ops.py", line 919, in apply_groupwise
+  File "/work/users/s/e/seyoun/CQTL_AI/snakefiles/RNA_verifyBamid.smk", line 33, in <lambda>

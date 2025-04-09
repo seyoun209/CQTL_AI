@@ -1,0 +1,186 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 100
+Job counts:
+	count	jobs
+	1	all_subset
+	6	verifybamid
+	7
+
+[Thu Nov 28 00:06:42 2024]
+rule verifybamid:
+    input: output/align/CQTL_AM7754_FNF_Ankle_replicate_RG.bam, output/align/CQTL_AM7754_FNF_Ankle_replicate_RG.bam.bai, output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.selfSM, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.selfRG, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.bestRG, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.bestSM, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.depthRG, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7754_FNF_Ankle_replicate.err
+    jobid: 3
+    wildcards: sampleName=CQTL_AM7754_FNF_Ankle_replicate
+
+
+        
+        if [[ "CQTL_AM7754_FNF_Ankle_replicate" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7754_FNF_Ankle_replicate" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7754_FNF_Ankle_replicate"
+            exit 1
+        fi
+        
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam output/align/CQTL_AM7754_FNF_Ankle_replicate_RG.bam --bai output/align/CQTL_AM7754_FNF_Ankle_replicate_RG.bam.bai --best --out output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7754_FNF_Ankle_replicate.err
+        
+Submitted job 3 with external jobid '54998348'.
+
+[Thu Nov 28 00:06:47 2024]
+rule verifybamid:
+    input: output/align/CQTL_AM7778FE_FNF_Femur_1_RG.bam, output/align/CQTL_AM7778FE_FNF_Femur_1_RG.bam.bai, output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.selfSM, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.selfRG, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.bestRG, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.bestSM, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.depthRG, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7778FE_FNF_Femur_1.err
+    jobid: 2
+    wildcards: sampleName=CQTL_AM7778FE_FNF_Femur_1
+
+
+        
+        if [[ "CQTL_AM7778FE_FNF_Femur_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7778FE_FNF_Femur_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7778FE_FNF_Femur_1"
+            exit 1
+        fi
+        
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam output/align/CQTL_AM7778FE_FNF_Femur_1_RG.bam --bai output/align/CQTL_AM7778FE_FNF_Femur_1_RG.bam.bai --best --out output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7778FE_FNF_Femur_1.err
+        
+Submitted job 2 with external jobid '54998349'.
+
+[Thu Nov 28 00:06:52 2024]
+rule verifybamid:
+    input: output/align/CQTL_AM7755_CTL_Ankle_replicate_RG.bam, output/align/CQTL_AM7755_CTL_Ankle_replicate_RG.bam.bai, output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.selfSM, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.selfRG, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.bestRG, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.bestSM, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.depthRG, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7755_CTL_Ankle_replicate.err
+    jobid: 7
+    wildcards: sampleName=CQTL_AM7755_CTL_Ankle_replicate
+
+
+        
+        if [[ "CQTL_AM7755_CTL_Ankle_replicate" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7755_CTL_Ankle_replicate" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7755_CTL_Ankle_replicate"
+            exit 1
+        fi
+        
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam output/align/CQTL_AM7755_CTL_Ankle_replicate_RG.bam --bai output/align/CQTL_AM7755_CTL_Ankle_replicate_RG.bam.bai --best --out output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7755_CTL_Ankle_replicate.err
+        
+Submitted job 7 with external jobid '54998350'.
+
+[Thu Nov 28 00:06:57 2024]
+rule verifybamid:
+    input: output/align/CQTL_AM7778FE_CTL_Femur_1_RG.bam, output/align/CQTL_AM7778FE_CTL_Femur_1_RG.bam.bai, output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.selfSM, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.selfRG, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.bestRG, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.bestSM, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.depthRG, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7778FE_CTL_Femur_1.err
+    jobid: 5
+    wildcards: sampleName=CQTL_AM7778FE_CTL_Femur_1
+
+
+        
+        if [[ "CQTL_AM7778FE_CTL_Femur_1" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7778FE_CTL_Femur_1" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7778FE_CTL_Femur_1"
+            exit 1
+        fi
+        
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam output/align/CQTL_AM7778FE_CTL_Femur_1_RG.bam --bai output/align/CQTL_AM7778FE_CTL_Femur_1_RG.bam.bai --best --out output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7778FE_CTL_Femur_1.err
+        
+Submitted job 5 with external jobid '54998351'.
+
+[Thu Nov 28 00:07:02 2024]
+rule verifybamid:
+    input: output/align/CQTL_AM7754_CTL_Ankle_replicate_RG.bam, output/align/CQTL_AM7754_CTL_Ankle_replicate_RG.bam.bai, output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.selfSM, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.selfRG, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.bestRG, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.bestSM, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.depthRG, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7754_CTL_Ankle_replicate.err
+    jobid: 6
+    wildcards: sampleName=CQTL_AM7754_CTL_Ankle_replicate
+
+
+        
+        if [[ "CQTL_AM7754_CTL_Ankle_replicate" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7754_CTL_Ankle_replicate" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7754_CTL_Ankle_replicate"
+            exit 1
+        fi
+        
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam output/align/CQTL_AM7754_CTL_Ankle_replicate_RG.bam --bai output/align/CQTL_AM7754_CTL_Ankle_replicate_RG.bam.bai --best --out output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7754_CTL_Ankle_replicate.err
+        
+Submitted job 6 with external jobid '54998353'.
+
+[Thu Nov 28 00:07:08 2024]
+rule verifybamid:
+    input: output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam, output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam.bai, output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+    output: output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.selfSM, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.selfRG, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.bestRG, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.bestSM, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.depthRG, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.depthSM
+    log: output/logs/verifyBamID_CQTL_AM7755_FNF_Ankle_replicate.err
+    jobid: 4
+    wildcards: sampleName=CQTL_AM7755_FNF_Ankle_replicate
+
+
+        
+        if [[ "CQTL_AM7755_FNF_Ankle_replicate" == *"CTL"* ]]; then
+            vcf_file=output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz
+        elif [[ "CQTL_AM7755_FNF_Ankle_replicate" == *"FNF"* ]]; then
+            vcf_file=output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz
+        else
+            echo "Error: Sample type not recognized in CQTL_AM7755_FNF_Ankle_replicate"
+            exit 1
+        fi
+        
+        echo "$vcf_file"
+
+        /users/s/e/seyoun/tools/verifyBamID_1.1.3/verifyBamID/bin/verifyBamID --vcf $vcf_file --bam output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam --bai output/align/CQTL_AM7755_FNF_Ankle_replicate_RG.bam.bai --best --out output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID 2> output/logs/verifyBamID_CQTL_AM7755_FNF_Ankle_replicate.err
+        
+Submitted job 4 with external jobid '54998356'.
+[Thu Nov 28 04:19:05 2024]
+Finished job 5.
+1 of 7 steps (14%) done
+[Thu Nov 28 04:42:30 2024]
+Finished job 6.
+2 of 7 steps (29%) done
+[Thu Nov 28 04:42:57 2024]
+Finished job 7.
+3 of 7 steps (43%) done
+[Thu Nov 28 04:44:03 2024]
+Finished job 4.
+4 of 7 steps (57%) done
+[Thu Nov 28 04:45:41 2024]
+Finished job 3.
+5 of 7 steps (71%) done
+[Thu Nov 28 05:16:02 2024]
+Finished job 2.
+6 of 7 steps (86%) done
+
+[Thu Nov 28 05:16:07 2024]
+localrule all_subset:
+    input: output/geno/pbs_geno_other/pbs.rename_wCHR.vcf.gz, output/geno/fnf_geno_other/fnf.rename_wCHR.vcf.gz, output/geno/pbs_geno_other/pbs.rename.vcf.gz, output/geno/fnf_geno_other/fnf.rename.vcf.gz, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.selfSM, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.selfRG, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.bestRG, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.bestSM, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.depthRG, output/QC/CQTL_AM7778FE_FNF_Femur_1_verifyBamID.depthSM, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.selfSM, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.selfRG, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.bestRG, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.bestSM, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.depthRG, output/QC/CQTL_AM7754_FNF_Ankle_replicate_verifyBamID.depthSM, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.selfSM, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.selfRG, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.bestRG, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.bestSM, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.depthRG, output/QC/CQTL_AM7755_FNF_Ankle_replicate_verifyBamID.depthSM, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.selfSM, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.selfRG, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.bestRG, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.bestSM, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.depthRG, output/QC/CQTL_AM7778FE_CTL_Femur_1_verifyBamID.depthSM, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.selfSM, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.selfRG, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.bestRG, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.bestSM, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.depthRG, output/QC/CQTL_AM7754_CTL_Ankle_replicate_verifyBamID.depthSM, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.selfSM, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.selfRG, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.bestRG, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.bestSM, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.depthRG, output/QC/CQTL_AM7755_CTL_Ankle_replicate_verifyBamID.depthSM
+    jobid: 0
+
+[Thu Nov 28 05:16:07 2024]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-11-28T000639.379932.snakemake.log

@@ -1,0 +1,13 @@
+Building DAG of jobs...
+MissingInputException in line 238 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/peak_counting.smk:
+Missing input files for rule create_count_matrices:
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam']
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam']
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam']
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam']
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam']
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_CTL_synovium_1_RG.bam']
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam']
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam']
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam']
+['/work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_FNF_synovium_1_RG.bam']

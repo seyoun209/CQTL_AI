@@ -1,0 +1,401 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	10	hmmratac_peaks
+	11
+
+[Fri Dec 20 13:53:43 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_FNF_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0016_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0016_FNF_synovium_1.err
+    jobid: 24
+    wildcards: sampleName=FACT_23-0016_FNF_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0016_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0016_FNF_synovium_1.err
+
+        
+Submitted job 24 with external jobid '56236584'.
+
+[Fri Dec 20 13:53:44 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0025_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0025_CTL_synovium_1.err
+    jobid: 29
+    wildcards: sampleName=FACT_23-0025_CTL_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0025_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0025_CTL_synovium_1.err
+
+        
+Submitted job 29 with external jobid '56236585'.
+
+[Fri Dec 20 13:53:45 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0016_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0016_CTL_synovium_1.err
+    jobid: 23
+    wildcards: sampleName=FACT_23-0016_CTL_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0016_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0016_CTL_synovium_1.err
+
+        
+Submitted job 23 with external jobid '56236586'.
+
+[Fri Dec 20 13:53:46 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0013_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0013_FNF_synovium_1.err
+    jobid: 22
+    wildcards: sampleName=FACT_23-0013_FNF_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0013_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0013_FNF_synovium_1.err
+
+        
+Submitted job 22 with external jobid '56236588'.
+
+[Fri Dec 20 13:53:48 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0022_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0022_CTL_synovium_1.err
+    jobid: 25
+    wildcards: sampleName=FACT_23-0022_CTL_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0022_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0022_CTL_synovium_1.err
+
+        
+Submitted job 25 with external jobid '56236589'.
+
+[Fri Dec 20 13:53:49 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0023_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0023_FNF_synovium_1.err
+    jobid: 28
+    wildcards: sampleName=FACT_23-0023_FNF_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0023_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0023_FNF_synovium_1.err
+
+        
+Submitted job 28 with external jobid '56236590'.
+
+[Fri Dec 20 13:53:50 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0013_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0013_CTL_synovium_1.err
+    jobid: 21
+    wildcards: sampleName=FACT_23-0013_CTL_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0013_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0013_CTL_synovium_1.err
+
+        
+Submitted job 21 with external jobid '56236591'.
+
+[Fri Dec 20 13:53:51 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0025_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0025_FNF_synovium_1.err
+    jobid: 30
+    wildcards: sampleName=FACT_23-0025_FNF_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0025_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0025_FNF_synovium_1.err
+
+        
+Submitted job 30 with external jobid '56236592'.
+
+[Fri Dec 20 13:53:52 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_CTL_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0023_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0023_CTL_synovium_1.err
+    jobid: 27
+    wildcards: sampleName=FACT_23-0023_CTL_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0023_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0023_CTL_synovium_1.err
+
+        
+Submitted job 27 with external jobid '56236593'.
+
+[Fri Dec 20 13:53:53 2024]
+rule hmmratac_peaks:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam
+    output: output/peaks/hmmratac/FACT_23-0022_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0022_FNF_synovium_1.err
+    jobid: 26
+    wildcards: sampleName=FACT_23-0022_FNF_synovium_1
+    threads: 2
+
+
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0022_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0022_FNF_synovium_1.err
+
+        
+Submitted job 26 with external jobid '56236594'.
+[Fri Dec 20 13:57:03 2024]
+Error in rule hmmratac_peaks:
+    jobid: 23
+    output: output/peaks/hmmratac/FACT_23-0016_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0016_CTL_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0016_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0016_CTL_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236586
+
+Error executing rule hmmratac_peaks on cluster (jobid: 23, external: 56236586, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.23.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Dec 20 14:27:16 2024]
+Error in rule hmmratac_peaks:
+    jobid: 29
+    output: output/peaks/hmmratac/FACT_23-0025_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0025_CTL_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0025_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0025_CTL_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236585
+
+Error executing rule hmmratac_peaks on cluster (jobid: 29, external: 56236585, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.29.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Dec 20 14:36:40 2024]
+Error in rule hmmratac_peaks:
+    jobid: 30
+    output: output/peaks/hmmratac/FACT_23-0025_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0025_FNF_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0025_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0025_FNF_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236592
+
+Error executing rule hmmratac_peaks on cluster (jobid: 30, external: 56236592, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.30.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Dec 20 14:43:54 2024]
+Error in rule hmmratac_peaks:
+    jobid: 24
+    output: output/peaks/hmmratac/FACT_23-0016_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0016_FNF_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0016_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0016_FNF_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236584
+
+Error executing rule hmmratac_peaks on cluster (jobid: 24, external: 56236584, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.24.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Dec 20 14:45:18 2024]
+Error in rule hmmratac_peaks:
+    jobid: 22
+    output: output/peaks/hmmratac/FACT_23-0013_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0013_FNF_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0013_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0013_FNF_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236588
+
+Error executing rule hmmratac_peaks on cluster (jobid: 22, external: 56236588, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.22.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Dec 20 14:47:26 2024]
+Error in rule hmmratac_peaks:
+    jobid: 27
+    output: output/peaks/hmmratac/FACT_23-0023_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0023_CTL_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0023_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0023_CTL_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236593
+
+Error executing rule hmmratac_peaks on cluster (jobid: 27, external: 56236593, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.27.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Dec 20 14:48:50 2024]
+Error in rule hmmratac_peaks:
+    jobid: 25
+    output: output/peaks/hmmratac/FACT_23-0022_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0022_CTL_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0022_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0022_CTL_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236589
+
+Error executing rule hmmratac_peaks on cluster (jobid: 25, external: 56236589, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.25.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Dec 20 14:49:04 2024]
+Error in rule hmmratac_peaks:
+    jobid: 28
+    output: output/peaks/hmmratac/FACT_23-0023_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0023_FNF_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0023_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0023_FNF_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236590
+
+Error executing rule hmmratac_peaks on cluster (jobid: 28, external: 56236590, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.28.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Dec 20 14:53:45 2024]
+Error in rule hmmratac_peaks:
+    jobid: 21
+    output: output/peaks/hmmratac/FACT_23-0013_CTL_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0013_CTL_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0013_CTL_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0013_CTL_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236591
+
+Error executing rule hmmratac_peaks on cluster (jobid: 21, external: 56236591, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.21.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Fri Dec 20 14:56:32 2024]
+Error in rule hmmratac_peaks:
+    jobid: 26
+    output: output/peaks/hmmratac/FACT_23-0022_FNF_synovium_1_accessible_regions.gappedPeak
+    log: output/logs/hmmratac_FACT_23-0022_FNF_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load python/3.9.6
+        source /users/s/e/seyoun/tools/MACS3env/bin/activate
+
+        mkdir -p output/peaks/hmmratac
+
+         macs3 hmmratac             -i /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam             -f BAMPE             --keep-duplicates             --minlen 100             --save-states             --binsize 50             -n FACT_23-0022_FNF_synovium_1             --outdir output/peaks/hmmratac 2> output/logs/hmmratac_FACT_23-0022_FNF_synovium_1.err
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56236594
+
+Error executing rule hmmratac_peaks on cluster (jobid: 26, external: 56236594, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.8t58u_50/snakejob.hmmratac_peaks.26.sh). For error details see the cluster log and the log files of the involved rule(s).
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /work/users/s/e/seyoun/CQTL_AI/.snakemake/log/2024-12-20T135342.827596.snakemake.log

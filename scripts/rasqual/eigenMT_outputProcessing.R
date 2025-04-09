@@ -1,5 +1,5 @@
 # EigenMT output processing
-
+setwd("/work/users/s/e/seyoun/CQTL_AI/")
 library(data.table)
 library(dplyr)
 library(stringr)

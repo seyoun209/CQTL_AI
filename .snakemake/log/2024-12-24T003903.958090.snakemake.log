@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 119 of /work/users/s/e/seyoun/CQTL_AI/snakefiles/SubsetPreprocess.smk:
+Missing input files for rule extract_sample_ids:
+/work/users/s/e/seyoun/CQTL_AI/output/geno/FNF_samples_with_replacements.txt
+/work/users/s/e/seyoun/CQTL_AI/output/geno/CTL_samples_with_replacements.txt

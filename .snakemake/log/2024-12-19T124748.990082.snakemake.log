@@ -1,0 +1,388 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 150
+Job counts:
+	count	jobs
+	1	all
+	2	mergeAlign
+	2	mergeSignal
+	10	signal
+	15
+
+[Thu Dec 19 12:47:51 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0013_FNF_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0013_FNF_synovium_1.err
+    jobid: 2
+    wildcards: tissues=synovium, sampleName=FACT_23-0013_FNF_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0013_FNF_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0013_FNF_synovium_1.err 2>&1
+
+        
+Submitted job 2 with external jobid '56203783'.
+
+[Thu Dec 19 12:47:52 2024]
+rule mergeAlign:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_FNF_synovium_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam
+    output: output/siganls/synovium/mergedAlign/FNF_sorted.bam, output/siganls/synovium/mergedAlign/FNF_sorted.bam.bai, output/siganls/synovium/mergedAlign/FNF_stats.txt
+    log: output/logs/mergedAligned_synovium_FNF.err
+    jobid: 14
+    wildcards: tissues=synovium, cond=FNF
+
+
+        module load samtools/1.21
+        mkdir -p output/siganls/['synovium']/mergedAlign
+
+        samtools merge output/siganls/synovium/mergedAlign/FNF_sorted.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_FNF_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam >> output/logs/mergedAligned_synovium_FNF.err 2>&1
+        samtools flagstat output/siganls/synovium/mergedAlign/FNF_sorted.bam > output/siganls/synovium/mergedAlign/FNF_stats.txt >> output/logs/mergedAligned_synovium_FNF.err 2>&1
+        samtools index output/siganls/synovium/mergedAlign/FNF_sorted.bam >> output/logs/mergedAligned_synovium_FNF.err 2>&1
+        
+Submitted job 14 with external jobid '56203784'.
+
+[Thu Dec 19 12:47:53 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0025_CTL_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0025_CTL_synovium_1.err
+    jobid: 9
+    wildcards: tissues=synovium, sampleName=FACT_23-0025_CTL_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0025_CTL_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0025_CTL_synovium_1.err 2>&1
+
+        
+Submitted job 9 with external jobid '56203786'.
+
+[Thu Dec 19 12:47:54 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0013_CTL_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0013_CTL_synovium_1.err
+    jobid: 1
+    wildcards: tissues=synovium, sampleName=FACT_23-0013_CTL_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0013_CTL_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0013_CTL_synovium_1.err 2>&1
+
+        
+Submitted job 1 with external jobid '56203787'.
+
+[Thu Dec 19 12:47:55 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0022_CTL_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0022_CTL_synovium_1.err
+    jobid: 5
+    wildcards: tissues=synovium, sampleName=FACT_23-0022_CTL_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0022_CTL_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0022_CTL_synovium_1.err 2>&1
+
+        
+Submitted job 5 with external jobid '56203788'.
+
+[Thu Dec 19 12:47:56 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0023_FNF_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0023_FNF_synovium_1.err
+    jobid: 8
+    wildcards: tissues=synovium, sampleName=FACT_23-0023_FNF_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0023_FNF_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0023_FNF_synovium_1.err 2>&1
+
+        
+Submitted job 8 with external jobid '56203789'.
+
+[Thu Dec 19 12:47:57 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0022_FNF_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0022_FNF_synovium_1.err
+    jobid: 6
+    wildcards: tissues=synovium, sampleName=FACT_23-0022_FNF_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0022_FNF_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0022_FNF_synovium_1.err 2>&1
+
+        
+Submitted job 6 with external jobid '56203790'.
+
+[Thu Dec 19 12:47:58 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0025_FNF_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0025_FNF_synovium_1.err
+    jobid: 10
+    wildcards: tissues=synovium, sampleName=FACT_23-0025_FNF_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0025_FNF_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0025_FNF_synovium_1.err 2>&1
+
+        
+Submitted job 10 with external jobid '56203791'.
+
+[Thu Dec 19 12:47:59 2024]
+rule mergeAlign:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_CTL_synovium_1_RG.bam, /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam
+    output: output/siganls/synovium/mergedAlign/CTL_sorted.bam, output/siganls/synovium/mergedAlign/CTL_sorted.bam.bai, output/siganls/synovium/mergedAlign/CTL_stats.txt
+    log: output/logs/mergedAligned_synovium_CTL.err
+    jobid: 13
+    wildcards: tissues=synovium, cond=CTL
+
+
+        module load samtools/1.21
+        mkdir -p output/siganls/['synovium']/mergedAlign
+
+        samtools merge output/siganls/synovium/mergedAlign/CTL_sorted.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_CTL_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam >> output/logs/mergedAligned_synovium_CTL.err 2>&1
+        samtools flagstat output/siganls/synovium/mergedAlign/CTL_sorted.bam > output/siganls/synovium/mergedAlign/CTL_stats.txt >> output/logs/mergedAligned_synovium_CTL.err 2>&1
+        samtools index output/siganls/synovium/mergedAlign/CTL_sorted.bam >> output/logs/mergedAligned_synovium_CTL.err 2>&1
+        
+Submitted job 13 with external jobid '56203792'.
+
+[Thu Dec 19 12:48:00 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0016_CTL_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0016_CTL_synovium_1.err
+    jobid: 3
+    wildcards: tissues=synovium, sampleName=FACT_23-0016_CTL_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0016_CTL_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0016_CTL_synovium_1.err 2>&1
+
+        
+Submitted job 3 with external jobid '56203793'.
+
+[Thu Dec 19 12:48:01 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_FNF_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0016_FNF_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0016_FNF_synovium_1.err
+    jobid: 4
+    wildcards: tissues=synovium, sampleName=FACT_23-0016_FNF_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_FNF_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0016_FNF_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0016_FNF_synovium_1.err 2>&1
+
+        
+Submitted job 4 with external jobid '56203794'.
+
+[Thu Dec 19 12:48:03 2024]
+rule signal:
+    input: /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_CTL_synovium_1_RG.bam
+    output: output/signals/synovium/FACT_23-0023_CTL_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0023_CTL_synovium_1.err
+    jobid: 7
+    wildcards: tissues=synovium, sampleName=FACT_23-0023_CTL_synovium_1
+
+
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_CTL_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0023_CTL_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0023_CTL_synovium_1.err 2>&1
+
+        
+Submitted job 7 with external jobid '56203795'.
+[Thu Dec 19 12:54:57 2024]
+Error in rule signal:
+    jobid: 2
+    output: output/signals/synovium/FACT_23-0013_FNF_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0013_FNF_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0013_FNF_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0013_FNF_synovium_1.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203783
+
+Error executing rule signal on cluster (jobid: 2, external: 56203783, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.signal.2.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Dec 19 12:54:58 2024]
+Error in rule mergeAlign:
+    jobid: 14
+    output: output/siganls/synovium/mergedAlign/FNF_sorted.bam, output/siganls/synovium/mergedAlign/FNF_sorted.bam.bai, output/siganls/synovium/mergedAlign/FNF_stats.txt
+    log: output/logs/mergedAligned_synovium_FNF.err (check log file(s) for error message)
+    shell:
+        
+        module load samtools/1.21
+        mkdir -p output/siganls/['synovium']/mergedAlign
+
+        samtools merge output/siganls/synovium/mergedAlign/FNF_sorted.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_FNF_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_FNF_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam >> output/logs/mergedAligned_synovium_FNF.err 2>&1
+        samtools flagstat output/siganls/synovium/mergedAlign/FNF_sorted.bam > output/siganls/synovium/mergedAlign/FNF_stats.txt >> output/logs/mergedAligned_synovium_FNF.err 2>&1
+        samtools index output/siganls/synovium/mergedAlign/FNF_sorted.bam >> output/logs/mergedAligned_synovium_FNF.err 2>&1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203784
+
+Error executing rule mergeAlign on cluster (jobid: 14, external: 56203784, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.mergeAlign.14.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Dec 19 12:55:00 2024]
+Error in rule signal:
+    jobid: 9
+    output: output/signals/synovium/FACT_23-0025_CTL_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0025_CTL_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0025_CTL_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0025_CTL_synovium_1.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203786
+
+Error executing rule signal on cluster (jobid: 9, external: 56203786, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.signal.9.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Dec 19 12:55:01 2024]
+Error in rule signal:
+    jobid: 1
+    output: output/signals/synovium/FACT_23-0013_CTL_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0013_CTL_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0013_CTL_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0013_CTL_synovium_1.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203787
+
+Error executing rule signal on cluster (jobid: 1, external: 56203787, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.signal.1.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Dec 19 12:55:02 2024]
+Error in rule signal:
+    jobid: 5
+    output: output/signals/synovium/FACT_23-0022_CTL_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0022_CTL_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0022_CTL_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0022_CTL_synovium_1.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203788
+
+Error executing rule signal on cluster (jobid: 5, external: 56203788, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.signal.5.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Dec 19 12:55:03 2024]
+Error in rule signal:
+    jobid: 8
+    output: output/signals/synovium/FACT_23-0023_FNF_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0023_FNF_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_FNF_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0023_FNF_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0023_FNF_synovium_1.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203789
+
+Error executing rule signal on cluster (jobid: 8, external: 56203789, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.signal.8.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Dec 19 12:55:04 2024]
+Error in rule signal:
+    jobid: 6
+    output: output/signals/synovium/FACT_23-0022_FNF_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0022_FNF_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_FNF_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0022_FNF_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0022_FNF_synovium_1.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203790
+
+Error executing rule signal on cluster (jobid: 6, external: 56203790, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.signal.6.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Dec 19 12:55:05 2024]
+Error in rule signal:
+    jobid: 10
+    output: output/signals/synovium/FACT_23-0025_FNF_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0025_FNF_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_FNF_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0025_FNF_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0025_FNF_synovium_1.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203791
+
+Error executing rule signal on cluster (jobid: 10, external: 56203791, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.signal.10.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Dec 19 12:55:06 2024]
+Error in rule mergeAlign:
+    jobid: 13
+    output: output/siganls/synovium/mergedAlign/CTL_sorted.bam, output/siganls/synovium/mergedAlign/CTL_sorted.bam.bai, output/siganls/synovium/mergedAlign/CTL_stats.txt
+    log: output/logs/mergedAligned_synovium_CTL.err (check log file(s) for error message)
+    shell:
+        
+        module load samtools/1.21
+        mkdir -p output/siganls/['synovium']/mergedAlign
+
+        samtools merge output/siganls/synovium/mergedAlign/CTL_sorted.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0013_CTL_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0022_CTL_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0023_CTL_synovium_1_RG.bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0025_CTL_synovium_1_RG.bam >> output/logs/mergedAligned_synovium_CTL.err 2>&1
+        samtools flagstat output/siganls/synovium/mergedAlign/CTL_sorted.bam > output/siganls/synovium/mergedAlign/CTL_stats.txt >> output/logs/mergedAligned_synovium_CTL.err 2>&1
+        samtools index output/siganls/synovium/mergedAlign/CTL_sorted.bam >> output/logs/mergedAligned_synovium_CTL.err 2>&1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203792
+
+Error executing rule mergeAlign on cluster (jobid: 13, external: 56203792, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.mergeAlign.13.sh). For error details see the cluster log and the log files of the involved rule(s).
+[Thu Dec 19 12:55:07 2024]
+Error in rule signal:
+    jobid: 3
+    output: output/signals/synovium/FACT_23-0016_CTL_synovium_1.bw
+    log: output/logs/signal_synovium_FACT_23-0016_CTL_synovium_1.err (check log file(s) for error message)
+    shell:
+        
+        module load deeptools/3.5.4
+        mkdir -p output/signals/['synovium']
+
+        bamCoverage             --bam /work/users/s/e/seyoun/CQTL_AI/output/align/FACT_23-0016_CTL_synovium_1_RG.bam             -o output/signals/synovium/FACT_23-0016_CTL_synovium_1.bw             --binSize 10             --normalizeUsing RPGC             --effectiveGenomeSize 2862010428             --extendReads             > output/logs/signal_synovium_FACT_23-0016_CTL_synovium_1.err 2>&1
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    cluster_jobid: 56203793
+
+Error executing rule signal on cluster (jobid: 3, external: 56203793, jobscript: /work/users/s/e/seyoun/CQTL_AI/.snakemake/tmp.bzzt5hi1/snakejob.signal.3.sh). For error details see the cluster log and the log files of the involved rule(s).
